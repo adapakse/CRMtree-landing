@@ -36,17 +36,17 @@ body { font-family: 'Inter', sans-serif; color: var(--text); line-height: 1.6; }
 /* ── NAVBAR ──────────────────────────────────────── */
 .navbar {
   position: sticky; top: 0; z-index: 100;
-  background: rgba(255,255,255,.92); backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border);
+  background: var(--navy);
+  border-bottom: 1px solid rgba(255,255,255,.08);
 }
-.navbar__inner { display: flex; align-items: center; gap: 32px; height: 64px; }
-.navbar__logo  { display: flex; align-items: center; gap: 8px; text-decoration: none; }
-.logo-tree { font-size: 22px; }
-.logo-text { font-size: 20px; color: var(--navy); }
-.logo-text strong { color: var(--green); }
+.navbar__inner { display: flex; align-items: center; gap: 32px; height: 68px; }
+.navbar__logo  { display: flex; align-items: center; text-decoration: none; }
+.navbar__logo-img { height: 40px; width: auto; border-radius: 6px; }
 .navbar__links { display: flex; gap: 28px; margin-left: auto; }
-.navbar__links a { text-decoration: none; color: var(--text-muted); font-size: 15px; font-weight: 500; transition: color .15s; }
+.navbar__links a { text-decoration: none; color: rgba(255,255,255,.7); font-size: 15px; font-weight: 500; transition: color .15s; }
 .navbar__links a:hover { color: var(--green); }
+.btn--outline-light { background: transparent; border: 2px solid rgba(255,255,255,.4); color: #fff; border-radius: 8px; padding: 8px 20px; font-weight: 600; font-size: 15px; text-decoration: none; transition: all .18s; display: inline-flex; align-items: center; }
+.btn--outline-light:hover { border-color: var(--green); color: var(--green); }
 
 /* ── HERO ────────────────────────────────────────── */
 .hero { background: linear-gradient(135deg, #fff 0%, var(--green-light) 100%); padding: 80px 0 100px; }
@@ -136,9 +136,8 @@ textarea { resize: vertical; }
 /* ── FOOTER ──────────────────────────────────────── */
 .footer { background: var(--navy); padding: 48px 0 32px; }
 .footer__inner { display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center; }
-.footer__brand { display: flex; flex-direction: column; align-items: center; gap: 6px; }
-.footer__brand .logo-text { color: #fff; }
-.footer__brand .logo-text strong { color: var(--green); }
+.footer__brand { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.footer__logo-img { height: 48px; width: auto; border-radius: 8px; }
 .footer__brand p { font-size: 14px; color: rgba(255,255,255,.5); }
 .footer__links { display: flex; gap: 28px; }
 .footer__links a { text-decoration: none; color: rgba(255,255,255,.6); font-size: 14px; font-weight: 500; transition: color .15s; }
