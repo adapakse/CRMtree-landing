@@ -32,7 +32,7 @@
     <div class="container hero__inner">
       <div class="hero__content">
         <h1>Zarządzaj sprzedażą&nbsp;i partnerami<br /><span class="highlight">w jednym miejscu</span></h1>
-        <p class="hero__sub">CRMtree to platforma CRM stworzona specjalnie dla biur podróży korporacyjnych. Kontroluj budżety, monitoruj wyniki sprzedaży i buduj relacje z partnerami — wszystko bez arkuszy Excel.</p>
+        <p class="hero__sub">CRMtree to elastyczna platforma CRM stworzona specjalnie dla efektywności procesów i rozwoju firm. Kontroluj budżety, monitoruj wyniki sprzedaży i buduj relacje z partnerami — wszystko bez arkuszy Excel.</p>
         <div class="hero__cta">
           <a href="https://app.crmtree.pl" class="btn btn--primary btn--lg">Przejdź do aplikacji</a>
           <a href="#contact" class="btn btn--ghost btn--lg">Zapytaj o dostęp</a>
@@ -142,7 +142,10 @@
         <h2>Zapytaj o dostęp</h2>
         <p>Skontaktujemy się w ciągu jednego dnia roboczego</p>
       </div>
-      <form class="contact-form" action="https://formspree.io/f/REPLACE_WITH_YOUR_ID" method="POST">
+      <form class="contact-form" id="contactForm">
+        <input type="hidden" name="access_key" value="REPLACE_WITH_WEB3FORMS_KEY" />
+        <input type="hidden" name="subject" value="Zapytanie z crmtree.pl" />
+        <input type="hidden" name="from_name" value="CRMtree Landing" />
         <div class="form-row">
           <div class="form-group">
             <label for="name">Imię i nazwisko</label>
@@ -150,7 +153,7 @@
           </div>
           <div class="form-group">
             <label for="company">Firma</label>
-            <input type="text" id="company" name="company" placeholder="Nazwa biura podróży" required />
+            <input type="text" id="company" name="company" placeholder="Nazwa firmy" required />
           </div>
         </div>
         <div class="form-row">
@@ -167,8 +170,44 @@
           <label for="message">Wiadomość</label>
           <textarea id="message" name="message" rows="4" placeholder="Opisz krótko swoje potrzeby lub zadaj pytanie…"></textarea>
         </div>
-        <button type="submit" class="btn btn--primary btn--lg">Wyślij zapytanie</button>
+        <div id="formSuccess" class="form-success" style="display:none">
+          ✅ Dziękujemy! Odezwiemy się wkrótce.
+        </div>
+        <div id="formError" class="form-error" style="display:none">
+          ❌ Coś poszło nie tak. Spróbuj ponownie lub napisz bezpośrednio na kontakt@crmtree.pl
+        </div>
+        <button type="submit" id="formSubmit" class="btn btn--primary btn--lg">Wyślij zapytanie</button>
       </form>
+
+      <script>
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+          e.preventDefault();
+          const btn = document.getElementById('formSubmit');
+          const ok  = document.getElementById('formSuccess');
+          const err = document.getElementById('formError');
+          btn.disabled = true;
+          btn.textContent = 'Wysyłanie…';
+          ok.style.display = 'none';
+          err.style.display = 'none';
+          try {
+            const res = await fetch('https://api.web3forms.com/submit', {
+              method: 'POST',
+              body: new FormData(this),
+            });
+            const data = await res.json();
+            if (data.success) {
+              ok.style.display = 'block';
+              this.reset();
+            } else {
+              err.style.display = 'block';
+            }
+          } catch {
+            err.style.display = 'block';
+          }
+          btn.disabled = false;
+          btn.textContent = 'Wyślij zapytanie';
+        });
+      </script>
     </div>
   </section>
 
