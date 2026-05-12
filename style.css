@@ -36,12 +36,12 @@ body { font-family: 'Inter', sans-serif; color: var(--text); line-height: 1.6; }
 /* ── NAVBAR ──────────────────────────────────────── */
 .navbar {
   position: sticky; top: 0; z-index: 100;
-  background: var(--navy);
-  border-bottom: 1px solid rgba(255,255,255,.08);
+  background: #292A2E;
+  border-bottom: 1px solid rgba(255,255,255,.06);
 }
-.navbar__inner { display: flex; align-items: center; gap: 32px; height: 68px; }
+.navbar__inner { display: flex; align-items: center; gap: 32px; height: 72px; }
 .navbar__logo  { display: flex; align-items: center; text-decoration: none; }
-.navbar__logo-img { height: 40px; width: auto; border-radius: 6px; }
+.navbar__logo-img { height: 52px; width: auto; }
 .navbar__links { display: flex; gap: 28px; margin-left: auto; }
 .navbar__links a { text-decoration: none; color: rgba(255,255,255,.7); font-size: 15px; font-weight: 500; transition: color .15s; }
 .navbar__links a:hover { color: var(--green); }
@@ -57,32 +57,16 @@ body { font-family: 'Inter', sans-serif; color: var(--text); line-height: 1.6; }
 .hero__sub { font-size: 17px; color: var(--text-muted); max-width: 480px; margin-bottom: 36px; }
 .hero__cta { display: flex; gap: 16px; flex-wrap: wrap; }
 
-/* Dashboard mockup */
-.dashboard-mockup {
-  background: #fff; border-radius: 16px; box-shadow: var(--shadow), 0 0 0 1px var(--border);
+/* App screenshot */
+.screenshot-frame {
+  border-radius: 14px;
+  box-shadow: 0 24px 64px rgba(0,0,0,.18), 0 0 0 1px var(--border);
   overflow: hidden;
+  background: var(--bg-alt);
 }
-.mockup__bar { background: #F3F4F6; padding: 10px 14px; display: flex; gap: 6px; }
-.dot { width: 10px; height: 10px; border-radius: 50%; }
-.dot.red    { background: #EF4444; }
-.dot.yellow { background: #F59E0B; }
-.dot.green  { background: #10B981; }
-.mockup__content { display: flex; height: 260px; }
-.mockup__sidebar { width: 48px; background: var(--navy); padding: 16px 10px; display: flex; flex-direction: column; gap: 10px; }
-.mockup__nav-item { height: 28px; border-radius: 6px; background: rgba(255,255,255,.15); }
-.mockup__nav-item.active { background: var(--green); }
-.mockup__main { flex: 1; padding: 16px; display: flex; flex-direction: column; gap: 12px; }
-.mockup__stat-row { display: flex; gap: 10px; }
-.mockup__stat { flex: 1; height: 52px; border-radius: 8px; }
-.mockup__stat.green       { background: var(--green-light); }
-.mockup__stat.blue        { background: #EFF6FF; }
-.mockup__stat.green-light { background: #F0FDF4; }
-.mockup__chart { flex: 1; display: flex; align-items: flex-end; gap: 6px; background: var(--bg-alt); border-radius: 8px; padding: 12px 10px 8px; }
-.chart-bar { flex: 1; background: var(--green); border-radius: 4px 4px 0 0; opacity: .8; }
-.chart-bar:nth-child(4) { background: var(--blue); opacity: .8; }
-.mockup__list { display: flex; flex-direction: column; gap: 6px; }
-.mockup__list-item { height: 12px; border-radius: 4px; background: var(--border); }
-.mockup__list-item.short { width: 60%; }
+.screenshot-img {
+  width: 100%; height: auto; display: block;
+}
 
 /* ── SECTION HEADERS ─────────────────────────────── */
 .section-header { text-align: center; margin-bottom: 56px; }
