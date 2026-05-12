@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CRMtree — CRM dla biur podróży korporacyjnych</title>
+  <meta name="description" content="CRMtree to nowoczesny system CRM dedykowany biurom podróży korporacyjnych. Zarządzaj partnerami, budżetami i sprzedażą w jednym miejscu." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container navbar__inner">
+      <a href="/" class="navbar__logo">
+        <span class="logo-tree">🌳</span>
+        <span class="logo-text">CRM<strong>tree</strong></span>
+      </a>
+      <nav class="navbar__links">
+        <a href="#features">Funkcje</a>
+        <a href="#how-it-works">Jak działa</a>
+        <a href="#contact">Kontakt</a>
+      </nav>
+      <a href="https://app.crmtree.pl" class="btn btn--outline">Zaloguj się</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <span class="badge">CRM dla travel managerów</span>
+        <h1>Zarządzaj sprzedażą&nbsp;i partnerami<br /><span class="highlight">w jednym miejscu</span></h1>
+        <p class="hero__sub">CRMtree to platforma CRM stworzona specjalnie dla biur podróży korporacyjnych. Kontroluj budżety, monitoruj wyniki sprzedaży i buduj relacje z partnerami — wszystko bez arkuszy Excel.</p>
+        <div class="hero__cta">
+          <a href="https://app.crmtree.pl" class="btn btn--primary btn--lg">Przejdź do aplikacji</a>
+          <a href="#contact" class="btn btn--ghost btn--lg">Zapytaj o dostęp</a>
+        </div>
+      </div>
+      <div class="hero__visual">
+        <div class="dashboard-mockup">
+          <div class="mockup__bar">
+            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+          </div>
+          <div class="mockup__content">
+            <div class="mockup__sidebar">
+              <div class="mockup__nav-item active"></div>
+              <div class="mockup__nav-item"></div>
+              <div class="mockup__nav-item"></div>
+              <div class="mockup__nav-item"></div>
+              <div class="mockup__nav-item"></div>
+            </div>
+            <div class="mockup__main">
+              <div class="mockup__stat-row">
+                <div class="mockup__stat green"></div>
+                <div class="mockup__stat blue"></div>
+                <div class="mockup__stat green-light"></div>
+              </div>
+              <div class="mockup__chart">
+                <div class="chart-bar" style="height:60%"></div>
+                <div class="chart-bar" style="height:80%"></div>
+                <div class="chart-bar" style="height:45%"></div>
+                <div class="chart-bar" style="height:90%"></div>
+                <div class="chart-bar" style="height:65%"></div>
+                <div class="chart-bar" style="height:75%"></div>
+                <div class="chart-bar" style="height:55%"></div>
+              </div>
+              <div class="mockup__list">
+                <div class="mockup__list-item"></div>
+                <div class="mockup__list-item short"></div>
+                <div class="mockup__list-item"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header">
+        <h2>Wszystko, czego potrzebujesz</h2>
+        <p>Jeden system zamiast dziesiątek arkuszy i narzędzi</p>
+      </div>
+      <div class="features__grid">
+
+        <div class="feature-card">
+          <div class="feature-card__icon">📊</div>
+          <h3>Dashboard sprzedaży</h3>
+          <p>Bieżące wyniki sprzedaży w czasie rzeczywistym. Filtry po okresie, partnerze i handlowcu. Eksport do Excel jednym kliknięciem.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-card__icon">🤝</div>
+          <h3>Zarządzanie partnerami</h3>
+          <p>Baza partnerów biznesowych z historią transakcji, dokumentami i przypisanymi opiekunami. Grupowanie i tagowanie według segmentu.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-card__icon">💰</div>
+          <h3>Budżety i cele</h3>
+          <p>Planowanie budżetów rocznych i miesięcznych per handlowiec. Automatyczne porównanie planu z wykonaniem i alerty odchyleń.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-card__icon">📧</div>
+          <h3>Integracja Gmail</h3>
+          <p>Synchronizacja korespondencji mailowej z partnerami bezpośrednio w CRM. Historia maili widoczna przy karcie partnera.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-card__icon">📁</div>
+          <h3>Dokumenty i umowy</h3>
+          <p>Przechowywanie umów, ofert i dokumentów przy partnerach. Szybki podgląd bez wychodzenia z systemu.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-card__icon">🔐</div>
+          <h3>Multi-tenant &amp; bezpieczeństwo</h3>
+          <p>Każda firma ma izolowane środowisko. Zarządzanie rolami i uprawnieniami użytkowników. Logowanie przez SSO/SAML.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <h2>Jak zacząć</h2>
+        <p>Wdrożenie w 3 krokach, bez integracji IT</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step__number">1</div>
+          <h3>Zakładasz konto</h3>
+          <p>Wypełniasz formularz kontaktowy. Tworzymy dedykowane środowisko dla Twojej firmy w ciągu 24h.</p>
+        </div>
+        <div class="step__connector"></div>
+        <div class="step">
+          <div class="step__number">2</div>
+          <h3>Importujesz dane</h3>
+          <p>Wgrywasz listę partnerów i handlowców z pliku Excel. System importuje dane automatycznie.</p>
+        </div>
+        <div class="step__connector"></div>
+        <div class="step">
+          <div class="step__number">3</div>
+          <h3>Zaczynasz pracę</h3>
+          <p>Twój zespół loguje się i od razu widzi dashboard z wynikami. Zero szkolenia — interfejs mówi sam za siebie.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOGIN CTA -->
+  <section class="login-cta">
+    <div class="container login-cta__inner">
+      <div class="login-cta__text">
+        <h2>Masz już konto?</h2>
+        <p>Zaloguj się do swojego środowiska CRMtree</p>
+      </div>
+      <a href="https://app.crmtree.pl" class="btn btn--primary btn--lg">Przejdź do aplikacji →</a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <h2>Zapytaj o dostęp</h2>
+        <p>Skontaktujemy się w ciągu jednego dnia roboczego</p>
+      </div>
+      <form class="contact-form" action="https://formspree.io/f/REPLACE_WITH_YOUR_ID" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Imię i nazwisko</label>
+            <input type="text" id="name" name="name" placeholder="Jan Kowalski" required />
+          </div>
+          <div class="form-group">
+            <label for="company">Firma</label>
+            <input type="text" id="company" name="company" placeholder="Nazwa biura podróży" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email służbowy</label>
+            <input type="email" id="email" name="email" placeholder="jan@firma.pl" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">Telefon <span class="optional">(opcjonalnie)</span></label>
+            <input type="tel" id="phone" name="phone" placeholder="+48 500 000 000" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="message">Wiadomość</label>
+          <textarea id="message" name="message" rows="4" placeholder="Opisz krótko swoje potrzeby lub zadaj pytanie…"></textarea>
+        </div>
+        <button type="submit" class="btn btn--primary btn--lg">Wyślij zapytanie</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="logo-tree">🌳</span>
+        <span class="logo-text">CRM<strong>tree</strong></span>
+        <p>CRM dla biur podróży korporacyjnych</p>
+      </div>
+      <div class="footer__links">
+        <a href="https://app.crmtree.pl">Zaloguj się</a>
+        <a href="#features">Funkcje</a>
+        <a href="#contact">Kontakt</a>
+      </div>
+      <p class="footer__copy">&copy; 2026 CRMtree. Wszelkie prawa zastrzeżone.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
