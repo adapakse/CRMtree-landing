@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cennik — CRMtree</title>
+  <meta name="description" content="Przejrzyste ceny CRMtree. Wybierz plan dopasowany do potrzeb Twojego zespołu sprzedaży." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── PRICING PAGE SPECIFIC ─────────────────────────────────────────── */
+
+    .pricing-hero {
+      background: linear-gradient(135deg, #fff 0%, var(--green-light) 100%);
+      padding: 72px 0 80px;
+      text-align: center;
+    }
+    .pricing-hero h1 {
+      font-size: 46px; font-weight: 800; color: var(--navy); margin-bottom: 16px;
+    }
+    .pricing-hero p {
+      font-size: 18px; color: var(--text-muted); max-width: 540px; margin: 0 auto 40px;
+    }
+
+    /* ── BILLING TOGGLE ───────────────────────────────────────────────── */
+    .billing-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      background: #fff;
+      border: 1.5px solid var(--border);
+      border-radius: 999px;
+      padding: 6px 20px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-muted);
+      user-select: none;
+    }
+    .billing-toggle__label {
+      cursor: pointer;
+      transition: color .15s;
+      padding: 2px 4px;
+    }
+    .billing-toggle__label.active { color: var(--navy); }
+
+    .toggle-switch {
+      position: relative;
+      width: 44px; height: 24px;
+      background: var(--green);
+      border-radius: 999px;
+      cursor: pointer;
+      transition: background .2s;
+      flex-shrink: 0;
+    }
+    .toggle-switch::after {
+      content: '';
+      position: absolute;
+      top: 3px; left: 3px;
+      width: 18px; height: 18px;
+      background: #fff;
+      border-radius: 50%;
+      transition: transform .2s;
+    }
+    .toggle-switch.monthly::after { transform: translateX(20px); }
+
+    .save-badge {
+      display: inline-flex;
+      align-items: center;
+      background: #dcfce7;
+      color: var(--green-dark);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 2px 9px;
+      border-radius: 999px;
+      margin-left: 2px;
+      letter-spacing: .02em;
+    }
+    .toggle-switch.monthly ~ .save-badge { opacity: 0; }
+
+    /* ── PRICING GRID ─────────────────────────────────────────────────── */
+    .pricing-section {
+      padding: 0 0 100px;
+      background: linear-gradient(180deg, var(--green-light) 0%, #fff 200px);
+    }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      align-items: start;
+    }
+
+    /* ── CARD BASE ────────────────────────────────────────────────────── */
+    .plan-card {
+      background: #fff;
+      border: 1.5px solid var(--border);
+      border-radius: 20px;
+      padding: 36px 32px 40px;
+      position: relative;
+      transition: box-shadow .2s, transform .2s;
+    }
+    .plan-card:hover {
+      box-shadow: 0 12px 40px rgba(0,0,0,.10);
+      transform: translateY(-4px);
+    }
+
+    /* ── FEATURED (Standard) ──────────────────────────────────────────── */
+    .plan-card--featured {
+      border-color: var(--green);
+      border-width: 2px;
+      box-shadow: 0 8px 32px rgba(59,170,93,.18);
+      transform: translateY(-8px);
+    }
+    .plan-card--featured:hover {
+      box-shadow: 0 16px 48px rgba(59,170,93,.24);
+      transform: translateY(-12px);
+    }
+    .plan-badge {
+      position: absolute;
+      top: -14px; left: 50%;
+      transform: translateX(-50%);
+      background: var(--green);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 16px;
+      border-radius: 999px;
+      white-space: nowrap;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    /* ── PLAN HEADER ──────────────────────────────────────────────────── */
+    .plan-name {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+    .plan-card--featured .plan-name { color: var(--green); }
+
+    .plan-tagline {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+      min-height: 44px;
+    }
+
+    /* ── PRICE ────────────────────────────────────────────────────────── */
+    .plan-price {
+      margin-bottom: 6px;
+      display: flex;
+      align-items: flex-end;
+      gap: 4px;
+      min-height: 64px;
+    }
+    .price-currency {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1;
+      padding-bottom: 10px;
+    }
+    .price-amount {
+      font-size: 56px;
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1;
+    }
+    .price-period {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1;
+      padding-bottom: 10px;
+    }
+    .price-contact {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1;
+      padding-bottom: 4px;
+    }
+
+    .plan-billing-note {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+      min-height: 20px;
+    }
+    .plan-billing-note .annual-note { display: block; }
+    .plan-billing-note .monthly-note { display: none; }
+    body.billing-monthly .plan-billing-note .annual-note { display: none; }
+    body.billing-monthly .plan-billing-note .monthly-note { display: block; }
+
+    /* Przełączanie cen */
+    .price-annual { display: flex; align-items: flex-end; gap: 4px; }
+    .price-monthly { display: none; align-items: flex-end; gap: 4px; }
+    body.billing-monthly .price-annual { display: none; }
+    body.billing-monthly .price-monthly { display: flex; }
+
+    /* ── CTA BUTTON ───────────────────────────────────────────────────── */
+    .plan-cta {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 700;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: all .18s;
+      margin-bottom: 32px;
+    }
+    .plan-cta--primary {
+      background: var(--green);
+      color: #fff;
+    }
+    .plan-cta--primary:hover { background: var(--green-dark); }
+
+    .plan-cta--outline {
+      background: transparent;
+      border-color: var(--green);
+      color: var(--green);
+    }
+    .plan-cta--outline:hover { background: var(--green-light); }
+
+    .plan-cta--dark {
+      background: var(--navy);
+      color: #fff;
+    }
+    .plan-cta--dark:hover { background: #2d3748; }
+
+    /* ── FEATURE LIST ─────────────────────────────────────────────────── */
+    .plan-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin-bottom: 24px;
+    }
+    .plan-features-label {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .07em;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+    .plan-card--featured .plan-features-label { color: var(--green); }
+
+    .plan-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+    }
+    .plan-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14.5px;
+      color: var(--text);
+      line-height: 1.5;
+    }
+    .plan-features li .check {
+      width: 18px; height: 18px;
+      border-radius: 50%;
+      background: var(--green-light);
+      color: var(--green-dark);
+      font-size: 11px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+      font-weight: 700;
+    }
+    .plan-card--featured .plan-features li .check {
+      background: var(--green);
+      color: #fff;
+    }
+    .plan-features li .storage {
+      display: inline-flex;
+      align-items: center;
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 1px 8px;
+      border-radius: 6px;
+      color: var(--text-muted);
+      margin-left: auto;
+      flex-shrink: 0;
+    }
+    .plan-inherits {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted);
+      font-style: italic;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .plan-inherits::before {
+      content: '';
+      display: block;
+      width: 12px; height: 1px;
+      background: var(--border);
+    }
+
+    /* ── FAQ / NOTES ──────────────────────────────────────────────────── */
+    .pricing-notes {
+      padding: 48px 0 80px;
+      background: var(--bg-alt);
+    }
+    .pricing-notes__inner {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      text-align: center;
+    }
+    .note-item h4 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .note-item p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .note-icon {
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+
+    /* ── RESPONSIVE ───────────────────────────────────────────────────── */
+    @media (max-width: 960px) {
+      .pricing-grid {
+        grid-template-columns: 1fr;
+        max-width: 460px;
+        margin: 0 auto;
+      }
+      .plan-card--featured { transform: none; }
+      .plan-card--featured:hover { transform: translateY(-4px); }
+      .pricing-hero h1 { font-size: 34px; }
+      .pricing-notes__inner { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+    }
+    @media (max-width: 600px) {
+      .pricing-hero { padding: 48px 0 56px; }
+      .pricing-hero h1 { font-size: 28px; }
+      .plan-card { padding: 28px 24px 32px; }
+      .price-amount { font-size: 44px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container navbar__inner">
+      <a href="/" class="navbar__logo">
+        <img src="logo.png" alt="CRMtree" class="navbar__logo-img" />
+      </a>
+      <nav class="navbar__links">
+        <a href="/#features">Funkcje</a>
+        <a href="/#how-it-works">Jak działa</a>
+        <a href="/pricing.html" style="color:#fff">Cennik</a>
+        <a href="/#contact">Kontakt</a>
+      </nav>
+      <a href="https://app.crmtree.pl" class="btn btn--outline-light">Zaloguj się</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="pricing-hero">
+    <div class="container">
+      <h1>Prosty, przejrzysty cennik</h1>
+      <p>Płacisz tylko za aktywnych użytkowników. Bez ukrytych opłat, bez długoterminowych zobowiązań.</p>
+
+      <!-- BILLING TOGGLE -->
+      <div class="billing-toggle" id="billingToggle">
+        <span class="billing-toggle__label active" id="labelAnnual">Rozliczenie roczne</span>
+        <div class="toggle-switch" id="toggleSwitch"></div>
+        <span class="billing-toggle__label" id="labelMonthly">Miesięczne</span>
+        <span class="save-badge" id="saveBadge">Oszczędzasz do 32%</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING CARDS -->
+  <section class="pricing-section">
+    <div class="container">
+      <div class="pricing-grid">
+
+        <!-- ── LITE ───────────────────────────────────────── -->
+        <div class="plan-card">
+          <div class="plan-name">Lite</div>
+          <div class="plan-tagline">Dla zespołów sprzedaży, które zaczynają porządkować swój CRM.</div>
+
+          <!-- Annual price -->
+          <div class="plan-price price-annual">
+            <span class="price-currency">€</span>
+            <span class="price-amount">19</span>
+            <span class="price-period">/użytkownik<br>/miesiąc</span>
+          </div>
+          <!-- Monthly price -->
+          <div class="plan-price price-monthly">
+            <span class="price-currency">€</span>
+            <span class="price-amount">28</span>
+            <span class="price-period">/użytkownik<br>/miesiąc</span>
+          </div>
+
+          <div class="plan-billing-note">
+            <span class="annual-note">Rozliczenie roczne · €228/rok/użytkownik</span>
+            <span class="monthly-note">Rozliczenie miesięczne</span>
+          </div>
+
+          <a href="/#contact" class="plan-cta plan-cta--outline">Zapytaj o dostęp</a>
+
+          <hr class="plan-divider" />
+          <div class="plan-features-label">Co zawiera</div>
+          <ul class="plan-features">
+            <li>
+              <span class="check">✓</span>
+              Kompletny moduł zarządzania leadami i klientami
+            </li>
+            <li>
+              <span class="check">✓</span>
+              Lejki sprzedaży i budżety handlowców
+            </li>
+            <li>
+              <span class="check">✓</span>
+              Komunikacja end-to-end email (Gmail)
+            </li>
+            <li>
+              <span class="check">✓</span>
+              Zadania i workflow przypisań
+            </li>
+            <li>
+              <span class="check">✓</span>
+              Elastyczna konfiguracja słowników i ról
+            </li>
+            <li>
+              <span class="check">✓</span>
+              Przestrzeń na dane
+              <span class="storage">10 GB</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- ── STANDARD (FEATURED) ────────────────────────── -->
+        <div class="plan-card plan-card--featured">
+          <div class="plan-badge">⭐ Najpopularniejszy</div>
+
+          <div class="plan-name">Standard</div>
+          <div class="plan-tagline">Pełna obsługa sprzedaży — od leada po raport i integrację danych.</div>
+
+          <!-- Annual price -->
+          <div class="plan-price price-annual">
+            <span class="price-currency">€</span>
+            <span class="price-amount">28</span>
+            <span class="price-period">/użytkownik<br>/miesiąc</span>
+          </div>
+          <!-- Monthly price -->
+          <div class="plan-price price-monthly">
+            <span class="price-currency">€</span>
+            <span class="price-amount">36</span>
+            <span class="price-period">/użytkownik<br>/miesiąc</span>
+          </div>
+
+          <div class="plan-billing-note">
+            <span class="annual-note">Rozliczenie roczne · €336/rok/użytkownik</span>
+            <span class="monthly-note">Rozliczenie miesięczne</span>
+          </div>
+
+          <a href="/#contact" class="plan-cta plan-cta--primary">Zapytaj o dostęp</a>
+
+          <hr class="plan-divider" />
+          <div class="plan-features-label">Co zawiera</div>
+          <ul class="plan-features">
+            <li>
+              <span class="plan-inherits">Wszystko z planu Lite, plus:</span>
+            </li>
+            <li>
+              <span class="check">✓</span>
+              Pełna obsługa procesu partnerskiego
+            </li>
+            <li>
+              <span class="check">✓</span>
+              Workflows onboarding (4-etapowy proces wdrożenia)
+            </li>
+            <li>
+              <span class="check">✓</span>
+              Raporty sprzedaży i analityka (trendy, KPI, win rate)
+            </li>
+            <li>
+              <span class="check">✓</span>
+              Integracja z hurtownią danych (DWH)
+            </li>
+            <li>
+              <span class="check">✓</span>
+              Przestrzeń na dane
+              <span class="storage">100 GB</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- ── PROFESSIONAL ───────────────────────────────── -->
+        <div class="plan-card">
+          <div class="plan-name">Professional</div>
+          <div class="plan-tagline">Dla organizacji wymagających dedykowanych kanałów i zaawansowanej analityki.</div>
+
+          <div class="plan-price">
+            <span class="price-contact">Skontaktuj<br/>się z nami</span>
+          </div>
+
+          <div class="plan-billing-note">
+            Wycena indywidualna · SLA gwarantowane
+          </div>
+
+          <a href="/#contact" class="plan-cta plan-cta--dark">Umów rozmowę</a>
+
+          <hr class="plan-divider" />
+          <div class="plan-features-label">Co zawiera</div>
+          <ul class="plan-features">
+            <li>
+              <span class="plan-inherits">Wszystko z planu Standard, plus:</span>
+            </li>
+            <li>
+              <span class="check">✓</span>
+              Zasilanie hurtowni danych przez dedykowany interfejs API
+            </li>
+            <li>
+              <span class="check">✓</span>
+              Rozbudowane raporty i analiza churn
+            </li>
+            <li>
+              <span class="check">✓</span>
+              Moduł Customer Service
+            </li>
+            <li>
+              <span class="check">✓</span>
+              Dedykowany kanał telefoniczny
+            </li>
+            <li>
+              <span class="check">✓</span>
+              Zarządzanie kolejką agentów
+            </li>
+            <li>
+              <span class="check">✓</span>
+              Baza wiedzy
+            </li>
+            <li>
+              <span class="check">✓</span>
+              Portal self-service dla klienta
+            </li>
+            <li>
+              <span class="check">✓</span>
+              Dedykowana integracja komunikacji mailowej
+            </li>
+            <li>
+              <span class="check">✓</span>
+              Przestrzeń na dane
+              <span class="storage">1 TB</span>
+            </li>
+          </ul>
+        </div>
+
+      </div><!-- /pricing-grid -->
+    </div>
+  </section>
+
+  <!-- NOTES -->
+  <section class="pricing-notes">
+    <div class="container">
+      <div class="pricing-notes__inner">
+        <div class="note-item">
+          <div class="note-icon">🚀</div>
+          <h4>Wdrożenie w 24h</h4>
+          <p>Po podpisaniu umowy Twoje środowisko jest gotowe następnego dnia roboczego. Import danych z Excela w kilka minut.</p>
+        </div>
+        <div class="note-item">
+          <div class="note-icon">🔒</div>
+          <h4>Bezpieczeństwo enterprise</h4>
+          <p>SAML 2.0, izolacja danych per klient, audit trail, Azure Poland Central. Twoje dane zostają w UE.</p>
+        </div>
+        <div class="note-item">
+          <div class="note-icon">💬</div>
+          <h4>Wsparcie w języku polskim</h4>
+          <p>Dedykowany opiekun wdrożeniowy, dokumentacja po polsku, wsparcie mailowe i telefoniczne.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="login-cta">
+    <div class="container login-cta__inner">
+      <div class="login-cta__text">
+        <h2>Masz pytania o cennik?</h2>
+        <p>Odpowiemy w ciągu jednego dnia roboczego</p>
+      </div>
+      <a href="/#contact" class="btn btn--primary btn--lg">Napisz do nas →</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <img src="logo.png" alt="CRMtree" class="footer__logo-img" />
+        <p>CRM dla nowoczesnej firmy</p>
+      </div>
+      <div class="footer__links">
+        <a href="https://app.crmtree.pl">Zaloguj się</a>
+        <a href="/#features">Funkcje</a>
+        <a href="/pricing.html">Cennik</a>
+        <a href="/#contact">Kontakt</a>
+      </div>
+      <p class="footer__copy">&copy; 2026 CRMtree. Wszelkie prawa zastrzeżone.</p>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('toggleSwitch');
+    const labelAnnual = document.getElementById('labelAnnual');
+    const labelMonthly = document.getElementById('labelMonthly');
+    const saveBadge = document.getElementById('saveBadge');
+    let isMonthly = false;
+
+    toggle.addEventListener('click', () => {
+      isMonthly = !isMonthly;
+      toggle.classList.toggle('monthly', isMonthly);
+      labelAnnual.classList.toggle('active', !isMonthly);
+      labelMonthly.classList.toggle('active', isMonthly);
+      saveBadge.style.opacity = isMonthly ? '0' : '1';
+      document.body.classList.toggle('billing-monthly', isMonthly);
+    });
+
+    // Kliknięcie na etykiety też przełącza
+    labelAnnual.addEventListener('click', () => { if (isMonthly) toggle.click(); });
+    labelMonthly.addEventListener('click', () => { if (!isMonthly) toggle.click(); });
+  </script>
+
+</body>
+</html>
