@@ -103,6 +103,19 @@ body { font-family: 'Inter', sans-serif; color: var(--text); line-height: 1.6; }
 
 /* ── CONTACT ─────────────────────────────────────── */
 .contact { padding: 96px 0; }
+.contact-email-hint {
+  margin-top: 10px;
+  font-size: 15px;
+  color: var(--text-muted);
+}
+.contact-email-link {
+  color: var(--green);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1.5px solid transparent;
+  transition: border-color .15s;
+}
+.contact-email-link:hover { border-bottom-color: var(--green); }
 .contact-form { max-width: 680px; margin: 0 auto; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
 .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 20px; }
