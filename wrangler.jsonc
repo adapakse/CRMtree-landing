@@ -1,14 +1,16 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "crmtree-pl",
-  "compatibility_date": "2026-05-13",
+  "main": "./src/index.js",
+  "compatibility_date": "2026-08-10",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
   "observability": {
     "enabled": true
   },
   "assets": {
-    "directory": "."
-  },
-  "compatibility_flags": [
-    "nodejs_compat"
-  ]
+    "directory": "./public",
+    "not_found_handling": "none"
+  }
 }
