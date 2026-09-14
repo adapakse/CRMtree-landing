@@ -143,6 +143,7 @@ textarea { resize: vertical; }
 .footer__links a { text-decoration: none; color: rgba(255,255,255,.6); font-size: 14px; font-weight: 500; transition: color .15s; }
 .footer__links a:hover { color: var(--green); }
 .footer__copy { font-size: 13px; color: rgba(255,255,255,.35); }
+.footer__legal { font-size: 12px; color: rgba(255,255,255,.4); }
 
 /* ── RESPONSIVE ──────────────────────────────────── */
 @media (max-width: 900px) {
