@@ -53,7 +53,24 @@
         <img src="logo.webp" alt="CRMtree" class="navbar__logo-img" width="300" height="200" />
       </a>
       <nav class="navbar__links">
-        <a href="#features" data-i18n="nav.features">Funkcje</a>
+        <div class="has-mega">
+          <button type="button" class="mega-trigger">
+            <span data-i18n="nav.products">Produkty</span>
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </button>
+          <div class="mega-panel">
+            <a class="mega-item" href="#f-dashboard"><span class="mega-item__icon">📊</span><span><span class="mega-item__title" data-i18n="features.f1_t">Dashboard sprzedaży</span><span class="mega-item__desc" data-i18n="features.f1_d">Bieżące wyniki sprzedaży w czasie rzeczywistym, z eksportem danych. Filtry po okresie, partnerze i handlowcu.</span></span></a>
+            <a class="mega-item" href="#f-partnerzy"><span class="mega-item__icon">🤝</span><span><span class="mega-item__title" data-i18n="features.f2_t">Zarządzanie partnerami</span><span class="mega-item__desc" data-i18n="features.f2_d">Baza partnerów z historią transakcji, dokumentami i przypisanymi opiekunami. Grupowanie i tagowanie według segmentu.</span></span></a>
+            <a class="mega-item" href="#f-budzety"><span class="mega-item__icon">💰</span><span><span class="mega-item__title" data-i18n="features.f3_t">Budżety i cele</span><span class="mega-item__desc" data-i18n="features.f3_d">Planowanie budżetów rocznych i miesięcznych per handlowiec. Automatyczne porównanie planu z wykonaniem.</span></span></a>
+            <a class="mega-item" href="#f-komunikacja"><span class="mega-item__icon">💬</span><span><span class="mega-item__title" data-i18n="features.f4_t">Komunikacja wielokanałowa</span><span class="mega-item__desc" data-i18n="features.f4_d">E-mail (Gmail, Outlook, Zoho), WhatsApp Business, telefon — wszystko widoczne przy karcie leada i partnera.</span></span></a>
+            <a class="mega-item" href="#f-analiza-ai"><span class="mega-item__icon">🎯</span><span><span class="mega-item__title" data-i18n="features.f5_t">Analiza rozmów AI</span><span class="mega-item__desc" data-i18n="features.f5_d">AI ocenia skłonność do zakupu z notatek lub transkrypcji rozmów i wystawia sygnały oraz obiekcje klienta.</span></span></a>
+            <a class="mega-item" href="#f-seobot"><span class="mega-item__icon">✦</span><span><span class="mega-item__title" data-i18n="features.f6_t">SEObot</span><span class="mega-item__desc" data-i18n="features.f6_d">AI pisze i planuje publikację artykułów SEO, mierzy efekt w Google Search Console.</span></span></a>
+            <a class="mega-item" href="#f-dokumenty"><span class="mega-item__icon">📁</span><span><span class="mega-item__title" data-i18n="features.f7_t">Dokumenty i workflow</span><span class="mega-item__desc" data-i18n="features.f7_d">Obieg podpisów i akceptacji, przechowywanie umów i ofert przy partnerach.</span></span></a>
+            <a class="mega-item" href="#f-bezpieczenstwo"><span class="mega-item__icon">🔐</span><span><span class="mega-item__title" data-i18n="features.f8_t">Bezpieczeństwo i role</span><span class="mega-item__desc" data-i18n="features.f8_d">Środowisko każdej firmy w pełni odizolowane. Role, uprawnienia, logowanie przez SSO/SAML.</span></span></a>
+            <a class="mega-item" href="#f-mobile"><span class="mega-item__icon">📱</span><span><span class="mega-item__title" data-i18n="features.f9_t">Aplikacja mobilna</span><span class="mega-item__desc" data-i18n="features.f9_d">Leady, partnerzy i zadania zawsze pod ręką, z powiadomieniami push. iOS i Android.</span></span></a>
+            <a class="mega-item" href="#f-prospekty"><span class="mega-item__icon">🎯</span><span><span class="mega-item__title" data-i18n="features.f10_t">Prospekty</span><span class="mega-item__desc" data-i18n="features.f10_d">Automatyczny scoring ICP 0–100 i wzbogacanie danych firmy — wiesz, do kogo zadzwonić najpierw.</span></span></a>
+          </div>
+        </div>
         <a href="#compare" data-i18n="nav.compare">Porównanie</a>
         <a href="#security" data-i18n="nav.security">Bezpieczeństwo</a>
         <a href="#aiact" data-i18n="nav.aiact">AI Act</a>
@@ -159,61 +176,57 @@
       </div>
       <div class="features__grid">
 
-        <div class="feature-card">
-          <div class="feature-card__icon">📊</div>
+        <div class="feature-card" id="f-dashboard">
           <h3 data-i18n="features.f1_t">Dashboard sprzedaży</h3>
           <p data-i18n="features.f1_d">Bieżące wyniki sprzedaży w czasie rzeczywistym, z eksportem danych. Filtry po okresie, partnerze i handlowcu.</p>
         </div>
 
-        <div class="feature-card">
-          <div class="feature-card__icon">🤝</div>
+        <div class="feature-card" id="f-partnerzy">
           <h3 data-i18n="features.f2_t">Zarządzanie partnerami</h3>
           <p data-i18n="features.f2_d">Baza partnerów z historią transakcji, dokumentami i przypisanymi opiekunami. Grupowanie i tagowanie według segmentu.</p>
         </div>
 
-        <div class="feature-card">
-          <div class="feature-card__icon">💰</div>
+        <div class="feature-card" id="f-budzety">
           <h3 data-i18n="features.f3_t">Budżety i cele</h3>
           <p data-i18n="features.f3_d">Planowanie budżetów rocznych i miesięcznych per handlowiec. Automatyczne porównanie planu z wykonaniem.</p>
         </div>
 
-        <div class="feature-card">
-          <div class="feature-card__icon">💬</div>
+        <div class="feature-card" id="f-komunikacja">
           <h3 data-i18n="features.f4_t">Komunikacja wielokanałowa</h3>
           <p data-i18n="features.f4_d">E-mail (Gmail, Outlook, Zoho), WhatsApp Business, telefon — wszystko widoczne przy karcie leada i partnera.</p>
           <img src="komunikacja.webp" alt="" class="feature-card__photo" loading="lazy" width="900" height="675" />
         </div>
 
-        <div class="feature-card">
-          <div class="feature-card__icon">🎯</div>
+        <div class="feature-card" id="f-analiza-ai">
           <h3 data-i18n="features.f5_t">Analiza rozmów AI</h3>
           <p data-i18n="features.f5_d">AI ocenia skłonność do zakupu z notatek lub transkrypcji rozmów i wystawia sygnały oraz obiekcje klienta.</p>
           <img src="analiza-ai.webp" alt="" class="feature-card__photo" loading="lazy" width="900" height="675" />
         </div>
 
-        <div class="feature-card">
-          <div class="feature-card__icon">✦</div>
+        <div class="feature-card" id="f-seobot">
           <h3 data-i18n="features.f6_t">SEObot</h3>
           <p data-i18n="features.f6_d">AI pisze i planuje publikację artykułów SEO, mierzy efekt w Google Search Console.</p>
           <img src="seobot.webp" alt="" class="feature-card__photo" loading="lazy" width="900" height="675" />
         </div>
 
-        <div class="feature-card">
-          <div class="feature-card__icon">📁</div>
+        <div class="feature-card" id="f-dokumenty">
           <h3 data-i18n="features.f7_t">Dokumenty i workflow</h3>
           <p data-i18n="features.f7_d">Obieg podpisów i akceptacji, przechowywanie umów i ofert przy partnerach.</p>
         </div>
 
-        <div class="feature-card">
-          <div class="feature-card__icon">🔐</div>
+        <div class="feature-card" id="f-bezpieczenstwo">
           <h3 data-i18n="features.f8_t">Bezpieczeństwo i role</h3>
           <p data-i18n="features.f8_d">Środowisko każdej firmy w pełni odizolowane. Role, uprawnienia, logowanie przez SSO/SAML.</p>
         </div>
 
-        <div class="feature-card">
-          <div class="feature-card__icon">📱</div>
+        <div class="feature-card" id="f-mobile">
           <h3 data-i18n="features.f9_t">Aplikacja mobilna</h3>
           <p data-i18n="features.f9_d">Leady, partnerzy i zadania zawsze pod ręką, z powiadomieniami push. iOS i Android.</p>
+        </div>
+
+        <div class="feature-card" id="f-prospekty">
+          <h3 data-i18n="features.f10_t">Prospekty</h3>
+          <p data-i18n="features.f10_d">Automatyczny scoring ICP 0–100 i wzbogacanie danych firmy — wiesz, do kogo zadzwonić najpierw.</p>
         </div>
 
       </div>
@@ -363,12 +376,24 @@
           <p data-i18n="faq.a3">Gmail, Outlook i Zoho — korespondencja synchronizuje się bezpośrednio przy kartach leadów i partnerów.</p>
         </details>
         <details class="faq-item">
+          <summary data-i18n="faq.q_migrate">Czy da się przenieść dane z innego CRM (np. Livespace, Pipedrive)?</summary>
+          <p data-i18n="faq.a_migrate">Tak, standardowo importujemy dane partnerów i handlowców z pliku CSV. Przy większych migracjach pomagamy indywidualnie.</p>
+        </details>
+        <details class="faq-item">
           <summary data-i18n="faq.q4">Jak działa analiza rozmów AI?</summary>
           <p data-i18n="faq.a4">System analizuje notatki lub transkrypcje rozmów i wystawia ocenę skłonności do zakupu wraz z sygnałami i obiekcjami klienta.</p>
         </details>
         <details class="faq-item">
+          <summary data-i18n="faq.q_whatsapp">Czy WhatsApp Business działa od razu po założeniu konta?</summary>
+          <p data-i18n="faq.a_whatsapp">Numer WhatsApp Business konfiguruje administrator Twojej firmy w panelu — jeden wspólny, firmowy numer widoczny dla całego zespołu.</p>
+        </details>
+        <details class="faq-item">
           <summary data-i18n="faq.q5">Gdzie są przechowywane nasze dane?</summary>
           <p data-i18n="faq.a5">Na serwerach Microsoft Azure w regionie Polska Centralna, zgodnie z RODO i AI Act.</p>
+        </details>
+        <details class="faq-item">
+          <summary data-i18n="faq.q_price">Ile to kosztuje?</summary>
+          <p data-i18n="faq.a_price">Zależy od liczby użytkowników i wybranych modułów. Pełny cennik znajdziesz na stronie Cennik, a jeśli wolisz porozmawiać, napisz do nas.</p>
         </details>
       </div>
     </div>

@@ -31,7 +31,7 @@
 
   // ── Polski (źródło) ──────────────────────────────────────────────────
   I18N.pl = {
-    nav: { features: "Funkcje", how: "Jak działa", compare: "Porównanie", security: "Bezpieczeństwo", aiact: "AI Act", pricing: "Cennik", blog: "Blog", faq: "FAQ", contact: "Kontakt", login: "Zaloguj się", cta_trial: "Wypróbuj 14 dni" },
+    nav: { features: "Funkcje", how: "Jak działa", compare: "Porównanie", security: "Bezpieczeństwo", aiact: "AI Act", pricing: "Cennik", blog: "Blog", faq: "FAQ", contact: "Kontakt", login: "Zaloguj się", cta_trial: "Wypróbuj 14 dni", products: "Produkty" },
     hero: { eyebrow: "CRM dla każdej branży", h1: "Od zimnego leada do stałego klienta. Jeden system.", sub: "CRMtree prowadzi cały cykl wzrostu firmy: wzbogacanie baz i cold calling, pracę na ciepłych prospektach, inbound przez SEObot, opiekę nad klientami i monitoring ryzyka odejścia.", cta_primary: "Wypróbuj 14 dni za darmo", cta_secondary: "Zobacz funkcje", trust1: "14 dni za darmo", trust2: "Wdrożenie bez integracji IT", trust3: "Dane w Azure, region Polska Centralna" },
     trial: { eyebrow: "Zacznij już dziś", h2: "Wypróbuj CRMtree przez 14 dni za darmo", sub: "Pełny dostęp do wszystkich funkcji, bez integracji IT.", email_placeholder: "Firmowy adres e-mail", cta: "Rozpocznij za darmo", note: "Nie potrzebujesz karty płatniczej. Zrezygnujesz w każdej chwili." },
     cycle: {
@@ -55,7 +55,8 @@
       f6_t: "SEObot", f6_d: "AI pisze i planuje publikację artykułów SEO, mierzy efekt w Google Search Console.",
       f7_t: "Dokumenty i workflow", f7_d: "Obieg podpisów i akceptacji, przechowywanie umów i ofert przy partnerach.",
       f8_t: "Bezpieczeństwo i role", f8_d: "Środowisko każdej firmy w pełni odizolowane. Role, uprawnienia, logowanie przez SSO/SAML.",
-      f9_t: "Aplikacja mobilna", f9_d: "Leady, partnerzy i zadania zawsze pod ręką, z powiadomieniami push. iOS i Android."
+      f9_t: "Aplikacja mobilna", f9_d: "Leady, partnerzy i zadania zawsze pod ręką, z powiadomieniami push. iOS i Android.",
+      f10_t: "Prospekty", f10_d: "Automatyczny scoring ICP 0–100 i wzbogacanie danych firmy — wiesz, do kogo zadzwonić najpierw."
     },
     compare: {
       eyebrow: "Porównanie", h2: "CRMtree na tle innych systemów CRM",
@@ -90,7 +91,10 @@
       q2: "Czy mogę wypróbować CRMtree za darmo?", a2: "Tak — 14 dni pełnego dostępu, bez karty płatniczej. Zrezygnujesz w każdej chwili.",
       q3: "Jaką pocztę mogę podłączyć?", a3: "Gmail, Outlook i Zoho — korespondencja synchronizuje się bezpośrednio przy kartach leadów i partnerów.",
       q4: "Jak działa analiza rozmów AI?", a4: "System analizuje notatki lub transkrypcje rozmów i wystawia ocenę skłonności do zakupu wraz z sygnałami i obiekcjami klienta.",
-      q5: "Gdzie są przechowywane nasze dane?", a5: "Na serwerach Microsoft Azure w regionie Polska Centralna, zgodnie z RODO i AI Act." },
+      q5: "Gdzie są przechowywane nasze dane?", a5: "Na serwerach Microsoft Azure w regionie Polska Centralna, zgodnie z RODO i AI Act.",
+      q_migrate: "Czy da się przenieść dane z innego CRM (np. Livespace, Pipedrive)?", a_migrate: "Tak, standardowo importujemy dane partnerów i handlowców z pliku CSV. Przy większych migracjach pomagamy indywidualnie.",
+      q_whatsapp: "Czy WhatsApp Business działa od razu po założeniu konta?", a_whatsapp: "Numer WhatsApp Business konfiguruje administrator Twojej firmy w panelu — jeden wspólny, firmowy numer widoczny dla całego zespołu.",
+      q_price: "Ile to kosztuje?", a_price: "Zależy od liczby użytkowników i wybranych modułów. Pełny cennik znajdziesz na stronie Cennik, a jeśli wolisz porozmawiać, napisz do nas." },
     logincta: { h2: "Masz już konto?", sub: "Zaloguj się do swojego środowiska CRMtree", cta: "Przejdź do aplikacji →" },
     contact: { eyebrow: "Kontakt", h2: "Zapytaj o dostęp", sub: "Skontaktujemy się w ciągu jednego dnia roboczego", hint: "Wolisz napisać bezpośrednio?",
       name_label: "Imię i nazwisko", name_ph: "Jan Kowalski", company_label: "Firma", company_ph: "Nazwa firmy",
@@ -108,7 +112,7 @@
 
   // ── English ──────────────────────────────────────────────────────────
   I18N.en = {
-    nav: { features: "Features", how: "How it works", compare: "Comparison", security: "Security", aiact: "AI Act", pricing: "Pricing", blog: "Blog", faq: "FAQ", contact: "Contact", login: "Log in", cta_trial: "Try 14 days free" },
+    nav: { features: "Features", how: "How it works", compare: "Comparison", security: "Security", aiact: "AI Act", pricing: "Pricing", blog: "Blog", faq: "FAQ", contact: "Contact", login: "Log in", cta_trial: "Try 14 days free", products: "Products" },
     hero: { eyebrow: "CRM for every industry", h1: "From cold lead to loyal customer. One system.", sub: "CRMtree runs your whole growth cycle: database enrichment and cold calling, working warm prospects, inbound via SEObot, customer care, and churn-risk monitoring.", cta_primary: "Try 14 days free", cta_secondary: "See features", trust1: "14 days free", trust2: "No IT integration needed", trust3: "Data hosted in Azure, Poland Central" },
     trial: { eyebrow: "Start today", h2: "Try CRMtree free for 14 days", sub: "Full access to every feature, no IT integration required.", email_placeholder: "Work email address", cta: "Start for free", note: "No credit card needed. Cancel anytime." },
     cycle: {
@@ -132,7 +136,8 @@
       f6_t: "SEObot", f6_d: "AI writes and schedules SEO articles, and tracks results in Google Search Console.",
       f7_t: "Documents & workflow", f7_d: "Signature and approval flows, with contracts and offers stored on the partner record.",
       f8_t: "Security & roles", f8_d: "Every company's environment is fully isolated. Roles, permissions, SSO/SAML login.",
-      f9_t: "Mobile app", f9_d: "Leads, partners, and tasks always at hand, with push notifications. iOS and Android."
+      f9_t: "Mobile app", f9_d: "Leads, partners, and tasks always at hand, with push notifications. iOS and Android.",
+      f10_t: "Prospects", f10_d: "Automatic 0–100 ICP scoring and company data enrichment — know who to call first."
     },
     compare: {
       eyebrow: "Comparison", h2: "CRMtree vs. other CRM systems",
@@ -167,7 +172,10 @@
       q2: "Can I try CRMtree for free?", a2: "Yes — 14 days of full access, no credit card required. Cancel anytime.",
       q3: "Which email providers can I connect?", a3: "Gmail, Outlook, and Zoho — mail syncs directly onto the lead and partner cards.",
       q4: "How does AI call analysis work?", a4: "The system analyzes call notes or transcripts and scores purchase intent, along with buying signals and objections.",
-      q5: "Where is our data stored?", a5: "On Microsoft Azure servers in the Poland Central region, in line with GDPR and the AI Act." },
+      q5: "Where is our data stored?", a5: "On Microsoft Azure servers in the Poland Central region, in line with GDPR and the AI Act.",
+      q_migrate: "Can I migrate data from another CRM (e.g. Livespace, Pipedrive)?", a_migrate: "Yes — we import partner and rep data from a CSV file by default. For larger migrations we help individually.",
+      q_whatsapp: "Does WhatsApp Business work right after signup?", a_whatsapp: "Your company admin configures the WhatsApp Business number in the panel — one shared company number visible to the whole team.",
+      q_price: "How much does it cost?", a_price: "It depends on the number of users and the modules you choose. See the full pricing on the Pricing page, or write to us if you'd rather talk it through." },
     logincta: { h2: "Already have an account?", sub: "Log in to your CRMtree environment", cta: "Go to the app →" },
     contact: { eyebrow: "Contact", h2: "Ask for access", sub: "We'll get back to you within one business day", hint: "Prefer to write directly?",
       name_label: "Full name", name_ph: "Jane Smith", company_label: "Company", company_ph: "Company name",
@@ -185,7 +193,7 @@
 
   // ── Deutsch ──────────────────────────────────────────────────────────
   I18N.de = {
-    nav: { features: "Funktionen", how: "So funktioniert's", compare: "Vergleich", security: "Sicherheit", aiact: "AI Act", pricing: "Preise", blog: "Blog", faq: "FAQ", contact: "Kontakt", login: "Anmelden", cta_trial: "14 Tage kostenlos testen" },
+    nav: { features: "Funktionen", how: "So funktioniert's", compare: "Vergleich", security: "Sicherheit", aiact: "AI Act", pricing: "Preise", blog: "Blog", faq: "FAQ", contact: "Kontakt", login: "Anmelden", cta_trial: "14 Tage kostenlos testen", products: "Produkte" },
     hero: { eyebrow: "CRM für jede Branche", h1: "Vom kalten Lead zum treuen Kunden. Ein System.", sub: "CRMtree begleitet den gesamten Wachstumszyklus: Datenanreicherung und Kaltakquise, warme Interessenten, Inbound über SEObot, Kundenbetreuung und Abwanderungs-Monitoring.", cta_primary: "14 Tage kostenlos testen", cta_secondary: "Funktionen ansehen", trust1: "14 Tage kostenlos", trust2: "Keine IT-Integration nötig", trust3: "Daten in Azure, Region Polen Zentral" },
     trial: { eyebrow: "Jetzt starten", h2: "CRMtree 14 Tage kostenlos testen", sub: "Voller Zugriff auf alle Funktionen, ohne IT-Integration.", email_placeholder: "Geschäftliche E-Mail-Adresse", cta: "Kostenlos starten", note: "Keine Kreditkarte nötig. Jederzeit kündbar." },
     cycle: {
@@ -209,7 +217,8 @@
       f6_t: "SEObot", f6_d: "Die KI schreibt und plant SEO-Artikel und misst den Erfolg in der Google Search Console.",
       f7_t: "Dokumente & Workflow", f7_d: "Unterschrifts- und Freigabeprozesse, Verträge und Angebote direkt beim Partner gespeichert.",
       f8_t: "Sicherheit & Rollen", f8_d: "Die Umgebung jedes Unternehmens ist vollständig isoliert. Rollen, Rechte, Login per SSO/SAML.",
-      f9_t: "Mobile App", f9_d: "Leads, Partner und Aufgaben immer griffbereit, mit Push-Benachrichtigungen. iOS und Android."
+      f9_t: "Mobile App", f9_d: "Leads, Partner und Aufgaben immer griffbereit, mit Push-Benachrichtigungen. iOS und Android.",
+      f10_t: "Interessenten", f10_d: "Automatisches ICP-Scoring von 0–100 und Datenanreicherung — Sie wissen, wen Sie zuerst anrufen sollten."
     },
     compare: {
       eyebrow: "Vergleich", h2: "CRMtree im Vergleich zu anderen CRM-Systemen",
@@ -244,7 +253,10 @@
       q2: "Kann ich CRMtree kostenlos testen?", a2: "Ja — 14 Tage voller Zugriff, ohne Kreditkarte. Jederzeit kündbar.",
       q3: "Welche E-Mail-Anbieter kann ich verbinden?", a3: "Gmail, Outlook und Zoho — die Korrespondenz synchronisiert sich direkt mit Lead- und Partnerkarten.",
       q4: "Wie funktioniert die KI-Gesprächsanalyse?", a4: "Das System analysiert Notizen oder Transkripte und bewertet die Kaufbereitschaft samt Kaufsignalen und Einwänden.",
-      q5: "Wo werden unsere Daten gespeichert?", a5: "Auf Microsoft-Azure-Servern in der Region Polen Zentral, konform mit DSGVO und AI Act." },
+      q5: "Wo werden unsere Daten gespeichert?", a5: "Auf Microsoft-Azure-Servern in der Region Polen Zentral, konform mit DSGVO und AI Act.",
+      q_migrate: "Kann ich Daten aus einem anderen CRM übernehmen (z. B. Livespace, Pipedrive)?", a_migrate: "Ja, standardmäßig importieren wir Partner- und Vertrieblerdaten aus einer CSV-Datei. Bei größeren Migrationen helfen wir individuell.",
+      q_whatsapp: "Funktioniert WhatsApp Business sofort nach der Registrierung?", a_whatsapp: "Die WhatsApp-Business-Nummer wird vom Administrator Ihres Unternehmens im Panel konfiguriert — eine gemeinsame Firmennummer, sichtbar für das ganze Team.",
+      q_price: "Was kostet das?", a_price: "Das hängt von der Nutzerzahl und den gewählten Modulen ab. Die vollständigen Preise finden Sie auf der Preise-Seite, oder schreiben Sie uns, wenn Sie lieber sprechen möchten." },
     logincta: { h2: "Schon ein Konto?", sub: "Melden Sie sich in Ihrer CRMtree-Umgebung an", cta: "Zur App →" },
     contact: { eyebrow: "Kontakt", h2: "Zugang anfragen", sub: "Wir melden uns innerhalb eines Werktags", hint: "Lieber direkt schreiben?",
       name_label: "Name", name_ph: "Max Mustermann", company_label: "Unternehmen", company_ph: "Firmenname",
@@ -262,7 +274,7 @@
 
   // ── Italiano ─────────────────────────────────────────────────────────
   I18N.it = {
-    nav: { features: "Funzionalità", how: "Come funziona", compare: "Confronto", security: "Sicurezza", aiact: "AI Act", pricing: "Prezzi", blog: "Blog", faq: "FAQ", contact: "Contatti", login: "Accedi", cta_trial: "Prova gratis 14 giorni" },
+    nav: { features: "Funzionalità", how: "Come funziona", compare: "Confronto", security: "Sicurezza", aiact: "AI Act", pricing: "Prezzi", blog: "Blog", faq: "FAQ", contact: "Contatti", login: "Accedi", cta_trial: "Prova gratis 14 giorni", products: "Prodotti" },
     hero: { eyebrow: "CRM per ogni settore", h1: "Dal lead freddo al cliente fedele. Un solo sistema.", sub: "CRMtree gestisce l'intero ciclo di crescita: arricchimento dati e cold calling, prospect caldi, inbound tramite SEObot, cura del cliente e monitoraggio del rischio di abbandono.", cta_primary: "Prova gratis 14 giorni", cta_secondary: "Vedi le funzionalità", trust1: "14 giorni gratis", trust2: "Nessuna integrazione IT richiesta", trust3: "Dati su Azure, regione Polonia Centrale" },
     trial: { eyebrow: "Inizia oggi", h2: "Prova CRMtree gratis per 14 giorni", sub: "Accesso completo a tutte le funzionalità, senza integrazione IT.", email_placeholder: "Indirizzo e-mail aziendale", cta: "Inizia gratis", note: "Non serve la carta di credito. Annulla quando vuoi." },
     cycle: {
@@ -286,7 +298,8 @@
       f6_t: "SEObot", f6_d: "L'IA scrive e pianifica articoli SEO e misura i risultati in Google Search Console.",
       f7_t: "Documenti e workflow", f7_d: "Flussi di firma e approvazione, con contratti e offerte archiviati sulla scheda partner.",
       f8_t: "Sicurezza e ruoli", f8_d: "L'ambiente di ogni azienda è completamente isolato. Ruoli, permessi, login via SSO/SAML.",
-      f9_t: "App mobile", f9_d: "Lead, partner e attività sempre a portata di mano, con notifiche push. iOS e Android."
+      f9_t: "App mobile", f9_d: "Lead, partner e attività sempre a portata di mano, con notifiche push. iOS e Android.",
+      f10_t: "Prospect", f10_d: "Scoring ICP automatico da 0 a 100 e arricchimento dei dati aziendali — sai chi chiamare per primo."
     },
     compare: {
       eyebrow: "Confronto", h2: "CRMtree a confronto con altri CRM",
@@ -321,7 +334,10 @@
       q2: "Posso provare CRMtree gratis?", a2: "Sì — 14 giorni di accesso completo, senza carta di credito. Annulla quando vuoi.",
       q3: "Quali provider e-mail posso collegare?", a3: "Gmail, Outlook e Zoho — la corrispondenza si sincronizza direttamente sulle schede lead e partner.",
       q4: "Come funziona l'analisi IA delle chiamate?", a4: "Il sistema analizza note o trascrizioni e valuta la propensione all'acquisto, con segnali e obiezioni del cliente.",
-      q5: "Dove sono conservati i nostri dati?", a5: "Su server Microsoft Azure nella regione Polonia Centrale, in conformità con GDPR e AI Act." },
+      q5: "Dove sono conservati i nostri dati?", a5: "Su server Microsoft Azure nella regione Polonia Centrale, in conformità con GDPR e AI Act.",
+      q_migrate: "Posso trasferire i dati da un altro CRM (es. Livespace, Pipedrive)?", a_migrate: "Sì, di norma importiamo i dati di partner e venditori da un file CSV. Per migrazioni più grandi offriamo assistenza dedicata.",
+      q_whatsapp: "WhatsApp Business funziona subito dopo la registrazione?", a_whatsapp: "Il numero WhatsApp Business viene configurato dall'amministratore della tua azienda nel pannello — un unico numero aziendale condiviso, visibile a tutto il team.",
+      q_price: "Quanto costa?", a_price: "Dipende dal numero di utenti e dai moduli scelti. Trovi il listino completo nella pagina Prezzi, oppure scrivici se preferisci parlarne." },
     logincta: { h2: "Hai già un account?", sub: "Accedi al tuo ambiente CRMtree", cta: "Vai all'app →" },
     contact: { eyebrow: "Contatti", h2: "Richiedi l'accesso", sub: "Ti risponderemo entro un giorno lavorativo", hint: "Preferisci scrivere direttamente?",
       name_label: "Nome e cognome", name_ph: "Mario Rossi", company_label: "Azienda", company_ph: "Nome azienda",
@@ -339,7 +355,7 @@
 
   // ── Español ──────────────────────────────────────────────────────────
   I18N.es = {
-    nav: { features: "Funciones", how: "Cómo funciona", compare: "Comparativa", security: "Seguridad", aiact: "AI Act", pricing: "Precios", blog: "Blog", faq: "FAQ", contact: "Contacto", login: "Iniciar sesión", cta_trial: "Prueba 14 días gratis" },
+    nav: { features: "Funciones", how: "Cómo funciona", compare: "Comparativa", security: "Seguridad", aiact: "AI Act", pricing: "Precios", blog: "Blog", faq: "FAQ", contact: "Contacto", login: "Iniciar sesión", cta_trial: "Prueba 14 días gratis", products: "Productos" },
     hero: { eyebrow: "CRM para cualquier sector", h1: "De lead frío a cliente fiel. Un solo sistema.", sub: "CRMtree gestiona todo el ciclo de crecimiento: enriquecimiento de datos y llamadas en frío, prospectos cálidos, inbound con SEObot, cuidado del cliente y monitorización del riesgo de abandono.", cta_primary: "Prueba 14 días gratis", cta_secondary: "Ver funciones", trust1: "14 días gratis", trust2: "Sin integración de IT", trust3: "Datos en Azure, región Polonia Central" },
     trial: { eyebrow: "Empieza hoy", h2: "Prueba CRMtree gratis durante 14 días", sub: "Acceso completo a todas las funciones, sin integración de IT.", email_placeholder: "Correo corporativo", cta: "Empezar gratis", note: "No necesitas tarjeta de crédito. Cancela cuando quieras." },
     cycle: {
@@ -363,7 +379,8 @@
       f6_t: "SEObot", f6_d: "La IA escribe y programa artículos SEO, y mide el resultado en Google Search Console.",
       f7_t: "Documentos y flujo de trabajo", f7_d: "Flujos de firma y aprobación, con contratos y ofertas guardados en la ficha del cliente.",
       f8_t: "Seguridad y roles", f8_d: "El entorno de cada empresa está totalmente aislado. Roles, permisos, acceso vía SSO/SAML.",
-      f9_t: "Aplicación móvil", f9_d: "Leads, clientes y tareas siempre a mano, con notificaciones push. iOS y Android."
+      f9_t: "Aplicación móvil", f9_d: "Leads, clientes y tareas siempre a mano, con notificaciones push. iOS y Android.",
+      f10_t: "Prospectos", f10_d: "Puntuación ICP automática de 0 a 100 y enriquecimiento de datos de la empresa — sabes a quién llamar primero."
     },
     compare: {
       eyebrow: "Comparativa", h2: "CRMtree frente a otros sistemas CRM",
@@ -398,7 +415,10 @@
       q2: "¿Puedo probar CRMtree gratis?", a2: "Sí — 14 días de acceso completo, sin tarjeta de crédito. Cancela cuando quieras.",
       q3: "¿Qué proveedores de correo puedo conectar?", a3: "Gmail, Outlook y Zoho — la correspondencia se sincroniza directamente en las fichas de leads y clientes.",
       q4: "¿Cómo funciona el análisis de llamadas con IA?", a4: "El sistema analiza notas o transcripciones y puntúa la intención de compra, junto con señales y objeciones.",
-      q5: "¿Dónde se almacenan nuestros datos?", a5: "En servidores de Microsoft Azure, región Polonia Central, conforme al RGPD y la AI Act." },
+      q5: "¿Dónde se almacenan nuestros datos?", a5: "En servidores de Microsoft Azure, región Polonia Central, conforme al RGPD y la AI Act.",
+      q_migrate: "¿Puedo migrar datos desde otro CRM (p. ej. Livespace, Pipedrive)?", a_migrate: "Sí, por defecto importamos los datos de clientes y comerciales desde un archivo CSV. Para migraciones mayores, ayudamos de forma individual.",
+      q_whatsapp: "¿WhatsApp Business funciona nada más registrarse?", a_whatsapp: "El administrador de tu empresa configura el número de WhatsApp Business en el panel — un único número corporativo compartido, visible para todo el equipo.",
+      q_price: "¿Cuánto cuesta?", a_price: "Depende del número de usuarios y de los módulos elegidos. Encontrarás el precio completo en la página de Precios, o escríbenos si prefieres hablarlo." },
     logincta: { h2: "¿Ya tienes cuenta?", sub: "Inicia sesión en tu entorno CRMtree", cta: "Ir a la aplicación →" },
     contact: { eyebrow: "Contacto", h2: "Solicita acceso", sub: "Te responderemos en un día laborable", hint: "¿Prefieres escribirnos directamente?",
       name_label: "Nombre y apellidos", name_ph: "Juan Pérez", company_label: "Empresa", company_ph: "Nombre de la empresa",
@@ -416,7 +436,7 @@
 
   // ── Français ─────────────────────────────────────────────────────────
   I18N.fr = {
-    nav: { features: "Fonctionnalités", how: "Fonctionnement", compare: "Comparatif", security: "Sécurité", aiact: "AI Act", pricing: "Tarifs", blog: "Blog", faq: "FAQ", contact: "Contact", login: "Se connecter", cta_trial: "Essai gratuit 14 jours" },
+    nav: { features: "Fonctionnalités", how: "Fonctionnement", compare: "Comparatif", security: "Sécurité", aiact: "AI Act", pricing: "Tarifs", blog: "Blog", faq: "FAQ", contact: "Contact", login: "Se connecter", cta_trial: "Essai gratuit 14 jours", products: "Produits" },
     hero: { eyebrow: "Un CRM pour tous les secteurs", h1: "Du lead froid au client fidèle. Un seul système.", sub: "CRMtree gère tout le cycle de croissance : enrichissement des données et prospection téléphonique, prospects chauds, inbound via SEObot, suivi client et surveillance du risque de churn.", cta_primary: "Essai gratuit 14 jours", cta_secondary: "Voir les fonctionnalités", trust1: "14 jours gratuits", trust2: "Aucune intégration IT requise", trust3: "Données hébergées sur Azure, région Pologne Centrale" },
     trial: { eyebrow: "Commencez dès aujourd'hui", h2: "Essayez CRMtree gratuitement pendant 14 jours", sub: "Accès complet à toutes les fonctionnalités, sans intégration IT.", email_placeholder: "Adresse e-mail professionnelle", cta: "Commencer gratuitement", note: "Aucune carte bancaire requise. Annulez à tout moment." },
     cycle: {
@@ -440,7 +460,8 @@
       f6_t: "SEObot", f6_d: "L'IA rédige et planifie des articles SEO, et suit les résultats dans Google Search Console.",
       f7_t: "Documents et workflow", f7_d: "Circuits de signature et de validation, contrats et offres stockés sur la fiche partenaire.",
       f8_t: "Sécurité et rôles", f8_d: "L'environnement de chaque entreprise est totalement isolé. Rôles, permissions, connexion via SSO/SAML.",
-      f9_t: "Application mobile", f9_d: "Leads, partenaires et tâches toujours à portée de main, avec notifications push. iOS et Android."
+      f9_t: "Application mobile", f9_d: "Leads, partenaires et tâches toujours à portée de main, avec notifications push. iOS et Android.",
+      f10_t: "Prospects", f10_d: "Scoring ICP automatique de 0 à 100 et enrichissement des données d'entreprise — vous savez qui appeler en premier."
     },
     compare: {
       eyebrow: "Comparatif", h2: "CRMtree face aux autres CRM",
@@ -475,7 +496,10 @@
       q2: "Puis-je essayer CRMtree gratuitement ?", a2: "Oui — 14 jours d'accès complet, sans carte bancaire. Annulez à tout moment.",
       q3: "Quels fournisseurs e-mail puis-je connecter ?", a3: "Gmail, Outlook et Zoho — la correspondance se synchronise directement sur les fiches leads et partenaires.",
       q4: "Comment fonctionne l'analyse d'appel par IA ?", a4: "Le système analyse les notes ou transcriptions et note l'intention d'achat, avec les signaux et objections du client.",
-      q5: "Où sont stockées nos données ?", a5: "Sur des serveurs Microsoft Azure, région Pologne Centrale, conformément au RGPD et à l'AI Act." },
+      q5: "Où sont stockées nos données ?", a5: "Sur des serveurs Microsoft Azure, région Pologne Centrale, conformément au RGPD et à l'AI Act.",
+      q_migrate: "Puis-je transférer mes données depuis un autre CRM (Livespace, Pipedrive…) ?", a_migrate: "Oui, nous importons par défaut les données de partenaires et commerciaux depuis un fichier CSV. Pour les migrations plus importantes, nous vous accompagnons individuellement.",
+      q_whatsapp: "WhatsApp Business fonctionne-t-il dès la création du compte ?", a_whatsapp: "L'administrateur de votre entreprise configure le numéro WhatsApp Business dans le panneau — un seul numéro d'entreprise partagé, visible par toute l'équipe.",
+      q_price: "Combien ça coûte ?", a_price: "Cela dépend du nombre d'utilisateurs et des modules choisis. Retrouvez le tarif complet sur la page Tarifs, ou écrivez-nous si vous préférez en discuter." },
     logincta: { h2: "Vous avez déjà un compte ?", sub: "Connectez-vous à votre environnement CRMtree", cta: "Accéder à l'application →" },
     contact: { eyebrow: "Contact", h2: "Demander un accès", sub: "Nous vous répondrons sous un jour ouvré", hint: "Vous préférez écrire directement ?",
       name_label: "Nom et prénom", name_ph: "Jean Dupont", company_label: "Entreprise", company_ph: "Nom de l'entreprise",
@@ -493,7 +517,7 @@
 
   // ── Română ───────────────────────────────────────────────────────────
   I18N.ro = {
-    nav: { features: "Funcționalități", how: "Cum funcționează", compare: "Comparație", security: "Securitate", aiact: "AI Act", pricing: "Prețuri", blog: "Blog", faq: "Întrebări frecvente", contact: "Contact", login: "Autentificare", cta_trial: "Testează gratuit 14 zile" },
+    nav: { features: "Funcționalități", how: "Cum funcționează", compare: "Comparație", security: "Securitate", aiact: "AI Act", pricing: "Prețuri", blog: "Blog", faq: "Întrebări frecvente", contact: "Contact", login: "Autentificare", cta_trial: "Testează gratuit 14 zile", products: "Produse" },
     hero: { eyebrow: "CRM pentru orice domeniu", h1: "De la lead rece la client fidel. Un singur sistem.", sub: "CRMtree gestionează întregul ciclu de creștere: îmbogățirea bazelor de date și cold calling, prospecți calzi, inbound prin SEObot, grija față de clienți și monitorizarea riscului de pierdere a clienților.", cta_primary: "Testează gratuit 14 zile", cta_secondary: "Vezi funcționalitățile", trust1: "14 zile gratuit", trust2: "Fără integrare IT", trust3: "Date găzduite pe Azure, regiunea Polonia Centrală" },
     trial: { eyebrow: "Începe astăzi", h2: "Testează CRMtree gratuit timp de 14 zile", sub: "Acces complet la toate funcționalitățile, fără integrare IT.", email_placeholder: "Adresă de e-mail de serviciu", cta: "Începe gratuit", note: "Nu ai nevoie de card. Anulezi oricând." },
     cycle: {
@@ -517,7 +541,8 @@
       f6_t: "SEObot", f6_d: "AI scrie și programează articole SEO și măsoară rezultatele în Google Search Console.",
       f7_t: "Documente și workflow", f7_d: "Fluxuri de semnătură și aprobare, cu contracte și oferte păstrate la fișa partenerului.",
       f8_t: "Securitate și roluri", f8_d: "Mediul fiecărei companii este complet izolat. Roluri, permisiuni, autentificare prin SSO/SAML.",
-      f9_t: "Aplicație mobilă", f9_d: "Leaduri, parteneri și sarcini mereu la îndemână, cu notificări push. iOS și Android."
+      f9_t: "Aplicație mobilă", f9_d: "Leaduri, parteneri și sarcini mereu la îndemână, cu notificări push. iOS și Android.",
+      f10_t: "Prospecți", f10_d: "Scoring ICP automat 0–100 și îmbogățirea datelor companiei — știi pe cine să suni primul."
     },
     compare: {
       eyebrow: "Comparație", h2: "CRMtree față de alte sisteme CRM",
@@ -552,7 +577,10 @@
       q2: "Pot testa CRMtree gratuit?", a2: "Da — 14 zile de acces complet, fără card. Anulezi oricând.",
       q3: "Ce furnizori de e-mail pot conecta?", a3: "Gmail, Outlook și Zoho — corespondența se sincronizează direct pe fișele leadurilor și partenerilor.",
       q4: "Cum funcționează analiza convorbirilor cu AI?", a4: "Sistemul analizează notițe sau transcrieri și evaluează intenția de cumpărare, împreună cu semnale și obiecții.",
-      q5: "Unde sunt stocate datele noastre?", a5: "Pe servere Microsoft Azure, regiunea Polonia Centrală, conform GDPR și AI Act." },
+      q5: "Unde sunt stocate datele noastre?", a5: "Pe servere Microsoft Azure, regiunea Polonia Centrală, conform GDPR și AI Act.",
+      q_migrate: "Pot muta datele dintr-un alt CRM (de ex. Livespace, Pipedrive)?", a_migrate: "Da, în mod standard importăm datele partenerilor și agenților dintr-un fișier CSV. Pentru migrări mai mari oferim asistență individuală.",
+      q_whatsapp: "Funcționează WhatsApp Business imediat după crearea contului?", a_whatsapp: "Numărul WhatsApp Business este configurat de administratorul companiei tale în panou — un singur număr comun al companiei, vizibil pentru toată echipa.",
+      q_price: "Cât costă?", a_price: "Depinde de numărul de utilizatori și modulele alese. Găsești prețul complet pe pagina Prețuri, sau scrie-ne dacă preferi să discutăm." },
     logincta: { h2: "Ai deja cont?", sub: "Autentifică-te în mediul tău CRMtree", cta: "Mergi la aplicație →" },
     contact: { eyebrow: "Contact", h2: "Solicită acces", sub: "Îți răspundem într-o zi lucrătoare", hint: "Preferi să scrii direct?",
       name_label: "Nume și prenume", name_ph: "Ion Popescu", company_label: "Companie", company_ph: "Numele companiei",
@@ -570,7 +598,7 @@
 
   // ── Русский ──────────────────────────────────────────────────────────
   I18N.ru = {
-    nav: { features: "Возможности", how: "Как это работает", compare: "Сравнение", security: "Безопасность", aiact: "AI Act", pricing: "Цены", blog: "Блог", faq: "Вопросы", contact: "Контакты", login: "Войти", cta_trial: "14 дней бесплатно" },
+    nav: { features: "Возможности", how: "Как это работает", compare: "Сравнение", security: "Безопасность", aiact: "AI Act", pricing: "Цены", blog: "Блог", faq: "Вопросы", contact: "Контакты", login: "Войти", cta_trial: "14 дней бесплатно", products: "Продукты" },
     hero: { eyebrow: "CRM для любой отрасли", h1: "От холодного лида до постоянного клиента. Одна система.", sub: "CRMtree ведёт весь цикл роста компании: обогащение баз и холодные звонки, работу с тёплыми лидами, inbound через SEObot, заботу о клиентах и мониторинг риска оттока.", cta_primary: "Попробовать 14 дней бесплатно", cta_secondary: "Смотреть возможности", trust1: "14 дней бесплатно", trust2: "Без интеграции с ИТ", trust3: "Данные в Azure, регион Центральная Польша" },
     trial: { eyebrow: "Начните уже сегодня", h2: "Попробуйте CRMtree бесплатно 14 дней", sub: "Полный доступ ко всем функциям, без интеграции с ИТ.", email_placeholder: "Рабочий e-mail", cta: "Начать бесплатно", note: "Банковская карта не нужна. Отменить можно в любой момент." },
     cycle: {
@@ -594,7 +622,8 @@
       f6_t: "SEObot", f6_d: "AI пишет и планирует публикацию SEO-статей, измеряет эффект в Google Search Console.",
       f7_t: "Документы и workflow", f7_d: "Согласование подписей и утверждений, договоры и предложения хранятся у карточки партнёра.",
       f8_t: "Безопасность и роли", f8_d: "Среда каждой компании полностью изолирована. Роли, права доступа, вход через SSO/SAML.",
-      f9_t: "Мобильное приложение", f9_d: "Лиды, партнёры и задачи всегда под рукой, с push-уведомлениями. iOS и Android."
+      f9_t: "Мобильное приложение", f9_d: "Лиды, партнёры и задачи всегда под рукой, с push-уведомлениями. iOS и Android.",
+      f10_t: "Проспекты", f10_d: "Автоматический ICP-скоринг 0–100 и обогащение данных компании — вы знаете, кому звонить первым."
     },
     compare: {
       eyebrow: "Сравнение", h2: "CRMtree на фоне других CRM-систем",
@@ -629,7 +658,10 @@
       q2: "Можно ли попробовать CRMtree бесплатно?", a2: "Да — 14 дней полного доступа, без банковской карты. Отменить можно в любой момент.",
       q3: "Какую почту можно подключить?", a3: "Gmail, Outlook и Zoho — переписка синхронизируется прямо на карточках лидов и партнёров.",
       q4: "Как работает AI-анализ звонков?", a4: "Система анализирует заметки или расшифровки звонков и оценивает готовность к покупке вместе с сигналами и возражениями клиента.",
-      q5: "Где хранятся наши данные?", a5: "На серверах Microsoft Azure в регионе Центральная Польша, в соответствии с GDPR и AI Act." },
+      q5: "Где хранятся наши данные?", a5: "На серверах Microsoft Azure в регионе Центральная Польша, в соответствии с GDPR и AI Act.",
+      q_migrate: "Можно ли перенести данные из другой CRM (например, Livespace, Pipedrive)?", a_migrate: "Да, обычно мы импортируем данные партнёров и менеджеров из файла CSV. При крупных миграциях помогаем индивидуально.",
+      q_whatsapp: "Работает ли WhatsApp Business сразу после регистрации?", a_whatsapp: "Номер WhatsApp Business настраивает администратор вашей компании в панели — один общий корпоративный номер, видимый всей команде.",
+      q_price: "Сколько это стоит?", a_price: "Зависит от количества пользователей и выбранных модулей. Полную цену смотрите на странице Цены, или напишите нам, если хотите обсудить." },
     logincta: { h2: "Уже есть аккаунт?", sub: "Войдите в свою среду CRMtree", cta: "Перейти в приложение →" },
     contact: { eyebrow: "Контакты", h2: "Запросить доступ", sub: "Ответим в течение одного рабочего дня", hint: "Хотите написать напрямую?",
       name_label: "Имя и фамилия", name_ph: "Иван Иванов", company_label: "Компания", company_ph: "Название компании",
@@ -647,7 +679,7 @@
 
   // ── Slovenščina ──────────────────────────────────────────────────────
   I18N.sl = {
-    nav: { features: "Funkcije", how: "Kako deluje", compare: "Primerjava", security: "Varnost", aiact: "AI Act", pricing: "Cenik", blog: "Blog", faq: "Pogosta vprašanja", contact: "Kontakt", login: "Prijava", cta_trial: "14 dni brezplačno" },
+    nav: { features: "Funkcije", how: "Kako deluje", compare: "Primerjava", security: "Varnost", aiact: "AI Act", pricing: "Cenik", blog: "Blog", faq: "Pogosta vprašanja", contact: "Kontakt", login: "Prijava", cta_trial: "14 dni brezplačno", products: "Izdelki" },
     hero: { eyebrow: "CRM za vsako panogo", h1: "Od hladnega leada do zvestega kupca. En sistem.", sub: "CRMtree vodi celoten cikel rasti podjetja: bogatenje podatkov in hladne klice, delo s toplimi priložnostmi, inbound prek SEObota, skrb za stranke in spremljanje tveganja odlivov.", cta_primary: "Preizkusi 14 dni brezplačno", cta_secondary: "Poglej funkcije", trust1: "14 dni brezplačno", trust2: "Brez IT-integracije", trust3: "Podatki v Azure, regija Poljska Centralna" },
     trial: { eyebrow: "Začnite še danes", h2: "Preizkusite CRMtree brezplačno 14 dni", sub: "Poln dostop do vseh funkcij, brez IT-integracije.", email_placeholder: "Poslovni e-poštni naslov", cta: "Začni brezplačno", note: "Kreditna kartica ni potrebna. Prekličete lahko kadar koli." },
     cycle: {
@@ -671,7 +703,8 @@
       f6_t: "SEObot", f6_d: "AI piše in načrtuje objave SEO-člankov ter meri učinek v Google Search Console.",
       f7_t: "Dokumenti in delovni tok", f7_d: "Postopki podpisovanja in odobritev, pogodbe in ponudbe shranjene pri kartici partnerja.",
       f8_t: "Varnost in vloge", f8_d: "Okolje vsakega podjetja je popolnoma izolirano. Vloge, dovoljenja, prijava prek SSO/SAML.",
-      f9_t: "Mobilna aplikacija", f9_d: "Leadi, partnerji in naloge vedno pri roki, s potisnimi obvestili. iOS in Android."
+      f9_t: "Mobilna aplikacija", f9_d: "Leadi, partnerji in naloge vedno pri roki, s potisnimi obvestili. iOS in Android.",
+      f10_t: "Prospekti", f10_d: "Samodejno ocenjevanje ICP 0–100 in bogatenje podatkov podjetja — veste, koga poklicati najprej."
     },
     compare: {
       eyebrow: "Primerjava", h2: "CRMtree v primerjavi z drugimi CRM sistemi",
@@ -706,7 +739,10 @@
       q2: "Ali lahko CRMtree preizkusim brezplačno?", a2: "Da — 14 dni polnega dostopa, brez kreditne kartice. Prekličete lahko kadar koli.",
       q3: "Katere ponudnike e-pošte lahko povežem?", a3: "Gmail, Outlook in Zoho — korespondenca se sinhronizira neposredno na kartice leadov in partnerjev.",
       q4: "Kako deluje analiza klicev z AI?", a4: "Sistem analizira zapiske ali prepise pogovorov in oceni nakupno namero skupaj s signali in ugovori strank.",
-      q5: "Kje so shranjeni naši podatki?", a5: "Na strežnikih Microsoft Azure v regiji Poljska Centralna, skladno z GDPR in AI Act." },
+      q5: "Kje so shranjeni naši podatki?", a5: "Na strežnikih Microsoft Azure v regiji Poljska Centralna, skladno z GDPR in AI Act.",
+      q_migrate: "Ali lahko prenesem podatke iz drugega CRM-ja (npr. Livespace, Pipedrive)?", a_migrate: "Da, običajno uvozimo podatke partnerjev in prodajalcev iz datoteke CSV. Pri večjih selitvah pomagamo individualno.",
+      q_whatsapp: "Ali WhatsApp Business deluje takoj po registraciji?", a_whatsapp: "Številko WhatsApp Business v nadzorni plošči nastavi skrbnik vašega podjetja — ena skupna poslovna številka, vidna celotni ekipi.",
+      q_price: "Koliko to stane?", a_price: "Odvisno je od števila uporabnikov in izbranih modulov. Celoten cenik najdete na strani Cenik, ali nam pišite, če se raje pogovorite." },
     logincta: { h2: "Že imate račun?", sub: "Prijavite se v svoje okolje CRMtree", cta: "Pojdi v aplikacijo →" },
     contact: { eyebrow: "Kontakt", h2: "Povprašajte za dostop", sub: "Odgovorimo v enem delovnem dnevu", hint: "Raje pišete neposredno?",
       name_label: "Ime in priimek", name_ph: "Janez Novak", company_label: "Podjetje", company_ph: "Naziv podjetja",
@@ -724,7 +760,7 @@
 
   // ── Hrvatski ─────────────────────────────────────────────────────────
   I18N.hr = {
-    nav: { features: "Značajke", how: "Kako radi", compare: "Usporedba", security: "Sigurnost", aiact: "AI Act", pricing: "Cjenik", blog: "Blog", faq: "Česta pitanja", contact: "Kontakt", login: "Prijava", cta_trial: "14 dana besplatno" },
+    nav: { features: "Značajke", how: "Kako radi", compare: "Usporedba", security: "Sigurnost", aiact: "AI Act", pricing: "Cjenik", blog: "Blog", faq: "Česta pitanja", contact: "Kontakt", login: "Prijava", cta_trial: "14 dana besplatno", products: "Proizvodi" },
     hero: { eyebrow: "CRM za svaku djelatnost", h1: "Od hladnog leada do vjernog kupca. Jedan sustav.", sub: "CRMtree vodi cijeli ciklus rasta tvrtke: obogaćivanje baza i hladne pozive, rad na toplim prilikama, inbound putem SEObota, brigu o klijentima i praćenje rizika odljeva.", cta_primary: "Isprobaj 14 dana besplatno", cta_secondary: "Pogledaj značajke", trust1: "14 dana besplatno", trust2: "Bez IT integracije", trust3: "Podaci na Azureu, regija Poljska Centralna" },
     trial: { eyebrow: "Počnite već danas", h2: "Isprobajte CRMtree besplatno 14 dana", sub: "Puni pristup svim značajkama, bez IT integracije.", email_placeholder: "Poslovna e-mail adresa", cta: "Počni besplatno", note: "Nije potrebna kartica. Otkažite u bilo kojem trenutku." },
     cycle: {
@@ -748,7 +784,8 @@
       f6_t: "SEObot", f6_d: "AI piše i planira objavu SEO članaka te mjeri učinak u Google Search Consoleu.",
       f7_t: "Dokumenti i workflow", f7_d: "Tijek potpisivanja i odobravanja, ugovori i ponude pohranjeni uz karticu partnera.",
       f8_t: "Sigurnost i uloge", f8_d: "Okruženje svake tvrtke potpuno je izolirano. Uloge, dozvole, prijava putem SSO/SAML-a.",
-      f9_t: "Mobilna aplikacija", f9_d: "Leadovi, partneri i zadaci uvijek pri ruci, s push obavijestima. iOS i Android."
+      f9_t: "Mobilna aplikacija", f9_d: "Leadovi, partneri i zadaci uvijek pri ruci, s push obavijestima. iOS i Android.",
+      f10_t: "Prospekti", f10_d: "Automatska ICP ocjena 0–100 i obogaćivanje podataka tvrtke — znate koga prvog nazvati."
     },
     compare: {
       eyebrow: "Usporedba", h2: "CRMtree u odnosu na druge CRM sustave",
@@ -783,7 +820,10 @@
       q2: "Mogu li isprobati CRMtree besplatno?", a2: "Da — 14 dana punog pristupa, bez kartice. Otkažite u bilo kojem trenutku.",
       q3: "Koje pružatelje e-pošte mogu povezati?", a3: "Gmail, Outlook i Zoho — korespondencija se sinkronizira izravno na kartice leadova i partnera.",
       q4: "Kako radi AI analiza razgovora?", a4: "Sustav analizira bilješke ili transkripte razgovora i ocjenjuje sklonost kupnji zajedno sa signalima i prigovorima klijenta.",
-      q5: "Gdje se pohranjuju naši podaci?", a5: "Na poslužiteljima Microsoft Azurea u regiji Poljska Centralna, u skladu s GDPR-om i AI Actom." },
+      q5: "Gdje se pohranjuju naši podaci?", a5: "Na poslužiteljima Microsoft Azurea u regiji Poljska Centralna, u skladu s GDPR-om i AI Actom.",
+      q_migrate: "Mogu li prenijeti podatke iz drugog CRM-a (npr. Livespace, Pipedrive)?", a_migrate: "Da, standardno uvozimo podatke partnera i prodavača iz CSV datoteke. Kod većih migracija pomažemo individualno.",
+      q_whatsapp: "Radi li WhatsApp Business odmah nakon registracije?", a_whatsapp: "Broj WhatsApp Business konfigurira administrator vaše tvrtke u panelu — jedan zajednički poslovni broj, vidljiv cijelom timu.",
+      q_price: "Koliko to košta?", a_price: "Ovisi o broju korisnika i odabranim modulima. Cjelovit cjenik pronaći ćete na stranici Cjenik, a ako radije razgovarate, pišite nam." },
     logincta: { h2: "Već imate račun?", sub: "Prijavite se u svoje CRMtree okruženje", cta: "Idi na aplikaciju →" },
     contact: { eyebrow: "Kontakt", h2: "Zatražite pristup", sub: "Odgovorit ćemo u roku od jednog radnog dana", hint: "Radije biste pisali izravno?",
       name_label: "Ime i prezime", name_ph: "Ivan Horvat", company_label: "Tvrtka", company_ph: "Naziv tvrtke",
