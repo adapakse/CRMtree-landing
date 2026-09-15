@@ -185,8 +185,8 @@ textarea { resize: vertical; }
   opacity: 0; pointer-events: none; transition: opacity .15s ease, transform .15s ease; z-index: 150;
 }
 .has-mega:hover .mega-panel, .has-mega:focus-within .mega-panel { opacity: 1; pointer-events: auto; transform: translateX(-50%) translateY(0); }
-.mega-item { display: block; padding: 11px 12px; border-radius: 8px; text-decoration: none; color: var(--navy); font-size: 14px; font-weight: 600; }
-.mega-item:hover { background: var(--bg-alt); color: var(--green-dark); }
+.mega-panel .mega-item { display: block; padding: 11px 12px; border-radius: 8px; text-decoration: none; color: var(--navy); font-size: 14px; font-weight: 600; }
+.mega-panel .mega-item:hover { background: var(--bg-alt); color: var(--green-dark); }
 @media (max-width: 700px) { .mega-panel { grid-template-columns: 1fr; } }
 
 /* Anchored scroll targets should clear the sticky navbar */
