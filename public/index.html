@@ -59,16 +59,16 @@
             <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
           </button>
           <div class="mega-panel">
-            <a class="mega-item" href="#f-dashboard"><span class="mega-item__icon">📊</span><span><span class="mega-item__title" data-i18n="features.f1_t">Dashboard sprzedaży</span><span class="mega-item__desc" data-i18n="features.f1_d">Bieżące wyniki sprzedaży w czasie rzeczywistym, z eksportem danych. Filtry po okresie, partnerze i handlowcu.</span></span></a>
-            <a class="mega-item" href="#f-partnerzy"><span class="mega-item__icon">🤝</span><span><span class="mega-item__title" data-i18n="features.f2_t">Zarządzanie partnerami</span><span class="mega-item__desc" data-i18n="features.f2_d">Baza partnerów z historią transakcji, dokumentami i przypisanymi opiekunami. Grupowanie i tagowanie według segmentu.</span></span></a>
-            <a class="mega-item" href="#f-budzety"><span class="mega-item__icon">💰</span><span><span class="mega-item__title" data-i18n="features.f3_t">Budżety i cele</span><span class="mega-item__desc" data-i18n="features.f3_d">Planowanie budżetów rocznych i miesięcznych per handlowiec. Automatyczne porównanie planu z wykonaniem.</span></span></a>
-            <a class="mega-item" href="#f-komunikacja"><span class="mega-item__icon">💬</span><span><span class="mega-item__title" data-i18n="features.f4_t">Komunikacja wielokanałowa</span><span class="mega-item__desc" data-i18n="features.f4_d">E-mail (Gmail, Outlook, Zoho), WhatsApp Business, telefon — wszystko widoczne przy karcie leada i partnera.</span></span></a>
-            <a class="mega-item" href="#f-analiza-ai"><span class="mega-item__icon">🎯</span><span><span class="mega-item__title" data-i18n="features.f5_t">Analiza rozmów AI</span><span class="mega-item__desc" data-i18n="features.f5_d">AI ocenia skłonność do zakupu z notatek lub transkrypcji rozmów i wystawia sygnały oraz obiekcje klienta.</span></span></a>
-            <a class="mega-item" href="#f-seobot"><span class="mega-item__icon">✦</span><span><span class="mega-item__title" data-i18n="features.f6_t">SEObot</span><span class="mega-item__desc" data-i18n="features.f6_d">AI pisze i planuje publikację artykułów SEO, mierzy efekt w Google Search Console.</span></span></a>
-            <a class="mega-item" href="#f-dokumenty"><span class="mega-item__icon">📁</span><span><span class="mega-item__title" data-i18n="features.f7_t">Dokumenty i workflow</span><span class="mega-item__desc" data-i18n="features.f7_d">Obieg podpisów i akceptacji, przechowywanie umów i ofert przy partnerach.</span></span></a>
-            <a class="mega-item" href="#f-bezpieczenstwo"><span class="mega-item__icon">🔐</span><span><span class="mega-item__title" data-i18n="features.f8_t">Bezpieczeństwo i role</span><span class="mega-item__desc" data-i18n="features.f8_d">Środowisko każdej firmy w pełni odizolowane. Role, uprawnienia, logowanie przez SSO/SAML.</span></span></a>
-            <a class="mega-item" href="#f-mobile"><span class="mega-item__icon">📱</span><span><span class="mega-item__title" data-i18n="features.f9_t">Aplikacja mobilna</span><span class="mega-item__desc" data-i18n="features.f9_d">Leady, partnerzy i zadania zawsze pod ręką, z powiadomieniami push. iOS i Android.</span></span></a>
-            <a class="mega-item" href="#f-prospekty"><span class="mega-item__icon">🎯</span><span><span class="mega-item__title" data-i18n="features.f10_t">Prospekty</span><span class="mega-item__desc" data-i18n="features.f10_d">Automatyczny scoring ICP 0–100 i wzbogacanie danych firmy — wiesz, do kogo zadzwonić najpierw.</span></span></a>
+            <a class="mega-item" href="#f-dashboard" data-i18n="features.f1_t">Dashboard sprzedaży</a>
+            <a class="mega-item" href="#f-partnerzy" data-i18n="features.f2_t">Zarządzanie partnerami</a>
+            <a class="mega-item" href="#f-budzety" data-i18n="features.f3_t">Budżety i cele</a>
+            <a class="mega-item" href="#f-komunikacja" data-i18n="features.f4_t">Komunikacja wielokanałowa</a>
+            <a class="mega-item" href="#f-analiza-ai" data-i18n="features.f5_t">Analiza rozmów AI</a>
+            <a class="mega-item" href="#f-seobot" data-i18n="features.f6_t">SEObot</a>
+            <a class="mega-item" href="#f-dokumenty" data-i18n="features.f7_t">Dokumenty i workflow</a>
+            <a class="mega-item" href="#f-bezpieczenstwo" data-i18n="features.f8_t">Bezpieczeństwo i role</a>
+            <a class="mega-item" href="#f-mobile" data-i18n="features.f9_t">Aplikacja mobilna</a>
+            <a class="mega-item" href="#f-prospekty" data-i18n="features.f10_t">Prospekty</a>
           </div>
         </div>
         <a href="#compare" data-i18n="nav.compare">Porównanie</a>
@@ -167,68 +167,217 @@
     </div>
   </section>
 
-  <!-- FEATURES -->
-  <section class="features" id="features">
-    <div class="container">
-      <div class="section-header">
-        <h2 data-i18n="features.h2">Wszystko, czego potrzebujesz</h2>
-        <p data-i18n="features.sub">Jeden system zamiast dziesiątek arkuszy i narzędzi</p>
+  <!-- FEATURES INTRO -->
+  <section class="products-intro" id="features">
+    <div class="container section-header">
+      <h2 data-i18n="features.h2">Wszystko, czego potrzebujesz</h2>
+      <p data-i18n="features.sub">Jeden system zamiast dziesiątek arkuszy i narzędzi</p>
+    </div>
+  </section>
+
+  <!-- PRODUCT 1: DASHBOARD -->
+  <section class="product-section" id="f-dashboard">
+    <div class="container product-section__inner">
+      <div class="product-section__text">
+        <h2 data-i18n="features.f1_t">Dashboard sprzedaży</h2>
+        <p data-i18n="features.f1_d">Bieżące wyniki sprzedaży w czasie rzeczywistym, z eksportem danych. Filtry po okresie, partnerze i handlowcu.</p>
+        <a href="#trial" class="btn btn--primary btn--lg" data-i18n="features.cta">Wypróbuj za darmo</a>
       </div>
-      <div class="features__grid">
+      <div class="product-section__visual">
+        <div class="screenshot-frame"><img src="screenshot.webp" alt="" loading="lazy" width="900" height="675" /></div>
+      </div>
+    </div>
+  </section>
 
-        <div class="feature-card" id="f-dashboard">
-          <h3 data-i18n="features.f1_t">Dashboard sprzedaży</h3>
-          <p data-i18n="features.f1_d">Bieżące wyniki sprzedaży w czasie rzeczywistym, z eksportem danych. Filtry po okresie, partnerze i handlowcu.</p>
+  <!-- PRODUCT 2: PARTNERZY -->
+  <section class="product-section product-section--alt" id="f-partnerzy">
+    <div class="container product-section__inner">
+      <div class="product-section__text">
+        <h2 data-i18n="features.f2_t">Zarządzanie partnerami</h2>
+        <p data-i18n="features.f2_d">Baza partnerów z historią transakcji, dokumentami i przypisanymi opiekunami. Grupowanie i tagowanie według segmentu.</p>
+        <a href="#trial" class="btn btn--primary btn--lg" data-i18n="features.cta">Wypróbuj za darmo</a>
+      </div>
+      <div class="product-section__visual">
+        <div class="screenshot-frame"><img src="screenshot.webp" alt="" loading="lazy" width="900" height="675" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT 3: BUDŻETY -->
+  <section class="product-section" id="f-budzety">
+    <div class="container product-section__inner">
+      <div class="product-section__text">
+        <h2 data-i18n="features.f3_t">Budżety i cele</h2>
+        <p data-i18n="features.f3_d">Planowanie budżetów rocznych i miesięcznych per handlowiec. Automatyczne porównanie planu z wykonaniem.</p>
+        <a href="#trial" class="btn btn--primary btn--lg" data-i18n="features.cta">Wypróbuj za darmo</a>
+      </div>
+      <div class="product-section__visual">
+        <div class="screenshot-frame"><img src="screenshot.webp" alt="" loading="lazy" width="900" height="675" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT 4: KOMUNIKACJA -->
+  <section class="product-section product-section--alt" id="f-komunikacja">
+    <div class="container product-section__inner">
+      <div class="product-section__text">
+        <h2 data-i18n="features.f4_t">Komunikacja wielokanałowa</h2>
+        <p data-i18n="features.f4_d">E-mail (Gmail, Outlook, Zoho), WhatsApp Business, telefon — wszystko widoczne przy karcie leada i partnera.</p>
+        <a href="#trial" class="btn btn--primary btn--lg" data-i18n="features.cta">Wypróbuj za darmo</a>
+      </div>
+      <div class="product-section__visual">
+        <div class="screenshot-frame"><img src="komunikacja.webp" alt="" loading="lazy" width="900" height="675" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT 5: ANALIZA ROZMÓW AI -->
+  <section class="product-section" id="f-analiza-ai">
+    <div class="container product-section__inner">
+      <div class="product-section__text">
+        <h2 data-i18n="features.f5_t">Analiza rozmów AI</h2>
+        <p data-i18n="features.f5_d">AI ocenia skłonność do zakupu z notatek lub transkrypcji rozmów i wystawia sygnały oraz obiekcje klienta.</p>
+        <a href="#trial" class="btn btn--primary btn--lg" data-i18n="features.cta">Wypróbuj za darmo</a>
+      </div>
+      <div class="product-section__visual">
+        <div class="screenshot-frame"><img src="analiza-ai.webp" alt="" loading="lazy" width="900" height="675" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT 6: SEOBOT -->
+  <section class="product-section product-section--alt" id="f-seobot">
+    <div class="container product-section__inner">
+      <div class="product-section__text">
+        <h2 data-i18n="features.f6_t">SEObot</h2>
+        <p data-i18n="features.f6_d">AI pisze i planuje publikację artykułów SEO, mierzy efekt w Google Search Console.</p>
+        <a href="#trial" class="btn btn--primary btn--lg" data-i18n="features.cta">Wypróbuj za darmo</a>
+      </div>
+      <div class="product-section__visual">
+        <div class="screenshot-frame"><img src="seobot.webp" alt="" loading="lazy" width="900" height="675" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT 7: DOKUMENTY -->
+  <section class="product-section" id="f-dokumenty">
+    <div class="container product-section__inner">
+      <div class="product-section__text">
+        <h2 data-i18n="features.f7_t">Dokumenty i workflow</h2>
+        <p data-i18n="features.f7_d">Obieg podpisów i akceptacji, przechowywanie umów i ofert przy partnerach.</p>
+        <a href="#trial" class="btn btn--primary btn--lg" data-i18n="features.cta">Wypróbuj za darmo</a>
+      </div>
+      <div class="product-section__visual">
+        <div class="screenshot-frame"><img src="screenshot.webp" alt="" loading="lazy" width="900" height="675" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT 8: BEZPIECZEŃSTWO -->
+  <section class="product-section product-section--alt" id="f-bezpieczenstwo">
+    <div class="container product-section__inner">
+      <div class="product-section__text">
+        <h2 data-i18n="features.f8_t">Bezpieczeństwo i role</h2>
+        <p data-i18n="features.f8_d">Środowisko każdej firmy w pełni odizolowane. Role, uprawnienia, logowanie przez SSO/SAML.</p>
+        <a href="#trial" class="btn btn--primary btn--lg" data-i18n="features.cta">Wypróbuj za darmo</a>
+      </div>
+      <div class="product-section__visual">
+        <div class="screenshot-frame"><img src="screenshot.webp" alt="" loading="lazy" width="900" height="675" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT 9: APLIKACJA MOBILNA -->
+  <section class="product-section" id="f-mobile">
+    <div class="container product-section__inner">
+      <div class="product-section__text">
+        <h2 data-i18n="features.f9_t">Aplikacja mobilna</h2>
+        <p data-i18n="features.f9_d">Leady, partnerzy i zadania zawsze pod ręką, z powiadomieniami push. iOS i Android.</p>
+        <a href="#trial" class="btn btn--primary btn--lg" data-i18n="features.cta">Wypróbuj za darmo</a>
+      </div>
+      <div class="product-section__visual">
+        <div class="app-shot-frame">
+          <svg class="app-shot" viewBox="0 0 300 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Podgląd aplikacji mobilnej CRMtree">
+            <defs>
+              <filter id="cardShadow" x="-30%" y="-30%" width="160%" height="160%">
+                <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#1F2933" flood-opacity="0.10"/>
+              </filter>
+            </defs>
+            <rect x="0" y="0" width="300" height="600" rx="42" fill="#1F2933"/>
+            <rect x="10" y="10" width="280" height="580" rx="34" fill="#FAFAF9"/>
+            <rect x="120" y="20" width="60" height="16" rx="8" fill="#1F2933"/>
+            <text x="30" y="52" font-family="monospace" font-size="12" fill="#1F2933" font-weight="600">9:41</text>
+            <g fill="#1F2933">
+              <rect x="238" y="44" width="3" height="6" rx="1"/><rect x="243" y="41" width="3" height="9" rx="1"/>
+              <rect x="248" y="38" width="3" height="12" rx="1"/><rect x="253" y="35" width="3" height="15" rx="1"/>
+              <rect x="263" y="40" width="20" height="10" rx="2.5" fill="none" stroke="#1F2933" stroke-width="1.2"/>
+              <rect x="265" y="42" width="12" height="6" rx="1"/><rect x="283.5" y="43" width="2" height="4"/>
+            </g>
+            <rect x="10" y="64" width="280" height="56" fill="#3BAA5D"/>
+            <text x="30" y="98" font-family="sans-serif" font-size="18" font-weight="700" fill="#fff">CRMtree</text>
+            <circle cx="258" cy="92" r="12" fill="rgba(255,255,255,.22)"/>
+            <path d="M258 85.5c-3 0-5.4 2.4-5.4 5.4v3.1c0 1.5-.6 2.9-1.6 3.9l-.5.5h15l-.5-.5c-1-1-1.6-2.4-1.6-3.9v-3.1c0-3-2.4-5.4-5.4-5.4z" fill="#fff"/>
+            <path d="M255.6 99.5a2.4 2.4 0 004.8 0z" fill="#fff"/>
+            <circle cx="266" cy="82" r="4" fill="#B4650A"/>
+            <text x="30" y="140" font-family="sans-serif" font-size="11" font-weight="700" letter-spacing="0.5" fill="#6B7280">LEADY — DZIŚ (4)</text>
+            <g font-family="sans-serif">
+              <rect x="24" y="150" width="252" height="60" rx="12" fill="#fff" stroke="#E5E7EB" filter="url(#cardShadow)"/>
+              <circle cx="46" cy="180" r="14" fill="#E6F4EA"/><text x="46" y="184" font-size="11" text-anchor="middle" fill="#2F8F4D" font-weight="700">VT</text>
+              <text x="70" y="176" font-size="13" font-weight="700" fill="#1F2933">Vantex Sp. z o.o.</text>
+              <text x="70" y="192" font-size="11" fill="#6B7280">Oferta wysłana · 25 200 PLN</text>
+              <circle cx="262" cy="180" r="5" fill="#3BAA5D"/>
+
+              <rect x="24" y="220" width="252" height="60" rx="12" fill="#fff" stroke="#E5E7EB" filter="url(#cardShadow)"/>
+              <circle cx="46" cy="250" r="14" fill="#FBEEE0"/><text x="46" y="254" font-size="11" text-anchor="middle" fill="#B4650A" font-weight="700">KM</text>
+              <text x="70" y="246" font-size="13" font-weight="700" fill="#1F2933">Kolmex S.A.</text>
+              <text x="70" y="262" font-size="11" fill="#6B7280">Follow-up jutro, 10:00</text>
+              <circle cx="262" cy="250" r="5" fill="#B4650A"/>
+
+              <rect x="24" y="290" width="252" height="60" rx="12" fill="#fff" stroke="#E5E7EB" filter="url(#cardShadow)"/>
+              <circle cx="46" cy="320" r="14" fill="#E6F4EA"/><text x="46" y="324" font-size="11" text-anchor="middle" fill="#2F8F4D" font-weight="700">NG</text>
+              <text x="70" y="316" font-size="13" font-weight="700" fill="#1F2933">Nortex Group</text>
+              <text x="70" y="332" font-size="11" fill="#6B7280">Negocjacje · 3 zadania</text>
+              <circle cx="262" cy="320" r="5" fill="#3BAA5D"/>
+
+              <rect x="24" y="360" width="252" height="60" rx="12" fill="#fff" stroke="#E5E7EB" filter="url(#cardShadow)"/>
+              <circle cx="46" cy="390" r="14" fill="#FCE8EC"/><text x="46" y="394" font-size="11" text-anchor="middle" fill="#B4223F" font-weight="700">KL</text>
+              <text x="70" y="386" font-size="13" font-weight="700" fill="#1F2933">Kowalski Logistyka</text>
+              <text x="70" y="402" font-size="11" fill="#B4223F">Churn risk — kontakt pilny</text>
+              <circle cx="262" cy="390" r="5" fill="#B4223F"/>
+            </g>
+            <circle cx="256" cy="438" r="20" fill="#3BAA5D" filter="url(#cardShadow)"/>
+            <text x="256" y="444" font-size="20" fill="#fff" text-anchor="middle" font-weight="700">+</text>
+            <path d="M10,520 L290,520 L290,556 A34,34 0 0 1 256,590 L44,590 A34,34 0 0 1 10,556 Z" fill="#fff"/>
+            <line x1="10" y1="520" x2="290" y2="520" stroke="#E5E7EB"/>
+            <g font-family="sans-serif" font-size="9" fill="#6B7280" text-anchor="middle">
+              <circle cx="55" cy="543" r="11" fill="#3BAA5D"/>
+              <g stroke="#fff" stroke-width="1.6" stroke-linecap="round">
+                <line x1="48" y1="539" x2="62" y2="539"/><line x1="48" y1="543" x2="62" y2="543"/><line x1="48" y1="547" x2="58" y2="547"/>
+              </g>
+              <text x="55" y="565">Leady</text>
+              <g fill="none" stroke="#6B7280" stroke-width="1.4"><circle cx="121" cy="543" r="5"/><circle cx="129" cy="543" r="5"/></g>
+              <text x="125" y="565">Partnerzy</text>
+              <path d="M188 543l5 5 9-9" fill="none" stroke="#6B7280" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+              <text x="195" y="565">Zadania</text>
+              <g fill="#6B7280"><circle cx="248" cy="543" r="1.8"/><circle cx="255" cy="543" r="1.8"/><circle cx="262" cy="543" r="1.8"/></g>
+              <text x="255" y="565">Więcej</text>
+            </g>
+          </svg>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="feature-card" id="f-partnerzy">
-          <h3 data-i18n="features.f2_t">Zarządzanie partnerami</h3>
-          <p data-i18n="features.f2_d">Baza partnerów z historią transakcji, dokumentami i przypisanymi opiekunami. Grupowanie i tagowanie według segmentu.</p>
-        </div>
-
-        <div class="feature-card" id="f-budzety">
-          <h3 data-i18n="features.f3_t">Budżety i cele</h3>
-          <p data-i18n="features.f3_d">Planowanie budżetów rocznych i miesięcznych per handlowiec. Automatyczne porównanie planu z wykonaniem.</p>
-        </div>
-
-        <div class="feature-card" id="f-komunikacja">
-          <h3 data-i18n="features.f4_t">Komunikacja wielokanałowa</h3>
-          <p data-i18n="features.f4_d">E-mail (Gmail, Outlook, Zoho), WhatsApp Business, telefon — wszystko widoczne przy karcie leada i partnera.</p>
-          <img src="komunikacja.webp" alt="" class="feature-card__photo" loading="lazy" width="900" height="675" />
-        </div>
-
-        <div class="feature-card" id="f-analiza-ai">
-          <h3 data-i18n="features.f5_t">Analiza rozmów AI</h3>
-          <p data-i18n="features.f5_d">AI ocenia skłonność do zakupu z notatek lub transkrypcji rozmów i wystawia sygnały oraz obiekcje klienta.</p>
-          <img src="analiza-ai.webp" alt="" class="feature-card__photo" loading="lazy" width="900" height="675" />
-        </div>
-
-        <div class="feature-card" id="f-seobot">
-          <h3 data-i18n="features.f6_t">SEObot</h3>
-          <p data-i18n="features.f6_d">AI pisze i planuje publikację artykułów SEO, mierzy efekt w Google Search Console.</p>
-          <img src="seobot.webp" alt="" class="feature-card__photo" loading="lazy" width="900" height="675" />
-        </div>
-
-        <div class="feature-card" id="f-dokumenty">
-          <h3 data-i18n="features.f7_t">Dokumenty i workflow</h3>
-          <p data-i18n="features.f7_d">Obieg podpisów i akceptacji, przechowywanie umów i ofert przy partnerach.</p>
-        </div>
-
-        <div class="feature-card" id="f-bezpieczenstwo">
-          <h3 data-i18n="features.f8_t">Bezpieczeństwo i role</h3>
-          <p data-i18n="features.f8_d">Środowisko każdej firmy w pełni odizolowane. Role, uprawnienia, logowanie przez SSO/SAML.</p>
-        </div>
-
-        <div class="feature-card" id="f-mobile">
-          <h3 data-i18n="features.f9_t">Aplikacja mobilna</h3>
-          <p data-i18n="features.f9_d">Leady, partnerzy i zadania zawsze pod ręką, z powiadomieniami push. iOS i Android.</p>
-        </div>
-
-        <div class="feature-card" id="f-prospekty">
-          <h3 data-i18n="features.f10_t">Prospekty</h3>
-          <p data-i18n="features.f10_d">Automatyczny scoring ICP 0–100 i wzbogacanie danych firmy — wiesz, do kogo zadzwonić najpierw.</p>
-        </div>
-
+  <!-- PRODUCT 10: PROSPEKTY -->
+  <section class="product-section product-section--alt" id="f-prospekty">
+    <div class="container product-section__inner">
+      <div class="product-section__text">
+        <h2 data-i18n="features.f10_t">Prospekty</h2>
+        <p data-i18n="features.f10_d">Automatyczny scoring ICP 0–100 i wzbogacanie danych firmy — wiesz, do kogo zadzwonić najpierw.</p>
+        <a href="#trial" class="btn btn--primary btn--lg" data-i18n="features.cta">Wypróbuj za darmo</a>
+      </div>
+      <div class="product-section__visual">
+        <div class="screenshot-frame"><img src="screenshot.webp" alt="" loading="lazy" width="900" height="675" /></div>
       </div>
     </div>
   </section>

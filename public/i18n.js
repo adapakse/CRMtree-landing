@@ -56,7 +56,7 @@
       f7_t: "Dokumenty i workflow", f7_d: "Obieg podpisów i akceptacji, przechowywanie umów i ofert przy partnerach.",
       f8_t: "Bezpieczeństwo i role", f8_d: "Środowisko każdej firmy w pełni odizolowane. Role, uprawnienia, logowanie przez SSO/SAML.",
       f9_t: "Aplikacja mobilna", f9_d: "Leady, partnerzy i zadania zawsze pod ręką, z powiadomieniami push. iOS i Android.",
-      f10_t: "Prospekty", f10_d: "Automatyczny scoring ICP 0–100 i wzbogacanie danych firmy — wiesz, do kogo zadzwonić najpierw."
+      f10_t: "Prospekty", f10_d: "Automatyczny scoring ICP 0–100 i wzbogacanie danych firmy — wiesz, do kogo zadzwonić najpierw.", cta: "Wypróbuj za darmo"
     },
     compare: {
       eyebrow: "Porównanie", h2: "CRMtree na tle innych systemów CRM",
@@ -137,7 +137,7 @@
       f7_t: "Documents & workflow", f7_d: "Signature and approval flows, with contracts and offers stored on the partner record.",
       f8_t: "Security & roles", f8_d: "Every company's environment is fully isolated. Roles, permissions, SSO/SAML login.",
       f9_t: "Mobile app", f9_d: "Leads, partners, and tasks always at hand, with push notifications. iOS and Android.",
-      f10_t: "Prospects", f10_d: "Automatic 0–100 ICP scoring and company data enrichment — know who to call first."
+      f10_t: "Prospects", f10_d: "Automatic 0–100 ICP scoring and company data enrichment — know who to call first.", cta: "Try it for free"
     },
     compare: {
       eyebrow: "Comparison", h2: "CRMtree vs. other CRM systems",
@@ -218,7 +218,7 @@
       f7_t: "Dokumente & Workflow", f7_d: "Unterschrifts- und Freigabeprozesse, Verträge und Angebote direkt beim Partner gespeichert.",
       f8_t: "Sicherheit & Rollen", f8_d: "Die Umgebung jedes Unternehmens ist vollständig isoliert. Rollen, Rechte, Login per SSO/SAML.",
       f9_t: "Mobile App", f9_d: "Leads, Partner und Aufgaben immer griffbereit, mit Push-Benachrichtigungen. iOS und Android.",
-      f10_t: "Interessenten", f10_d: "Automatisches ICP-Scoring von 0–100 und Datenanreicherung — Sie wissen, wen Sie zuerst anrufen sollten."
+      f10_t: "Interessenten", f10_d: "Automatisches ICP-Scoring von 0–100 und Datenanreicherung — Sie wissen, wen Sie zuerst anrufen sollten.", cta: "Kostenlos testen"
     },
     compare: {
       eyebrow: "Vergleich", h2: "CRMtree im Vergleich zu anderen CRM-Systemen",
@@ -299,7 +299,7 @@
       f7_t: "Documenti e workflow", f7_d: "Flussi di firma e approvazione, con contratti e offerte archiviati sulla scheda partner.",
       f8_t: "Sicurezza e ruoli", f8_d: "L'ambiente di ogni azienda è completamente isolato. Ruoli, permessi, login via SSO/SAML.",
       f9_t: "App mobile", f9_d: "Lead, partner e attività sempre a portata di mano, con notifiche push. iOS e Android.",
-      f10_t: "Prospect", f10_d: "Scoring ICP automatico da 0 a 100 e arricchimento dei dati aziendali — sai chi chiamare per primo."
+      f10_t: "Prospect", f10_d: "Scoring ICP automatico da 0 a 100 e arricchimento dei dati aziendali — sai chi chiamare per primo.", cta: "Provalo gratis"
     },
     compare: {
       eyebrow: "Confronto", h2: "CRMtree a confronto con altri CRM",
@@ -380,7 +380,7 @@
       f7_t: "Documentos y flujo de trabajo", f7_d: "Flujos de firma y aprobación, con contratos y ofertas guardados en la ficha del cliente.",
       f8_t: "Seguridad y roles", f8_d: "El entorno de cada empresa está totalmente aislado. Roles, permisos, acceso vía SSO/SAML.",
       f9_t: "Aplicación móvil", f9_d: "Leads, clientes y tareas siempre a mano, con notificaciones push. iOS y Android.",
-      f10_t: "Prospectos", f10_d: "Puntuación ICP automática de 0 a 100 y enriquecimiento de datos de la empresa — sabes a quién llamar primero."
+      f10_t: "Prospectos", f10_d: "Puntuación ICP automática de 0 a 100 y enriquecimiento de datos de la empresa — sabes a quién llamar primero.", cta: "Pruébalo gratis"
     },
     compare: {
       eyebrow: "Comparativa", h2: "CRMtree frente a otros sistemas CRM",
@@ -461,7 +461,7 @@
       f7_t: "Documents et workflow", f7_d: "Circuits de signature et de validation, contrats et offres stockés sur la fiche partenaire.",
       f8_t: "Sécurité et rôles", f8_d: "L'environnement de chaque entreprise est totalement isolé. Rôles, permissions, connexion via SSO/SAML.",
       f9_t: "Application mobile", f9_d: "Leads, partenaires et tâches toujours à portée de main, avec notifications push. iOS et Android.",
-      f10_t: "Prospects", f10_d: "Scoring ICP automatique de 0 à 100 et enrichissement des données d'entreprise — vous savez qui appeler en premier."
+      f10_t: "Prospects", f10_d: "Scoring ICP automatique de 0 à 100 et enrichissement des données d'entreprise — vous savez qui appeler en premier.", cta: "Essayez gratuitement"
     },
     compare: {
       eyebrow: "Comparatif", h2: "CRMtree face aux autres CRM",
@@ -542,7 +542,7 @@
       f7_t: "Documente și workflow", f7_d: "Fluxuri de semnătură și aprobare, cu contracte și oferte păstrate la fișa partenerului.",
       f8_t: "Securitate și roluri", f8_d: "Mediul fiecărei companii este complet izolat. Roluri, permisiuni, autentificare prin SSO/SAML.",
       f9_t: "Aplicație mobilă", f9_d: "Leaduri, parteneri și sarcini mereu la îndemână, cu notificări push. iOS și Android.",
-      f10_t: "Prospecți", f10_d: "Scoring ICP automat 0–100 și îmbogățirea datelor companiei — știi pe cine să suni primul."
+      f10_t: "Prospecți", f10_d: "Scoring ICP automat 0–100 și îmbogățirea datelor companiei — știi pe cine să suni primul.", cta: "Încearcă gratuit"
     },
     compare: {
       eyebrow: "Comparație", h2: "CRMtree față de alte sisteme CRM",
@@ -623,7 +623,7 @@
       f7_t: "Документы и workflow", f7_d: "Согласование подписей и утверждений, договоры и предложения хранятся у карточки партнёра.",
       f8_t: "Безопасность и роли", f8_d: "Среда каждой компании полностью изолирована. Роли, права доступа, вход через SSO/SAML.",
       f9_t: "Мобильное приложение", f9_d: "Лиды, партнёры и задачи всегда под рукой, с push-уведомлениями. iOS и Android.",
-      f10_t: "Проспекты", f10_d: "Автоматический ICP-скоринг 0–100 и обогащение данных компании — вы знаете, кому звонить первым."
+      f10_t: "Проспекты", f10_d: "Автоматический ICP-скоринг 0–100 и обогащение данных компании — вы знаете, кому звонить первым.", cta: "Попробовать бесплатно"
     },
     compare: {
       eyebrow: "Сравнение", h2: "CRMtree на фоне других CRM-систем",
@@ -704,7 +704,7 @@
       f7_t: "Dokumenti in delovni tok", f7_d: "Postopki podpisovanja in odobritev, pogodbe in ponudbe shranjene pri kartici partnerja.",
       f8_t: "Varnost in vloge", f8_d: "Okolje vsakega podjetja je popolnoma izolirano. Vloge, dovoljenja, prijava prek SSO/SAML.",
       f9_t: "Mobilna aplikacija", f9_d: "Leadi, partnerji in naloge vedno pri roki, s potisnimi obvestili. iOS in Android.",
-      f10_t: "Prospekti", f10_d: "Samodejno ocenjevanje ICP 0–100 in bogatenje podatkov podjetja — veste, koga poklicati najprej."
+      f10_t: "Prospekti", f10_d: "Samodejno ocenjevanje ICP 0–100 in bogatenje podatkov podjetja — veste, koga poklicati najprej.", cta: "Preizkusite brezplačno"
     },
     compare: {
       eyebrow: "Primerjava", h2: "CRMtree v primerjavi z drugimi CRM sistemi",
@@ -785,7 +785,7 @@
       f7_t: "Dokumenti i workflow", f7_d: "Tijek potpisivanja i odobravanja, ugovori i ponude pohranjeni uz karticu partnera.",
       f8_t: "Sigurnost i uloge", f8_d: "Okruženje svake tvrtke potpuno je izolirano. Uloge, dozvole, prijava putem SSO/SAML-a.",
       f9_t: "Mobilna aplikacija", f9_d: "Leadovi, partneri i zadaci uvijek pri ruci, s push obavijestima. iOS i Android.",
-      f10_t: "Prospekti", f10_d: "Automatska ICP ocjena 0–100 i obogaćivanje podataka tvrtke — znate koga prvog nazvati."
+      f10_t: "Prospekti", f10_d: "Automatska ICP ocjena 0–100 i obogaćivanje podataka tvrtke — znate koga prvog nazvati.", cta: "Isprobajte besplatno"
     },
     compare: {
       eyebrow: "Usporedba", h2: "CRMtree u odnosu na druge CRM sustave",
