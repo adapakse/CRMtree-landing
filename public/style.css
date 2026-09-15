@@ -179,7 +179,7 @@ textarea { resize: vertical; }
 .mega-trigger svg { transition: transform .15s; }
 .has-mega:hover .mega-trigger svg, .has-mega:focus-within .mega-trigger svg { transform: rotate(180deg); }
 .mega-panel {
-  position: absolute; top: calc(100% + 14px); left: 50%; transform: translateX(-50%) translateY(8px);
+  position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(8px);
   width: min(420px, 90vw); background: #fff; border: 1px solid var(--border); border-radius: 14px;
   box-shadow: var(--shadow); padding: 10px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px;
   opacity: 0; pointer-events: none; transition: opacity .15s ease, transform .15s ease; z-index: 150;
