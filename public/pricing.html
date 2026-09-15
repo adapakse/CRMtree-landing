@@ -96,6 +96,25 @@
     }
     .toggle-switch.monthly ~ .save-badge { opacity: 0; }
 
+    /* ── CURRENCY TOGGLE ──────────────────────────────────────────────── */
+    .currency-toggle {
+      display: inline-flex; align-items: center; gap: 2px; background: #fff; border: 1.5px solid var(--border);
+      border-radius: 999px; padding: 3px; margin-left: 12px; vertical-align: middle;
+    }
+    .currency-toggle button {
+      border: none; background: none; font-family: inherit; font-weight: 700; font-size: 13px;
+      padding: 6px 14px; border-radius: 999px; color: var(--text-muted); cursor: pointer;
+    }
+    .currency-toggle button.active { background: var(--navy); color: #fff; }
+    .currency-note { display: block; font-size: 12px; color: var(--text-muted); margin-top: 10px; }
+
+    /* Reorder currency symbol vs amount depending on selected currency */
+    .plan-price .price-currency { order: 1; }
+    .plan-price .price-amount { order: 2; }
+    .plan-price .price-period { order: 3; }
+    body.currency-pln .plan-price .price-currency { order: 2; margin-left: 4px; padding-bottom: 12px; }
+    body.currency-pln .plan-price .price-amount { order: 1; }
+
     /* ── PRICING GRID ─────────────────────────────────────────────────── */
     .pricing-section {
       padding: 0 0 100px;
@@ -382,13 +401,25 @@
         <img src="logo.webp" alt="CRMtree" class="navbar__logo-img" width="300" height="200" />
       </a>
       <nav class="navbar__links">
-        <a href="/#features">Funkcje</a>
-        <a href="/#how-it-works">Jak działa</a>
-        <a href="/pricing.html" style="color:#fff">Cennik</a>
-        <a href="/blog">Blog</a>
-        <a href="/#contact">Kontakt</a>
+        <a href="/#features" data-i18n="nav.features">Funkcje</a>
+        <a href="/#compare" data-i18n="nav.compare">Porównanie</a>
+        <a href="/#security" data-i18n="nav.security">Bezpieczeństwo</a>
+        <a href="/#aiact" data-i18n="nav.aiact">AI Act</a>
+        <a href="/pricing.html" style="color:#fff" data-i18n="nav.pricing">Cennik</a>
+        <a href="/blog" data-i18n="nav.blog">Blog</a>
+        <a href="/#contact" data-i18n="nav.contact">Kontakt</a>
       </nav>
-      <a href="https://demo.crmtree.pl/login" class="btn btn--outline-light">Zaloguj się</a>
+      <div class="navbar__right">
+        <div class="langpicker">
+          <button class="langbtn" id="langBtn" type="button" aria-haspopup="true" aria-expanded="false">
+            <span id="langBtnLabel">PL</span>
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </button>
+          <div class="langmenu" id="langMenu"></div>
+        </div>
+        <a href="https://demo.crmtree.pl/login" class="btn btn--outline-light" data-i18n="nav.login">Zaloguj się</a>
+        <a href="/#trial" class="btn btn--primary" data-i18n="nav.cta_trial">Wypróbuj 14 dni</a>
+      </div>
     </div>
   </header>
 
@@ -405,6 +436,13 @@
         <span class="billing-toggle__label" id="labelMonthly">Miesięczne</span>
         <span class="save-badge" id="saveBadge">Oszczędzasz do 32%</span>
       </div>
+
+      <!-- CURRENCY TOGGLE -->
+      <div class="currency-toggle" id="currencyToggle">
+        <button type="button" class="active" data-currency="eur">EUR €</button>
+        <button type="button" data-currency="pln">PLN zł</button>
+      </div>
+      <span class="currency-note">Ceny w PLN są orientacyjne — przelicznik ~4,30 PLN/EUR, aktualizowany okresowo.</span>
     </div>
   </section>
 
@@ -420,19 +458,19 @@
 
           <!-- Annual price -->
           <div class="plan-price price-annual">
-            <span class="price-currency">€</span>
-            <span class="price-amount">19</span>
+            <span class="price-currency" data-eur="€" data-pln="zł">€</span>
+            <span class="price-amount" data-eur="19" data-pln="82">19</span>
             <span class="price-period">/użytkownik<br>/miesiąc</span>
           </div>
           <!-- Monthly price -->
           <div class="plan-price price-monthly">
-            <span class="price-currency">€</span>
-            <span class="price-amount">28</span>
+            <span class="price-currency" data-eur="€" data-pln="zł">€</span>
+            <span class="price-amount" data-eur="28" data-pln="120">28</span>
             <span class="price-period">/użytkownik<br>/miesiąc</span>
           </div>
 
           <div class="plan-billing-note">
-            <span class="annual-note">Rozliczenie roczne · €228/rok/użytkownik</span>
+            <span class="annual-note" data-eur="Rozliczenie roczne · €228/rok/użytkownik" data-pln="Rozliczenie roczne · 980 zł/rok/użytkownik">Rozliczenie roczne · €228/rok/użytkownik</span>
             <span class="monthly-note">Rozliczenie miesięczne</span>
           </div>
 
@@ -478,19 +516,19 @@
 
           <!-- Annual price -->
           <div class="plan-price price-annual">
-            <span class="price-currency">€</span>
-            <span class="price-amount">28</span>
+            <span class="price-currency" data-eur="€" data-pln="zł">€</span>
+            <span class="price-amount" data-eur="28" data-pln="120">28</span>
             <span class="price-period">/użytkownik<br>/miesiąc</span>
           </div>
           <!-- Monthly price -->
           <div class="plan-price price-monthly">
-            <span class="price-currency">€</span>
-            <span class="price-amount">36</span>
+            <span class="price-currency" data-eur="€" data-pln="zł">€</span>
+            <span class="price-amount" data-eur="36" data-pln="155">36</span>
             <span class="price-period">/użytkownik<br>/miesiąc</span>
           </div>
 
           <div class="plan-billing-note">
-            <span class="annual-note">Rozliczenie roczne · €336/rok/użytkownik</span>
+            <span class="annual-note" data-eur="Rozliczenie roczne · €336/rok/użytkownik" data-pln="Rozliczenie roczne · 1445 zł/rok/użytkownik">Rozliczenie roczne · €336/rok/użytkownik</span>
             <span class="monthly-note">Rozliczenie miesięczne</span>
           </div>
 
@@ -598,7 +636,7 @@
         <div class="note-item">
           <div class="note-icon">🚀</div>
           <h4>Wdrożenie w 24h</h4>
-          <p>Po podpisaniu umowy Twoje środowisko jest gotowe następnego dnia roboczego. Import danych z Excela w kilka minut.</p>
+          <p>Po podpisaniu umowy Twoje środowisko jest gotowe następnego dnia roboczego. Import danych z pliku CSV w kilka minut.</p>
         </div>
         <div class="note-item">
           <div class="note-icon">🔒</div>
@@ -633,12 +671,13 @@
         <p>CRM dla nowoczesnej firmy</p>
       </div>
       <div class="footer__links">
-        <a href="https://demo.crmtree.pl/login">Zaloguj się</a>
-        <a href="/#features">Funkcje</a>
-        <a href="/pricing.html">Cennik</a>
-        <a href="/blog">Blog</a>
-        <a href="/#contact">Kontakt</a>
-        <a href="/polityka-prywatnosci.html">Polityka prywatności</a>
+        <a href="https://demo.crmtree.pl/login" data-i18n="footer.login">Zaloguj się</a>
+        <a href="/#features" data-i18n="footer.features">Funkcje</a>
+        <a href="/pricing.html" data-i18n="footer.pricing">Cennik</a>
+        <a href="/blog" data-i18n="footer.blog">Blog</a>
+        <a href="/#aiact" data-i18n="footer.aiact">AI Act</a>
+        <a href="/#contact" data-i18n="footer.contact">Kontakt</a>
+        <a href="/polityka-prywatnosci.html" data-i18n="footer.privacy">Polityka prywatności</a>
       </div>
       <p class="footer__legal">Właściciel marki CRMtree: Comparme Sp. z o.o. · ul. Herbu Janina 5, 02-972 Warszawa · NIP 5213664910 · REGON 147067912</p>
       <p class="footer__copy">&copy; 2026 CRMtree. Wszelkie prawa zastrzeżone.</p>
@@ -664,7 +703,19 @@
     // Kliknięcie na etykiety też przełącza
     labelAnnual.addEventListener('click', () => { if (isMonthly) toggle.click(); });
     labelMonthly.addEventListener('click', () => { if (!isMonthly) toggle.click(); });
+
+    // ── CURRENCY TOGGLE (EUR / PLN) ──────────────────────────────────
+    const currencyButtons = document.querySelectorAll('#currencyToggle button');
+    function setCurrency(cur) {
+      document.body.classList.toggle('currency-pln', cur === 'pln');
+      currencyButtons.forEach(b => b.classList.toggle('active', b.dataset.currency === cur));
+      document.querySelectorAll('[data-eur][data-pln]').forEach(el => {
+        el.textContent = cur === 'pln' ? el.dataset.pln : el.dataset.eur;
+      });
+    }
+    currencyButtons.forEach(b => b.addEventListener('click', () => setCurrency(b.dataset.currency)));
   </script>
 
+  <script src="i18n.js"></script>
 </body>
 </html>

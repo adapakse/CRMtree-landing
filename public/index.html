@@ -53,13 +53,25 @@
         <img src="logo.webp" alt="CRMtree" class="navbar__logo-img" width="300" height="200" />
       </a>
       <nav class="navbar__links">
-        <a href="#features">Funkcje</a>
-        <a href="#how-it-works">Jak działa</a>
-        <a href="/pricing.html">Cennik</a>
-        <a href="/blog">Blog</a>
-        <a href="#contact">Kontakt</a>
+        <a href="#features" data-i18n="nav.features">Funkcje</a>
+        <a href="#compare" data-i18n="nav.compare">Porównanie</a>
+        <a href="#security" data-i18n="nav.security">Bezpieczeństwo</a>
+        <a href="#aiact" data-i18n="nav.aiact">AI Act</a>
+        <a href="/pricing.html" data-i18n="nav.pricing">Cennik</a>
+        <a href="/blog" data-i18n="nav.blog">Blog</a>
+        <a href="#contact" data-i18n="nav.contact">Kontakt</a>
       </nav>
-      <a href="https://demo.crmtree.pl/login" class="btn btn--outline-light">Zaloguj się</a>
+      <div class="navbar__right">
+        <div class="langpicker">
+          <button class="langbtn" id="langBtn" type="button" aria-haspopup="true" aria-expanded="false">
+            <span id="langBtnLabel">PL</span>
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </button>
+          <div class="langmenu" id="langMenu"></div>
+        </div>
+        <a href="https://demo.crmtree.pl/login" class="btn btn--outline-light" data-i18n="nav.login">Zaloguj się</a>
+        <a href="#trial" class="btn btn--primary" data-i18n="nav.cta_trial">Wypróbuj 14 dni</a>
+      </div>
     </div>
   </header>
 
@@ -67,11 +79,12 @@
   <section class="hero">
     <div class="container hero__inner">
       <div class="hero__content">
-        <h1>Zarządzaj sprzedażą&nbsp;i partnerami<br /><span class="highlight">w jednym miejscu</span></h1>
-        <p class="hero__sub">CRMtree to elastyczna platforma CRM stworzona specjalnie dla efektywności procesów i rozwoju firm. Kontroluj budżety, monitoruj wyniki sprzedaży i buduj relacje z partnerami — wszystko bez arkuszy Excel.</p>
+        <span class="badge" data-i18n="hero.eyebrow">CRM dla każdej branży</span>
+        <h1 data-i18n="hero.h1">Od zimnego leada do stałego klienta. Jeden system.</h1>
+        <p class="hero__sub" data-i18n="hero.sub">CRMtree prowadzi cały cykl wzrostu firmy: wzbogacanie baz i cold calling, pracę na ciepłych prospektach, inbound przez SEObot, opiekę nad klientami i monitoring ryzyka odejścia.</p>
         <div class="hero__cta">
-          <a href="https://demo.crmtree.pl/login" class="btn btn--primary btn--lg">Przejdź do aplikacji</a>
-          <a href="#contact" class="btn btn--ghost btn--lg">Zapytaj o dostęp</a>
+          <a href="#trial" class="btn btn--primary btn--lg" data-i18n="hero.cta_primary">Wypróbuj 14 dni za darmo</a>
+          <a href="#features" class="btn btn--ghost btn--lg" data-i18n="hero.cta_secondary">Zobacz funkcje</a>
         </div>
       </div>
       <div class="hero__visual">
@@ -82,52 +95,184 @@
     </div>
   </section>
 
+  <!-- TRIAL -->
+  <section class="trial" id="trial">
+    <div class="container trial__inner">
+      <div>
+        <span class="eyebrow" data-i18n="trial.eyebrow">Zacznij już dziś</span>
+        <h2 data-i18n="trial.h2">Wypróbuj CRMtree przez 14 dni za darmo</h2>
+        <p class="trial__sub" data-i18n="trial.sub">Pełny dostęp do wszystkich funkcji, bez integracji IT.</p>
+        <form class="trial-form" id="trialForm">
+          <input type="hidden" name="access_key" value="f2f53912-5f35-4b8f-b3d8-743e8759f76b" />
+          <input type="hidden" name="subject" value="Zgłoszenie do 14-dniowego triala z crmtree.pl" />
+          <input type="hidden" name="from_name" value="CRMtree Landing — Trial" />
+          <input type="email" name="email" required data-i18n-placeholder="trial.email_placeholder" placeholder="Firmowy adres e-mail" />
+          <button type="submit" class="btn btn--primary btn--lg" data-i18n="trial.cta">Rozpocznij za darmo</button>
+        </form>
+        <div id="trialSuccess" class="form-success" style="display:none" data-i18n="contact.success">✅ Dziękujemy! Odezwiemy się wkrótce.</div>
+        <div id="trialError" class="form-error" style="display:none" data-i18n="contact.error">❌ Coś poszło nie tak. Spróbuj ponownie.</div>
+        <p class="trial__note" data-i18n="trial.note">Nie potrzebujesz karty płatniczej. Zrezygnujesz w każdej chwili.</p>
+      </div>
+    </div>
+    <script>
+      document.getElementById('trialForm').addEventListener('submit', async function (e) {
+        e.preventDefault();
+        var ok = document.getElementById('trialSuccess');
+        var err = document.getElementById('trialError');
+        ok.style.display = 'none'; err.style.display = 'none';
+        try {
+          var res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(this) });
+          var data = await res.json();
+          if (data.success) { ok.style.display = 'block'; this.reset(); } else { err.style.display = 'block'; }
+        } catch (e2) { err.style.display = 'block'; }
+      });
+    </script>
+  </section>
+
+  <!-- GROWTH CYCLE -->
+  <section class="cycle-section" id="cycle">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow" data-i18n="cycle.eyebrow">Jak rośniemy razem z Tobą</span>
+        <h2 data-i18n="cycle.h2">Cały cykl wzrostu — od zimnego leada do stałego klienta</h2>
+        <p data-i18n="cycle.sub">CRMtree nie kończy się na zamknięciu transakcji. Prowadzi cały proces: pozyskanie, kwalifikację, konwersję i utrzymanie klienta.</p>
+      </div>
+      <div class="cycle">
+        <div class="cycle__stage"><div class="cycle__num">01</div><h3 data-i18n="cycle.s1_t">Wzbogacanie baz danych</h3><p data-i18n="cycle.s1_d">Domena firmy z zimnej bazy leadów jest automatycznie uzupełniana o branżę i wielkość.</p></div>
+        <div class="cycle__stage"><div class="cycle__num">02</div><h3 data-i18n="cycle.s2_t">Cold calling</h3><p data-i18n="cycle.s2_d">Handlowiec dzwoni do zakwalifikowanych leadów wprost z CRM, jednym kliknięciem.</p></div>
+        <div class="cycle__stage"><div class="cycle__num">03</div><h3 data-i18n="cycle.s3_t">Analiza rozmowy AI</h3><p data-i18n="cycle.s3_d">AI ocenia rozmowę, wystawia skłonność do zakupu i sama oznacza follow-up z datą kontaktu.</p></div>
+        <div class="cycle__stage"><div class="cycle__num">04</div><h3 data-i18n="cycle.s4_t">Ciepłe prospekty</h3><p data-i18n="cycle.s4_d">Firma z wysokim scoringiem trafia do lejka sprzedażowego z priorytetem.</p></div>
+        <div class="cycle__stage"><div class="cycle__num">05</div><h3 data-i18n="cycle.s5_t">Inbound przez SEObot</h3><p data-i18n="cycle.s5_d">SEObot pisze i publikuje artykuły SEO, które przyciągają leady bez telefonowania.</p></div>
+        <div class="cycle__stage"><div class="cycle__num">06</div><h3 data-i18n="cycle.s6_t">Performance klientów</h3><p data-i18n="cycle.s6_d">Każdy partner ma raporty wyników i opiekuna widocznego na jednej karcie.</p></div>
+        <div class="cycle__stage"><div class="cycle__num">07</div><h3 data-i18n="cycle.s7_t">Churn i klienci uśpieni</h3><p data-i18n="cycle.s7_d">System liczy churn score i oznacza partnerów bez aktywności.</p></div>
+        <div class="cycle__stage"><div class="cycle__num">08</div><h3 data-i18n="cycle.s8_t">Rozbudowana analityka</h3><p data-i18n="cycle.s8_d">Wyniki sprzedaży, partnerów i budżetów w jednym dashboardzie.</p></div>
+      </div>
+    </div>
+  </section>
+
   <!-- FEATURES -->
   <section class="features" id="features">
     <div class="container">
       <div class="section-header">
-        <h2>Wszystko, czego potrzebujesz</h2>
-        <p>Jeden system zamiast dziesiątek arkuszy i narzędzi</p>
+        <h2 data-i18n="features.h2">Wszystko, czego potrzebujesz</h2>
+        <p data-i18n="features.sub">Jeden system zamiast dziesiątek arkuszy i narzędzi</p>
       </div>
       <div class="features__grid">
 
         <div class="feature-card">
           <div class="feature-card__icon">📊</div>
-          <h3>Dashboard sprzedaży</h3>
-          <p>Bieżące wyniki sprzedaży w czasie rzeczywistym. Filtry po okresie, partnerze i handlowcu. Eksport do Excel jednym kliknięciem.</p>
+          <h3 data-i18n="features.f1_t">Dashboard sprzedaży</h3>
+          <p data-i18n="features.f1_d">Bieżące wyniki sprzedaży w czasie rzeczywistym, z eksportem danych. Filtry po okresie, partnerze i handlowcu.</p>
         </div>
 
         <div class="feature-card">
           <div class="feature-card__icon">🤝</div>
-          <h3>Zarządzanie partnerami</h3>
-          <p>Baza partnerów biznesowych z historią transakcji, dokumentami i przypisanymi opiekunami. Grupowanie i tagowanie według segmentu.</p>
+          <h3 data-i18n="features.f2_t">Zarządzanie partnerami</h3>
+          <p data-i18n="features.f2_d">Baza partnerów z historią transakcji, dokumentami i przypisanymi opiekunami. Grupowanie i tagowanie według segmentu.</p>
         </div>
 
         <div class="feature-card">
           <div class="feature-card__icon">💰</div>
-          <h3>Budżety i cele</h3>
-          <p>Planowanie budżetów rocznych i miesięcznych per handlowiec. Automatyczne porównanie planu z wykonaniem i alerty odchyleń.</p>
+          <h3 data-i18n="features.f3_t">Budżety i cele</h3>
+          <p data-i18n="features.f3_d">Planowanie budżetów rocznych i miesięcznych per handlowiec. Automatyczne porównanie planu z wykonaniem.</p>
         </div>
 
         <div class="feature-card">
-          <div class="feature-card__icon">📧</div>
-          <h3>Integracja Gmail</h3>
-          <p>Synchronizacja korespondencji mailowej z partnerami bezpośrednio w CRM. Historia maili widoczna przy karcie partnera.</p>
+          <div class="feature-card__icon">💬</div>
+          <h3 data-i18n="features.f4_t">Komunikacja wielokanałowa</h3>
+          <p data-i18n="features.f4_d">E-mail (Gmail, Outlook, Zoho), WhatsApp Business, telefon — wszystko widoczne przy karcie leada i partnera.</p>
+          <img src="komunikacja.webp" alt="" class="feature-card__photo" loading="lazy" width="900" height="675" />
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-card__icon">🎯</div>
+          <h3 data-i18n="features.f5_t">Analiza rozmów AI</h3>
+          <p data-i18n="features.f5_d">AI ocenia skłonność do zakupu z notatek lub transkrypcji rozmów i wystawia sygnały oraz obiekcje klienta.</p>
+          <img src="analiza-ai.webp" alt="" class="feature-card__photo" loading="lazy" width="900" height="675" />
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-card__icon">✦</div>
+          <h3 data-i18n="features.f6_t">SEObot</h3>
+          <p data-i18n="features.f6_d">AI pisze i planuje publikację artykułów SEO, mierzy efekt w Google Search Console.</p>
+          <img src="seobot.webp" alt="" class="feature-card__photo" loading="lazy" width="900" height="675" />
         </div>
 
         <div class="feature-card">
           <div class="feature-card__icon">📁</div>
-          <h3>Dokumenty i umowy</h3>
-          <p>Przechowywanie umów, ofert i dokumentów przy partnerach. Szybki podgląd bez wychodzenia z systemu.</p>
+          <h3 data-i18n="features.f7_t">Dokumenty i workflow</h3>
+          <p data-i18n="features.f7_d">Obieg podpisów i akceptacji, przechowywanie umów i ofert przy partnerach.</p>
         </div>
 
         <div class="feature-card">
           <div class="feature-card__icon">🔐</div>
-          <h3>Multi-tenant &amp; bezpieczeństwo</h3>
-          <p>Każda firma ma izolowane środowisko. Zarządzanie rolami i uprawnieniami użytkowników. Logowanie przez SSO/SAML.</p>
+          <h3 data-i18n="features.f8_t">Bezpieczeństwo i role</h3>
+          <p data-i18n="features.f8_d">Środowisko każdej firmy w pełni odizolowane. Role, uprawnienia, logowanie przez SSO/SAML.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-card__icon">📱</div>
+          <h3 data-i18n="features.f9_t">Aplikacja mobilna</h3>
+          <p data-i18n="features.f9_d">Leady, partnerzy i zadania zawsze pod ręką, z powiadomieniami push. iOS i Android.</p>
         </div>
 
       </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON -->
+  <!-- TODO(legal): przed publikacją zweryfikować aktualność każdego twierdzenia i skonsultować z prawnikiem
+       (reklama porównawcza z nazwami konkurentów). Źródło: wewnętrzna analiza CRMtree_przewagi.pdf, sierpień 2026. -->
+  <section class="compare-section" id="compare">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow" data-i18n="compare.eyebrow">Porównanie</span>
+        <h2 data-i18n="compare.h2">CRMtree na tle innych systemów CRM</h2>
+        <p data-i18n="compare.sub">Zestawienie względem HubSpot, Pipedrive, Firmao i Livespace. Pokazujemy tylko obszary, w których CRMtree realnie wyprzedza konkurencję.</p>
+      </div>
+      <div class="compare-wrap">
+        <table class="compare">
+          <thead>
+            <tr>
+              <th data-i18n="compare.col_feature">Cecha</th>
+              <th class="col-us" data-i18n="compare.col_us">CRMtree</th>
+              <th>HubSpot</th><th>Pipedrive</th><th>Firmao</th><th>Livespace</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="compare-group"><td colspan="6" data-i18n="compare.g1">Wdrożenie</td></tr>
+            <tr><td data-i18n="compare.r1">Onboarding klienta krok po kroku</td><td class="col-us"><span class="mark--yes">✓</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td></tr>
+            <tr><td data-i18n="compare.r2">Model cenowy bez limitu stanowisk</td><td class="col-us"><span class="mark--yes">✓</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td></tr>
+
+            <tr class="compare-group"><td colspan="6" data-i18n="compare.g2">E-mail i komunikacja real-time</td></tr>
+            <tr><td data-i18n="compare.r3">Real-time synchronizacja e-maili</td><td class="col-us"><span class="mark--yes">✓</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td></tr>
+            <tr><td data-i18n="compare.r4">Śledzenie odczytania wiadomości</td><td class="col-us"><span class="mark--yes">✓</span></td><td><span class="mark--partial">~</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td></tr>
+            <tr><td data-i18n="compare.r5">WhatsApp Business w Centrum komunikacji</td><td class="col-us"><span class="mark--yes">✓</span></td><td><span class="mark--no">nieznane</span></td><td><span class="mark--no">nieznane</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td></tr>
+
+            <tr class="compare-group"><td colspan="6" data-i18n="compare.g3">Telefonia i analiza rozmów AI</td></tr>
+            <tr><td data-i18n="compare.r6">Wbudowany softphone WebRTC</td><td class="col-us"><span class="mark--yes">✓</span></td><td><span class="mark--yes">✓ (płatny moduł)</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td></tr>
+            <tr><td data-i18n="compare.r7">Nagrywanie i transkrypcja połączeń (AI)</td><td class="col-us"><span class="mark--yes">✓</span></td><td><span class="mark--partial">~</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td></tr>
+            <tr><td data-i18n="compare.r8">Analiza sentymentu i score'u rozmowy (AI)</td><td class="col-us"><span class="mark--yes">✓</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td></tr>
+            <tr><td data-i18n="compare.r9">Automatyczne wykrycie follow-up (AI, PL)</td><td class="col-us"><span class="mark--yes">✓</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td></tr>
+
+            <tr class="compare-group"><td colspan="6" data-i18n="compare.g4">Dane i wzbogacanie</td></tr>
+            <tr><td data-i18n="compare.r10">Wzbogacanie firmy z GUS/BIR 1.1</td><td class="col-us"><span class="mark--yes">✓</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--yes">✓</span></td><td><span class="mark--no">✗</span></td></tr>
+            <tr><td data-i18n="compare.r11">Integracja z hurtownią danych (DWH)</td><td class="col-us"><span class="mark--yes">✓</span></td><td><span class="mark--partial">~</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td></tr>
+            <tr><td data-i18n="compare.r12">Health Score i Churn Score</td><td class="col-us"><span class="mark--yes">✓</span></td><td><span class="mark--partial">~ (plan Enterprise)</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td></tr>
+
+            <tr class="compare-group"><td colspan="6" data-i18n="compare.g5">Analityka i powiadomienia</td></tr>
+            <tr><td data-i18n="compare.r13">5 dashboardów analitycznych bez BI</td><td class="col-us"><span class="mark--yes">✓</span></td><td><span class="mark--partial">~ (Enterprise)</span></td><td><span class="mark--partial">~ (Advanced)</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td></tr>
+            <tr><td data-i18n="compare.r14">Poranny mail zbiorczy (Daily Digest)</td><td class="col-us"><span class="mark--yes">✓</span></td><td><span class="mark--partial">~ (Enterprise)</span></td><td><span class="mark--partial">~ (dodatek)</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td></tr>
+
+            <tr class="compare-group"><td colspan="6" data-i18n="compare.g6">Dokumenty</td></tr>
+            <tr><td data-i18n="compare.r15">Zarządzanie dokumentami i akceptacje</td><td class="col-us"><span class="mark--yes">✓</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--partial">~</span></td><td><span class="mark--no">✗</span></td></tr>
+
+            <tr class="compare-group"><td colspan="6" data-i18n="compare.g7">Bezpieczeństwo i infrastruktura</td></tr>
+            <tr><td data-i18n="compare.r16">Dedykowana infrastruktura / on-prem</td><td class="col-us"><span class="mark--yes">✓</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">nieznane</span></td><td><span class="mark--no">✗</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="compare-note" data-i18n="compare.note">Zestawienie na podstawie wewnętrznej analizy funkcjonalnej CRMtree, zweryfikowanej względem publicznie dostępnej dokumentacji konkurentów.</p>
     </div>
   </section>
 
@@ -135,27 +280,96 @@
   <section class="how-it-works" id="how-it-works">
     <div class="container">
       <div class="section-header">
-        <h2>Jak zacząć</h2>
-        <p>Wdrożenie w 3 krokach, bez integracji IT</p>
+        <h2 data-i18n="how.h2">Jak zacząć</h2>
+        <p data-i18n="how.sub">Trzy kroki, bez integracji IT</p>
       </div>
       <div class="steps">
         <div class="step">
           <div class="step__number">1</div>
-          <h3>Zakładasz konto</h3>
-          <p>Wypełniasz formularz kontaktowy. Tworzymy dedykowane środowisko dla Twojej firmy w ciągu 24h.</p>
+          <h3 data-i18n="how.step1_t">Zakładasz konto</h3>
+          <p data-i18n="how.step1_d">Wypełniasz formularz kontaktowy. Tworzymy dedykowane środowisko dla Twojej firmy w ciągu 24h.</p>
         </div>
         <div class="step__connector"></div>
         <div class="step">
           <div class="step__number">2</div>
-          <h3>Importujesz dane</h3>
-          <p>Wgrywasz listę partnerów i handlowców z pliku Excel. System importuje dane automatycznie.</p>
+          <h3 data-i18n="how.step2_t">Importujesz dane</h3>
+          <p data-i18n="how.step2_d">Wgrywasz listę partnerów i handlowców z pliku CSV. System importuje dane automatycznie.</p>
         </div>
         <div class="step__connector"></div>
         <div class="step">
           <div class="step__number">3</div>
-          <h3>Zaczynasz pracę</h3>
-          <p>Twój zespół loguje się i od razu widzi dashboard z wynikami. Zero szkolenia — interfejs mówi sam za siebie.</p>
+          <h3 data-i18n="how.step3_t">Zaczynasz pracę</h3>
+          <p data-i18n="how.step3_d">Twój zespół loguje się i od razu widzi dashboard z wynikami. Zero szkolenia.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECURITY -->
+  <section class="security-section" id="security">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow" data-i18n="security.eyebrow">Bezpieczeństwo</span>
+        <h2 data-i18n="security.h2">Dane Twojej firmy nie mieszają się z niczyimi innymi</h2>
+        <p data-i18n="security.sub">Każda firma pracuje we w pełni odizolowanym środowisku — to jest wbudowane.</p>
+      </div>
+      <div class="trust-grid">
+        <div class="trust-card"><h3 data-i18n="security.sec1_t">Pełna izolacja danych</h3><p data-i18n="security.sec1_d">Środowisko każdej firmy jest odseparowane — użytkownicy jednej firmy nigdy nie widzą danych innej.</p></div>
+        <div class="trust-card"><h3 data-i18n="security.sec2_t">RBAC i SSO/SAML</h3><p data-i18n="security.sec2_d">Dostęp kontrolowany rolami i uprawnieniami. Logowanie firmowe przez SSO/SAML.</p></div>
+        <div class="trust-card"><h3 data-i18n="security.sec3_t">Serwery w UE</h3><p data-i18n="security.sec3_d">Infrastruktura hostowana w Microsoft Azure, region Polska Centralna.</p></div>
+        <div class="trust-card"><h3 data-i18n="security.sec4_t">Zgodność z RODO</h3><p data-i18n="security.sec4_d">Pełna polityka prywatności i jasny podział ról administrator / podmiot przetwarzający.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI ACT / GOVAI -->
+  <!-- TODO(legal): sformułowania o zgodności z AI Act wymagają przeglądu prawnego przed publikacją,
+       tak samo jak przy każdym twierdzeniu o zgodności z regulacją. GovAI = wewnętrzny produkt/bramka
+       zgodności z AI Act (klasyfikacja ryzyka, nadzór człowieka, niezmienny log audytowy). -->
+  <section class="aiact-section" id="aiact">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow" data-i18n="aiact.eyebrow">Zgodność z prawem</span>
+        <h2 data-i18n="aiact.h2">Gotowi na AI Act — nie tylko na RODO</h2>
+      </div>
+      <p class="aiact__body" data-i18n="aiact.body">Funkcje AI w CRMtree (Analiza rozmów, Prospekty, SEObot) działają w oparciu o natywną integrację z GovAI — naszą bramką zgodności z unijnym AI Act. Każde wywołanie modelu AI jest klasyfikowane pod kątem ryzyka, skanowane pod kątem danych osobowych i rejestrowane w niezmiennym dzienniku audytowym. Efekt: zgodność z AI Act od pierwszego dnia, tak samo jak zapewniamy zgodność z RODO.</p>
+      <div class="aiact-grid">
+        <div class="aiact-card"><h3 data-i18n="aiact.card1_t">Klasyfikacja ryzyka</h3><p data-i18n="aiact.card1_d">Automatyczna klasyfikacja każdego wywołania AI wg art. 5, Aneksu III i art. 50 AI Act.</p></div>
+        <div class="aiact-card"><h3 data-i18n="aiact.card2_t">Nadzór człowieka</h3><p data-i18n="aiact.card2_d">Wywołania wymagające przeglądu czekają na kwalifikowanego recenzenta, zanim trafią dalej.</p></div>
+        <div class="aiact-card"><h3 data-i18n="aiact.card3_t">Niezmienny dziennik audytowy</h3><p data-i18n="aiact.card3_d">Każda decyzja AI zapisana ze znacznikiem czasu — gotowy dowód na audyt.</p></div>
+        <div class="aiact-card"><h3 data-i18n="aiact.card4_t">RODO i AI Act razem</h3><p data-i18n="aiact.card4_d">Jedna, spójna warstwa zgodności zamiast osobnych wdrożeń dla każdej regulacji.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow" data-i18n="faq.eyebrow">Pytania</span>
+        <h2 data-i18n="faq.h2">Najczęściej pytacie o to</h2>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item" open>
+          <summary data-i18n="faq.q1">Czy CRMtree nadaje się dla mojej branży?</summary>
+          <p data-i18n="faq.a1">Tak — CRMtree nie jest zbudowany pod jeden konkretny model sprzedaży. Konfigurujesz lejek, pola i role pod proces, który już masz w firmie.</p>
+        </details>
+        <details class="faq-item">
+          <summary data-i18n="faq.q2">Czy mogę wypróbować CRMtree za darmo?</summary>
+          <p data-i18n="faq.a2">Tak — 14 dni pełnego dostępu, bez karty płatniczej. Zrezygnujesz w każdej chwili.</p>
+        </details>
+        <details class="faq-item">
+          <summary data-i18n="faq.q3">Jaką pocztę mogę podłączyć?</summary>
+          <p data-i18n="faq.a3">Gmail, Outlook i Zoho — korespondencja synchronizuje się bezpośrednio przy kartach leadów i partnerów.</p>
+        </details>
+        <details class="faq-item">
+          <summary data-i18n="faq.q4">Jak działa analiza rozmów AI?</summary>
+          <p data-i18n="faq.a4">System analizuje notatki lub transkrypcje rozmów i wystawia ocenę skłonności do zakupu wraz z sygnałami i obiekcjami klienta.</p>
+        </details>
+        <details class="faq-item">
+          <summary data-i18n="faq.q5">Gdzie są przechowywane nasze dane?</summary>
+          <p data-i18n="faq.a5">Na serwerach Microsoft Azure w regionie Polska Centralna, zgodnie z RODO i AI Act.</p>
+        </details>
       </div>
     </div>
   </section>
@@ -164,10 +378,10 @@
   <section class="login-cta">
     <div class="container login-cta__inner">
       <div class="login-cta__text">
-        <h2>Masz już konto?</h2>
-        <p>Zaloguj się do swojego środowiska CRMtree</p>
+        <h2 data-i18n="logincta.h2">Masz już konto?</h2>
+        <p data-i18n="logincta.sub">Zaloguj się do swojego środowiska CRMtree</p>
       </div>
-      <a href="https://demo.crmtree.pl/login" class="btn btn--primary btn--lg">Przejdź do aplikacji →</a>
+      <a href="https://demo.crmtree.pl/login" class="btn btn--primary btn--lg" data-i18n="logincta.cta">Przejdź do aplikacji →</a>
     </div>
   </section>
 
@@ -175,10 +389,10 @@
   <section class="contact" id="contact">
     <div class="container">
       <div class="section-header">
-        <h2>Zapytaj o dostęp</h2>
-        <p>Skontaktujemy się w ciągu jednego dnia roboczego</p>
+        <h2 data-i18n="contact.h2">Zapytaj o dostęp</h2>
+        <p data-i18n="contact.sub">Skontaktujemy się w ciągu jednego dnia roboczego</p>
         <p class="contact-email-hint">
-          Wolisz napisać bezpośrednio?
+          <span data-i18n="contact.hint">Wolisz napisać bezpośrednio?</span>
           <a href="mailto:crmtree_kontakt@crmtree.pl" class="contact-email-link">crmtree_kontakt@crmtree.pl</a>
         </p>
       </div>
@@ -188,35 +402,35 @@
         <input type="hidden" name="from_name" value="CRMtree Landing" />
         <div class="form-row">
           <div class="form-group">
-            <label for="name">Imię i nazwisko</label>
-            <input type="text" id="name" name="name" placeholder="Jan Kowalski" required />
+            <label for="name" data-i18n="contact.name_label">Imię i nazwisko</label>
+            <input type="text" id="name" name="name" data-i18n-placeholder="contact.name_ph" placeholder="Jan Kowalski" required />
           </div>
           <div class="form-group">
-            <label for="company">Firma</label>
-            <input type="text" id="company" name="company" placeholder="Nazwa firmy" required />
+            <label for="company" data-i18n="contact.company_label">Firma</label>
+            <input type="text" id="company" name="company" data-i18n-placeholder="contact.company_ph" placeholder="Nazwa firmy" required />
           </div>
         </div>
         <div class="form-row">
           <div class="form-group">
-            <label for="email">Email służbowy</label>
-            <input type="email" id="email" name="email" placeholder="jan@firma.pl" required />
+            <label for="email" data-i18n="contact.email_label">Email służbowy</label>
+            <input type="email" id="email" name="email" data-i18n-placeholder="contact.email_ph" placeholder="jan@firma.pl" required />
           </div>
           <div class="form-group">
-            <label for="phone">Telefon <span class="optional">(opcjonalnie)</span></label>
-            <input type="tel" id="phone" name="phone" placeholder="+48 500 000 000" />
+            <label for="phone"><span data-i18n="contact.phone_label">Telefon</span> <span class="optional" data-i18n="contact.phone_optional">(opcjonalnie)</span></label>
+            <input type="tel" id="phone" name="phone" data-i18n-placeholder="contact.phone_ph" placeholder="+48 500 000 000" />
           </div>
         </div>
         <div class="form-group">
-          <label for="message">Wiadomość</label>
-          <textarea id="message" name="message" rows="4" placeholder="Opisz krótko swoje potrzeby lub zadaj pytanie…"></textarea>
+          <label for="message" data-i18n="contact.message_label">Wiadomość</label>
+          <textarea id="message" name="message" rows="4" data-i18n-placeholder="contact.message_ph" placeholder="Opisz krótko swoje potrzeby lub zadaj pytanie…"></textarea>
         </div>
-        <div id="formSuccess" class="form-success" style="display:none">
+        <div id="formSuccess" class="form-success" style="display:none" data-i18n="contact.success">
           ✅ Dziękujemy! Odezwiemy się wkrótce.
         </div>
-        <div id="formError" class="form-error" style="display:none">
+        <div id="formError" class="form-error" style="display:none" data-i18n="contact.error">
           ❌ Coś poszło nie tak. Spróbuj ponownie lub napisz bezpośrednio na crmtree_kontakt@crmtree.pl
         </div>
-        <button type="submit" id="formSubmit" class="btn btn--primary btn--lg">Wyślij zapytanie</button>
+        <button type="submit" id="formSubmit" class="btn btn--primary btn--lg" data-i18n="contact.submit">Wyślij zapytanie</button>
       </form>
 
       <script>
@@ -226,7 +440,7 @@
           const ok  = document.getElementById('formSuccess');
           const err = document.getElementById('formError');
           btn.disabled = true;
-          btn.textContent = 'Wysyłanie…';
+          btn.textContent = (window.CRMtreeI18N && document.documentElement.lang !== 'pl') ? 'Sending…' : 'Wysyłanie…';
           ok.style.display = 'none';
           err.style.display = 'none';
           try {
@@ -245,7 +459,7 @@
             err.style.display = 'block';
           }
           btn.disabled = false;
-          btn.textContent = 'Wyślij zapytanie';
+          btn.textContent = document.querySelector('[data-i18n="contact.submit"]').textContent;
         });
       </script>
     </div>
@@ -256,20 +470,43 @@
     <div class="container footer__inner">
       <div class="footer__brand">
         <img src="logo.webp" alt="CRMtree" class="footer__logo-img" width="300" height="200" loading="lazy" />
-        <p>CRM dla nowoczesnej firmy</p>
+        <p data-i18n="footer.tagline">CRM dla nowoczesnej firmy</p>
       </div>
       <div class="footer__links">
-        <a href="https://demo.crmtree.pl/login">Zaloguj się</a>
-        <a href="#features">Funkcje</a>
-        <a href="/pricing.html">Cennik</a>
-        <a href="/blog">Blog</a>
-        <a href="#contact">Kontakt</a>
-        <a href="/polityka-prywatnosci.html">Polityka prywatności</a>
+        <a href="https://demo.crmtree.pl/login" data-i18n="footer.login">Zaloguj się</a>
+        <a href="#features" data-i18n="footer.features">Funkcje</a>
+        <a href="/pricing.html" data-i18n="footer.pricing">Cennik</a>
+        <a href="/blog" data-i18n="footer.blog">Blog</a>
+        <a href="#aiact" data-i18n="footer.aiact">AI Act</a>
+        <a href="#contact" data-i18n="footer.contact">Kontakt</a>
+        <a href="/polityka-prywatnosci.html" data-i18n="footer.privacy">Polityka prywatności</a>
       </div>
       <p class="footer__legal">Właściciel marki CRMtree: Comparme Sp. z o.o. · ul. Herbu Janina 5, 02-972 Warszawa · NIP 5213664910 · REGON 147067912</p>
-      <p class="footer__copy">&copy; 2026 CRMtree. Wszelkie prawa zastrzeżone.</p>
+      <p class="footer__copy" data-i18n="footer.copyright">&copy; 2026 CRMtree. Wszelkie prawa zastrzeżone.</p>
     </div>
   </footer>
 
+  <!-- CHAT WIDGET -->
+  <div class="chat-widget" id="chatWidget">
+    <div class="chat-panel">
+      <button class="chat-panel__close" type="button" onclick="document.getElementById('chatWidget').classList.remove('open')" aria-label="Zamknij czat">✕</button>
+      <div class="chat-panel__head">
+        <img class="chat-panel__avatar" src="chat-avatar.webp" alt="" />
+        <div>
+          <span class="chat-panel__name" data-i18n="chat.name">Zespół CRMtree</span>
+          <span class="chat-panel__status"><span class="chat-panel__status-dot"></span><span data-i18n="chat.status">Online teraz</span></span>
+        </div>
+      </div>
+      <p class="chat-panel__msg" data-i18n="chat.msg1">Cześć! 👋 Chętnie odpowiemy, czego szukasz albo co chcesz usprawnić w swojej sprzedaży.</p>
+      <p class="chat-panel__msg chat-panel__msg--soft" data-i18n="chat.msg2">Możemy też od razu umówić 14-dniowy dostęp testowy.</p>
+      <a href="#contact" class="btn btn--primary" data-i18n="chat.cta">Napisz do nas</a>
+    </div>
+    <button class="chat-teaser" type="button" onclick="document.getElementById('chatWidget').classList.toggle('open')" aria-label="Otwórz czat">
+      <img class="chat-teaser__avatar" src="chat-avatar.webp" alt="" />
+      <span class="chat-teaser__text" data-i18n="chat.pill">Cześć! 👋</span>
+    </button>
+  </div>
+
+  <script src="i18n.js"></script>
 </body>
 </html>
