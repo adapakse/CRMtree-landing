@@ -177,7 +177,7 @@
   },
   "security": {
     "eyebrow": "Bezpieczeństwo",
-    "h2": "Dane Twojej firmy nie mieszają się z niczyimi innymi",
+    "h2": "Dane Twojej firmy są bezpiecznie wydzielone w dedykowanej przestrzeni",
     "sub": "Każda firma pracuje we w pełni odizolowanym środowisku — to jest wbudowane.",
     "sec1_t": "Pełna izolacja danych",
     "sec1_d": "Środowisko każdej firmy jest odseparowane — użytkownicy jednej firmy nigdy nie widzą danych innej.",
@@ -420,7 +420,7 @@
   },
   "security": {
     "eyebrow": "Security",
-    "h2": "Your company's data never mixes with anyone else's",
+    "h2": "Your company's data is securely isolated in a dedicated space",
     "sub": "Every company runs in a fully isolated environment — it's built in.",
     "sec1_t": "Full data isolation",
     "sec1_d": "Every company's environment is separated — one company's users never see another's data.",
@@ -663,7 +663,7 @@
   },
   "security": {
     "eyebrow": "Sicherheit",
-    "h2": "Die Daten Ihres Unternehmens vermischen sich mit keinen anderen",
+    "h2": "Die Daten Ihres Unternehmens sind sicher in einem dedizierten Bereich isoliert",
     "sub": "Jedes Unternehmen läuft in einer vollständig isolierten Umgebung — das ist fest eingebaut.",
     "sec1_t": "Vollständige Datenisolierung",
     "sec1_d": "Die Umgebung jedes Unternehmens ist getrennt — Nutzer eines Unternehmens sehen nie Daten eines anderen.",
@@ -906,7 +906,7 @@
   },
   "security": {
     "eyebrow": "Sicurezza",
-    "h2": "I dati della tua azienda non si mescolano con quelli di nessun altro",
+    "h2": "I dati della tua azienda sono isolati in modo sicuro in uno spazio dedicato",
     "sub": "Ogni azienda opera in un ambiente completamente isolato — è integrato di default.",
     "sec1_t": "Isolamento completo dei dati",
     "sec1_d": "L'ambiente di ogni azienda è separato — gli utenti di un'azienda non vedono mai i dati di un'altra.",
@@ -1149,7 +1149,7 @@
   },
   "security": {
     "eyebrow": "Seguridad",
-    "h2": "Los datos de tu empresa no se mezclan con los de nadie más",
+    "h2": "Los datos de tu empresa están aislados de forma segura en un espacio dedicado",
     "sub": "Cada empresa opera en un entorno totalmente aislado — está integrado por defecto.",
     "sec1_t": "Aislamiento total de datos",
     "sec1_d": "El entorno de cada empresa está separado — los usuarios de una empresa nunca ven los datos de otra.",
@@ -1392,7 +1392,7 @@
   },
   "security": {
     "eyebrow": "Sécurité",
-    "h2": "Les données de votre entreprise ne se mélangent avec celles de personne",
+    "h2": "Les données de votre entreprise sont isolées en toute sécurité dans un espace dédié",
     "sub": "Chaque entreprise évolue dans un environnement totalement isolé — c'est natif.",
     "sec1_t": "Isolation totale des données",
     "sec1_d": "L'environnement de chaque entreprise est séparé — les utilisateurs d'une entreprise ne voient jamais les données d'une autre.",
@@ -1635,7 +1635,7 @@
   },
   "security": {
     "eyebrow": "Securitate",
-    "h2": "Datele companiei tale nu se amestecă cu ale nimănui altcuiva",
+    "h2": "Datele companiei tale sunt izolate în siguranță într-un spațiu dedicat",
     "sub": "Fiecare companie funcționează într-un mediu complet izolat — este integrat din start.",
     "sec1_t": "Izolare completă a datelor",
     "sec1_d": "Mediul fiecărei companii este separat — utilizatorii unei companii nu văd niciodată datele alteia.",
@@ -1878,7 +1878,7 @@
   },
   "security": {
     "eyebrow": "Безопасность",
-    "h2": "Данные вашей компании не смешиваются с чужими",
+    "h2": "Данные вашей компании надёжно изолированы в выделенном пространстве",
     "sub": "Каждая компания работает в полностью изолированной среде — это встроено по умолчанию.",
     "sec1_t": "Полная изоляция данных",
     "sec1_d": "Среда каждой компании отделена — пользователи одной компании никогда не видят данные другой.",
@@ -2121,7 +2121,7 @@
   },
   "security": {
     "eyebrow": "Varnost",
-    "h2": "Podatki vašega podjetja se ne mešajo s tujimi",
+    "h2": "Podatki vašega podjetja so varno izolirani v namenskem prostoru",
     "sub": "Vsako podjetje deluje v popolnoma izoliranem okolju — to je vgrajeno.",
     "sec1_t": "Popolna izolacija podatkov",
     "sec1_d": "Okolje vsakega podjetja je ločeno — uporabniki enega podjetja nikoli ne vidijo podatkov drugega.",
@@ -2364,7 +2364,7 @@
   },
   "security": {
     "eyebrow": "Sigurnost",
-    "h2": "Podaci vaše tvrtke ne miješaju se s tuđima",
+    "h2": "Podaci vaše tvrtke sigurno su izolirani u namjenskom prostoru",
     "sub": "Svaka tvrtka radi u potpuno izoliranom okruženju — to je ugrađeno.",
     "sec1_t": "Potpuna izolacija podataka",
     "sec1_d": "Okruženje svake tvrtke je odvojeno — korisnici jedne tvrtke nikad ne vide podatke druge.",
