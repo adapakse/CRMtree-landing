@@ -98,6 +98,7 @@
     "f8_t": "Bezpieczeństwo i role",
     "f9_t": "Aplikacja mobilna",
     "f10_t": "Prospekty",
+    "f11_t": "Projekty",
     "cta": "Wypróbuj za darmo",
     "f1_problem": "Kierownik sprzedaży nie wie, jak naprawdę stoi zespół, dopóki nie zbierze ręcznie danych od każdego handlowca.",
     "f1_how": "Dashboard sprzedaży pokazuje wyniki w czasie rzeczywistym, z eksportem danych i filtrami po okresie, partnerze i handlowcu.",
@@ -129,6 +130,9 @@
     "f10_problem": "Handlowiec traci godziny na ręczne sprawdzanie, czy firma z zimnej bazy w ogóle pasuje do profilu klienta.",
     "f10_how": "Automatyczny scoring ICP 0–100 sam wzbogaca dane firmy.",
     "f10_example": "Z listy 500 nowych firm system od razu pokazuje 40 z najwyższym dopasowaniem — handlowiec dzwoni najpierw do nich, nie po kolei od góry listy.",
+    "f11_problem": "Po podpisaniu umowy wdrożenie u klienta rozjeżdża się po mailach, arkuszach i komunikatorach — nikt nie wie, kto za co odpowiada ani na jakim etapie jest praca.",
+    "f11_how": "Projekt ma kartę z zespołem, zadania z podzadaniami, oś czasu (Gantt) i czat — z rolami dla PM-a, uczestników, kontrolera i osób spoza firmy.",
+    "f11_example": "PM zakłada projekt wdrożenia i przypisuje zadania swoim ludziom oraz osobie po stronie klienta — ta po zalogowaniu widzi wyłącznie swoje zadania i zamyka je na bieżąco.",
     "label_problem": "Jaki problem rozwiązuje CRMtree",
     "label_how": "W jaki sposób",
     "label_example": "Przykład zastosowania"
@@ -136,7 +140,7 @@
   "compare": {
     "eyebrow": "Porównanie",
     "h2": "CRMtree na tle innych systemów CRM",
-    "sub": "Zestawienie względem HubSpot, Pipedrive, Firmao i Livespace. Pokazujemy tylko obszary, w których CRMtree realnie wyprzedza konkurencję — nie funkcje, które ma każdy.",
+    "sub": "CRMtree ma wszystko, co konkurencja, a wyprzedza ją w następujących obszarach funkcjonalnych.",
     "col_feature": "Cecha",
     "col_us": "CRMtree",
     "g1": "Wdrożenie",
@@ -146,6 +150,7 @@
     "g5": "Analityka i powiadomienia",
     "g6": "Dokumenty",
     "g7": "Bezpieczeństwo i infrastruktura",
+    "g8": "Projekty",
     "r1": "Onboarding klienta krok po kroku",
     "r2": "Model cenowy bez limitu stanowisk",
     "r3": "Real-time synchronizacja e-maili",
@@ -162,6 +167,7 @@
     "r14": "Poranny mail zbiorczy (Daily Digest)",
     "r15": "Zarządzanie dokumentami i akceptacje",
     "r16": "Dedykowana infrastruktura / on-prem",
+    "r17": "Zarządzanie projektami z osią czasu (Gantt)",
     "note": "Zestawienie na podstawie wewnętrznej analizy funkcjonalnej CRMtree, zweryfikowanej względem publicznie dostępnej dokumentacji konkurentów."
   },
   "how": {
@@ -341,6 +347,7 @@
     "f8_t": "Security & roles",
     "f9_t": "Mobile app",
     "f10_t": "Prospects",
+    "f11_t": "Projects",
     "cta": "Try it for free",
     "f1_problem": "A sales manager has no idea how the team is really doing until someone manually pulls the numbers from every rep.",
     "f1_how": "The sales dashboard shows results in real time, with data export and filters by period, partner, and rep.",
@@ -372,6 +379,9 @@
     "f10_problem": "A rep burns hours manually checking whether a company from a cold list even fits the target customer profile.",
     "f10_how": "Automatic 0–100 ICP scoring enriches company data on its own.",
     "f10_example": "Out of 500 new companies, the system immediately surfaces the 40 best matches — so the rep calls them first, not in whatever order the list happened to load.",
+    "f11_problem": "Once the contract is signed, the client rollout scatters across emails, spreadsheets and chat apps — nobody knows who owns what or how far the work has got.",
+    "f11_how": "A project has a card with its team, tasks with subtasks, a timeline (Gantt) and a chat — with roles for the PM, participants, a controller and people outside your company.",
+    "f11_example": "The PM sets up a rollout project and assigns tasks to their own people and to a contact on the client side — who logs in, sees only their own tasks and closes them as they go.",
     "label_problem": "What problem CRMtree solves",
     "label_how": "How",
     "label_example": "Example in practice"
@@ -379,7 +389,7 @@
   "compare": {
     "eyebrow": "Comparison",
     "h2": "CRMtree vs. other CRM systems",
-    "sub": "Compared against HubSpot, Pipedrive, Firmao, and Livespace. We only show areas where CRMtree genuinely leads — not features everyone has.",
+    "sub": "CRMtree has everything the competition offers, and is ahead of it in the following functional areas.",
     "col_feature": "Feature",
     "col_us": "CRMtree",
     "g1": "Onboarding",
@@ -389,6 +399,7 @@
     "g5": "Analytics & notifications",
     "g6": "Documents",
     "g7": "Security & infrastructure",
+    "g8": "Projects",
     "r1": "Step-by-step client onboarding",
     "r2": "Unlimited-seat pricing (site license)",
     "r3": "Real-time email sync",
@@ -405,6 +416,7 @@
     "r14": "Daily digest email",
     "r15": "Document management & approvals",
     "r16": "Dedicated / on-prem infrastructure option",
+    "r17": "Project management with a timeline (Gantt)",
     "note": "Based on CRMtree's internal functional analysis, checked against competitors' publicly available documentation."
   },
   "how": {
@@ -584,6 +596,7 @@
     "f8_t": "Sicherheit & Rollen",
     "f9_t": "Mobile App",
     "f10_t": "Interessenten",
+    "f11_t": "Projekte",
     "cta": "Kostenlos testen",
     "f1_problem": "Ein Vertriebsleiter weiß nicht wirklich, wie das Team dasteht, bis jemand die Zahlen manuell von jedem Vertriebler einsammelt.",
     "f1_how": "Das Vertriebs-Dashboard zeigt Ergebnisse in Echtzeit, mit Datenexport und Filtern nach Zeitraum, Partner und Vertriebler.",
@@ -615,6 +628,9 @@
     "f10_problem": "Ein Vertriebler verschwendet Stunden damit, von Hand zu prüfen, ob eine Firma aus einer kalten Liste überhaupt zum Zielkundenprofil passt.",
     "f10_how": "Automatisches ICP-Scoring von 0–100 reichert die Firmendaten von selbst an.",
     "f10_example": "Von 500 neuen Firmen zeigt das System sofort die 40 am besten passenden — der Vertriebler ruft zuerst diese an, nicht einfach von oben nach unten.",
+    "f11_problem": "Nach Vertragsabschluss verteilt sich die Einführung beim Kunden auf E-Mails, Tabellen und Messenger — niemand weiß, wer wofür zuständig ist und wie weit die Arbeit ist.",
+    "f11_how": "Ein Projekt hat eine Karte mit dem Team, Aufgaben mit Unteraufgaben, eine Zeitachse (Gantt) und einen Chat — mit Rollen für PM, Teilnehmer, Controller und externe Personen.",
+    "f11_example": "Der PM legt ein Einführungsprojekt an und weist Aufgaben seinen Leuten und einem Ansprechpartner beim Kunden zu — dieser sieht nach dem Login nur seine eigenen Aufgaben und schließt sie laufend ab.",
     "label_problem": "Welches Problem CRMtree löst",
     "label_how": "Wie",
     "label_example": "Anwendungsbeispiel"
@@ -622,7 +638,7 @@
   "compare": {
     "eyebrow": "Vergleich",
     "h2": "CRMtree im Vergleich zu anderen CRM-Systemen",
-    "sub": "Vergleich mit HubSpot, Pipedrive, Firmao und Livespace. Wir zeigen nur Bereiche, in denen CRMtree wirklich vorn liegt — nicht Funktionen, die jeder hat.",
+    "sub": "CRMtree bietet alles, was die Konkurrenz bietet, und ist ihr in den folgenden Funktionsbereichen voraus.",
     "col_feature": "Merkmal",
     "col_us": "CRMtree",
     "g1": "Einführung",
@@ -632,6 +648,7 @@
     "g5": "Analytik & Benachrichtigungen",
     "g6": "Dokumente",
     "g7": "Sicherheit & Infrastruktur",
+    "g8": "Projekte",
     "r1": "Schrittweises Kunden-Onboarding",
     "r2": "Preismodell ohne Platzlimit",
     "r3": "Echtzeit-E-Mail-Synchronisierung",
@@ -648,6 +665,7 @@
     "r14": "Tägliche Sammel-E-Mail",
     "r15": "Dokumentenverwaltung & Freigaben",
     "r16": "Dedizierte / On-Prem-Infrastruktur-Option",
+    "r17": "Projektmanagement mit Zeitachse (Gantt)",
     "note": "Basierend auf einer internen Funktionsanalyse von CRMtree, abgeglichen mit öffentlich verfügbarer Dokumentation der Wettbewerber."
   },
   "how": {
@@ -827,6 +845,7 @@
     "f8_t": "Sicurezza e ruoli",
     "f9_t": "App mobile",
     "f10_t": "Prospect",
+    "f11_t": "Progetti",
     "cta": "Provalo gratis",
     "f1_problem": "Un sales manager non sa davvero come sta andando il team finché qualcuno non raccoglie i numeri a mano da ogni venditore.",
     "f1_how": "Il dashboard vendite mostra i risultati in tempo reale, con esportazione dati e filtri per periodo, partner e venditore.",
@@ -858,6 +877,9 @@
     "f10_problem": "Un venditore perde ore a controllare a mano se un'azienda di una lista fredda corrisponda anche solo al profilo cliente target.",
     "f10_how": "Lo scoring ICP automatico da 0 a 100 arricchisce da solo i dati aziendali.",
     "f10_example": "Su 500 nuove aziende, il sistema mostra subito le 40 con il punteggio più alto — il venditore chiama prima quelle, non semplicemente in ordine di lista.",
+    "f11_problem": "Dopo la firma del contratto, l'avvio presso il cliente si disperde tra email, fogli di calcolo e chat — nessuno sa chi è responsabile di cosa né a che punto è il lavoro.",
+    "f11_how": "Un progetto ha una scheda con il team, attività con sottoattività, una linea temporale (Gantt) e una chat — con ruoli per PM, partecipanti, controllore e persone esterne all'azienda.",
+    "f11_example": "Il PM crea il progetto di avvio e assegna le attività ai suoi e a un referente del cliente — che, dopo l'accesso, vede solo le proprie attività e le chiude man mano.",
     "label_problem": "Quale problema risolve CRMtree",
     "label_how": "In che modo",
     "label_example": "Esempio pratico"
@@ -865,7 +887,7 @@
   "compare": {
     "eyebrow": "Confronto",
     "h2": "CRMtree a confronto con altri CRM",
-    "sub": "Confronto con HubSpot, Pipedrive, Firmao e Livespace. Mostriamo solo le aree in cui CRMtree è realmente avanti — non le funzioni che hanno tutti.",
+    "sub": "CRMtree ha tutto ciò che offre la concorrenza e la supera nelle seguenti aree funzionali.",
     "col_feature": "Caratteristica",
     "col_us": "CRMtree",
     "g1": "Avvio",
@@ -875,6 +897,7 @@
     "g5": "Analisi e notifiche",
     "g6": "Documenti",
     "g7": "Sicurezza e infrastruttura",
+    "g8": "Progetti",
     "r1": "Onboarding del cliente passo dopo passo",
     "r2": "Prezzo senza limite di postazioni",
     "r3": "Sincronizzazione e-mail in tempo reale",
@@ -891,6 +914,7 @@
     "r14": "E-mail riepilogativa giornaliera",
     "r15": "Gestione documenti e approvazioni",
     "r16": "Opzione di infrastruttura dedicata / on-prem",
+    "r17": "Gestione progetti con linea temporale (Gantt)",
     "note": "Basato sull'analisi funzionale interna di CRMtree, verificata rispetto alla documentazione pubblica dei concorrenti."
   },
   "how": {
@@ -1070,6 +1094,7 @@
     "f8_t": "Seguridad y roles",
     "f9_t": "Aplicación móvil",
     "f10_t": "Prospectos",
+    "f11_t": "Proyectos",
     "cta": "Pruébalo gratis",
     "f1_problem": "Un jefe de ventas no sabe realmente cómo va el equipo hasta que alguien recopila los números a mano de cada comercial.",
     "f1_how": "El panel de ventas muestra resultados en tiempo real, con exportación de datos y filtros por periodo, cliente y comercial.",
@@ -1101,6 +1126,9 @@
     "f10_problem": "Un comercial pierde horas comprobando a mano si una empresa de una lista fría siquiera encaja con el perfil de cliente objetivo.",
     "f10_how": "La puntuación ICP automática de 0 a 100 enriquece los datos de la empresa por sí sola.",
     "f10_example": "De 500 empresas nuevas, el sistema muestra al momento las 40 con mejor encaje, así el comercial llama antes a esas, no simplemente por orden de lista.",
+    "f11_problem": "Tras firmar el contrato, la implantación en el cliente se dispersa entre correos, hojas de cálculo y chats: nadie sabe quién es responsable de qué ni en qué punto está el trabajo.",
+    "f11_how": "Un proyecto tiene una ficha con el equipo, tareas con subtareas, una línea de tiempo (Gantt) y un chat, con roles para el PM, los participantes, el controlador y personas ajenas a la empresa.",
+    "f11_example": "El PM crea el proyecto de implantación y asigna tareas a su equipo y a un contacto del cliente, que al iniciar sesión ve únicamente sus tareas y las va cerrando.",
     "label_problem": "Qué problema resuelve CRMtree",
     "label_how": "De qué manera",
     "label_example": "Ejemplo práctico"
@@ -1108,7 +1136,7 @@
   "compare": {
     "eyebrow": "Comparativa",
     "h2": "CRMtree frente a otros sistemas CRM",
-    "sub": "Comparado con HubSpot, Pipedrive, Firmao y Livespace. Solo mostramos las áreas donde CRMtree realmente destaca — no las funciones que tiene todo el mundo.",
+    "sub": "CRMtree tiene todo lo que ofrece la competencia y la supera en las siguientes áreas funcionales.",
     "col_feature": "Característica",
     "col_us": "CRMtree",
     "g1": "Puesta en marcha",
@@ -1118,6 +1146,7 @@
     "g5": "Analítica y notificaciones",
     "g6": "Documentos",
     "g7": "Seguridad e infraestructura",
+    "g8": "Proyectos",
     "r1": "Incorporación del cliente paso a paso",
     "r2": "Precio sin límite de usuarios",
     "r3": "Sincronización de correo en tiempo real",
@@ -1134,6 +1163,7 @@
     "r14": "Correo resumen diario",
     "r15": "Gestión de documentos y aprobaciones",
     "r16": "Opción de infraestructura dedicada / on-prem",
+    "r17": "Gestión de proyectos con línea de tiempo (Gantt)",
     "note": "Basado en el análisis funcional interno de CRMtree, contrastado con la documentación pública de los competidores."
   },
   "how": {
@@ -1313,6 +1343,7 @@
     "f8_t": "Sécurité et rôles",
     "f9_t": "Application mobile",
     "f10_t": "Prospects",
+    "f11_t": "Projets",
     "cta": "Essayez gratuitement",
     "f1_problem": "Un directeur commercial ne sait pas vraiment où en est son équipe tant que quelqu'un n'a pas récupéré les chiffres à la main auprès de chaque commercial.",
     "f1_how": "Le tableau de bord commercial affiche les résultats en temps réel, avec export des données et filtres par période, partenaire et commercial.",
@@ -1344,6 +1375,9 @@
     "f10_problem": "Un commercial perd des heures à vérifier à la main si une entreprise d'une liste froide correspond ne serait-ce qu'au profil client visé.",
     "f10_how": "Le scoring ICP automatique de 0 à 100 enrichit lui-même les données de l'entreprise.",
     "f10_example": "Sur 500 nouvelles entreprises, le système fait tout de suite ressortir les 40 mieux notées, le commercial les appelle donc en premier, pas simplement dans l'ordre de la liste.",
+    "f11_problem": "Une fois le contrat signé, le déploiement chez le client se disperse entre e-mails, tableurs et messageries : personne ne sait qui est responsable de quoi ni où en est le travail.",
+    "f11_how": "Un projet a une fiche avec son équipe, des tâches avec sous-tâches, une frise chronologique (Gantt) et un chat, avec des rôles pour le chef de projet, les participants, le contrôleur et des personnes externes.",
+    "f11_example": "Le chef de projet crée le projet de déploiement et attribue des tâches à son équipe et à un contact côté client, qui, une fois connecté, ne voit que ses propres tâches et les clôture au fur et à mesure.",
     "label_problem": "Quel problème CRMtree résout",
     "label_how": "De quelle manière",
     "label_example": "Exemple concret"
@@ -1351,7 +1385,7 @@
   "compare": {
     "eyebrow": "Comparatif",
     "h2": "CRMtree face aux autres CRM",
-    "sub": "Comparé à HubSpot, Pipedrive, Firmao et Livespace. Nous ne montrons que les domaines où CRMtree a une vraie longueur d'avance — pas les fonctions que tout le monde a.",
+    "sub": "CRMtree a tout ce que propose la concurrence et la devance dans les domaines fonctionnels suivants.",
     "col_feature": "Fonction",
     "col_us": "CRMtree",
     "g1": "Mise en place",
@@ -1361,6 +1395,7 @@
     "g5": "Analytique et notifications",
     "g6": "Documents",
     "g7": "Sécurité et infrastructure",
+    "g8": "Projets",
     "r1": "Onboarding client pas à pas",
     "r2": "Tarification sans limite de postes",
     "r3": "Synchronisation e-mail en temps réel",
@@ -1377,6 +1412,7 @@
     "r14": "E-mail récapitulatif quotidien",
     "r15": "Gestion documentaire et validations",
     "r16": "Option d'infrastructure dédiée / on-prem",
+    "r17": "Gestion de projets avec frise chronologique (Gantt)",
     "note": "Basé sur l'analyse fonctionnelle interne de CRMtree, vérifiée par rapport à la documentation publique des concurrents."
   },
   "how": {
@@ -1556,6 +1592,7 @@
     "f8_t": "Securitate și roluri",
     "f9_t": "Aplicație mobilă",
     "f10_t": "Prospecți",
+    "f11_t": "Proiecte",
     "cta": "Încearcă gratuit",
     "f1_problem": "Un manager de vânzări nu știe cu adevărat cum stă echipa până când cineva adună manual cifrele de la fiecare agent.",
     "f1_how": "Dashboard-ul de vânzări arată rezultatele în timp real, cu export de date și filtre după perioadă, partener și agent.",
@@ -1587,6 +1624,9 @@
     "f10_problem": "Un agent pierde ore verificând manual dacă o firmă dintr-o listă rece se potrivește măcar cu profilul clientului țintă.",
     "f10_how": "Scoring-ul ICP automat 0–100 îmbogățește singur datele companiei.",
     "f10_example": "Din 500 de firme noi, sistemul arată imediat cele 40 cu cel mai bun scor — agentul le sună pe acestea primele, nu pur și simplu în ordinea din listă.",
+    "f11_problem": "După semnarea contractului, implementarea la client se împrăștie prin e-mailuri, foi de calcul și aplicații de chat — nimeni nu știe cine răspunde de ce și în ce stadiu este lucrul.",
+    "f11_how": "Un proiect are o fișă cu echipa, sarcini cu subsarcini, o axă a timpului (Gantt) și un chat — cu roluri pentru PM, participanți, controlor și persoane din afara firmei.",
+    "f11_example": "PM-ul creează proiectul de implementare și atribuie sarcini oamenilor săi și unei persoane de la client — care, după autentificare, își vede doar propriile sarcini și le închide pe parcurs.",
     "label_problem": "Ce problemă rezolvă CRMtree",
     "label_how": "În ce mod",
     "label_example": "Exemplu practic"
@@ -1594,7 +1634,7 @@
   "compare": {
     "eyebrow": "Comparație",
     "h2": "CRMtree față de alte sisteme CRM",
-    "sub": "Comparație cu HubSpot, Pipedrive, Firmao și Livespace. Arătăm doar zonele în care CRMtree este cu adevărat în avans — nu funcțiile pe care le are oricine.",
+    "sub": "CRMtree are tot ce oferă concurența și o depășește în următoarele arii funcționale.",
     "col_feature": "Caracteristică",
     "col_us": "CRMtree",
     "g1": "Implementare",
@@ -1604,6 +1644,7 @@
     "g5": "Analiză și notificări",
     "g6": "Documente",
     "g7": "Securitate și infrastructură",
+    "g8": "Proiecte",
     "r1": "Onboarding client pas cu pas",
     "r2": "Preț fără limită de utilizatori",
     "r3": "Sincronizare e-mail în timp real",
@@ -1620,6 +1661,7 @@
     "r14": "E-mail zilnic de sinteză",
     "r15": "Gestionarea documentelor și aprobări",
     "r16": "Opțiune de infrastructură dedicată / on-prem",
+    "r17": "Management de proiecte cu axă a timpului (Gantt)",
     "note": "Bazat pe analiza funcțională internă a CRMtree, verificată în raport cu documentația publică a competitorilor."
   },
   "how": {
@@ -1799,6 +1841,7 @@
     "f8_t": "Безопасность и роли",
     "f9_t": "Мобильное приложение",
     "f10_t": "Проспекты",
+    "f11_t": "Проекты",
     "cta": "Попробовать бесплатно",
     "f1_problem": "Руководитель отдела продаж не знает, как реально обстоят дела в команде, пока кто-то вручную не соберёт цифры по каждому менеджеру.",
     "f1_how": "Дашборд продаж показывает результаты в реальном времени, с экспортом данных и фильтрами по периоду, партнёру и менеджеру.",
@@ -1830,6 +1873,9 @@
     "f10_problem": "Менеджер тратит часы, вручную проверяя, подходит ли компания из холодного списка вообще под профиль целевого клиента.",
     "f10_how": "Автоматический ICP-скоринг 0–100 сам обогащает данные компании.",
     "f10_example": "Из 500 новых компаний система сразу показывает 40 с лучшим совпадением — менеджер звонит сначала им, а не просто по порядку списка.",
+    "f11_problem": "После подписания договора внедрение у клиента расползается по письмам, таблицам и мессенджерам — никто не знает, кто за что отвечает и на каком этапе работа.",
+    "f11_how": "У проекта есть карточка с командой, задачи с подзадачами, временная шкала (Гант) и чат — с ролями для руководителя проекта, участников, контролёра и людей вне компании.",
+    "f11_example": "Руководитель проекта создаёт проект внедрения и назначает задачи своим сотрудникам и человеку со стороны клиента — тот после входа видит только свои задачи и закрывает их по ходу работы.",
     "label_problem": "Какую проблему решает CRMtree",
     "label_how": "Каким образом",
     "label_example": "Пример использования"
@@ -1837,7 +1883,7 @@
   "compare": {
     "eyebrow": "Сравнение",
     "h2": "CRMtree на фоне других CRM-систем",
-    "sub": "Сравнение с HubSpot, Pipedrive, Firmao и Livespace. Показываем только те области, где CRMtree реально впереди — не функции, которые есть у всех.",
+    "sub": "В CRMtree есть всё, что предлагают конкуренты, и он опережает их в следующих функциональных областях.",
     "col_feature": "Функция",
     "col_us": "CRMtree",
     "g1": "Внедрение",
@@ -1847,6 +1893,7 @@
     "g5": "Аналитика и уведомления",
     "g6": "Документы",
     "g7": "Безопасность и инфраструктура",
+    "g8": "Проекты",
     "r1": "Пошаговый онбординг клиента",
     "r2": "Тарификация без лимита мест",
     "r3": "Синхронизация почты в реальном времени",
@@ -1863,6 +1910,7 @@
     "r14": "Ежедневная сводка на почту",
     "r15": "Управление документами и согласования",
     "r16": "Опция выделенной инфраструктуры / on-prem",
+    "r17": "Управление проектами с временной шкалой (Гант)",
     "note": "На основе внутреннего функционального анализа CRMtree, сверенного с публичной документацией конкурентов."
   },
   "how": {
@@ -2042,6 +2090,7 @@
     "f8_t": "Varnost in vloge",
     "f9_t": "Mobilna aplikacija",
     "f10_t": "Prospekti",
+    "f11_t": "Projekti",
     "cta": "Preizkusite brezplačno",
     "f1_problem": "Vodja prodaje resnično ne ve, kako je ekipa uspešna, dokler nekdo ročno ne zbere številk od vsakega prodajalca.",
     "f1_how": "Prodajna nadzorna plošča prikazuje rezultate v realnem času, z izvozom podatkov in filtri po obdobju, partnerju in prodajalcu.",
@@ -2073,6 +2122,9 @@
     "f10_problem": "Prodajalec izgubi ure z ročnim preverjanjem, ali podjetje s hladnega seznama sploh ustreza profilu ciljne stranke.",
     "f10_how": "Samodejno ocenjevanje ICP 0–100 samo obogati podatke o podjetju.",
     "f10_example": "Od 500 novih podjetij sistem takoj pokaže 40 z najvišjo oceno ujemanja — prodajalec pokliče najprej te, ne po vrstnem redu seznama.",
+    "f11_problem": "Po podpisu pogodbe se uvedba pri stranki razprši po e-pošti, preglednicah in klepetih — nihče ne ve, kdo je za kaj odgovoren in kako daleč je delo.",
+    "f11_how": "Projekt ima kartico z ekipo, naloge s podnalogami, časovnico (Gantt) in klepet — z vlogami za vodjo projekta, udeležence, kontrolorja in osebe zunaj podjetja.",
+    "f11_example": "Vodja projekta ustvari projekt uvedbe in dodeli naloge svojim ljudem ter osebi na strani stranke — ta po prijavi vidi samo svoje naloge in jih sproti zaključuje.",
     "label_problem": "Kateri problem rešuje CRMtree",
     "label_how": "Na kakšen način",
     "label_example": "Praktični primer"
@@ -2080,7 +2132,7 @@
   "compare": {
     "eyebrow": "Primerjava",
     "h2": "CRMtree v primerjavi z drugimi CRM sistemi",
-    "sub": "Primerjava s HubSpot, Pipedrive, Firmao in Livespace. Prikazujemo le področja, kjer je CRMtree res pred konkurenco — ne funkcij, ki jih ima vsak.",
+    "sub": "CRMtree ima vse, kar ponuja konkurenca, in jo prehiteva na naslednjih funkcionalnih področjih.",
     "col_feature": "Lastnost",
     "col_us": "CRMtree",
     "g1": "Uvajanje",
@@ -2090,6 +2142,7 @@
     "g5": "Analitika in obvestila",
     "g6": "Dokumenti",
     "g7": "Varnost in infrastruktura",
+    "g8": "Projekti",
     "r1": "Postopno uvajanje strank",
     "r2": "Cenovni model brez omejitve mest",
     "r3": "Sinhronizacija e-pošte v realnem času",
@@ -2106,6 +2159,7 @@
     "r14": "Dnevni zbirni e-poštni pregled",
     "r15": "Upravljanje dokumentov in odobritve",
     "r16": "Možnost namenske / on-prem infrastrukture",
+    "r17": "Vodenje projektov s časovnico (Gantt)",
     "note": "Na podlagi interne funkcionalne analize CRMtree, preverjene glede na javno dostopno dokumentacijo konkurentov."
   },
   "how": {
@@ -2285,6 +2339,7 @@
     "f8_t": "Sigurnost i uloge",
     "f9_t": "Mobilna aplikacija",
     "f10_t": "Prospekti",
+    "f11_t": "Projekti",
     "cta": "Isprobajte besplatno",
     "f1_problem": "Voditelj prodaje zapravo ne zna kako tim stoji dok netko ručno ne skupi brojke od svakog prodavača.",
     "f1_how": "Prodajna nadzorna ploča prikazuje rezultate u stvarnom vremenu, s izvozom podataka i filtrima po razdoblju, partneru i prodavaču.",
@@ -2316,6 +2371,9 @@
     "f10_problem": "Prodavač gubi sate ručno provjeravajući odgovara li tvrtka s hladnog popisa uopće profilu ciljanog klijenta.",
     "f10_how": "Automatska ICP ocjena 0–100 sama obogaćuje podatke o tvrtki.",
     "f10_example": "Od 500 novih tvrtki sustav odmah pokaže 40 s najboljim podudaranjem — prodavač njih zove prve, a ne redom kako su na popisu.",
+    "f11_problem": "Nakon potpisa ugovora uvođenje kod klijenta raspe se po e-pošti, tablicama i chatovima — nitko ne zna tko je za što odgovoran ni dokle je posao stigao.",
+    "f11_how": "Projekt ima karticu s timom, zadatke s podzadacima, vremensku crtu (Gantt) i chat — s ulogama za voditelja projekta, sudionike, kontrolora i osobe izvan tvrtke.",
+    "f11_example": "Voditelj projekta otvara projekt uvođenja i dodjeljuje zadatke svojim ljudima i osobi na strani klijenta — ona nakon prijave vidi samo svoje zadatke i zatvara ih u hodu.",
     "label_problem": "Koji problem rješava CRMtree",
     "label_how": "Na koji način",
     "label_example": "Praktični primjer"
@@ -2323,7 +2381,7 @@
   "compare": {
     "eyebrow": "Usporedba",
     "h2": "CRMtree u odnosu na druge CRM sustave",
-    "sub": "Usporedba s HubSpot, Pipedrive, Firmao i Livespaceom. Prikazujemo samo područja u kojima je CRMtree stvarno ispred konkurencije — ne značajke koje ima svatko.",
+    "sub": "CRMtree ima sve što nudi konkurencija, a prednjači pred njom u sljedećim funkcionalnim područjima.",
     "col_feature": "Značajka",
     "col_us": "CRMtree",
     "g1": "Uvođenje",
@@ -2333,6 +2391,7 @@
     "g5": "Analitika i obavijesti",
     "g6": "Dokumenti",
     "g7": "Sigurnost i infrastruktura",
+    "g8": "Projekti",
     "r1": "Postupno uvođenje klijenta",
     "r2": "Cjenovni model bez ograničenja mjesta",
     "r3": "Sinkronizacija e-pošte u stvarnom vremenu",
@@ -2349,6 +2408,7 @@
     "r14": "Dnevni zbirni e-mail",
     "r15": "Upravljanje dokumentima i odobrenja",
     "r16": "Opcija namjenske / on-prem infrastrukture",
+    "r17": "Upravljanje projektima s vremenskom crtom (Gantt)",
     "note": "Temeljeno na internoj funkcionalnoj analizi CRMtreea, provjerenoj u odnosu na javno dostupnu dokumentaciju konkurenata."
   },
   "how": {
