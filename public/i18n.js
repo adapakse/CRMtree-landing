@@ -14,30 +14,6 @@
 
   var STORAGE_KEY = "crmtree_lang";
 
-  // To samo ciasteczko ustawia aplikacja CRM na `.crmtree.pl`. Landing stoi na
-  // crmtree.pl, a CRM na {slug}.crmtree.pl i app.crmtree.pl — localStorage jest
-  // per origin, więc się nim nie podzielą, ale ciasteczko domenowe już tak.
-  // Dzięki temu klient, któremu CRM działa po rosyjsku, widzi po rosyjsku także
-  // stronę marketingową.
-  var COOKIE_NAME = "crmtree_lang";
-
-  function readLangCookie() {
-    try {
-      var m = document.cookie.match(/(?:^|;\s*)crmtree_lang=([a-z]{2})(?:;|$)/);
-      return m ? m[1] : null;
-    } catch (e) { return null; }
-  }
-
-  function writeLangCookie(code) {
-    try {
-      // Domena z kropką = współdzielona z każdą subdomeną CRM-a.
-      var host = location.hostname;
-      var domain = /(^|\.)crmtree\.pl$/.test(host) ? "; domain=.crmtree.pl" : "";
-      document.cookie = COOKIE_NAME + "=" + code + "; path=/; max-age=31536000"
-        + domain + "; SameSite=Lax";
-    } catch (e) {}
-  }
-
   var LANGS = [
     { code: "pl", name: "Polski" },
     { code: "en", name: "English" },
@@ -2555,11 +2531,6 @@
   }
 
   function detectLang() {
-    // Ciasteczko jest PIERWSZE: niesie ostatni świadomy wybór — czy to język
-    // ustawiony w CRM, czy wybrany tu, na landingu (oba zapisują to samo).
-    // localStorage zostaje dla wejść spoza domeny crmtree.pl.
-    var fromCookie = readLangCookie();
-    if (fromCookie && I18N[fromCookie]) return fromCookie;
     try {
       var saved = localStorage.getItem(STORAGE_KEY);
       if (saved && I18N[saved]) return saved;
@@ -2594,7 +2565,6 @@
     }
 
     try { localStorage.setItem(STORAGE_KEY, code); } catch (e) {}
-    writeLangCookie(code); // wybór na landingu ma też działać po stronie CRM-a
 
     var btnLabel = document.getElementById("langBtnLabel");
     if (btnLabel) btnLabel.textContent = code.toUpperCase();
