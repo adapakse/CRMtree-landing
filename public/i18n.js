@@ -12,7 +12,9 @@
 (function () {
   "use strict";
 
-  var STORAGE_KEY = "crmtree_lang";
+  // Renamed from "crmtree_lang": between 14 and 20 Oct 2026 the page copied the
+  // CRM's language into that key, so it still holds a language nobody chose here.
+  var STORAGE_KEY = "crmtree_landing_lang";
 
   var LANGS = [
     { code: "pl", name: "Polski" },
@@ -2564,8 +2566,6 @@
       if (pval != null) attrNodes[j].setAttribute("placeholder", pval);
     }
 
-    try { localStorage.setItem(STORAGE_KEY, code); } catch (e) {}
-
     var btnLabel = document.getElementById("langBtnLabel");
     if (btnLabel) btnLabel.textContent = code.toUpperCase();
     var menuBtns = document.querySelectorAll("#langMenu button");
@@ -2584,7 +2584,11 @@
       b.setAttribute("data-code", l.code);
       b.innerHTML = "<span>" + l.name + "</span><span class=\"lang-code\">" + l.code.toUpperCase() + "</span>";
       b.addEventListener("click", function () {
-        applyLang(this.getAttribute("data-code"));
+        var code = this.getAttribute("data-code");
+        applyLang(code);
+        // Only a language picked here is remembered — a browser-language guess
+        // saved on every visit would outlive a later change of that browser.
+        try { localStorage.setItem(STORAGE_KEY, code); } catch (e) {}
         menu.classList.remove("open");
         btn.setAttribute("aria-expanded", "false");
       });
