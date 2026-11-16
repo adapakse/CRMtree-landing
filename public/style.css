@@ -181,7 +181,7 @@ img, svg { max-width: 100%; }
 /* Logo białe na przezroczystym tle — bez prostokąta; rozmiar jak na produkcji (~76×42) */
 .navbar__logo-img { height: 42px; width: auto; display: block; }
 
-.navbar__cta { margin-left: auto; min-height: 40px; padding: 8px 14px; }
+.navbar__cta { margin-left: auto; min-height: 44px; padding: 8px 14px; }
 .navbar__toggle {
   display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
   width: 44px; height: 44px; margin-right: -8px; border-radius: var(--radius-btn);
@@ -197,6 +197,8 @@ img, svg { max-width: 100%; }
 html.nav-open { overflow: hidden; }
 /* Menu otwarte: w pasku zostaje logo i ✕ — jedyne „Wypróbuj” jest na dole menu */
 body.nav-open .navbar__cta { visibility: hidden; }
+/* Na stronie głównej „Wypróbuj” w pasku pokazuje się dopiero, gdy przycisk w hero zniknie z ekranu */
+.navbar__cta.is-hidden { visibility: hidden; }
 
 @media (max-width: 1199px) {
   .navbar__menu {
@@ -467,13 +469,20 @@ input::placeholder, textarea::placeholder { color: var(--gray-500); }
 input:hover, textarea:hover { border-color: var(--gray-300); }
 input:focus, textarea:focus { outline: none; border-color: var(--brand); box-shadow: var(--shadow-field), var(--ring); }
 input:focus-visible, textarea:focus-visible { outline: none; }
-input:user-invalid, textarea:user-invalid { border-color: var(--danger); }
+input:user-invalid, textarea:user-invalid { border-color: var(--danger); box-shadow: var(--shadow-field), 0 0 0 4px rgba(220,38,38,.12); }
 input:user-invalid:focus, textarea:user-invalid:focus { box-shadow: var(--shadow-field), 0 0 0 4px rgba(220,38,38,.16); }
 textarea { resize: vertical; min-height: 128px; }
 
 .form-success, .form-error { border-radius: var(--radius-btn); padding: 12px 16px; font-size: 14px; font-weight: 500; margin-bottom: 12px; }
 .form-success { background: var(--brand-pale); border: 1px solid var(--brand-muted); color: #1B5E31; }
 .form-error   { background: #FEF2F2; border: 1px solid #FECACA; color: #991B1B; }
+/* Ikona linią przed komunikatem (zamiast emoji w tekście) */
+.form-success::before, .form-error::before {
+  content: ''; display: inline-block; width: 16px; height: 16px; margin-right: 8px; vertical-align: -2px;
+  background: currentColor; -webkit-mask: var(--msg-icon) center / contain no-repeat; mask: var(--msg-icon) center / contain no-repeat;
+}
+.form-success { --msg-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23000' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='8' cy='8' r='6.5'/%3E%3Cpath d='M5 8.2l2 2 4-4.2'/%3E%3C/svg%3E"); }
+.form-error { --msg-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23000' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='8' cy='8' r='6.5'/%3E%3Cpath d='M8 4.8v3.8M8 11.2h.01'/%3E%3C/svg%3E"); }
 
 /* ── TRIAL ───────────────────────────────────────────────────────── */
 .trial { background: var(--graphite); color: var(--on-dark); padding: var(--section-y) 0; }
@@ -486,6 +495,7 @@ textarea { resize: vertical; min-height: 128px; }
 .trial-form input { flex: 1 1 260px; border-color: transparent; box-shadow: none; }
 .trial-form input:hover { border-color: transparent; }
 .trial-form input:focus { border-color: var(--brand-light); box-shadow: 0 0 0 4px rgba(77,198,113,.32); }
+.trial-form input:user-invalid { border-color: var(--danger); box-shadow: 0 0 0 4px rgba(248,113,113,.32); }
 .trial-form .btn { flex: 0 0 auto; }
 .trial__note { font-size: 14px; color: var(--on-dark-muted); margin-top: 12px; }
 .trial .form-success, .trial .form-error { max-width: 520px; margin-top: 12px; }
@@ -510,6 +520,12 @@ a.cycle__stage:hover .cycle__go { transform: translateX(2px); }
 .cycle__num { font-size: 14px; font-weight: 700; color: var(--brand-text); line-height: 1.2; letter-spacing: .04em; }
 .cycle__stage h3 { font-size: 16px; font-weight: 700; color: var(--ink); line-height: 1.4; }
 .cycle__stage p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+@media (max-width: 559px) {
+  /* Strzałka w jednym wierszu z numerem - karta krótsza o linię */
+  .cycle__stage { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 8px; row-gap: 8px; }
+  .cycle__stage > :not(.cycle__go) { grid-column: 1; }
+  .cycle__go { grid-column: 2; grid-row: 1; margin: 0; padding: 0; align-self: center; }
+}
 @media (min-width: 560px)  { .cycle { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 1024px) { .cycle { grid-template-columns: repeat(4, 1fr); } .cycle__stage { padding: 28px 24px; } }
 
@@ -687,7 +703,7 @@ tr.compare-group td { padding: 0; }
 }
 .compare-pick__chips::-webkit-scrollbar { display: none; }
 .compare-pick__chips button {
-  flex: 1 0 auto; min-height: 40px; padding: 0 12px; border: 0; border-radius: 999px; background: none;
+  flex: 1 1 0; min-width: 0; min-height: 44px; padding: 0 8px; border: 0; border-radius: 999px; background: none;
   font-family: inherit; font-size: 14px; font-weight: 600; line-height: 1.2; color: var(--text-muted);
   white-space: nowrap; cursor: pointer; transition: background-color .15s, color .15s;
 }
@@ -703,6 +719,7 @@ tr.compare-group td { padding: 0; }
   table.compare thead th:first-child { width: 50%; }
   table.compare thead th.col-us { width: 25%; }
   table.compare tbody td:first-child { font-size: 14px; }
+  table.compare th, table.compare td { overflow-wrap: anywhere; hyphens: auto; }
   tr.compare-group th { padding: 20px 12px 8px; }
   tr.compare-group > * { border-bottom: 0; }
   tr.compare-group > td[colspan] { display: none; }
@@ -719,6 +736,11 @@ tr.compare-group td { padding: 0; }
   table.compare[data-compare="firmao"] tbody tr:not(.compare-group) > td:nth-child(5),
   table.compare[data-compare="livespace"] thead th:nth-child(6),
   table.compare[data-compare="livespace"] tbody tr:not(.compare-group) > td:nth-child(6) { display: table-cell; }
+}
+
+/* Akapity treści na telefonie 16/26 px jak reszta strony */
+@media (max-width: 767px) {
+  .cycle__stage p, .sec-item p, .contact-step p, .module-tile__lead { font-size: 16px; line-height: 26px; }
 }
 
 /* ── BEZPIECZEŃSTWO + AI ACT ─────────────────────────────────────── */
@@ -862,6 +884,26 @@ tr.compare-group td { padding: 0; }
   text-decoration: none; color: var(--on-dark-muted); font-size: 14px; font-weight: 500; transition: color .15s;
 }
 .footer__col a:hover { color: var(--on-dark); }
+@media (max-width: 1023px) { .footer__col a { min-height: 44px; } }
+/* Kolumna = <details>: na desktopie zawsze otwarta i wygląda jak dawniej (nav.js),
+   na telefonie zwinięta, nagłówek 48px ze strzałką. Linki zostają w HTML. */
+summary.footer__heading { display: block; list-style: none; }
+summary.footer__heading::-webkit-details-marker { display: none; }
+@media (min-width: 768px) { summary.footer__heading { pointer-events: none; } }
+@media (max-width: 767px) {
+  .footer__cols { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  details.footer__col { border-bottom: 1px solid rgba(255,255,255,.1); }
+  details.footer__col:first-child { border-top: 1px solid rgba(255,255,255,.1); }
+  summary.footer__heading {
+    display: flex; align-items: center; justify-content: space-between; min-height: 48px; margin: 0; cursor: pointer;
+  }
+  summary.footer__heading::after {
+    content: ''; width: 8px; height: 8px; margin-right: 4px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor;
+    transform: translateY(-2px) rotate(45deg); transition: transform .2s;
+  }
+  details.footer__col[open] > summary.footer__heading::after { transform: translateY(2px) rotate(-135deg); }
+  details.footer__col > ul { padding-bottom: 12px; }
+}
 .footer__bottom {
   display: flex; flex-direction: column; gap: 8px; padding-top: 24px;
   border-top: 1px solid rgba(255,255,255,.1);

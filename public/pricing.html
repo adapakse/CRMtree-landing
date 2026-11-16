@@ -55,7 +55,7 @@
     }
     .seg button {
       display: inline-flex; align-items: center; gap: 8px;
-      min-height: 40px; padding: 0 16px; border: 0; border-radius: 999px; background: none;
+      min-height: 44px; padding: 0 16px; border: 0; border-radius: 999px; background: none;
       font-family: inherit; font-size: 14px; font-weight: 600; line-height: 1.2; color: var(--text-muted);
       cursor: pointer; white-space: nowrap; transition: background-color .15s, color .15s;
     }
@@ -237,6 +237,17 @@
     .pricing-contact h2 { font-size: 26px; font-weight: 800; line-height: 1.2; color: var(--ink); letter-spacing: -.01em; margin-bottom: 8px; }
     .pricing-contact p { font-size: 16px; color: var(--text-muted); margin-bottom: 24px; }
     .pricing-contact .btn svg { flex-shrink: 0; }
+
+    /* Kopia nagłówka tabeli przyklejona pod paskiem (telefon): sticky nie działa
+       w kontenerze z overflow-x, więc JS pokazuje kopię i przesuwa ją razem z tabelą */
+    .plan-compare-sticky {
+      position: fixed; top: var(--nav-h); z-index: 50; overflow: hidden;
+      background: var(--surface); border: 1px solid var(--border); border-top: 0;
+      box-shadow: 0 4px 10px rgba(0,0,0,.06);
+    }
+    .plan-compare-sticky[hidden] { display: none; }
+    .plan-compare-sticky__scroll { overflow: hidden; }
+    .plan-compare-sticky table.plan-compare thead th { border-radius: 0; }
 
     /* ── TELEFON: tabela przewijana wewnątrz, pierwsza kolumna przyklejona ─ */
     @media (max-width: 767px) {
@@ -556,29 +567,29 @@
           <p data-i18n="footer.tagline">CRM dla nowoczesnej firmy</p>
         </div>
         <div class="footer__cols">
-          <div class="footer__col">
-            <p class="footer__heading" data-i18n="footer.col_product">Produkt</p>
+          <details class="footer__col" open>
+            <summary class="footer__heading" data-i18n="footer.col_product">Produkt</summary>
             <ul>
               <li><a href="/#features" data-i18n="footer.features">Funkcje</a></li>
               <li><a href="/pricing.html" data-i18n="footer.pricing">Cennik</a></li>
               <li><a href="/#aiact" data-i18n="footer.aiact">AI Act</a></li>
               <li><a href="https://demo.crmtree.pl/login" data-i18n="footer.login">Zaloguj się</a></li>
             </ul>
-          </div>
-          <div class="footer__col">
-            <p class="footer__heading" data-i18n="footer.col_resources">Zasoby</p>
+          </details>
+          <details class="footer__col" open>
+            <summary class="footer__heading" data-i18n="footer.col_resources">Zasoby</summary>
             <ul>
               <li><a href="/blog" data-i18n="footer.blog">Blog</a></li>
               <li><a href="/#faq" data-i18n="footer.faq">FAQ</a></li>
             </ul>
-          </div>
-          <div class="footer__col">
-            <p class="footer__heading" data-i18n="footer.col_company">Firma</p>
+          </details>
+          <details class="footer__col" open>
+            <summary class="footer__heading" data-i18n="footer.col_company">Firma</summary>
             <ul>
               <li><a href="/#contact" data-i18n="footer.contact">Kontakt</a></li>
               <li><a href="/polityka-prywatnosci.html" data-i18n="footer.privacy">Polityka prywatności</a></li>
             </ul>
-          </div>
+          </details>
         </div>
       </div>
       <div class="footer__bottom">
@@ -652,6 +663,39 @@
     // i18n.js ustawia <html lang> po wybraniu języka - dopóki ktoś nie wybrał waluty sam, idzie za językiem
     new MutationObserver(() => { if (!currencyChosen) setCurrency(currencyForLang()); else renderPriceNotes(); requestAnimationFrame(alignCards); })
       .observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+  </script>
+  <script>
+    // ── Tabela „Porównaj plany” na telefonie: przyklejony nagłówek (kopia thead) ──
+    (function () {
+      const wrap = document.querySelector('.plan-compare-wrap');
+      const table = wrap && wrap.querySelector('table');
+      if (!table || !table.tHead) return;
+      const mq = window.matchMedia('(max-width: 767px)');
+      const bar = document.createElement('div');
+      bar.className = 'plan-compare-sticky'; bar.hidden = true; bar.setAttribute('aria-hidden', 'true');
+      const scroller = document.createElement('div'); scroller.className = 'plan-compare-sticky__scroll';
+      const copy = document.createElement('table'); copy.className = 'plan-compare';
+      copy.appendChild(table.tHead.cloneNode(true));
+      scroller.appendChild(copy); bar.appendChild(scroller);
+      wrap.parentNode.insertBefore(bar, wrap);
+      function sync() {
+        if (!mq.matches) { bar.hidden = true; return; }
+        const navH = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 64;
+        const head = table.tHead.getBoundingClientRect();
+        const box = wrap.getBoundingClientRect();
+        const show = head.top < navH && box.bottom > navH + head.height;
+        bar.hidden = !show;
+        if (!show) return;
+        bar.style.left = box.left + 'px';
+        bar.style.width = box.width + 'px';
+        copy.style.width = table.offsetWidth + 'px';
+        scroller.scrollLeft = wrap.scrollLeft;
+      }
+      window.addEventListener('scroll', sync, { passive: true });
+      wrap.addEventListener('scroll', sync, { passive: true });
+      window.addEventListener('resize', sync);
+      sync();
+    })();
   </script>
   <script src="nav.js"></script>
 </body>

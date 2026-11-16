@@ -271,8 +271,8 @@
     "phone_ph": "+48 500 000 000",
     "message_label": "Wiadomość",
     "message_ph": "Opisz krótko swoje potrzeby lub zadaj pytanie…",
-    "success": "✅ Dziękujemy! Odezwiemy się wkrótce.",
-    "error": "❌ Coś poszło nie tak. Spróbuj ponownie lub napisz bezpośrednio.",
+    "success": "Dziękujemy! Odezwiemy się wkrótce.",
+    "error": "Coś poszło nie tak. Spróbuj ponownie lub napisz bezpośrednio.",
     "submit": "Wyślij zapytanie",
     "submitting": "Wysyłanie…"
   },
@@ -346,7 +346,7 @@
     "pill": "Cześć!",
     "name": "Zespół CRMtree",
     "status": "Online teraz",
-    "msg1": "Cześć! 👋 Chętnie odpowiemy, czego szukasz albo co chcesz usprawnić w swojej sprzedaży.",
+    "msg1": "Cześć! Chętnie odpowiemy, czego szukasz albo co chcesz usprawnić w swojej sprzedaży.",
     "msg2": "Możemy też od razu umówić 14-dniowy dostęp testowy.",
     "cta": "Napisz do nas"
   }
@@ -589,8 +589,8 @@
     "phone_ph": "+1 555 000 0000",
     "message_label": "Message",
     "message_ph": "Briefly describe your needs or ask a question…",
-    "success": "✅ Thank you! We'll be in touch soon.",
-    "error": "❌ Something went wrong. Please try again or email us directly.",
+    "success": "Thank you! We'll be in touch soon.",
+    "error": "Something went wrong. Please try again or email us directly.",
     "submit": "Send inquiry",
     "submitting": "Sending…"
   },
@@ -664,7 +664,7 @@
     "pill": "Hey!",
     "name": "CRMtree team",
     "status": "Online now",
-    "msg1": "Hey! 👋 Happy to help you figure out what you're looking for, or what you'd like to improve in your sales process.",
+    "msg1": "Hey! Happy to help you figure out what you're looking for, or what you'd like to improve in your sales process.",
     "msg2": "We can also set you up with a 14-day trial right away.",
     "cta": "Message us"
   }
@@ -907,8 +907,8 @@
     "phone_ph": "+49 151 00000000",
     "message_label": "Nachricht",
     "message_ph": "Beschreiben Sie kurz Ihren Bedarf oder stellen Sie eine Frage…",
-    "success": "✅ Danke! Wir melden uns bald.",
-    "error": "❌ Etwas ist schiefgelaufen. Bitte erneut versuchen oder direkt schreiben.",
+    "success": "Danke! Wir melden uns bald.",
+    "error": "Etwas ist schiefgelaufen. Bitte erneut versuchen oder direkt schreiben.",
     "submit": "Anfrage senden",
     "submitting": "Wird gesendet…"
   },
@@ -982,7 +982,7 @@
     "pill": "Hallo!",
     "name": "CRMtree-Team",
     "status": "Jetzt online",
-    "msg1": "Hallo! 👋 Wir helfen gern herauszufinden, wonach Sie suchen oder was Sie im Vertrieb verbessern möchten.",
+    "msg1": "Hallo! Wir helfen gern herauszufinden, wonach Sie suchen oder was Sie im Vertrieb verbessern möchten.",
     "msg2": "Wir können auch direkt einen 14-tägigen Testzugang einrichten.",
     "cta": "Schreiben Sie uns"
   }
@@ -1225,8 +1225,8 @@
     "phone_ph": "+39 300 0000000",
     "message_label": "Messaggio",
     "message_ph": "Descrivi brevemente le tue esigenze o fai una domanda…",
-    "success": "✅ Grazie! Ti risponderemo presto.",
-    "error": "❌ Qualcosa è andato storto. Riprova o scrivici direttamente.",
+    "success": "Grazie! Ti risponderemo presto.",
+    "error": "Qualcosa è andato storto. Riprova o scrivici direttamente.",
     "submit": "Invia richiesta",
     "submitting": "Invio in corso…"
   },
@@ -1300,7 +1300,7 @@
     "pill": "Ciao!",
     "name": "Team CRMtree",
     "status": "Online ora",
-    "msg1": "Ciao! 👋 Siamo felici di aiutarti a capire cosa cerchi o cosa vuoi migliorare nelle tue vendite.",
+    "msg1": "Ciao! Siamo felici di aiutarti a capire cosa cerchi o cosa vuoi migliorare nelle tue vendite.",
     "msg2": "Possiamo anche attivarti subito una prova gratuita di 14 giorni.",
     "cta": "Scrivici"
   }
@@ -1543,8 +1543,8 @@
     "phone_ph": "+34 600 000 000",
     "message_label": "Mensaje",
     "message_ph": "Describe brevemente tus necesidades o haz una pregunta…",
-    "success": "✅ ¡Gracias! Te contactaremos pronto.",
-    "error": "❌ Algo salió mal. Inténtalo de nuevo o escríbenos directamente.",
+    "success": "¡Gracias! Te contactaremos pronto.",
+    "error": "Algo salió mal. Inténtalo de nuevo o escríbenos directamente.",
     "submit": "Enviar solicitud",
     "submitting": "Enviando…"
   },
@@ -1618,7 +1618,7 @@
     "pill": "¡Hola!",
     "name": "Equipo CRMtree",
     "status": "En línea ahora",
-    "msg1": "¡Hola! 👋 Encantados de ayudarte a ver qué buscas o qué te gustaría mejorar en tus ventas.",
+    "msg1": "¡Hola! Encantados de ayudarte a ver qué buscas o qué te gustaría mejorar en tus ventas.",
     "msg2": "También podemos activarte ya una prueba gratuita de 14 días.",
     "cta": "Escríbenos"
   }
@@ -1861,8 +1861,8 @@
     "phone_ph": "+33 6 00 00 00 00",
     "message_label": "Message",
     "message_ph": "Décrivez brièvement vos besoins ou posez une question…",
-    "success": "✅ Merci ! Nous vous recontactons bientôt.",
-    "error": "❌ Un problème est survenu. Réessayez ou écrivez-nous directement.",
+    "success": "Merci ! Nous vous recontactons bientôt.",
+    "error": "Un problème est survenu. Réessayez ou écrivez-nous directement.",
     "submit": "Envoyer la demande",
     "submitting": "Envoi en cours…"
   },
@@ -1936,7 +1936,7 @@
     "pill": "Salut !",
     "name": "Équipe CRMtree",
     "status": "En ligne",
-    "msg1": "Salut ! 👋 On est là pour vous aider à trouver ce que vous cherchez ou ce que vous voulez améliorer dans vos ventes.",
+    "msg1": "Salut ! On est là pour vous aider à trouver ce que vous cherchez ou ce que vous voulez améliorer dans vos ventes.",
     "msg2": "On peut aussi vous activer directement un essai gratuit de 14 jours.",
     "cta": "Écrivez-nous"
   }
@@ -2179,8 +2179,8 @@
     "phone_ph": "+40 700 000 000",
     "message_label": "Mesaj",
     "message_ph": "Descrie pe scurt nevoile tale sau pune o întrebare…",
-    "success": "✅ Mulțumim! Revenim curând.",
-    "error": "❌ Ceva nu a mers bine. Încearcă din nou sau scrie-ne direct.",
+    "success": "Mulțumim! Revenim curând.",
+    "error": "Ceva nu a mers bine. Încearcă din nou sau scrie-ne direct.",
     "submit": "Trimite solicitarea",
     "submitting": "Se trimite…"
   },
@@ -2254,7 +2254,7 @@
     "pill": "Bună!",
     "name": "Echipa CRMtree",
     "status": "Online acum",
-    "msg1": "Bună! 👋 Te ajutăm cu drag să vezi ce cauți sau ce vrei să îmbunătățești în vânzări.",
+    "msg1": "Bună! Te ajutăm cu drag să vezi ce cauți sau ce vrei să îmbunătățești în vânzări.",
     "msg2": "Îți putem activa și acum o perioadă de testare gratuită de 14 zile.",
     "cta": "Scrie-ne"
   }
@@ -2497,8 +2497,8 @@
     "phone_ph": "+7 900 000 00 00",
     "message_label": "Сообщение",
     "message_ph": "Кратко опишите ваши потребности или задайте вопрос…",
-    "success": "✅ Спасибо! Мы скоро свяжемся.",
-    "error": "❌ Что-то пошло не так. Попробуйте ещё раз или напишите нам напрямую.",
+    "success": "Спасибо! Мы скоро свяжемся.",
+    "error": "Что-то пошло не так. Попробуйте ещё раз или напишите нам напрямую.",
     "submit": "Отправить запрос",
     "submitting": "Отправка…"
   },
@@ -2572,7 +2572,7 @@
     "pill": "Привет!",
     "name": "Команда CRMtree",
     "status": "Онлайн сейчас",
-    "msg1": "Привет! 👋 Расскажите, что вы ищете или что хотите улучшить в продажах - мы поможем.",
+    "msg1": "Привет! Расскажите, что вы ищете или что хотите улучшить в продажах - мы поможем.",
     "msg2": "Можем сразу подключить 14-дневный тестовый доступ.",
     "cta": "Написать нам"
   }
@@ -2815,8 +2815,8 @@
     "phone_ph": "+386 40 000 000",
     "message_label": "Sporočilo",
     "message_ph": "Na kratko opišite svoje potrebe ali zastavite vprašanje…",
-    "success": "✅ Hvala! Kmalu se oglasimo.",
-    "error": "❌ Nekaj je šlo narobe. Poskusite znova ali nam pišite neposredno.",
+    "success": "Hvala! Kmalu se oglasimo.",
+    "error": "Nekaj je šlo narobe. Poskusite znova ali nam pišite neposredno.",
     "submit": "Pošlji povpraševanje",
     "submitting": "Pošiljanje…"
   },
@@ -2890,7 +2890,7 @@
     "pill": "Živjo!",
     "name": "Ekipa CRMtree",
     "status": "Trenutno na voljo",
-    "msg1": "Živjo! 👋 Z veseljem pomagamo ugotoviti, kaj iščete ali kaj bi radi izboljšali pri prodaji.",
+    "msg1": "Živjo! Z veseljem pomagamo ugotoviti, kaj iščete ali kaj bi radi izboljšali pri prodaji.",
     "msg2": "Lahko takoj aktiviramo tudi 14-dnevni preizkusni dostop.",
     "cta": "Pišite nam"
   }
@@ -3133,8 +3133,8 @@
     "phone_ph": "+385 91 000 0000",
     "message_label": "Poruka",
     "message_ph": "Ukratko opišite svoje potrebe ili postavite pitanje…",
-    "success": "✅ Hvala! Javit ćemo se uskoro.",
-    "error": "❌ Nešto je pošlo po zlu. Pokušajte ponovno ili nam pišite izravno.",
+    "success": "Hvala! Javit ćemo se uskoro.",
+    "error": "Nešto je pošlo po zlu. Pokušajte ponovno ili nam pišite izravno.",
     "submit": "Pošalji upit",
     "submitting": "Slanje…"
   },
@@ -3208,7 +3208,7 @@
     "pill": "Bok!",
     "name": "CRMtree tim",
     "status": "Online sada",
-    "msg1": "Bok! 👋 Rado ćemo pomoći oko toga što tražite ili što biste željeli poboljšati u prodaji.",
+    "msg1": "Bok! Rado ćemo pomoći oko toga što tražite ili što biste željeli poboljšati u prodaji.",
     "msg2": "Odmah vam možemo aktivirati i 14-dnevni probni pristup.",
     "cta": "Pišite nam"
   }

@@ -109,7 +109,7 @@
     var chat = document.getElementById("chatWidget");
     if (!chat || !("IntersectionObserver" in window)) return;
     var hero = document.querySelector(".hero");
-    var blockers = document.querySelectorAll("#trial, #contact, .footer");
+    var blockers = document.querySelectorAll("#trial, .cta-band, #contact, .footer");
     var heroVisible = !!hero;
     var visibleBlockers = 0;
 
@@ -138,6 +138,63 @@
     update();
   }
 
+  // ── Panel czatu: zamyka się po „Napisz do nas”, Esc i dotknięciu poza nim ──
+  function initChatPanel() {
+    var chat = document.getElementById("chatWidget");
+    if (!chat) return;
+    function close() { chat.classList.remove("open"); }
+    var cta = chat.querySelector(".chat-panel .btn");
+    if (cta) cta.addEventListener("click", close);
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && chat.classList.contains("open")) close();
+    });
+    document.addEventListener("click", function (e) {
+      if (chat.classList.contains("open") && !chat.contains(e.target)) close();
+    });
+  }
+
+  // ── „Wypróbuj” w pasku: schowany, dopóki widać przycisk w hero ────────
+  // Na telefonie oba są na pierwszym ekranie; visibility, więc pasek nie skacze.
+  function initNavCta() {
+    var navCta = document.querySelector(".navbar__cta");
+    var heroCta = document.querySelector(".hero__cta");
+    if (!navCta || !heroCta || !("IntersectionObserver" in window)) return;
+    new IntersectionObserver(function (entries) {
+      navCta.classList.toggle("is-hidden", entries[0].isIntersecting);
+    }, { rootMargin: "-64px 0px 0px 0px" }).observe(heroCta);
+  }
+
+  // ── Stopka: kolumny jako <details> zwinięte tylko na telefonie ─────────
+  function initFooterCols() {
+    var cols = document.querySelectorAll("details.footer__col");
+    if (!cols.length) return;
+    var MOBILE = window.matchMedia("(max-width: 767px)");
+    function apply() {
+      Array.prototype.forEach.call(cols, function (d) {
+        d.open = !MOBILE.matches;
+        var s = d.querySelector("summary");
+        if (s) { if (MOBILE.matches) s.removeAttribute("tabindex"); else s.setAttribute("tabindex", "-1"); }
+      });
+    }
+    Array.prototype.forEach.call(cols, function (d) {
+      var s = d.querySelector("summary");
+      if (s) s.addEventListener("click", function (e) { if (!MOBILE.matches) e.preventDefault(); });
+    });
+    onMediaChange(MOBILE, apply);
+    apply();
+  }
+
+  // ── Formularze: błędne pole dostaje aria-invalid (wygląd daje :user-invalid) ──
+  function initFormValidity() {
+    document.addEventListener("invalid", function (e) {
+      if (e.target && e.target.setAttribute) e.target.setAttribute("aria-invalid", "true");
+    }, true);
+    document.addEventListener("input", function (e) {
+      var el = e.target;
+      if (el && el.hasAttribute && el.hasAttribute("aria-invalid") && el.checkValidity()) el.removeAttribute("aria-invalid");
+    });
+  }
+
   // ── Kotwice do zwiniętych modułów ─────────────────────────────────
   // Kafelki modułów to <details>. Link z menu, cyklu albo stopki do takiego
   // kafelka (np. #f-seobot) ma go rozwinąć, a nie przewinąć do zamkniętego.
@@ -158,6 +215,10 @@
   document.addEventListener("DOMContentLoaded", function () {
     initMenu();
     initChat();
+    initChatPanel();
+    initNavCta();
+    initFooterCols();
+    initFormValidity();
     initDetailsAnchors();
   });
 })();

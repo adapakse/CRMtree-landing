@@ -145,8 +145,8 @@
           <input type="email" id="trialEmail" name="email" autocomplete="email" required data-i18n-placeholder="trial.email_placeholder" placeholder="Firmowy adres e-mail" />
           <button type="submit" class="btn btn--primary btn--lg" data-i18n="trial.cta">Rozpocznij za darmo</button>
         </form>
-        <div id="trialSuccess" class="form-success" role="status" style="display:none" data-i18n="contact.success">✅ Dziękujemy! Odezwiemy się wkrótce.</div>
-        <div id="trialError" class="form-error" role="alert" style="display:none" data-i18n="contact.error">❌ Coś poszło nie tak. Spróbuj ponownie.</div>
+        <div id="trialSuccess" class="form-success" role="status" style="display:none" data-i18n="contact.success">Dziękujemy! Odezwiemy się wkrótce.</div>
+        <div id="trialError" class="form-error" role="alert" style="display:none" data-i18n="contact.error">Coś poszło nie tak. Spróbuj ponownie.</div>
         <p class="trial__note" data-i18n="trial.note">Nie potrzebujesz karty płatniczej. Zrezygnujesz w każdej chwili.</p>
       </div>
     </div>
@@ -870,10 +870,10 @@
           <textarea id="message" name="message" rows="4" data-i18n-placeholder="contact.message_ph" placeholder="Opisz krótko swoje potrzeby lub zadaj pytanie…"></textarea>
         </div>
         <div id="formSuccess" class="form-success" role="status" style="display:none" data-i18n="contact.success">
-          ✅ Dziękujemy! Odezwiemy się wkrótce.
+          Dziękujemy! Odezwiemy się wkrótce.
         </div>
         <div id="formError" class="form-error" role="alert" style="display:none" data-i18n="contact.error">
-          ❌ Coś poszło nie tak. Spróbuj ponownie lub napisz bezpośrednio na crmtree_kontakt@crmtree.pl
+          Coś poszło nie tak. Spróbuj ponownie lub napisz bezpośrednio na crmtree_kontakt@crmtree.pl
         </div>
         <div class="contact-form__foot">
           <button type="submit" id="formSubmit" class="btn btn--primary btn--lg" data-i18n="contact.submit">Wyślij zapytanie</button>
@@ -923,8 +923,8 @@
           <p data-i18n="footer.tagline">CRM dla nowoczesnej firmy</p>
         </div>
         <div class="footer__cols">
-          <div class="footer__col footer__col--modules">
-            <p class="footer__heading" data-i18n="footer.col_modules">Moduły</p>
+          <details class="footer__col footer__col--modules" open>
+            <summary class="footer__heading" data-i18n="footer.col_modules">Moduły</summary>
             <ul>
               <li><a href="#f-prospekty" data-i18n="features.f10_t">Prospekty</a></li>
               <li><a href="#f-analiza-ai" data-i18n="features.f5_t">Analiza rozmów AI</a></li>
@@ -938,30 +938,30 @@
               <li><a href="#f-bezpieczenstwo" data-i18n="features.f8_t">Bezpieczeństwo i role</a></li>
               <li><a href="#f-projekty" data-i18n="features.f11_t">Projekty</a></li>
             </ul>
-          </div>
-          <div class="footer__col">
-            <p class="footer__heading" data-i18n="footer.col_product">Produkt</p>
+          </details>
+          <details class="footer__col" open>
+            <summary class="footer__heading" data-i18n="footer.col_product">Produkt</summary>
             <ul>
               <li><a href="#features" data-i18n="footer.features">Funkcje</a></li>
               <li><a href="/pricing.html" data-i18n="footer.pricing">Cennik</a></li>
               <li><a href="#aiact" data-i18n="footer.aiact">AI Act</a></li>
               <li><a href="https://demo.crmtree.pl/login" data-i18n="footer.login">Zaloguj się</a></li>
             </ul>
-          </div>
-          <div class="footer__col">
-            <p class="footer__heading" data-i18n="footer.col_resources">Zasoby</p>
+          </details>
+          <details class="footer__col" open>
+            <summary class="footer__heading" data-i18n="footer.col_resources">Zasoby</summary>
             <ul>
               <li><a href="/blog" data-i18n="footer.blog">Blog</a></li>
               <li><a href="#faq" data-i18n="footer.faq">FAQ</a></li>
             </ul>
-          </div>
-          <div class="footer__col">
-            <p class="footer__heading" data-i18n="footer.col_company">Firma</p>
+          </details>
+          <details class="footer__col" open>
+            <summary class="footer__heading" data-i18n="footer.col_company">Firma</summary>
             <ul>
               <li><a href="#contact" data-i18n="footer.contact">Kontakt</a></li>
               <li><a href="/polityka-prywatnosci.html" data-i18n="footer.privacy">Polityka prywatności</a></li>
             </ul>
-          </div>
+          </details>
         </div>
       </div>
       <div class="footer__bottom">
@@ -982,7 +982,7 @@
           <span class="chat-panel__status"><span class="chat-panel__status-dot"></span><span data-i18n="chat.status">Online teraz</span></span>
         </div>
       </div>
-      <p class="chat-panel__msg" data-i18n="chat.msg1">Cześć! 👋 Chętnie odpowiemy, czego szukasz albo co chcesz usprawnić w swojej sprzedaży.</p>
+      <p class="chat-panel__msg" data-i18n="chat.msg1">Cześć! Chętnie odpowiemy, czego szukasz albo co chcesz usprawnić w swojej sprzedaży.</p>
       <p class="chat-panel__msg chat-panel__msg--soft" data-i18n="chat.msg2">Możemy też od razu umówić 14-dniowy dostęp testowy.</p>
       <a href="#contact" class="btn btn--primary" data-i18n="chat.cta">Napisz do nas</a>
     </div>
