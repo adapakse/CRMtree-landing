@@ -1,6 +1,8 @@
 /*
- * CRMtree landing — menu nawigacji na telefonie/tablecie (☰) i rozwijane „Produkty”.
- * Esc albo klik obok zamyka menu; stan w aria-expanded.
+ * CRMtree landing — menu nawigacji na telefonie/tablecie (☰), rozwijane „Produkty”
+ * i widoczność widgetu czatu na telefonie.
+ * Menu: panel na całą wysokość pod paskiem, strona pod spodem się nie przewija;
+ * Esc, ✕ albo klik w link zamyka; stan w aria-expanded.
  * Etykiety „Otwórz menu” / „Zamknij menu” biorą tłumaczenie z i18n.js, jeśli jest
  * na stronie (polityka prywatności go nie ładuje — wtedy zostają po polsku).
  */
@@ -8,6 +10,7 @@
   "use strict";
 
   var DESKTOP = window.matchMedia("(min-width: 1200px)");
+  var PHONE = window.matchMedia("(max-width: 1023px)");  // telefon i tablet: hero z mockupem jest wtedy pod czatem
   var FALLBACK = { "nav.menu_open": "Otwórz menu", "nav.menu_close": "Zamknij menu" };
 
   function t(key) {
@@ -16,15 +19,15 @@
     return val || FALLBACK[key];
   }
 
-  document.addEventListener("DOMContentLoaded", function () {
+  function onMediaChange(mq, fn) {
+    if (mq.addEventListener) mq.addEventListener("change", fn);
+    else if (mq.addListener) mq.addListener(fn);
+  }
+
+  function initMenu() {
     var toggle = document.querySelector(".navbar__toggle");
     var menu = document.getElementById("siteMenu");
     if (!toggle || !menu) return;
-
-    var backdrop = document.createElement("div");
-    backdrop.className = "navbar__backdrop";
-    backdrop.setAttribute("aria-hidden", "true");
-    document.body.appendChild(backdrop);
 
     function setLabel(open) {
       var key = open ? "nav.menu_close" : "nav.menu_open";
@@ -38,13 +41,14 @@
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
       menu.classList.toggle("open", open);
       document.body.classList.toggle("nav-open", open);
+      document.documentElement.classList.toggle("nav-open", open);
       setLabel(open);
+      if (open) menu.scrollTop = 0;
       if (!open && returnFocus) toggle.focus();
     }
 
     setLabel(false);
     toggle.addEventListener("click", function () { setOpen(!isOpen(), false); });
-    backdrop.addEventListener("click", function () { setOpen(false, false); });
 
     // Klik w link w menu (np. #compare) — przewiń i zamknij menu.
     menu.addEventListener("click", function (e) {
@@ -59,9 +63,7 @@
     });
 
     // Przejście do szerokiego ekranu — menu wraca do paska.
-    var onWide = function () { if (DESKTOP.matches && isOpen()) setOpen(false, false); };
-    if (DESKTOP.addEventListener) DESKTOP.addEventListener("change", onWide);
-    else if (DESKTOP.addListener) DESKTOP.addListener(onWide);
+    onMediaChange(DESKTOP, function () { if (DESKTOP.matches && isOpen()) setOpen(false, false); });
 
     // ── „Produkty” (rozwijane) ──────────────────────────────────────
     var megas = document.querySelectorAll(".has-mega");
@@ -98,5 +100,46 @@
       }
       if (isOpen()) setOpen(false, true);
     });
+  }
+
+  // ── Czat na telefonie ─────────────────────────────────────────────
+  // Launcher nie może zasłaniać CTA: pokazuje się dopiero, gdy hero zniknie
+  // z ekranu, i chowa się, gdy widać formularz kontaktowy albo stopkę.
+  function initChat() {
+    var chat = document.getElementById("chatWidget");
+    if (!chat || !("IntersectionObserver" in window)) return;
+    var hero = document.querySelector(".hero");
+    var blockers = document.querySelectorAll("#trial, #contact, .footer");
+    var heroVisible = !!hero;
+    var visibleBlockers = 0;
+
+    function update() {
+      var hide = PHONE.matches && (heroVisible || visibleBlockers > 0);
+      chat.classList.toggle("is-hidden", hide);
+    }
+
+    if (hero) {
+      new IntersectionObserver(function (entries) {
+        heroVisible = entries[0].isIntersecting;
+        update();
+      }).observe(hero);
+    }
+    var state = [];
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        var i = Array.prototype.indexOf.call(blockers, en.target);
+        state[i] = en.isIntersecting;
+      });
+      visibleBlockers = state.filter(Boolean).length;
+      update();
+    });
+    Array.prototype.forEach.call(blockers, function (el) { io.observe(el); });
+    onMediaChange(PHONE, update);
+    update();
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    initMenu();
+    initChat();
   });
 })();

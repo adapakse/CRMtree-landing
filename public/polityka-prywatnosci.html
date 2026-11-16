@@ -28,7 +28,7 @@
     .legal h1 { font-size: 32px; font-weight: 800; line-height: 1.2; color: var(--ink); margin-bottom: 8px; }
     .legal .legal__updated { font-size: 14px; color: var(--text-muted); margin-bottom: 40px; }
     .legal h2 { font-size: 20px; font-weight: 700; line-height: 1.3; color: var(--ink); margin: 36px 0 12px; }
-    .legal p, .legal li { max-width: 68ch; }
+    .legal p, .legal li { max-width: 45.5em; }
     .legal p { margin-bottom: 14px; color: var(--text); }
     .legal ul { margin: 0 0 14px 22px; }
     .legal li { margin-bottom: 8px; }
@@ -52,7 +52,7 @@
   <header class="navbar">
     <div class="container navbar__inner">
       <a href="/" class="navbar__logo">
-        <img src="logo.webp" alt="CRMtree" class="navbar__logo-img" width="300" height="200" />
+        <img src="logo-white.webp" alt="CRMtree" class="navbar__logo-img" width="172" height="96" />
       </a>
       <a href="/#trial" class="btn btn--primary navbar__cta">Wypróbuj 14 dni</a>
       <button type="button" class="navbar__toggle" aria-expanded="false" aria-controls="siteMenu" aria-label="Otwórz menu" data-i18n-aria-label="nav.menu_open">
@@ -62,7 +62,9 @@
       <div class="navbar__menu" id="siteMenu">
       <nav class="navbar__links" aria-label="Menu">
         <a href="/#features">Funkcje</a>
-        <a href="/#how-it-works">Jak działa</a>
+        <a href="/#compare">Porównanie</a>
+        <a href="/#security">Bezpieczeństwo</a>
+        <a href="/#aiact">AI Act</a>
         <a href="/pricing.html">Cennik</a>
         <a href="/blog">Blog</a>
         <a href="/#contact">Kontakt</a>
@@ -173,21 +175,42 @@
 
   <!-- FOOTER -->
   <footer class="footer">
-    <div class="container footer__inner">
-      <div class="footer__brand">
-        <img src="logo.webp" alt="CRMtree" class="footer__logo-img" width="300" height="200" loading="lazy" />
-        <p>CRM dla nowoczesnej firmy</p>
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="/" class="footer__logo"><img src="logo-white.webp" alt="CRMtree" class="footer__logo-img" width="172" height="96" loading="lazy" /></a>
+          <p>CRM dla nowoczesnej firmy</p>
+        </div>
+        <div class="footer__cols">
+          <div class="footer__col">
+            <p class="footer__heading">Produkt</p>
+            <ul>
+              <li><a href="/#features">Funkcje</a></li>
+              <li><a href="/pricing.html">Cennik</a></li>
+              <li><a href="/#aiact">AI Act</a></li>
+              <li><a href="https://demo.crmtree.pl/login">Zaloguj się</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <p class="footer__heading">Zasoby</p>
+            <ul>
+              <li><a href="/blog">Blog</a></li>
+              <li><a href="/#faq">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <p class="footer__heading">Firma</p>
+            <ul>
+              <li><a href="/#contact">Kontakt</a></li>
+              <li><a href="/polityka-prywatnosci.html">Polityka prywatności</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <div class="footer__links">
-        <a href="https://demo.crmtree.pl/login">Zaloguj się</a>
-        <a href="/#features">Funkcje</a>
-        <a href="/pricing.html">Cennik</a>
-        <a href="/blog">Blog</a>
-        <a href="/#contact">Kontakt</a>
-        <a href="/polityka-prywatnosci.html">Polityka prywatności</a>
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2026 CRMtree. Wszelkie prawa zastrzeżone.</p>
+        <p class="footer__legal">Właściciel marki CRMtree: Comparme Sp. z o.o. · ul. Herbu Janina 5, 02-972 Warszawa · NIP 5213664910 · REGON 147067912</p>
       </div>
-      <p class="footer__legal">Właściciel marki CRMtree: Comparme Sp. z o.o. · ul. Herbu Janina 5, 02-972 Warszawa · NIP 5213664910 · REGON 147067912</p>
-      <p class="footer__copy">&copy; 2026 CRMtree. Wszelkie prawa zastrzeżone.</p>
     </div>
   </footer>
 

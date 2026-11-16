@@ -16,17 +16,20 @@
   // CRM's language into that key, so it still holds a language nobody chose here.
   var STORAGE_KEY = "crmtree_landing_lang";
 
+  // Flagi jako pliki (emoji flag nie działają na Windows). es/hr jako małe PNG —
+  // ich SVG z herbem ważą 40–90 KB, a przy 20×14 px herbu i tak nie widać.
+  var FLAG_DIR = "flags/";
   var LANGS = [
-    { code: "pl", name: "Polski" },
-    { code: "en", name: "English" },
-    { code: "de", name: "Deutsch" },
-    { code: "it", name: "Italiano" },
-    { code: "es", name: "Español" },
-    { code: "fr", name: "Français" },
-    { code: "ro", name: "Română" },
-    { code: "ru", name: "Русский" },
-    { code: "sl", name: "Slovenščina" },
-    { code: "hr", name: "Hrvatski" }
+    { code: "pl", name: "Polski",      flag: "pl.svg" },
+    { code: "en", name: "English",     flag: "gb.svg" },
+    { code: "de", name: "Deutsch",     flag: "de.svg" },
+    { code: "it", name: "Italiano",    flag: "it.svg" },
+    { code: "es", name: "Español",     flag: "es.png" },
+    { code: "fr", name: "Français",    flag: "fr.svg" },
+    { code: "ro", name: "Română",      flag: "ro.svg" },
+    { code: "ru", name: "Русский",     flag: "ru.svg" },
+    { code: "sl", name: "Slovenščina", flag: "si.svg" },
+    { code: "hr", name: "Hrvatski",    flag: "hr.png" }
   ];
 
   var I18N = {};
@@ -47,7 +50,8 @@
     "cta_trial": "Wypróbuj 14 dni",
     "products": "Produkty",
     "menu_open": "Otwórz menu",
-    "menu_close": "Zamknij menu"
+    "menu_close": "Zamknij menu",
+    "language": "Język"
   },
   "hero": {
     "eyebrow": "CRM dla każdej branży",
@@ -57,7 +61,9 @@
     "cta_secondary": "Zobacz funkcje",
     "trust1": "14 dni za darmo",
     "trust2": "Wdrożenie bez integracji IT",
-    "trust3": "Dane w Azure, region Polska Centralna"
+    "trust3": "Dane w Azure, region Polska Centralna",
+    "shot_web_alt": "Dashboard CRMtree w przeglądarce",
+    "shot_mobile_alt": "Aplikacja mobilna CRMtree — ekran Start"
   },
   "trial": {
     "eyebrow": "Zacznij już dziś",
@@ -131,6 +137,7 @@
     "f9_problem": "Handlowiec w terenie nie ma dostępu do CRM między spotkaniami i zapomina zapisać ustalenia, zanim wróci do biura.",
     "f9_how": "Leady, partnerzy i zadania są zawsze pod ręką, z powiadomieniami push.",
     "f9_example": "Zaraz po spotkaniu z klientem handlowiec dodaje notatkę z telefonu w windzie — zanim zdąży o czymkolwiek zapomnieć.",
+    "f9_shot_alt": "Aplikacja mobilna CRMtree — lista leadów",
     "f10_problem": "Handlowiec traci godziny na ręczne sprawdzanie, czy firma z zimnej bazy w ogóle pasuje do profilu klienta.",
     "f10_how": "Automatyczny scoring ICP 0–100 sam wzbogaca dane firmy.",
     "f10_example": "Z listy 500 nowych firm system od razu pokazuje 40 z najwyższym dopasowaniem — handlowiec dzwoni najpierw do nich, nie po kolei od góry listy.",
@@ -273,7 +280,7 @@
     "copyright": "© 2026 CRMtree. Wszelkie prawa zastrzeżone."
   },
   "chat": {
-    "pill": "Cześć! 👋",
+    "pill": "Cześć!",
     "name": "Zespół CRMtree",
     "status": "Online teraz",
     "msg1": "Cześć! 👋 Chętnie odpowiemy, czego szukasz albo co chcesz usprawnić w swojej sprzedaży.",
@@ -298,7 +305,8 @@
     "cta_trial": "Try 14 days free",
     "products": "Products",
     "menu_open": "Open menu",
-    "menu_close": "Close menu"
+    "menu_close": "Close menu",
+    "language": "Language"
   },
   "hero": {
     "eyebrow": "CRM for every industry",
@@ -308,7 +316,9 @@
     "cta_secondary": "See features",
     "trust1": "14 days free",
     "trust2": "No IT integration needed",
-    "trust3": "Data hosted in Azure, Poland Central"
+    "trust3": "Data hosted in Azure, Poland Central",
+    "shot_web_alt": "CRMtree dashboard in the browser",
+    "shot_mobile_alt": "CRMtree mobile app — Start screen"
   },
   "trial": {
     "eyebrow": "Start today",
@@ -382,6 +392,7 @@
     "f9_problem": "A field rep has no CRM access between meetings and forgets to log what was agreed before getting back to the office.",
     "f9_how": "Leads, partners, and tasks are always at hand, with push notifications.",
     "f9_example": "Right after a client meeting, the rep adds a note from their phone in the elevator — before anything gets forgotten.",
+    "f9_shot_alt": "CRMtree mobile app — leads list",
     "f10_problem": "A rep burns hours manually checking whether a company from a cold list even fits the target customer profile.",
     "f10_how": "Automatic 0–100 ICP scoring enriches company data on its own.",
     "f10_example": "Out of 500 new companies, the system immediately surfaces the 40 best matches — so the rep calls them first, not in whatever order the list happened to load.",
@@ -524,7 +535,7 @@
     "copyright": "© 2026 CRMtree. All rights reserved."
   },
   "chat": {
-    "pill": "Hey! 👋",
+    "pill": "Hey!",
     "name": "CRMtree team",
     "status": "Online now",
     "msg1": "Hey! 👋 Happy to help you figure out what you're looking for, or what you'd like to improve in your sales process.",
@@ -549,7 +560,8 @@
     "cta_trial": "14 Tage kostenlos testen",
     "products": "Produkte",
     "menu_open": "Menü öffnen",
-    "menu_close": "Menü schließen"
+    "menu_close": "Menü schließen",
+    "language": "Sprache"
   },
   "hero": {
     "eyebrow": "CRM für jede Branche",
@@ -559,7 +571,9 @@
     "cta_secondary": "Funktionen ansehen",
     "trust1": "14 Tage kostenlos",
     "trust2": "Keine IT-Integration nötig",
-    "trust3": "Daten in Azure, Region Polen Zentral"
+    "trust3": "Daten in Azure, Region Polen Zentral",
+    "shot_web_alt": "CRMtree-Dashboard im Browser",
+    "shot_mobile_alt": "CRMtree Mobile-App – Startbildschirm"
   },
   "trial": {
     "eyebrow": "Jetzt starten",
@@ -633,6 +647,7 @@
     "f9_problem": "Ein Außendienstler hat zwischen Terminen keinen CRM-Zugriff und vergisst, Absprachen festzuhalten, bevor er ins Büro zurückkommt.",
     "f9_how": "Leads, Partner und Aufgaben sind mit Push-Benachrichtigungen immer griffbereit.",
     "f9_example": "Direkt nach dem Kundentermin trägt der Vertriebler eine Notiz vom Handy aus im Aufzug ein — bevor irgendetwas in Vergessenheit gerät.",
+    "f9_shot_alt": "CRMtree Mobile-App – Lead-Liste",
     "f10_problem": "Ein Vertriebler verschwendet Stunden damit, von Hand zu prüfen, ob eine Firma aus einer kalten Liste überhaupt zum Zielkundenprofil passt.",
     "f10_how": "Automatisches ICP-Scoring von 0–100 reichert die Firmendaten von selbst an.",
     "f10_example": "Von 500 neuen Firmen zeigt das System sofort die 40 am besten passenden — der Vertriebler ruft zuerst diese an, nicht einfach von oben nach unten.",
@@ -775,7 +790,7 @@
     "copyright": "© 2026 CRMtree. Alle Rechte vorbehalten."
   },
   "chat": {
-    "pill": "Hallo! 👋",
+    "pill": "Hallo!",
     "name": "CRMtree-Team",
     "status": "Jetzt online",
     "msg1": "Hallo! 👋 Wir helfen gern herauszufinden, wonach Sie suchen oder was Sie im Vertrieb verbessern möchten.",
@@ -800,7 +815,8 @@
     "cta_trial": "Prova gratis 14 giorni",
     "products": "Prodotti",
     "menu_open": "Apri menu",
-    "menu_close": "Chiudi menu"
+    "menu_close": "Chiudi menu",
+    "language": "Lingua"
   },
   "hero": {
     "eyebrow": "CRM per ogni settore",
@@ -810,7 +826,9 @@
     "cta_secondary": "Vedi le funzionalità",
     "trust1": "14 giorni gratis",
     "trust2": "Nessuna integrazione IT richiesta",
-    "trust3": "Dati su Azure, regione Polonia Centrale"
+    "trust3": "Dati su Azure, regione Polonia Centrale",
+    "shot_web_alt": "Dashboard di CRMtree nel browser",
+    "shot_mobile_alt": "App mobile CRMtree — schermata Start"
   },
   "trial": {
     "eyebrow": "Inizia oggi",
@@ -884,6 +902,7 @@
     "f9_problem": "Un venditore sul campo non ha accesso al CRM tra un appuntamento e l'altro e dimentica di annotare gli accordi prima di tornare in ufficio.",
     "f9_how": "Lead, partner e attività sono sempre a portata di mano, con notifiche push.",
     "f9_example": "Subito dopo l'incontro col cliente, il venditore aggiunge una nota dal telefono in ascensore — prima di dimenticare qualcosa.",
+    "f9_shot_alt": "App mobile CRMtree — elenco dei lead",
     "f10_problem": "Un venditore perde ore a controllare a mano se un'azienda di una lista fredda corrisponda anche solo al profilo cliente target.",
     "f10_how": "Lo scoring ICP automatico da 0 a 100 arricchisce da solo i dati aziendali.",
     "f10_example": "Su 500 nuove aziende, il sistema mostra subito le 40 con il punteggio più alto — il venditore chiama prima quelle, non semplicemente in ordine di lista.",
@@ -1026,7 +1045,7 @@
     "copyright": "© 2026 CRMtree. Tutti i diritti riservati."
   },
   "chat": {
-    "pill": "Ciao! 👋",
+    "pill": "Ciao!",
     "name": "Team CRMtree",
     "status": "Online ora",
     "msg1": "Ciao! 👋 Siamo felici di aiutarti a capire cosa cerchi o cosa vuoi migliorare nelle tue vendite.",
@@ -1051,7 +1070,8 @@
     "cta_trial": "Prueba 14 días gratis",
     "products": "Productos",
     "menu_open": "Abrir menú",
-    "menu_close": "Cerrar menú"
+    "menu_close": "Cerrar menú",
+    "language": "Idioma"
   },
   "hero": {
     "eyebrow": "CRM para cualquier sector",
@@ -1061,7 +1081,9 @@
     "cta_secondary": "Ver funciones",
     "trust1": "14 días gratis",
     "trust2": "Sin integración de IT",
-    "trust3": "Datos en Azure, región Polonia Central"
+    "trust3": "Datos en Azure, región Polonia Central",
+    "shot_web_alt": "Panel de CRMtree en el navegador",
+    "shot_mobile_alt": "App móvil de CRMtree: pantalla de inicio"
   },
   "trial": {
     "eyebrow": "Empieza hoy",
@@ -1135,6 +1157,7 @@
     "f9_problem": "Un comercial en la calle no tiene acceso al CRM entre reuniones y se le olvida anotar lo acordado antes de volver a la oficina.",
     "f9_how": "Los leads, clientes y tareas están siempre a mano, con notificaciones push.",
     "f9_example": "Justo después de reunirse con un cliente, el comercial añade una nota desde el móvil en el ascensor, antes de que se le olvide algo.",
+    "f9_shot_alt": "App móvil de CRMtree: lista de leads",
     "f10_problem": "Un comercial pierde horas comprobando a mano si una empresa de una lista fría siquiera encaja con el perfil de cliente objetivo.",
     "f10_how": "La puntuación ICP automática de 0 a 100 enriquece los datos de la empresa por sí sola.",
     "f10_example": "De 500 empresas nuevas, el sistema muestra al momento las 40 con mejor encaje, así el comercial llama antes a esas, no simplemente por orden de lista.",
@@ -1277,7 +1300,7 @@
     "copyright": "© 2026 CRMtree. Todos los derechos reservados."
   },
   "chat": {
-    "pill": "¡Hola! 👋",
+    "pill": "¡Hola!",
     "name": "Equipo CRMtree",
     "status": "En línea ahora",
     "msg1": "¡Hola! 👋 Encantados de ayudarte a ver qué buscas o qué te gustaría mejorar en tus ventas.",
@@ -1302,7 +1325,8 @@
     "cta_trial": "Essai gratuit 14 jours",
     "products": "Produits",
     "menu_open": "Ouvrir le menu",
-    "menu_close": "Fermer le menu"
+    "menu_close": "Fermer le menu",
+    "language": "Langue"
   },
   "hero": {
     "eyebrow": "Un CRM pour tous les secteurs",
@@ -1312,7 +1336,9 @@
     "cta_secondary": "Voir les fonctionnalités",
     "trust1": "14 jours gratuits",
     "trust2": "Aucune intégration IT requise",
-    "trust3": "Données hébergées sur Azure, région Pologne Centrale"
+    "trust3": "Données hébergées sur Azure, région Pologne Centrale",
+    "shot_web_alt": "Tableau de bord CRMtree dans le navigateur",
+    "shot_mobile_alt": "Application mobile CRMtree — écran d'accueil"
   },
   "trial": {
     "eyebrow": "Commencez dès aujourd'hui",
@@ -1386,6 +1412,7 @@
     "f9_problem": "Un commercial sur le terrain n'a pas accès au CRM entre deux rendez-vous et oublie de noter ce qui a été convenu avant de rentrer au bureau.",
     "f9_how": "Leads, partenaires et tâches restent toujours à portée de main, avec des notifications push.",
     "f9_example": "Juste après un rendez-vous client, le commercial ajoute une note depuis son téléphone dans l'ascenseur, avant d'avoir le temps d'oublier quoi que ce soit.",
+    "f9_shot_alt": "Application mobile CRMtree — liste des leads",
     "f10_problem": "Un commercial perd des heures à vérifier à la main si une entreprise d'une liste froide correspond ne serait-ce qu'au profil client visé.",
     "f10_how": "Le scoring ICP automatique de 0 à 100 enrichit lui-même les données de l'entreprise.",
     "f10_example": "Sur 500 nouvelles entreprises, le système fait tout de suite ressortir les 40 mieux notées, le commercial les appelle donc en premier, pas simplement dans l'ordre de la liste.",
@@ -1528,7 +1555,7 @@
     "copyright": "© 2026 CRMtree. Tous droits réservés."
   },
   "chat": {
-    "pill": "Salut ! 👋",
+    "pill": "Salut !",
     "name": "Équipe CRMtree",
     "status": "En ligne",
     "msg1": "Salut ! 👋 On est là pour vous aider à trouver ce que vous cherchez ou ce que vous voulez améliorer dans vos ventes.",
@@ -1553,7 +1580,8 @@
     "cta_trial": "Testează gratuit 14 zile",
     "products": "Produse",
     "menu_open": "Deschide meniul",
-    "menu_close": "Închide meniul"
+    "menu_close": "Închide meniul",
+    "language": "Limbă"
   },
   "hero": {
     "eyebrow": "CRM pentru orice domeniu",
@@ -1563,7 +1591,9 @@
     "cta_secondary": "Vezi funcționalitățile",
     "trust1": "14 zile gratuit",
     "trust2": "Fără integrare IT",
-    "trust3": "Date găzduite pe Azure, regiunea Polonia Centrală"
+    "trust3": "Date găzduite pe Azure, regiunea Polonia Centrală",
+    "shot_web_alt": "Tabloul de bord CRMtree în browser",
+    "shot_mobile_alt": "Aplicația mobilă CRMtree — ecranul Start"
   },
   "trial": {
     "eyebrow": "Începe astăzi",
@@ -1637,6 +1667,7 @@
     "f9_problem": "Un agent de teren nu are acces la CRM între întâlniri și uită să noteze ce s-a stabilit înainte să ajungă înapoi la birou.",
     "f9_how": "Leadurile, partenerii și sarcinile sunt mereu la îndemână, cu notificări push.",
     "f9_example": "Imediat după o întâlnire cu un client, agentul adaugă o notiță de pe telefon în lift — înainte să apuce să uite ceva.",
+    "f9_shot_alt": "Aplicația mobilă CRMtree — lista de leaduri",
     "f10_problem": "Un agent pierde ore verificând manual dacă o firmă dintr-o listă rece se potrivește măcar cu profilul clientului țintă.",
     "f10_how": "Scoring-ul ICP automat 0–100 îmbogățește singur datele companiei.",
     "f10_example": "Din 500 de firme noi, sistemul arată imediat cele 40 cu cel mai bun scor — agentul le sună pe acestea primele, nu pur și simplu în ordinea din listă.",
@@ -1779,7 +1810,7 @@
     "copyright": "© 2026 CRMtree. Toate drepturile rezervate."
   },
   "chat": {
-    "pill": "Bună! 👋",
+    "pill": "Bună!",
     "name": "Echipa CRMtree",
     "status": "Online acum",
     "msg1": "Bună! 👋 Te ajutăm cu drag să vezi ce cauți sau ce vrei să îmbunătățești în vânzări.",
@@ -1804,7 +1835,8 @@
     "cta_trial": "14 дней бесплатно",
     "products": "Продукты",
     "menu_open": "Открыть меню",
-    "menu_close": "Закрыть меню"
+    "menu_close": "Закрыть меню",
+    "language": "Язык"
   },
   "hero": {
     "eyebrow": "CRM для любой отрасли",
@@ -1814,7 +1846,9 @@
     "cta_secondary": "Смотреть возможности",
     "trust1": "14 дней бесплатно",
     "trust2": "Без интеграции с ИТ",
-    "trust3": "Данные в Azure, регион Центральная Польша"
+    "trust3": "Данные в Azure, регион Центральная Польша",
+    "shot_web_alt": "Дашборд CRMtree в браузере",
+    "shot_mobile_alt": "Мобильное приложение CRMtree — стартовый экран"
   },
   "trial": {
     "eyebrow": "Начните уже сегодня",
@@ -1888,6 +1922,7 @@
     "f9_problem": "У выездного менеджера нет доступа к CRM между встречами, и он забывает записать договорённости до возвращения в офис.",
     "f9_how": "Лиды, партнёры и задачи всегда под рукой, с push-уведомлениями.",
     "f9_example": "Сразу после встречи с клиентом менеджер добавляет заметку с телефона прямо в лифте — пока ничего не забылось.",
+    "f9_shot_alt": "Мобильное приложение CRMtree — список лидов",
     "f10_problem": "Менеджер тратит часы, вручную проверяя, подходит ли компания из холодного списка вообще под профиль целевого клиента.",
     "f10_how": "Автоматический ICP-скоринг 0–100 сам обогащает данные компании.",
     "f10_example": "Из 500 новых компаний система сразу показывает 40 с лучшим совпадением — менеджер звонит сначала им, а не просто по порядку списка.",
@@ -2030,7 +2065,7 @@
     "copyright": "© 2026 CRMtree. Все права защищены."
   },
   "chat": {
-    "pill": "Привет! 👋",
+    "pill": "Привет!",
     "name": "Команда CRMtree",
     "status": "Онлайн сейчас",
     "msg1": "Привет! 👋 Расскажите, что вы ищете или что хотите улучшить в продажах — мы поможем.",
@@ -2055,7 +2090,8 @@
     "cta_trial": "14 dni brezplačno",
     "products": "Izdelki",
     "menu_open": "Odpri meni",
-    "menu_close": "Zapri meni"
+    "menu_close": "Zapri meni",
+    "language": "Jezik"
   },
   "hero": {
     "eyebrow": "CRM za vsako panogo",
@@ -2065,7 +2101,9 @@
     "cta_secondary": "Poglej funkcije",
     "trust1": "14 dni brezplačno",
     "trust2": "Brez IT-integracije",
-    "trust3": "Podatki v Azure, regija Poljska Centralna"
+    "trust3": "Podatki v Azure, regija Poljska Centralna",
+    "shot_web_alt": "Nadzorna plošča CRMtree v brskalniku",
+    "shot_mobile_alt": "Mobilna aplikacija CRMtree — začetni zaslon"
   },
   "trial": {
     "eyebrow": "Začnite še danes",
@@ -2139,6 +2177,7 @@
     "f9_problem": "Terenski prodajalec med sestanki nima dostopa do CRM-ja in pozabi zapisati dogovorjeno, preden se vrne v pisarno.",
     "f9_how": "Leadi, partnerji in naloge so vedno pri roki, s potisnimi obvestili.",
     "f9_example": "Takoj po sestanku s stranko prodajalec doda zapisek s telefona kar v dvigalu — preden kaj pozabi.",
+    "f9_shot_alt": "Mobilna aplikacija CRMtree — seznam leadov",
     "f10_problem": "Prodajalec izgubi ure z ročnim preverjanjem, ali podjetje s hladnega seznama sploh ustreza profilu ciljne stranke.",
     "f10_how": "Samodejno ocenjevanje ICP 0–100 samo obogati podatke o podjetju.",
     "f10_example": "Od 500 novih podjetij sistem takoj pokaže 40 z najvišjo oceno ujemanja — prodajalec pokliče najprej te, ne po vrstnem redu seznama.",
@@ -2281,7 +2320,7 @@
     "copyright": "© 2026 CRMtree. Vse pravice pridržane."
   },
   "chat": {
-    "pill": "Živjo! 👋",
+    "pill": "Živjo!",
     "name": "Ekipa CRMtree",
     "status": "Trenutno na voljo",
     "msg1": "Živjo! 👋 Z veseljem pomagamo ugotoviti, kaj iščete ali kaj bi radi izboljšali pri prodaji.",
@@ -2306,7 +2345,8 @@
     "cta_trial": "14 dana besplatno",
     "products": "Proizvodi",
     "menu_open": "Otvori izbornik",
-    "menu_close": "Zatvori izbornik"
+    "menu_close": "Zatvori izbornik",
+    "language": "Jezik"
   },
   "hero": {
     "eyebrow": "CRM za svaku djelatnost",
@@ -2316,7 +2356,9 @@
     "cta_secondary": "Pogledaj značajke",
     "trust1": "14 dana besplatno",
     "trust2": "Bez IT integracije",
-    "trust3": "Podaci na Azureu, regija Poljska Centralna"
+    "trust3": "Podaci na Azureu, regija Poljska Centralna",
+    "shot_web_alt": "Nadzorna ploča CRMtree u pregledniku",
+    "shot_mobile_alt": "Mobilna aplikacija CRMtree — početni zaslon"
   },
   "trial": {
     "eyebrow": "Počnite već danas",
@@ -2390,6 +2432,7 @@
     "f9_problem": "Terenski prodavač između sastanaka nema pristup CRM-u i zaboravi zapisati dogovoreno prije povratka u ured.",
     "f9_how": "Leadovi, partneri i zadaci uvijek su pri ruci, s push obavijestima.",
     "f9_example": "Odmah nakon sastanka s klijentom prodavač doda bilješku s telefona u dizalu — prije nego što nešto zaboravi.",
+    "f9_shot_alt": "Mobilna aplikacija CRMtree — popis leadova",
     "f10_problem": "Prodavač gubi sate ručno provjeravajući odgovara li tvrtka s hladnog popisa uopće profilu ciljanog klijenta.",
     "f10_how": "Automatska ICP ocjena 0–100 sama obogaćuje podatke o tvrtki.",
     "f10_example": "Od 500 novih tvrtki sustav odmah pokaže 40 s najboljim podudaranjem — prodavač njih zove prve, a ne redom kako su na popisu.",
@@ -2532,7 +2575,7 @@
     "copyright": "© 2026 CRMtree. Sva prava pridržana."
   },
   "chat": {
-    "pill": "Bok! 👋",
+    "pill": "Bok!",
     "name": "CRMtree tim",
     "status": "Online sada",
     "msg1": "Bok! 👋 Rado ćemo pomoći oko toga što tražite ili što biste željeli poboljšati u prodaji.",
@@ -2594,43 +2637,116 @@
       if (aval != null) ariaNodes[n].setAttribute("aria-label", aval);
     }
 
-    var btnLabel = document.getElementById("langBtnLabel");
-    if (btnLabel) btnLabel.textContent = code.toUpperCase();
-    var menuBtns = document.querySelectorAll("#langMenu button");
-    for (var k = 0; k < menuBtns.length; k++) {
-      menuBtns[k].setAttribute("aria-current", menuBtns[k].getAttribute("data-code") === code ? "true" : "false");
+    var altNodes = document.querySelectorAll("[data-i18n-alt]");
+    for (var q = 0; q < altNodes.length; q++) {
+      var tkey = altNodes[q].getAttribute("data-i18n-alt");
+      var tval = getByPath(table, tkey);
+      if (tval == null) tval = getByPath(fallback, tkey);
+      if (tval != null) altNodes[q].setAttribute("alt", tval);
+    }
+
+    updateLangButton(code, table, fallback);
+  }
+
+  function langByCode(code) {
+    for (var i = 0; i < LANGS.length; i++) if (LANGS[i].code === code) return LANGS[i];
+    return LANGS[0];
+  }
+
+  // Przycisk: [flaga] PL ▾ w pasku, [flaga] Polski ▾ w menu na telefonie (CSS).
+  function updateLangButton(code, table, fallback) {
+    var lang = langByCode(code);
+    var btn = document.getElementById("langBtn");
+    if (!btn) return;
+    var flag = document.getElementById("langBtnFlag");
+    if (flag) flag.setAttribute("src", FLAG_DIR + lang.flag);
+    var label = document.getElementById("langBtnLabel");
+    if (label) label.textContent = lang.code.toUpperCase();
+    var name = document.getElementById("langBtnName");
+    if (name) name.textContent = lang.name;
+    var word = getByPath(table, "nav.language") || getByPath(fallback, "nav.language") || "Język";
+    btn.setAttribute("aria-label", word + ": " + lang.name);
+    var opts = document.querySelectorAll("#langMenu [role=option]");
+    for (var k = 0; k < opts.length; k++) {
+      var on = opts[k].getAttribute("data-code") === code;
+      opts[k].setAttribute("aria-selected", on ? "true" : "false");
     }
   }
 
+  var CHECK_SVG = '<svg class="langmenu__check" viewBox="0 0 16 16" fill="none" aria-hidden="true">' +
+    '<path d="M3 8.5l3.2 3L13 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+  // Lista języków: role=listbox, strzałki / Home / End / Enter / Spacja,
+  // Esc i Tab zamykają, klik obok zamyka.
   function buildLangMenu() {
     var menu = document.getElementById("langMenu");
     var btn = document.getElementById("langBtn");
     if (!menu || !btn) return;
+
     LANGS.forEach(function (l) {
-      var b = document.createElement("button");
-      b.type = "button";
-      b.setAttribute("data-code", l.code);
-      b.innerHTML = "<span>" + l.name + "</span><span class=\"lang-code\">" + l.code.toUpperCase() + "</span>";
-      b.addEventListener("click", function () {
-        var code = this.getAttribute("data-code");
-        applyLang(code);
-        // Only a language picked here is remembered — a browser-language guess
-        // saved on every visit would outlive a later change of that browser.
-        try { localStorage.setItem(STORAGE_KEY, code); } catch (e) {}
-        menu.classList.remove("open");
-        btn.setAttribute("aria-expanded", "false");
-      });
-      menu.appendChild(b);
+      var li = document.createElement("li");
+      li.id = "lang-opt-" + l.code;
+      li.setAttribute("role", "option");
+      li.setAttribute("tabindex", "-1");
+      li.setAttribute("lang", l.code);
+      li.setAttribute("data-code", l.code);
+      li.setAttribute("aria-selected", "false");
+      li.innerHTML = '<img class="flag" src="' + FLAG_DIR + l.flag + '" alt="" width="20" height="14" loading="lazy" />' +
+        "<span>" + l.name + "</span>" + CHECK_SVG;
+      menu.appendChild(li);
     });
-    btn.addEventListener("click", function () {
-      var open = menu.classList.toggle("open");
-      btn.setAttribute("aria-expanded", open ? "true" : "false");
+
+    function options() { return Array.prototype.slice.call(menu.querySelectorAll("[role=option]")); }
+    function isOpen() { return menu.classList.contains("open"); }
+
+    function open(focusWhich) {
+      menu.classList.add("open");
+      btn.setAttribute("aria-expanded", "true");
+      var opts = options();
+      var target = menu.querySelector("[aria-selected=true]") || opts[0];
+      if (focusWhich === "last") target = opts[opts.length - 1];
+      if (target) target.focus();
+    }
+    function close(returnFocus) {
+      if (!isOpen()) return;
+      menu.classList.remove("open");
+      btn.setAttribute("aria-expanded", "false");
+      if (returnFocus) btn.focus();
+    }
+    function choose(li) {
+      var code = li.getAttribute("data-code");
+      applyLang(code);
+      // Only a language picked here is remembered — a browser-language guess
+      // saved on every visit would outlive a later change of that browser.
+      try { localStorage.setItem(STORAGE_KEY, code); } catch (e) {}
+      close(true);
+    }
+
+    btn.addEventListener("click", function () { if (isOpen()) close(false); else open(); });
+    btn.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowDown" || e.key === "ArrowUp") { e.preventDefault(); open(e.key === "ArrowUp" ? "last" : null); }
+    });
+    menu.addEventListener("click", function (e) {
+      var li = e.target.closest ? e.target.closest("[role=option]") : null;
+      if (li) choose(li);
+    });
+    menu.addEventListener("keydown", function (e) {
+      var opts = options();
+      var i = opts.indexOf(document.activeElement);
+      if (e.key === "ArrowDown") { e.preventDefault(); opts[Math.min(i + 1, opts.length - 1)].focus(); }
+      else if (e.key === "ArrowUp") { e.preventDefault(); opts[Math.max(i - 1, 0)].focus(); }
+      else if (e.key === "Home") { e.preventDefault(); opts[0].focus(); }
+      else if (e.key === "End") { e.preventDefault(); opts[opts.length - 1].focus(); }
+      else if (e.key === "Enter" || e.key === " ") { e.preventDefault(); if (i >= 0) choose(opts[i]); }
+      else if (e.key === "Escape") { e.preventDefault(); e.stopPropagation(); close(true); }
+      else if (e.key === "Tab") { close(false); }
     });
     document.addEventListener("click", function (e) {
-      if (!menu.contains(e.target) && e.target !== btn && !btn.contains(e.target)) {
-        menu.classList.remove("open");
-        btn.setAttribute("aria-expanded", "false");
-      }
+      if (isOpen() && !menu.contains(e.target) && !btn.contains(e.target)) close(false);
+    });
+    // Esc przy otwartej liście zamyka tylko listę, nie całe menu (nav.js słucha później).
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && isOpen()) { e.stopImmediatePropagation(); close(true); }
     });
   }
 
