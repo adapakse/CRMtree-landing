@@ -228,7 +228,7 @@ body.nav-open .navbar__cta { visibility: hidden; }
   .has-mega.open .mega-trigger { border-bottom-color: transparent; }
   .has-mega.open .mega-panel { display: grid; grid-template-columns: 1fr; }
   .mega-panel .mega-item {
-    display: flex; align-items: center; min-height: 48px; padding: 0 4px 0 16px;
+    display: flex; align-items: center; gap: 12px; min-height: 48px; padding: 0 4px 0 16px;
     color: var(--text-muted); font-size: 16px; font-weight: 500; text-decoration: none;
     border-radius: var(--radius-sm);
   }
@@ -288,20 +288,24 @@ body.nav-open .navbar__cta { visibility: hidden; }
   /* Mostek nad panelem, żeby kursor nie gubił menu w szczelinie */
   .has-mega::after { content: ''; position: absolute; left: -16px; right: -16px; top: 100%; height: 14px; }
   .mega-panel {
-    position: absolute; top: calc(100% + 12px); left: 50%; transform: translateX(-50%);
-    width: 480px; background: var(--surface); border-radius: var(--radius);
-    box-shadow: var(--shadow-pop); padding: 8px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px;
+    position: absolute; top: calc(100% + 8px); left: 0;
+    width: 520px; background: var(--surface); border-radius: var(--radius);
+    box-shadow: var(--shadow-pop); padding: 6px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px;
     opacity: 0; visibility: hidden; transition: opacity .15s ease, visibility 0s linear .15s; z-index: 150;
   }
   .has-mega:hover .mega-panel, .has-mega:focus-within .mega-panel, .has-mega.open .mega-panel {
     opacity: 1; visibility: visible; transition-delay: 0s;
   }
   .mega-panel .mega-item {
-    display: flex; align-items: center; min-height: 40px; padding: 8px 12px; border-radius: var(--radius-sm);
-    text-decoration: none; color: var(--text); font-size: 14px; font-weight: 500;
+    display: flex; align-items: center; gap: 12px; min-height: 40px; padding: 0 10px; border-radius: var(--radius-sm);
+    text-decoration: none; color: var(--text); font-size: 14px; font-weight: 500; outline: none;
   }
-  .mega-panel .mega-item:hover { background: var(--gray-100); color: var(--brand-text); }
+  .mega-panel .mega-item:hover, .mega-panel .mega-item:focus { background: var(--gray-100); color: var(--ink); }
+  .mega-panel .mega-item:focus-visible { box-shadow: inset 0 0 0 2px var(--brand-text); }
 }
+
+.mega-item__ic { flex-shrink: 0; color: var(--text-muted); transition: color .15s; }
+.mega-item:hover .mega-item__ic, .mega-item:focus .mega-item__ic { color: var(--brand-text); }
 
 /* ── WYBÓR JĘZYKA ────────────────────────────────────────────────────
    Pasek: mały przycisk [flaga] PL ▾. Menu na telefonie: [flaga] Polski ▾.
