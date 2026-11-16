@@ -119,8 +119,8 @@ img, svg { max-width: 100%; }
   box-shadow: inset 0 0 0 1px rgba(255,255,255,.18), 0 6px 12px rgba(59,170,93,.22);
 }
 .btn--ghost, .btn--outline {
-  background: var(--control-bg); color: var(--gray-700);
-  border-color: var(--control-border); box-shadow: var(--shadow-sm);
+  background: var(--control-bg); color: var(--gray-700); font-weight: 500;
+  border-color: var(--gray-200); box-shadow: 0 4px 12px rgba(0,0,0,.08);
 }
 .btn--ghost:hover, .btn--outline:hover {
   border-color: var(--brand); color: var(--brand-text);
@@ -609,3 +609,10 @@ textarea { resize: vertical; min-height: 120px; }
 
 /* Otwarte menu zasłania stronę — czat nie wchodzi na nie */
 body.nav-open .chat-widget { visibility: hidden; }
+
+/* Primary on dark bands (nav, trial, security, login, footer): deeper green, no green glow — the bright one looks neon on graphite. */
+:is(.navbar, .trial, .security-section, .login-cta, .footer) .btn--primary {
+  background: linear-gradient(180deg, #2F9E52 0%, #2B9149 100%);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.10);
+}
+:is(.navbar, .trial, .security-section, .login-cta, .footer) .btn--primary:hover { filter: brightness(1.06); box-shadow: inset 0 0 0 1px rgba(255,255,255,.14); }
