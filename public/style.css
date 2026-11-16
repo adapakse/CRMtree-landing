@@ -395,7 +395,9 @@ body.nav-open .navbar__cta { visibility: hidden; }
 }
 .mockup__url svg { flex-shrink: 0; color: var(--gray-400); }
 .mockup__browser img { display: block; width: 100%; height: auto; }
-.mockup__phone { position: absolute; right: 0; bottom: 0; width: 36%; }
+/* Szerokość telefonu w parzystych px na każdym progu (ekran 1:2, więc wysokość też parzysta) */
+.mockup__phone { position: absolute; right: 0; bottom: 0; width: 128px; }
+@media (min-width: 480px) { .mockup__phone { width: 168px; } }
 
 /* Ramka telefonu (CSS) — ta sama w hero i w sekcji „Aplikacja mobilna”.
    Cienki grafitowy bezel z jasnym refleksem krawędzi; ekran ma proporcje
@@ -410,7 +412,8 @@ body.nav-open .navbar__cta { visibility: hidden; }
     0 2px 4px rgba(0,0,0,.06), 0 12px 24px rgba(0,0,0,.12), 0 32px 64px rgba(16,24,40,.16);
 }
 .phone img {
-  display: block; width: 100%; height: auto; aspect-ratio: 540 / 1083; object-fit: contain;
+  /* zrzut 540×1083 ≈ 1:2 — ekran 1:2 ucina najwyżej 1–2px na dole, bez przybliżania */
+  display: block; width: 100%; height: auto; aspect-ratio: 1 / 2; object-fit: cover; object-position: top;
   border-radius: calc(var(--phone-r) - var(--phone-pad)); background: #F2F3F5;
   box-shadow: 0 0 0 1px rgba(0,0,0,.28);
 }
@@ -423,15 +426,17 @@ body.nav-open .navbar__cta { visibility: hidden; }
   .mockup__dots { gap: 6px; }
   .mockup__dots i { width: 10px; height: 10px; }
   .mockup__url { display: flex; }
-  .mockup__phone { width: 28%; }
+  .mockup__phone { width: 180px; }
   .phone { --phone-pad: 6px; --phone-r: 26px; }
 }
 @media (min-width: 768px) {
   .hero { padding: 64px 0 80px; }
+  .mockup__phone { width: 200px; }
   .hero__content h1 { font-size: 44px; }
 }
 @media (min-width: 1024px) {
   .hero__inner { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px; }
+  .mockup__phone { width: 132px; }
   .hero__content h1 { font-size: 42px; }
   .mockup__bar { height: 28px; }
   .mockup__dots i { width: 8px; height: 8px; }
@@ -440,6 +445,7 @@ body.nav-open .navbar__cta { visibility: hidden; }
 @media (min-width: 1200px) {
   .hero { padding: 80px 0 96px; }
   .hero__inner { grid-template-columns: minmax(0, 1fr) minmax(0, 1.12fr); gap: 56px; }
+  .mockup__phone { width: 164px; }
   .hero__content h1 { font-size: 52px; }
   .mockup__bar { height: 32px; }
   .mockup__dots i { width: 10px; height: 10px; }
