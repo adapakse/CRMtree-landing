@@ -41,8 +41,11 @@
       font-size: 18px; color: var(--text-muted); max-width: 540px; margin: 0 auto 32px;
     }
     .pricing-switches {
-      display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px 16px;
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 16px 40px;
     }
+    .switch-group { display: inline-flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px 12px; }
+    .switch-group__label { font-size: 14px; font-weight: 600; color: var(--text-muted); }
+    .switch-group__label::after { content: ':'; }
 
     /* ── PRZEŁĄCZNIKI (segmented control: okres i waluta) ─────────────── */
     .seg {
@@ -59,15 +62,15 @@
     .seg button:hover { color: var(--ink); }
     .seg button.active { background: var(--brand-pale); color: var(--brand-text); }
     .seg button:focus-visible { outline-offset: 0; border-radius: 999px; }
-    .seg--currency button { min-width: 48px; justify-content: center; padding: 0 12px; }
+    .seg--currency button { justify-content: center; padding: 0 14px; }
 
+    /* Znaczek oszczędności w segmencie „Rocznie”: jasna zieleń, w aktywnym segmencie biało na zielonym */
     .save-badge {
-      display: inline-flex; align-items: center; min-height: 24px;
+      display: inline-flex; align-items: center; height: 20px; padding: 0 6px; border-radius: 999px;
       background: var(--brand-pale); color: var(--brand-text);
-      font-size: 12px; font-weight: 700; line-height: 1.2; padding: 2px 10px; border-radius: 999px;
-      border: 1px solid var(--brand-muted);
+      font-size: 12px; font-weight: 700; line-height: 1; letter-spacing: .01em;
     }
-    .billing-group { display: inline-flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px 12px; }
+    .seg button.active .save-badge { background: var(--brand-text); color: #fff; }
     .currency-note { display: block; font-size: 12px; color: var(--text-muted); margin: 16px auto 0; max-width: 40em; }
 
     /* Kolejność symbolu waluty i kwoty */
@@ -155,7 +158,13 @@
     }
     .plan-features { list-style: none; display: flex; flex-direction: column; gap: 10px; }
     .plan-features li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; line-height: 20px; color: var(--text); }
-    .plan-features .ic-check { flex-shrink: 0; width: 20px; height: 20px; color: var(--brand-text); }
+    .plan-features .check {
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+      width: 20px; height: 20px; border-radius: 50%;
+      background: var(--brand-pale); color: var(--brand-text);
+    }
+    .plan-features .check svg { display: block; }
+    .plan-card--featured .plan-features .check { background: var(--brand-text); color: #fff; }
     .plan-features li .storage {
       display: inline-flex; align-items: center; flex-shrink: 0; margin-left: auto;
       background: var(--gray-50); border: 1px solid var(--border); border-radius: 6px;
@@ -240,9 +249,8 @@
         position: sticky; left: 0; z-index: 1; background: var(--surface);
         box-shadow: 1px 0 0 var(--gray-200);
       }
-      /* Przełączniki: okres i waluta w jednym rzędzie, plakietka pod nimi */
-      .billing-group { display: contents; }
-      .save-badge { order: 3; }
+      /* Przełączniki: etykieta nad przełącznikiem */
+      .switch-group { flex-direction: column; gap: 8px; }
     }
 
     /* ── RESPONSYWNOŚĆ ────────────────────────────────────────────────── */
@@ -263,17 +271,11 @@
       .pricing-contact h2 { font-size: 30px; }
     }
     @media (min-width: 1024px) {
-      .pricing-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: none; align-items: stretch; }
+      .pricing-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: none; align-items: start; }
       .plan-card { padding: 32px 24px 36px; }
-      .plan-card--featured { padding: 31px 23px 35px; transform: translateY(-8px); }
+      .plan-card--featured { padding: 31px 23px 35px; }
       .price-amount { font-size: 48px; }
       .price-contact { font-size: 28px; }
-      /* Równe bloki nagłówek + cena + notka: przyciski na jednej wysokości */
-      @supports (grid-template-rows: subgrid) {
-        .pricing-grid { grid-template-rows: repeat(7, auto); row-gap: 0; }
-        .plan-card { display: grid; grid-row: span 7; grid-template-rows: subgrid; align-content: start; }
-        .plan-card > * { min-width: 0; }
-      }
     }
     @media (min-width: 1200px) {
       .pricing-hero h1 { font-size: 46px; }
@@ -332,18 +334,21 @@
 
       <div class="pricing-switches">
         <!-- OKRES ROZLICZENIA -->
-        <div class="billing-group">
-          <div class="seg" id="billingToggle" role="group" aria-label="Rozliczenie" data-i18n-aria-label="pricing.billing_label">
-            <button type="button" class="active" aria-pressed="true" data-billing="annual" data-i18n="pricing.billing_annual">Rocznie</button>
+        <div class="switch-group">
+          <span class="switch-group__label" id="billingLabel" data-i18n="pricing.billing_label">Rozliczenie</span>
+          <div class="seg" id="billingToggle" role="group" aria-labelledby="billingLabel">
+            <button type="button" class="active" aria-pressed="true" data-billing="annual"><span data-i18n="pricing.billing_annual">Rocznie</span><span class="save-badge" aria-hidden="true">-32%</span><span class="sr-only" data-i18n="pricing.save_badge">Oszczędzasz do 32%</span></button>
             <button type="button" aria-pressed="false" data-billing="monthly" data-i18n="pricing.billing_monthly">Miesięcznie</button>
           </div>
-          <span class="save-badge" id="saveBadge" data-i18n="pricing.save_badge">Oszczędzasz do 32%</span>
         </div>
 
         <!-- WALUTA -->
-        <div class="seg seg--currency" id="currencyToggle" role="group" aria-label="Waluta" data-i18n-aria-label="pricing.currency_label">
-          <button type="button" aria-pressed="false" data-currency="pln">zł</button>
-          <button type="button" aria-pressed="false" data-currency="eur">€</button>
+        <div class="switch-group">
+          <span class="switch-group__label" id="currencyLabel" data-i18n="pricing.currency_label">Waluta</span>
+          <div class="seg seg--currency" id="currencyToggle" role="group" aria-labelledby="currencyLabel">
+            <button type="button" aria-pressed="false" data-currency="pln">PLN zł</button>
+            <button type="button" aria-pressed="false" data-currency="eur">EUR €</button>
+          </div>
         </div>
       </div>
       <span class="currency-note" data-i18n="pricing.currency_note">Ceny w PLN są orientacyjne - przelicznik ~4,30 PLN/EUR, aktualizowany okresowo.</span>
@@ -385,12 +390,12 @@
           <hr class="plan-divider" />
           <div class="plan-features-label" data-i18n="pricing.features_label">Co zawiera</div>
           <ul class="plan-features">
-            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pricing.f_leads">Kompletny moduł zarządzania leadami i klientami</span></li>
-            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pricing.f_funnels">Lejki sprzedaży i budżety handlowców</span></li>
-            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pricing.f_email">Komunikacja end-to-end email (Gmail)</span></li>
-            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pricing.f_tasks">Zadania i workflow przypisań</span></li>
-            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pricing.f_config">Elastyczna konfiguracja słowników i ról</span></li>
-            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pricing.f_storage">Przestrzeń na dane</span><span class="storage">10 GB</span></li>
+            <li><span class="check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.3 2.3 4.7-4.9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="pricing.f_leads">Kompletny moduł zarządzania leadami i klientami</span></li>
+            <li><span class="check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.3 2.3 4.7-4.9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="pricing.f_funnels">Lejki sprzedaży i budżety handlowców</span></li>
+            <li><span class="check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.3 2.3 4.7-4.9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="pricing.f_email">Komunikacja end-to-end email (Gmail)</span></li>
+            <li><span class="check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.3 2.3 4.7-4.9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="pricing.f_tasks">Zadania i workflow przypisań</span></li>
+            <li><span class="check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.3 2.3 4.7-4.9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="pricing.f_config">Elastyczna konfiguracja słowników i ról</span></li>
+            <li><span class="check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.3 2.3 4.7-4.9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="pricing.f_storage">Przestrzeń na dane</span><span class="storage">10 GB</span></li>
           </ul>
         </div>
 
@@ -426,11 +431,11 @@
           <div class="plan-features-label" data-i18n="pricing.features_label">Co zawiera</div>
           <ul class="plan-features">
             <li><span class="plan-inherits" data-i18n="pricing.inherits_lite">Wszystko z planu Lite, plus:</span></li>
-            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pricing.f_partner">Pełna obsługa procesu partnerskiego</span></li>
-            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pricing.f_onboarding">Workflows onboarding (4-etapowy proces wdrożenia)</span></li>
-            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pricing.f_reports">Raporty sprzedaży i analityka (trendy, KPI, win rate)</span></li>
-            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="compare.r11">Integracja z hurtownią danych (DWH)</span></li>
-            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pricing.f_storage">Przestrzeń na dane</span><span class="storage">100 GB</span></li>
+            <li><span class="check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.3 2.3 4.7-4.9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="pricing.f_partner">Pełna obsługa procesu partnerskiego</span></li>
+            <li><span class="check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.3 2.3 4.7-4.9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="pricing.f_onboarding">Workflows onboarding (4-etapowy proces wdrożenia)</span></li>
+            <li><span class="check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.3 2.3 4.7-4.9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="pricing.f_reports">Raporty sprzedaży i analityka (trendy, KPI, win rate)</span></li>
+            <li><span class="check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.3 2.3 4.7-4.9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="compare.r11">Integracja z hurtownią danych (DWH)</span></li>
+            <li><span class="check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.3 2.3 4.7-4.9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="pricing.f_storage">Przestrzeń na dane</span><span class="storage">100 GB</span></li>
           </ul>
         </div>
 
@@ -455,15 +460,15 @@
           <div class="plan-features-label" data-i18n="pricing.features_label">Co zawiera</div>
           <ul class="plan-features">
             <li><span class="plan-inherits" data-i18n="pricing.inherits_standard">Wszystko z planu Standard, plus:</span></li>
-            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pricing.f_dwh_api">Zasilanie hurtowni danych przez dedykowany interfejs API</span></li>
-            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pricing.f_churn">Rozbudowane raporty i analiza churn</span></li>
-            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pricing.f_cs">Moduł Customer Service</span></li>
-            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pricing.f_phone">Dedykowany kanał telefoniczny</span></li>
-            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pricing.f_queue">Zarządzanie kolejką agentów</span></li>
-            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pricing.f_kb">Baza wiedzy</span></li>
-            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pricing.f_portal">Portal self-service dla klienta</span></li>
-            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pricing.f_mail">Dedykowana integracja komunikacji mailowej</span></li>
-            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pricing.f_storage">Przestrzeń na dane</span><span class="storage">1 TB</span></li>
+            <li><span class="check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.3 2.3 4.7-4.9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="pricing.f_dwh_api">Zasilanie hurtowni danych przez dedykowany interfejs API</span></li>
+            <li><span class="check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.3 2.3 4.7-4.9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="pricing.f_churn">Rozbudowane raporty i analiza churn</span></li>
+            <li><span class="check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.3 2.3 4.7-4.9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="pricing.f_cs">Moduł Customer Service</span></li>
+            <li><span class="check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.3 2.3 4.7-4.9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="pricing.f_phone">Dedykowany kanał telefoniczny</span></li>
+            <li><span class="check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.3 2.3 4.7-4.9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="pricing.f_queue">Zarządzanie kolejką agentów</span></li>
+            <li><span class="check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.3 2.3 4.7-4.9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="pricing.f_kb">Baza wiedzy</span></li>
+            <li><span class="check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.3 2.3 4.7-4.9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="pricing.f_portal">Portal self-service dla klienta</span></li>
+            <li><span class="check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.3 2.3 4.7-4.9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="pricing.f_mail">Dedykowana integracja komunikacji mailowej</span></li>
+            <li><span class="check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.3 2.3 4.7-4.9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="pricing.f_storage">Przestrzeń na dane</span><span class="storage">1 TB</span></li>
           </ul>
         </div>
 
@@ -586,6 +591,23 @@
 
   <script src="i18n.js"></script>
   <script>
+    // ── KARTY: nazwa+opis, cena i notka równej wysokości (od 1024px), żeby przyciski
+    // stały w jednej linii; listy funkcji kończą się naturalnie
+    const alignParts = ['.plan-head', '.plan-price-wrap', '.plan-billing-note'];
+    function alignCards() {
+      const wide = window.matchMedia('(min-width: 1024px)').matches;
+      alignParts.forEach(sel => {
+        const els = document.querySelectorAll('.pricing-grid ' + sel);
+        els.forEach(el => { el.style.minHeight = ''; });
+        if (!wide) return;
+        const h = Math.max(...[...els].map(el => el.getBoundingClientRect().height));
+        els.forEach(el => { el.style.minHeight = Math.ceil(h) + 'px'; });
+      });
+    }
+    window.addEventListener('resize', alignCards);
+    if (document.fonts) document.fonts.ready.then(alignCards);
+    document.addEventListener('DOMContentLoaded', alignCards);
+
     // ── OKRES ROZLICZENIA (roczne / miesięczne) ──────────────────────
     const billingButtons = document.querySelectorAll('#billingToggle button');
     function setBilling(mode) {
@@ -596,7 +618,7 @@
         b.setAttribute('aria-pressed', on ? 'true' : 'false');
       });
     }
-    billingButtons.forEach(b => b.addEventListener('click', () => setBilling(b.dataset.billing)));
+    billingButtons.forEach(b => b.addEventListener('click', () => { setBilling(b.dataset.billing); alignCards(); }));
 
     // ── WALUTA (zł / €): domyślnie wg języka strony, PL = zł, reszta = € ──
     const currencyButtons = document.querySelectorAll('#currencyToggle button');
@@ -612,6 +634,7 @@
         el.textContent = cur === 'pln' ? el.dataset.pln : el.dataset.eur;
       });
       renderPriceNotes();
+      alignCards();
     }
     // Notki z kwotą: tekst z i18n (szablon {price}) + kwota w bieżącej walucie
     function renderPriceNotes() {
@@ -627,7 +650,7 @@
     currencyButtons.forEach(b => b.addEventListener('click', () => { currencyChosen = true; setCurrency(b.dataset.currency); }));
     setCurrency(currencyForLang());
     // i18n.js ustawia <html lang> po wybraniu języka - dopóki ktoś nie wybrał waluty sam, idzie za językiem
-    new MutationObserver(() => { if (!currencyChosen) setCurrency(currencyForLang()); else renderPriceNotes(); })
+    new MutationObserver(() => { if (!currencyChosen) setCurrency(currencyForLang()); else renderPriceNotes(); requestAnimationFrame(alignCards); })
       .observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
   </script>
   <script src="nav.js"></script>
