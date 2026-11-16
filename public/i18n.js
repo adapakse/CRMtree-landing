@@ -45,7 +45,9 @@
     "contact": "Kontakt",
     "login": "Zaloguj się",
     "cta_trial": "Wypróbuj 14 dni",
-    "products": "Produkty"
+    "products": "Produkty",
+    "menu_open": "Otwórz menu",
+    "menu_close": "Zamknij menu"
   },
   "hero": {
     "eyebrow": "CRM dla każdej branży",
@@ -294,7 +296,9 @@
     "contact": "Contact",
     "login": "Log in",
     "cta_trial": "Try 14 days free",
-    "products": "Products"
+    "products": "Products",
+    "menu_open": "Open menu",
+    "menu_close": "Close menu"
   },
   "hero": {
     "eyebrow": "CRM for every industry",
@@ -543,7 +547,9 @@
     "contact": "Kontakt",
     "login": "Anmelden",
     "cta_trial": "14 Tage kostenlos testen",
-    "products": "Produkte"
+    "products": "Produkte",
+    "menu_open": "Menü öffnen",
+    "menu_close": "Menü schließen"
   },
   "hero": {
     "eyebrow": "CRM für jede Branche",
@@ -792,7 +798,9 @@
     "contact": "Contatti",
     "login": "Accedi",
     "cta_trial": "Prova gratis 14 giorni",
-    "products": "Prodotti"
+    "products": "Prodotti",
+    "menu_open": "Apri menu",
+    "menu_close": "Chiudi menu"
   },
   "hero": {
     "eyebrow": "CRM per ogni settore",
@@ -1041,7 +1049,9 @@
     "contact": "Contacto",
     "login": "Iniciar sesión",
     "cta_trial": "Prueba 14 días gratis",
-    "products": "Productos"
+    "products": "Productos",
+    "menu_open": "Abrir menú",
+    "menu_close": "Cerrar menú"
   },
   "hero": {
     "eyebrow": "CRM para cualquier sector",
@@ -1290,7 +1300,9 @@
     "contact": "Contact",
     "login": "Se connecter",
     "cta_trial": "Essai gratuit 14 jours",
-    "products": "Produits"
+    "products": "Produits",
+    "menu_open": "Ouvrir le menu",
+    "menu_close": "Fermer le menu"
   },
   "hero": {
     "eyebrow": "Un CRM pour tous les secteurs",
@@ -1539,7 +1551,9 @@
     "contact": "Contact",
     "login": "Autentificare",
     "cta_trial": "Testează gratuit 14 zile",
-    "products": "Produse"
+    "products": "Produse",
+    "menu_open": "Deschide meniul",
+    "menu_close": "Închide meniul"
   },
   "hero": {
     "eyebrow": "CRM pentru orice domeniu",
@@ -1788,7 +1802,9 @@
     "contact": "Контакты",
     "login": "Войти",
     "cta_trial": "14 дней бесплатно",
-    "products": "Продукты"
+    "products": "Продукты",
+    "menu_open": "Открыть меню",
+    "menu_close": "Закрыть меню"
   },
   "hero": {
     "eyebrow": "CRM для любой отрасли",
@@ -2037,7 +2053,9 @@
     "contact": "Kontakt",
     "login": "Prijava",
     "cta_trial": "14 dni brezplačno",
-    "products": "Izdelki"
+    "products": "Izdelki",
+    "menu_open": "Odpri meni",
+    "menu_close": "Zapri meni"
   },
   "hero": {
     "eyebrow": "CRM za vsako panogo",
@@ -2286,7 +2304,9 @@
     "contact": "Kontakt",
     "login": "Prijava",
     "cta_trial": "14 dana besplatno",
-    "products": "Proizvodi"
+    "products": "Proizvodi",
+    "menu_open": "Otvori izbornik",
+    "menu_close": "Zatvori izbornik"
   },
   "hero": {
     "eyebrow": "CRM za svaku djelatnost",
@@ -2566,6 +2586,14 @@
       if (pval != null) attrNodes[j].setAttribute("placeholder", pval);
     }
 
+    var ariaNodes = document.querySelectorAll("[data-i18n-aria-label]");
+    for (var n = 0; n < ariaNodes.length; n++) {
+      var akey = ariaNodes[n].getAttribute("data-i18n-aria-label");
+      var aval = getByPath(table, akey);
+      if (aval == null) aval = getByPath(fallback, akey);
+      if (aval != null) ariaNodes[n].setAttribute("aria-label", aval);
+    }
+
     var btnLabel = document.getElementById("langBtnLabel");
     if (btnLabel) btnLabel.textContent = code.toUpperCase();
     var menuBtns = document.querySelectorAll("#langMenu button");
@@ -2611,5 +2639,14 @@
     applyLang(detectLang());
   });
 
-  window.CRMtreeI18N = { apply: applyLang, langs: LANGS };
+  window.CRMtreeI18N = {
+    apply: applyLang,
+    langs: LANGS,
+    // Tłumaczenie jednego klucza w bieżącym języku strony (fallback: polski).
+    t: function (key) {
+      var code = document.documentElement.getAttribute("lang");
+      var val = getByPath(I18N[code] || I18N.pl, key);
+      return val != null ? val : getByPath(I18N.pl, key);
+    }
+  };
 })();

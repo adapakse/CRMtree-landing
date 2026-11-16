@@ -25,7 +25,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400..800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 
   <script type="application/ld+json">
@@ -53,13 +53,19 @@
       <a href="/" class="navbar__logo">
         <img src="logo.webp" alt="CRMtree" class="navbar__logo-img" width="300" height="200" />
       </a>
-      <nav class="navbar__links">
+      <a href="#trial" class="btn btn--primary navbar__cta" data-i18n="nav.cta_trial">Wypróbuj 14 dni</a>
+      <button type="button" class="navbar__toggle" aria-expanded="false" aria-controls="siteMenu" aria-label="Otwórz menu" data-i18n-aria-label="nav.menu_open">
+        <svg class="ic-open" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <svg class="ic-close" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <div class="navbar__menu" id="siteMenu">
+      <nav class="navbar__links" aria-label="Menu">
         <div class="has-mega">
-          <button type="button" class="mega-trigger">
+          <button type="button" class="mega-trigger" aria-expanded="false" aria-controls="megaPanel">
             <span data-i18n="nav.products">Produkty</span>
-            <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
           </button>
-          <div class="mega-panel">
+          <div class="mega-panel" id="megaPanel">
             <a class="mega-item" href="#f-dashboard" data-i18n="features.f1_t">Dashboard sprzedaży</a>
             <a class="mega-item" href="#f-partnerzy" data-i18n="features.f2_t">Zarządzanie partnerami</a>
             <a class="mega-item" href="#f-budzety" data-i18n="features.f3_t">Budżety i cele</a>
@@ -84,12 +90,13 @@
         <div class="langpicker">
           <button class="langbtn" id="langBtn" type="button" aria-haspopup="true" aria-expanded="false">
             <span id="langBtnLabel">PL</span>
-            <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
           </button>
           <div class="langmenu" id="langMenu"></div>
         </div>
         <a href="https://demo.crmtree.pl/login" class="btn btn--outline-light" data-i18n="nav.login">Zaloguj się</a>
         <a href="#trial" class="btn btn--primary" data-i18n="nav.cta_trial">Wypróbuj 14 dni</a>
+      </div>
       </div>
     </div>
   </header>
@@ -108,7 +115,7 @@
       </div>
       <div class="hero__visual">
         <div class="screenshot-frame">
-          <img src="screenshot.webp" alt="Raport Sprzedaży — CRMtree" class="screenshot-img" width="1050" height="645" fetchpriority="high" />
+          <img src="screenshot.webp" alt="Raport Sprzedaży — CRMtree" class="screenshot-img" width="1440" height="900" fetchpriority="high" />
         </div>
       </div>
     </div>
@@ -125,11 +132,12 @@
           <input type="hidden" name="access_key" value="f2f53912-5f35-4b8f-b3d8-743e8759f76b" />
           <input type="hidden" name="subject" value="Zgłoszenie do 14-dniowego triala z crmtree.pl" />
           <input type="hidden" name="from_name" value="CRMtree Landing — Trial" />
-          <input type="email" name="email" required data-i18n-placeholder="trial.email_placeholder" placeholder="Firmowy adres e-mail" />
+          <label for="trialEmail" class="sr-only" data-i18n="trial.email_placeholder">Firmowy adres e-mail</label>
+          <input type="email" id="trialEmail" name="email" autocomplete="email" required data-i18n-placeholder="trial.email_placeholder" placeholder="Firmowy adres e-mail" />
           <button type="submit" class="btn btn--primary btn--lg" data-i18n="trial.cta">Rozpocznij za darmo</button>
         </form>
-        <div id="trialSuccess" class="form-success" style="display:none" data-i18n="contact.success">✅ Dziękujemy! Odezwiemy się wkrótce.</div>
-        <div id="trialError" class="form-error" style="display:none" data-i18n="contact.error">❌ Coś poszło nie tak. Spróbuj ponownie.</div>
+        <div id="trialSuccess" class="form-success" role="status" style="display:none" data-i18n="contact.success">✅ Dziękujemy! Odezwiemy się wkrótce.</div>
+        <div id="trialError" class="form-error" role="alert" style="display:none" data-i18n="contact.error">❌ Coś poszło nie tak. Spróbuj ponownie.</div>
         <p class="trial__note" data-i18n="trial.note">Nie potrzebujesz karty płatniczej. Zrezygnujesz w każdej chwili.</p>
       </div>
     </div>
@@ -197,7 +205,7 @@
         <a href="#trial" class="btn btn--primary btn--lg" data-i18n="features.cta">Wypróbuj za darmo</a>
       </div>
       <div class="product-section__visual">
-        <div class="screenshot-frame"><img src="dashboard.webp" alt="" loading="lazy" width="900" height="675" /></div>
+        <div class="screenshot-frame"><img src="dashboard.webp" alt="" loading="lazy" width="960" height="600" /></div>
       </div>
     </div>
   </section>
@@ -222,7 +230,7 @@
         <a href="#trial" class="btn btn--primary btn--lg" data-i18n="features.cta">Wypróbuj za darmo</a>
       </div>
       <div class="product-section__visual">
-        <div class="screenshot-frame"><img src="partnerzy.webp" alt="" loading="lazy" width="900" height="675" /></div>
+        <div class="screenshot-frame"><img src="partnerzy.webp" alt="" loading="lazy" width="960" height="600" /></div>
       </div>
     </div>
   </section>
@@ -247,7 +255,7 @@
         <a href="#trial" class="btn btn--primary btn--lg" data-i18n="features.cta">Wypróbuj za darmo</a>
       </div>
       <div class="product-section__visual">
-        <div class="screenshot-frame"><img src="budzety.webp" alt="" loading="lazy" width="900" height="675" /></div>
+        <div class="screenshot-frame"><img src="budzety.webp" alt="" loading="lazy" width="960" height="600" /></div>
       </div>
     </div>
   </section>
@@ -272,7 +280,7 @@
         <a href="#trial" class="btn btn--primary btn--lg" data-i18n="features.cta">Wypróbuj za darmo</a>
       </div>
       <div class="product-section__visual">
-        <div class="screenshot-frame"><img src="komunikacja.webp" alt="" loading="lazy" width="900" height="675" /></div>
+        <div class="screenshot-frame"><img src="komunikacja.webp" alt="" loading="lazy" width="960" height="600" /></div>
       </div>
     </div>
   </section>
@@ -297,7 +305,7 @@
         <a href="#trial" class="btn btn--primary btn--lg" data-i18n="features.cta">Wypróbuj za darmo</a>
       </div>
       <div class="product-section__visual">
-        <div class="screenshot-frame"><img src="analiza-ai.webp" alt="" loading="lazy" width="900" height="675" /></div>
+        <div class="screenshot-frame"><img src="analiza-ai.webp" alt="" loading="lazy" width="960" height="600" /></div>
       </div>
     </div>
   </section>
@@ -347,7 +355,7 @@
         <a href="#trial" class="btn btn--primary btn--lg" data-i18n="features.cta">Wypróbuj za darmo</a>
       </div>
       <div class="product-section__visual">
-        <div class="screenshot-frame"><img src="dokumenty.webp" alt="" loading="lazy" width="900" height="675" /></div>
+        <div class="screenshot-frame"><img src="dokumenty.webp" alt="" loading="lazy" width="960" height="600" /></div>
       </div>
     </div>
   </section>
@@ -372,7 +380,7 @@
         <a href="#trial" class="btn btn--primary btn--lg" data-i18n="features.cta">Wypróbuj za darmo</a>
       </div>
       <div class="product-section__visual">
-        <div class="screenshot-frame"><img src="bezpieczenstwo.webp" alt="" loading="lazy" width="900" height="675" /></div>
+        <div class="screenshot-frame"><img src="bezpieczenstwo.webp" alt="" loading="lazy" width="960" height="600" /></div>
       </div>
     </div>
   </section>
@@ -489,7 +497,7 @@
         <a href="#trial" class="btn btn--primary btn--lg" data-i18n="features.cta">Wypróbuj za darmo</a>
       </div>
       <div class="product-section__visual">
-        <div class="screenshot-frame"><img src="prospekty.webp" alt="" loading="lazy" width="900" height="675" /></div>
+        <div class="screenshot-frame"><img src="prospekty.webp" alt="" loading="lazy" width="960" height="600" /></div>
       </div>
     </div>
   </section>
@@ -671,10 +679,10 @@
     <div class="container">
       <div class="section-header">
         <span class="eyebrow" data-i18n="compare.eyebrow">Porównanie</span>
-        <h2 data-i18n="compare.h2">CRMtree na tle innych systemów CRM</h2>
+        <h2 id="compareTitle" data-i18n="compare.h2">CRMtree na tle innych systemów CRM</h2>
         <p data-i18n="compare.sub">CRMtree ma wszystko, co konkurencja, a wyprzedza ją w następujących obszarach funkcjonalnych.</p>
       </div>
-      <div class="compare-wrap">
+      <div class="compare-wrap" role="region" aria-labelledby="compareTitle" tabindex="0">
         <table class="compare">
           <thead>
             <tr>
@@ -685,37 +693,37 @@
           </thead>
           <tbody>
             <tr class="compare-group"><td colspan="6" data-i18n="compare.g1">Wdrożenie</td></tr>
-            <tr><td data-i18n="compare.r1">Onboarding klienta krok po kroku</td><td class="col-us"><span class="mark--yes">✓</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td></tr>
-            <tr><td data-i18n="compare.r2">Model cenowy bez limitu stanowisk</td><td class="col-us"><span class="mark--yes">✓</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td></tr>
+            <tr><td data-i18n="compare.r1">Onboarding klienta krok po kroku</td><td class="col-us" data-label="CRMtree"><span class="mark--yes">✓</span></td><td data-label="HubSpot"><span class="mark--no">✗</span></td><td data-label="Pipedrive"><span class="mark--no">✗</span></td><td data-label="Firmao"><span class="mark--no">✗</span></td><td data-label="Livespace"><span class="mark--no">✗</span></td></tr>
+            <tr><td data-i18n="compare.r2">Model cenowy bez limitu stanowisk</td><td class="col-us" data-label="CRMtree"><span class="mark--yes">✓</span></td><td data-label="HubSpot"><span class="mark--no">✗</span></td><td data-label="Pipedrive"><span class="mark--no">✗</span></td><td data-label="Firmao"><span class="mark--no">✗</span></td><td data-label="Livespace"><span class="mark--no">✗</span></td></tr>
 
             <tr class="compare-group"><td colspan="6" data-i18n="compare.g2">E-mail i komunikacja real-time</td></tr>
-            <tr><td data-i18n="compare.r3">Real-time synchronizacja e-maili</td><td class="col-us"><span class="mark--yes">✓</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td></tr>
-            <tr><td data-i18n="compare.r4">Śledzenie odczytania wiadomości</td><td class="col-us"><span class="mark--yes">✓</span></td><td><span class="mark--partial">~</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td></tr>
-            <tr><td data-i18n="compare.r5">WhatsApp Business w Centrum komunikacji</td><td class="col-us"><span class="mark--yes">✓</span></td><td><span class="mark--no">nieznane</span></td><td><span class="mark--no">nieznane</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td></tr>
+            <tr><td data-i18n="compare.r3">Real-time synchronizacja e-maili</td><td class="col-us" data-label="CRMtree"><span class="mark--yes">✓</span></td><td data-label="HubSpot"><span class="mark--no">✗</span></td><td data-label="Pipedrive"><span class="mark--no">✗</span></td><td data-label="Firmao"><span class="mark--no">✗</span></td><td data-label="Livespace"><span class="mark--no">✗</span></td></tr>
+            <tr><td data-i18n="compare.r4">Śledzenie odczytania wiadomości</td><td class="col-us" data-label="CRMtree"><span class="mark--yes">✓</span></td><td data-label="HubSpot"><span class="mark--partial">~</span></td><td data-label="Pipedrive"><span class="mark--no">✗</span></td><td data-label="Firmao"><span class="mark--no">✗</span></td><td data-label="Livespace"><span class="mark--no">✗</span></td></tr>
+            <tr><td data-i18n="compare.r5">WhatsApp Business w Centrum komunikacji</td><td class="col-us" data-label="CRMtree"><span class="mark--yes">✓</span></td><td data-label="HubSpot"><span class="mark--no">nieznane</span></td><td data-label="Pipedrive"><span class="mark--no">nieznane</span></td><td data-label="Firmao"><span class="mark--no">✗</span></td><td data-label="Livespace"><span class="mark--no">✗</span></td></tr>
 
             <tr class="compare-group"><td colspan="6" data-i18n="compare.g3">Telefonia i analiza rozmów AI</td></tr>
-            <tr><td data-i18n="compare.r6">Wbudowany softphone WebRTC</td><td class="col-us"><span class="mark--yes">✓</span></td><td><span class="mark--yes">✓ (płatny moduł)</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td></tr>
-            <tr><td data-i18n="compare.r7">Nagrywanie i transkrypcja połączeń (AI)</td><td class="col-us"><span class="mark--yes">✓</span></td><td><span class="mark--partial">~</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td></tr>
-            <tr><td data-i18n="compare.r8">Analiza sentymentu i score'u rozmowy (AI)</td><td class="col-us"><span class="mark--yes">✓</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td></tr>
-            <tr><td data-i18n="compare.r9">Automatyczne wykrycie follow-up (AI, PL)</td><td class="col-us"><span class="mark--yes">✓</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td></tr>
+            <tr><td data-i18n="compare.r6">Wbudowany softphone WebRTC</td><td class="col-us" data-label="CRMtree"><span class="mark--yes">✓</span></td><td data-label="HubSpot"><span class="mark--yes">✓ (płatny moduł)</span></td><td data-label="Pipedrive"><span class="mark--no">✗</span></td><td data-label="Firmao"><span class="mark--no">✗</span></td><td data-label="Livespace"><span class="mark--no">✗</span></td></tr>
+            <tr><td data-i18n="compare.r7">Nagrywanie i transkrypcja połączeń (AI)</td><td class="col-us" data-label="CRMtree"><span class="mark--yes">✓</span></td><td data-label="HubSpot"><span class="mark--partial">~</span></td><td data-label="Pipedrive"><span class="mark--no">✗</span></td><td data-label="Firmao"><span class="mark--no">✗</span></td><td data-label="Livespace"><span class="mark--no">✗</span></td></tr>
+            <tr><td data-i18n="compare.r8">Analiza sentymentu i score'u rozmowy (AI)</td><td class="col-us" data-label="CRMtree"><span class="mark--yes">✓</span></td><td data-label="HubSpot"><span class="mark--no">✗</span></td><td data-label="Pipedrive"><span class="mark--no">✗</span></td><td data-label="Firmao"><span class="mark--no">✗</span></td><td data-label="Livespace"><span class="mark--no">✗</span></td></tr>
+            <tr><td data-i18n="compare.r9">Automatyczne wykrycie follow-up (AI, PL)</td><td class="col-us" data-label="CRMtree"><span class="mark--yes">✓</span></td><td data-label="HubSpot"><span class="mark--no">✗</span></td><td data-label="Pipedrive"><span class="mark--no">✗</span></td><td data-label="Firmao"><span class="mark--no">✗</span></td><td data-label="Livespace"><span class="mark--no">✗</span></td></tr>
 
             <tr class="compare-group"><td colspan="6" data-i18n="compare.g4">Dane i wzbogacanie</td></tr>
-            <tr><td data-i18n="compare.r10">Wzbogacanie firmy z GUS/BIR 1.1</td><td class="col-us"><span class="mark--yes">✓</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--yes">✓</span></td><td><span class="mark--no">✗</span></td></tr>
-            <tr><td data-i18n="compare.r11">Integracja z hurtownią danych (DWH)</td><td class="col-us"><span class="mark--yes">✓</span></td><td><span class="mark--partial">~</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td></tr>
-            <tr><td data-i18n="compare.r12">Health Score i Churn Score</td><td class="col-us"><span class="mark--yes">✓</span></td><td><span class="mark--partial">~ (plan Enterprise)</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td></tr>
+            <tr><td data-i18n="compare.r10">Wzbogacanie firmy z GUS/BIR 1.1</td><td class="col-us" data-label="CRMtree"><span class="mark--yes">✓</span></td><td data-label="HubSpot"><span class="mark--no">✗</span></td><td data-label="Pipedrive"><span class="mark--no">✗</span></td><td data-label="Firmao"><span class="mark--yes">✓</span></td><td data-label="Livespace"><span class="mark--no">✗</span></td></tr>
+            <tr><td data-i18n="compare.r11">Integracja z hurtownią danych (DWH)</td><td class="col-us" data-label="CRMtree"><span class="mark--yes">✓</span></td><td data-label="HubSpot"><span class="mark--partial">~</span></td><td data-label="Pipedrive"><span class="mark--no">✗</span></td><td data-label="Firmao"><span class="mark--no">✗</span></td><td data-label="Livespace"><span class="mark--no">✗</span></td></tr>
+            <tr><td data-i18n="compare.r12">Health Score i Churn Score</td><td class="col-us" data-label="CRMtree"><span class="mark--yes">✓</span></td><td data-label="HubSpot"><span class="mark--partial">~ (plan Enterprise)</span></td><td data-label="Pipedrive"><span class="mark--no">✗</span></td><td data-label="Firmao"><span class="mark--no">✗</span></td><td data-label="Livespace"><span class="mark--no">✗</span></td></tr>
 
             <tr class="compare-group"><td colspan="6" data-i18n="compare.g5">Analityka i powiadomienia</td></tr>
-            <tr><td data-i18n="compare.r13">5 dashboardów analitycznych bez BI</td><td class="col-us"><span class="mark--yes">✓</span></td><td><span class="mark--partial">~ (Enterprise)</span></td><td><span class="mark--partial">~ (Advanced)</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td></tr>
-            <tr><td data-i18n="compare.r14">Poranny mail zbiorczy (Daily Digest)</td><td class="col-us"><span class="mark--yes">✓</span></td><td><span class="mark--partial">~ (Enterprise)</span></td><td><span class="mark--partial">~ (dodatek)</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td></tr>
+            <tr><td data-i18n="compare.r13">5 dashboardów analitycznych bez BI</td><td class="col-us" data-label="CRMtree"><span class="mark--yes">✓</span></td><td data-label="HubSpot"><span class="mark--partial">~ (Enterprise)</span></td><td data-label="Pipedrive"><span class="mark--partial">~ (Advanced)</span></td><td data-label="Firmao"><span class="mark--no">✗</span></td><td data-label="Livespace"><span class="mark--no">✗</span></td></tr>
+            <tr><td data-i18n="compare.r14">Poranny mail zbiorczy (Daily Digest)</td><td class="col-us" data-label="CRMtree"><span class="mark--yes">✓</span></td><td data-label="HubSpot"><span class="mark--partial">~ (Enterprise)</span></td><td data-label="Pipedrive"><span class="mark--partial">~ (dodatek)</span></td><td data-label="Firmao"><span class="mark--no">✗</span></td><td data-label="Livespace"><span class="mark--no">✗</span></td></tr>
 
             <tr class="compare-group"><td colspan="6" data-i18n="compare.g6">Dokumenty</td></tr>
-            <tr><td data-i18n="compare.r15">Zarządzanie dokumentami i akceptacje</td><td class="col-us"><span class="mark--yes">✓</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--partial">~</span></td><td><span class="mark--no">✗</span></td></tr>
+            <tr><td data-i18n="compare.r15">Zarządzanie dokumentami i akceptacje</td><td class="col-us" data-label="CRMtree"><span class="mark--yes">✓</span></td><td data-label="HubSpot"><span class="mark--no">✗</span></td><td data-label="Pipedrive"><span class="mark--no">✗</span></td><td data-label="Firmao"><span class="mark--partial">~</span></td><td data-label="Livespace"><span class="mark--no">✗</span></td></tr>
 
             <tr class="compare-group"><td colspan="6" data-i18n="compare.g8">Projekty</td></tr>
-            <tr><td data-i18n="compare.r17">Zarządzanie projektami z osią czasu (Gantt)</td><td class="col-us"><span class="mark--yes">✓</span></td><td><span class="mark--yes">✓</span></td><td><span class="mark--partial">~ (dodatek, Gantt w becie)</span></td><td><span class="mark--partial">~ (od planu Professional)</span></td><td><span class="mark--no">✗</span></td></tr>
+            <tr><td data-i18n="compare.r17">Zarządzanie projektami z osią czasu (Gantt)</td><td class="col-us" data-label="CRMtree"><span class="mark--yes">✓</span></td><td data-label="HubSpot"><span class="mark--yes">✓</span></td><td data-label="Pipedrive"><span class="mark--partial">~ (dodatek, Gantt w becie)</span></td><td data-label="Firmao"><span class="mark--partial">~ (od planu Professional)</span></td><td data-label="Livespace"><span class="mark--no">✗</span></td></tr>
 
             <tr class="compare-group"><td colspan="6" data-i18n="compare.g7">Bezpieczeństwo i infrastruktura</td></tr>
-            <tr><td data-i18n="compare.r16">Dedykowana infrastruktura / on-prem</td><td class="col-us"><span class="mark--yes">✓</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">nieznane</span></td><td><span class="mark--no">✗</span></td></tr>
+            <tr><td data-i18n="compare.r16">Dedykowana infrastruktura / on-prem</td><td class="col-us" data-label="CRMtree"><span class="mark--yes">✓</span></td><td data-label="HubSpot"><span class="mark--no">✗</span></td><td data-label="Pipedrive"><span class="mark--no">✗</span></td><td data-label="Firmao"><span class="mark--no">nieznane</span></td><td data-label="Livespace"><span class="mark--no">✗</span></td></tr>
           </tbody>
         </table>
       </div>
@@ -862,31 +870,31 @@
         <div class="form-row">
           <div class="form-group">
             <label for="name" data-i18n="contact.name_label">Imię i nazwisko</label>
-            <input type="text" id="name" name="name" data-i18n-placeholder="contact.name_ph" placeholder="Jan Kowalski" required />
+            <input type="text" id="name" name="name" autocomplete="name" data-i18n-placeholder="contact.name_ph" placeholder="Jan Kowalski" required />
           </div>
           <div class="form-group">
             <label for="company" data-i18n="contact.company_label">Firma</label>
-            <input type="text" id="company" name="company" data-i18n-placeholder="contact.company_ph" placeholder="Nazwa firmy" required />
+            <input type="text" id="company" name="company" autocomplete="organization" data-i18n-placeholder="contact.company_ph" placeholder="Nazwa firmy" required />
           </div>
         </div>
         <div class="form-row">
           <div class="form-group">
             <label for="email" data-i18n="contact.email_label">Email służbowy</label>
-            <input type="email" id="email" name="email" data-i18n-placeholder="contact.email_ph" placeholder="jan@firma.pl" required />
+            <input type="email" id="email" name="email" autocomplete="email" data-i18n-placeholder="contact.email_ph" placeholder="jan@firma.pl" required />
           </div>
           <div class="form-group">
             <label for="phone"><span data-i18n="contact.phone_label">Telefon</span> <span class="optional" data-i18n="contact.phone_optional">(opcjonalnie)</span></label>
-            <input type="tel" id="phone" name="phone" data-i18n-placeholder="contact.phone_ph" placeholder="+48 500 000 000" />
+            <input type="tel" id="phone" name="phone" autocomplete="tel" data-i18n-placeholder="contact.phone_ph" placeholder="+48 500 000 000" />
           </div>
         </div>
         <div class="form-group">
           <label for="message" data-i18n="contact.message_label">Wiadomość</label>
           <textarea id="message" name="message" rows="4" data-i18n-placeholder="contact.message_ph" placeholder="Opisz krótko swoje potrzeby lub zadaj pytanie…"></textarea>
         </div>
-        <div id="formSuccess" class="form-success" style="display:none" data-i18n="contact.success">
+        <div id="formSuccess" class="form-success" role="status" style="display:none" data-i18n="contact.success">
           ✅ Dziękujemy! Odezwiemy się wkrótce.
         </div>
-        <div id="formError" class="form-error" style="display:none" data-i18n="contact.error">
+        <div id="formError" class="form-error" role="alert" style="display:none" data-i18n="contact.error">
           ❌ Coś poszło nie tak. Spróbuj ponownie lub napisz bezpośrednio na crmtree_kontakt@crmtree.pl
         </div>
         <button type="submit" id="formSubmit" class="btn btn--primary btn--lg" data-i18n="contact.submit">Wyślij zapytanie</button>
@@ -948,7 +956,7 @@
   <!-- CHAT WIDGET -->
   <div class="chat-widget" id="chatWidget">
     <div class="chat-panel">
-      <button class="chat-panel__close" type="button" onclick="document.getElementById('chatWidget').classList.remove('open')" aria-label="Zamknij czat">✕</button>
+      <button class="chat-panel__close" type="button" onclick="document.getElementById('chatWidget').classList.remove('open')" aria-label="Zamknij czat"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 2l10 10M12 2L2 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
       <div class="chat-panel__head">
         <img class="chat-panel__avatar" src="chat-avatar.webp" alt="" />
         <div>
@@ -967,5 +975,6 @@
   </div>
 
   <script src="i18n.js"></script>
+  <script src="nav.js"></script>
 </body>
 </html>
