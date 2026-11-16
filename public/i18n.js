@@ -291,6 +291,12 @@
     "privacy": "Polityka prywatności",
     "copyright": "© 2026 CRMtree. Wszelkie prawa zastrzeżone."
   },
+  "pricing": {
+    "billing_label": "Rozliczenie",
+    "billing_annual": "Rocznie",
+    "billing_monthly": "Miesięcznie",
+    "compare_h2": "Porównaj plany"
+  },
   "chat": {
     "pill": "Cześć!",
     "name": "Zespół CRMtree",
@@ -557,6 +563,12 @@
     "contact": "Contact",
     "privacy": "Privacy policy",
     "copyright": "© 2026 CRMtree. All rights reserved."
+  },
+  "pricing": {
+    "billing_label": "Billing",
+    "billing_annual": "Annually",
+    "billing_monthly": "Monthly",
+    "compare_h2": "Compare plans"
   },
   "chat": {
     "pill": "Hey!",
@@ -825,6 +837,12 @@
     "privacy": "Datenschutz",
     "copyright": "© 2026 CRMtree. Alle Rechte vorbehalten."
   },
+  "pricing": {
+    "billing_label": "Abrechnung",
+    "billing_annual": "Jährlich",
+    "billing_monthly": "Monatlich",
+    "compare_h2": "Pläne vergleichen"
+  },
   "chat": {
     "pill": "Hallo!",
     "name": "CRMtree-Team",
@@ -1091,6 +1109,12 @@
     "contact": "Contatti",
     "privacy": "Informativa privacy",
     "copyright": "© 2026 CRMtree. Tutti i diritti riservati."
+  },
+  "pricing": {
+    "billing_label": "Fatturazione",
+    "billing_annual": "Annuale",
+    "billing_monthly": "Mensile",
+    "compare_h2": "Confronta i piani"
   },
   "chat": {
     "pill": "Ciao!",
@@ -1359,6 +1383,12 @@
     "privacy": "Política de privacidad",
     "copyright": "© 2026 CRMtree. Todos los derechos reservados."
   },
+  "pricing": {
+    "billing_label": "Facturación",
+    "billing_annual": "Anual",
+    "billing_monthly": "Mensual",
+    "compare_h2": "Compara los planes"
+  },
   "chat": {
     "pill": "¡Hola!",
     "name": "Equipo CRMtree",
@@ -1625,6 +1655,12 @@
     "contact": "Contact",
     "privacy": "Politique de confidentialité",
     "copyright": "© 2026 CRMtree. Tous droits réservés."
+  },
+  "pricing": {
+    "billing_label": "Facturation",
+    "billing_annual": "Annuel",
+    "billing_monthly": "Mensuel",
+    "compare_h2": "Comparer les offres"
   },
   "chat": {
     "pill": "Salut !",
@@ -1893,6 +1929,12 @@
     "privacy": "Politica de confidențialitate",
     "copyright": "© 2026 CRMtree. Toate drepturile rezervate."
   },
+  "pricing": {
+    "billing_label": "Facturare",
+    "billing_annual": "Anual",
+    "billing_monthly": "Lunar",
+    "compare_h2": "Compară planurile"
+  },
   "chat": {
     "pill": "Bună!",
     "name": "Echipa CRMtree",
@@ -2159,6 +2201,12 @@
     "contact": "Контакты",
     "privacy": "Политика конфиденциальности",
     "copyright": "© 2026 CRMtree. Все права защищены."
+  },
+  "pricing": {
+    "billing_label": "Оплата",
+    "billing_annual": "Ежегодно",
+    "billing_monthly": "Ежемесячно",
+    "compare_h2": "Сравнить тарифы"
   },
   "chat": {
     "pill": "Привет!",
@@ -2427,6 +2475,12 @@
     "privacy": "Politika zasebnosti",
     "copyright": "© 2026 CRMtree. Vse pravice pridržane."
   },
+  "pricing": {
+    "billing_label": "Obračun",
+    "billing_annual": "Letno",
+    "billing_monthly": "Mesečno",
+    "compare_h2": "Primerjaj pakete"
+  },
   "chat": {
     "pill": "Živjo!",
     "name": "Ekipa CRMtree",
@@ -2693,6 +2747,12 @@
     "contact": "Kontakt",
     "privacy": "Politika privatnosti",
     "copyright": "© 2026 CRMtree. Sva prava pridržana."
+  },
+  "pricing": {
+    "billing_label": "Naplata",
+    "billing_annual": "Godišnje",
+    "billing_monthly": "Mjesečno",
+    "compare_h2": "Usporedi planove"
   },
   "chat": {
     "pill": "Bok!",

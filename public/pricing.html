@@ -31,380 +31,258 @@
 
     .pricing-hero {
       background: linear-gradient(135deg, var(--surface) 0%, var(--brand-pale) 100%);
-      padding: 48px 0 56px;
+      padding: 48px 0 40px;
       text-align: center;
     }
     .pricing-hero h1 {
-      font-size: 32px; font-weight: 800; line-height: 1.16; color: var(--ink); margin-bottom: 16px;
+      font-size: 32px; font-weight: 800; line-height: 1.16; color: var(--ink); margin-bottom: 16px; letter-spacing: -.01em;
     }
     .pricing-hero p {
       font-size: 18px; color: var(--text-muted); max-width: 540px; margin: 0 auto 32px;
     }
     .pricing-switches {
-      display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px;
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px 16px;
     }
 
-    /* ── PRZEŁĄCZNIK ROZLICZENIA ──────────────────────────────────────── */
-    .billing-toggle {
-      display: inline-flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      gap: 8px 12px;
-      max-width: 100%;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow-sm);
-      border-radius: 24px;
-      padding: 6px 16px;
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--text-muted);
-      user-select: none;
+    /* ── PRZEŁĄCZNIKI (segmented control: okres i waluta) ─────────────── */
+    .seg {
+      display: inline-flex; align-items: center; gap: 2px; padding: 4px;
+      background: var(--surface); border: 1px solid var(--border); border-radius: 999px;
+      box-shadow: var(--shadow-field);
     }
-    .billing-toggle__label {
-      cursor: pointer;
-      transition: color .15s;
-      padding: 10px 4px;
+    .seg button {
+      display: inline-flex; align-items: center; gap: 8px;
+      min-height: 40px; padding: 0 16px; border: 0; border-radius: 999px; background: none;
+      font-family: inherit; font-size: 14px; font-weight: 600; line-height: 1.2; color: var(--text-muted);
+      cursor: pointer; white-space: nowrap; transition: background-color .15s, color .15s;
     }
-    .billing-toggle__label.active { color: var(--ink); }
-
-    .toggle-switch {
-      position: relative;
-      width: 44px; height: 24px;
-      background: var(--brand-gradient);
-      border: 0;
-      border-radius: 999px;
-      cursor: pointer;
-      flex-shrink: 0;
-    }
-    /* Większy cel dotyku niż widoczny suwak */
-    .toggle-switch::before { content: ''; position: absolute; inset: -10px -2px; }
-    .toggle-switch::after {
-      content: '';
-      position: absolute;
-      top: 2px; left: 2px;
-      width: 20px; height: 20px;
-      background: #fff;
-      border-radius: 50%;
-      box-shadow: 0 1px 2px rgba(0,0,0,.2);
-      transition: transform .2s;
-    }
-    .toggle-switch.monthly::after { transform: translateX(20px); }
+    .seg button:hover { color: var(--ink); }
+    .seg button.active { background: var(--brand-pale); color: var(--brand-text); }
+    .seg button:focus-visible { outline-offset: 0; border-radius: 999px; }
+    .seg--currency button { min-width: 48px; justify-content: center; padding: 0 12px; }
 
     .save-badge {
-      display: inline-flex;
-      align-items: center;
-      background: var(--brand-pale);
-      color: var(--brand-text);
-      font-size: 12px;
-      font-weight: 700;
-      padding: 2px 10px;
-      border-radius: 999px;
-      letter-spacing: .02em;
-      transition: opacity .15s;
+      display: inline-flex; align-items: center; min-height: 24px;
+      background: var(--brand-pale); color: var(--brand-text);
+      font-size: 12px; font-weight: 700; line-height: 1.2; padding: 2px 10px; border-radius: 999px;
+      border: 1px solid var(--brand-muted);
     }
-    .toggle-switch.monthly ~ .save-badge { opacity: 0; }
-
-    /* ── PRZEŁĄCZNIK WALUTY ───────────────────────────────────────────── */
-    .currency-toggle {
-      display: inline-flex; align-items: center; gap: 2px; background: var(--surface); border: 1px solid var(--border);
-      box-shadow: var(--shadow-sm); border-radius: 999px; padding: 4px;
-    }
-    .currency-toggle button {
-      border: none; background: none; font-family: inherit; font-weight: 700; font-size: 14px;
-      min-height: 40px; padding: 0 16px; border-radius: 999px; color: var(--text-muted); cursor: pointer;
-      transition: background-color .15s, color .15s;
-    }
-    .currency-toggle button:hover { color: var(--ink); }
-    .currency-toggle button.active { background: var(--graphite); color: #fff; }
-    .currency-note { display: block; font-size: 12px; color: var(--text-muted); margin: 12px auto 0; max-width: 40em; }
+    .billing-group { display: inline-flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px 12px; }
+    .currency-note { display: block; font-size: 12px; color: var(--text-muted); margin: 16px auto 0; max-width: 40em; }
 
     /* Kolejność symbolu waluty i kwoty */
     .plan-price .price-currency { order: 1; }
     .plan-price .price-amount { order: 2; }
     .plan-price .price-period { order: 3; }
-    body.currency-pln .plan-price .price-currency { order: 2; margin-left: 4px; padding-bottom: 12px; }
+    body.currency-pln .plan-price .price-currency { order: 2; }
     body.currency-pln .plan-price .price-amount { order: 1; }
 
     /* ── SIATKA PLANÓW ────────────────────────────────────────────────── */
     .pricing-section {
-      padding: 24px 0 64px;
-      background: linear-gradient(180deg, var(--brand-pale) 0%, var(--surface) 200px);
+      padding: 32px 0 56px;
+      background: linear-gradient(180deg, var(--brand-pale) 0%, var(--surface) 240px);
     }
     .pricing-grid {
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: minmax(0, 1fr);
       gap: 24px;
-      align-items: start;
       max-width: 480px;
       margin: 0 auto;
     }
 
     /* ── KARTA PLANU ──────────────────────────────────────────────────── */
     .plan-card {
+      display: flex; flex-direction: column;
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--radius);
       box-shadow: var(--shadow-sm);
       padding: 28px 24px 32px;
       position: relative;
-      transition: box-shadow .2s, transform .2s;
       min-width: 0;
     }
-    @media (hover: hover) { .plan-card:hover { box-shadow: var(--shadow-lg); } }
-
     .plan-card--featured {
       border: 2px solid var(--brand);
-      box-shadow: 0 8px 32px rgba(59,170,93,.18);
+      padding: 27px 23px 31px; /* ramka 2px zamiast 1px - treść w tym samym miejscu */
+      box-shadow: 0 8px 24px rgba(59,170,93,.14), 0 2px 6px rgba(0,0,0,.04);
     }
-    .plan-card--featured:hover { box-shadow: 0 14px 40px rgba(59,170,93,.24); }
     .plan-badge {
-      position: absolute;
-      top: -14px; left: 50%;
-      transform: translateX(-50%);
-      background: var(--brand-gradient);
-      color: #fff;
-      font-size: 12px;
-      font-weight: 700;
-      padding: 4px 16px;
-      border-radius: 999px;
-      white-space: nowrap;
-      letter-spacing: .04em;
-      text-transform: uppercase;
+      position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+      background: var(--brand-pale); color: var(--brand-text);
+      border: 1px solid var(--brand-muted);
+      font-size: 12px; font-weight: 700; line-height: 1.4;
+      padding: 3px 12px; border-radius: 999px; white-space: nowrap; letter-spacing: .02em;
     }
 
-    /* ── NAGŁÓWEK PLANU ───────────────────────────────────────────────── */
+    /* Nagłówek planu */
+    .plan-head { display: flex; flex-direction: column; }
     .plan-name {
-      font-size: 14px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .08em;
-      color: var(--text-muted);
-      margin-bottom: 8px;
+      font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em;
+      color: var(--text-muted); line-height: 1.4; margin-bottom: 8px;
     }
     .plan-card--featured .plan-name { color: var(--brand-text); }
+    .plan-tagline { font-size: 16px; line-height: 1.5; color: var(--text-muted); margin-bottom: 24px; }
 
-    .plan-tagline {
-      font-size: 16px;
-      color: var(--text-muted);
-      margin-bottom: 24px;
-    }
-
-    /* ── CENA ─────────────────────────────────────────────────────────── */
+    /* Cena: duża cyfra, mniejsza waluta, okres jednym wierszem */
     .plan-price {
-      margin-bottom: 6px;
-      display: flex;
-      align-items: flex-end;
-      gap: 4px;
-      min-height: 64px;
+      display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 4px; row-gap: 0;
+      min-height: 56px; margin-bottom: 8px;
     }
-    .price-currency {
-      font-size: 22px;
-      font-weight: 700;
-      color: var(--ink);
-      line-height: 1;
-      padding-bottom: 10px;
-    }
-    .price-amount {
-      font-size: 44px;
-      font-weight: 800;
-      color: var(--ink);
-      line-height: 1;
-    }
-    .price-period {
-      font-size: 14px;
-      color: var(--text-muted);
-      line-height: 1.2;
-      padding-bottom: 6px;
-    }
-    .price-contact {
-      font-size: 28px;
-      font-weight: 800;
-      color: var(--ink);
-      line-height: 1.1;
-      padding-bottom: 4px;
-    }
+    .price-currency { font-size: 24px; font-weight: 700; color: var(--ink); line-height: 1; }
+    .price-amount { font-size: 48px; font-weight: 800; color: var(--ink); line-height: 1.1; letter-spacing: -.02em; }
+    .price-period { font-size: 14px; color: var(--text-muted); line-height: 1.4; white-space: nowrap; margin-left: 4px; }
+    .price-contact { font-size: 28px; font-weight: 800; color: var(--ink); line-height: 1.14; letter-spacing: -.01em; }
+    .price-contact br { display: none; }
 
-    .plan-billing-note {
-      font-size: 14px;
-      color: var(--text-muted);
-      margin-bottom: 24px;
-      min-height: 20px;
-    }
+    .plan-billing-note { font-size: 14px; line-height: 1.4; color: var(--text-muted); min-height: 20px; margin-bottom: 24px; }
     .plan-billing-note .annual-note { display: block; }
     .plan-billing-note .monthly-note { display: none; }
     body.billing-monthly .plan-billing-note .annual-note { display: none; }
     body.billing-monthly .plan-billing-note .monthly-note { display: block; }
 
     /* Przełączanie cen */
-    .price-annual { display: flex; align-items: flex-end; gap: 4px; }
-    .price-monthly { display: none; align-items: flex-end; gap: 4px; }
+    .price-monthly { display: none; }
     body.billing-monthly .price-annual { display: none; }
     body.billing-monthly .price-monthly { display: flex; }
 
-    /* ── PRZYCISK PLANU (te same style co .btn) ───────────────────────── */
-    .plan-cta {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      min-height: 48px;
-      padding: 12px 16px;
-      border-radius: var(--radius-btn);
-      font-size: 16px;
-      font-weight: 600;
-      text-align: center;
-      text-decoration: none;
-      cursor: pointer;
-      border: 1px solid transparent;
-      transition: filter .15s, box-shadow .15s, border-color .15s, color .15s, background-color .15s;
-      margin-bottom: 28px;
-    }
-    .plan-cta--primary {
-      background: var(--brand-gradient);
-      color: var(--on-primary);
-      box-shadow: inset 0 0 0 1px rgba(255,255,255,.14), 0 4px 10px rgba(59,170,93,.16);
-    }
-    .plan-cta--primary:hover { filter: brightness(1.05); box-shadow: inset 0 0 0 1px rgba(255,255,255,.18), 0 6px 12px rgba(59,170,93,.22); }
+    /* Przycisk planu: główny tylko w planie wyróżnionym, reszta drugorzędne */
+    .plan-cta { width: 100%; margin-bottom: 28px; }
 
-    .plan-cta--outline {
-      background: var(--control-bg);
-      border-color: var(--control-border);
-      color: var(--gray-700);
-      box-shadow: var(--shadow-sm);
-    }
-    .plan-cta--outline:hover { border-color: var(--brand); color: var(--brand-text); box-shadow: var(--shadow-sm), 0 0 0 3px rgba(59,170,93,.12); }
-
-    .plan-cta--dark {
-      background: var(--graphite);
-      color: #fff;
-    }
-    .plan-cta--dark:hover { background: var(--graphite-2); }
-
-    /* ── LISTA FUNKCJI ────────────────────────────────────────────────── */
-    .plan-divider {
-      border: none;
-      border-top: 1px solid var(--border);
-      margin-bottom: 24px;
-    }
+    /* Lista funkcji */
+    .plan-divider { border: none; border-top: 1px solid var(--border); margin-bottom: 24px; }
     .plan-features-label {
-      font-size: 12px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .08em;
-      color: var(--text-muted);
-      margin-bottom: 16px;
+      font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em;
+      color: var(--text-muted); line-height: 1.4; margin-bottom: 16px;
     }
-    .plan-card--featured .plan-features-label { color: var(--brand-text); }
-
-    .plan-features {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .plan-features li {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      font-size: 14px;
-      color: var(--text);
-      line-height: 1.5;
-    }
-    .plan-features li .check {
-      width: 18px; height: 18px;
-      border-radius: 50%;
-      background: var(--brand-pale);
-      color: var(--brand-text);
-      font-size: 10px;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-      margin-top: 2px;
-      font-weight: 700;
-    }
-    .plan-card--featured .plan-features li .check {
-      background: var(--brand-text);
-      color: #fff;
-    }
+    .plan-features { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .plan-features li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; line-height: 20px; color: var(--text); }
+    .plan-features .ic-check { flex-shrink: 0; width: 20px; height: 20px; color: var(--brand-text); }
     .plan-features li .storage {
-      display: inline-flex;
-      align-items: center;
-      background: var(--gray-50);
-      border: 1px solid var(--border);
-      font-size: 12px;
-      font-weight: 600;
-      padding: 0 8px;
-      border-radius: 6px;
-      color: var(--text-muted);
-      margin-left: auto;
-      flex-shrink: 0;
+      display: inline-flex; align-items: center; flex-shrink: 0; margin-left: auto;
+      background: var(--gray-50); border: 1px solid var(--border); border-radius: 6px;
+      font-size: 12px; font-weight: 600; line-height: 18px; padding: 0 8px; color: var(--text-muted);
     }
     .plan-inherits {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--text-muted);
-      font-style: italic;
-      display: flex;
-      align-items: center;
-      gap: 6px;
+      display: flex; align-items: center; gap: 8px;
+      font-size: 14px; font-weight: 600; color: var(--text-muted);
     }
-    .plan-inherits::before {
-      content: '';
-      display: block;
-      width: 12px; height: 1px;
-      background: var(--gray-300);
-    }
+    .plan-inherits::before { content: ''; display: block; width: 12px; height: 2px; border-radius: 2px; background: var(--gray-300); }
 
-    /* ── UWAGI ────────────────────────────────────────────────────────── */
-    .pricing-notes {
-      padding: 48px 0 64px;
-      background: var(--page-bg);
+    /* ── PORÓWNAJ PLANY ───────────────────────────────────────────────── */
+    .plans-compare { padding: 0 0 64px; }
+    .plans-compare h2 {
+      text-align: center; font-size: 26px; font-weight: 800; line-height: 1.2; color: var(--ink);
+      letter-spacing: -.01em; margin-bottom: 24px;
     }
+    .plan-compare-wrap {
+      border: 1px solid var(--border); border-radius: var(--radius);
+      box-shadow: var(--shadow-sm); background: var(--surface);
+      max-width: 960px; margin: 0 auto;
+    }
+    table.plan-compare { width: 100%; border-collapse: separate; border-spacing: 0; table-layout: fixed; font-size: 14px; }
+    table.plan-compare th, table.plan-compare td {
+      padding: 14px 16px; border-bottom: 1px solid var(--gray-200); vertical-align: middle; text-align: center; line-height: 1.4;
+    }
+    table.plan-compare th:first-child, table.plan-compare td:first-child { text-align: left; }
+    table.plan-compare tbody th { color: var(--ink); font-weight: 500; }
+    table.plan-compare thead th {
+      position: sticky; top: var(--nav-h); z-index: 2; background: var(--surface);
+      padding: 20px 16px 16px; border-bottom: 1px solid var(--gray-300);
+      font-size: 16px; font-weight: 800; color: var(--ink);
+    }
+    table.plan-compare thead th:first-child {
+      width: 46%; border-top-left-radius: var(--radius);
+      font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--text-muted);
+    }
+    table.plan-compare thead th:last-child { border-top-right-radius: var(--radius); }
+    table.plan-compare .col-hl { background: var(--brand-pale); }
+    table.plan-compare thead th.col-hl { color: var(--brand-text); border-radius: var(--radius) var(--radius) 0 0; }
+    table.plan-compare tbody tr:last-child > * { border-bottom: 0; }
+    table.plan-compare tbody tr:last-child > :first-child { border-bottom-left-radius: var(--radius); }
+    table.plan-compare tbody tr:last-child > :last-child { border-bottom-right-radius: var(--radius); }
+    table.plan-compare tbody tr:last-child .col-hl { border-radius: 0 0 var(--radius) var(--radius); }
+    .pc-yes, .pc-no { display: inline-flex; vertical-align: middle; }
+    .pc-yes { color: var(--brand-text); }
+    .pc-no { color: var(--gray-400); }
+    .pc-val { font-weight: 600; color: var(--ink); white-space: nowrap; }
+
+    /* ── UWAGI: trzy kafelki ──────────────────────────────────────────── */
+    .pricing-notes { padding: 56px 0; background: var(--page-bg); }
     .pricing-notes__inner {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 32px;
-      text-align: center;
-      max-width: 420px;
-      margin: 0 auto;
+      display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; max-width: 480px; margin: 0 auto;
     }
-    .note-item h3 {
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--ink);
-      margin-bottom: 8px;
+    .note-item {
+      background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+      box-shadow: 0 4px 14px rgba(0,0,0,.05); padding: 24px;
     }
-    .note-item p {
-      font-size: 14px;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
+    .note-item h3 { font-size: 16px; font-weight: 700; line-height: 1.4; color: var(--ink); margin-bottom: 8px; }
+    .note-item p { font-size: 14px; line-height: 1.6; color: var(--text-muted); }
     .note-icon {
       display: flex; align-items: center; justify-content: center;
-      width: 48px; height: 48px; margin: 0 auto 14px; border-radius: 12px;
+      width: 48px; height: 48px; margin-bottom: 16px; border-radius: var(--radius);
       background: var(--brand-pale); color: var(--brand-text);
     }
     .note-icon svg { width: 24px; height: 24px; }
 
+    /* ── KONTAKT: spokojny blok jak koniec strony głównej ─────────────── */
+    .pricing-contact { padding: 56px 0 64px; background: var(--surface); text-align: center; }
+    .pricing-contact h2 { font-size: 26px; font-weight: 800; line-height: 1.2; color: var(--ink); letter-spacing: -.01em; margin-bottom: 8px; }
+    .pricing-contact p { font-size: 16px; color: var(--text-muted); margin-bottom: 24px; }
+    .pricing-contact .btn svg { flex-shrink: 0; }
+
+    /* ── TELEFON: tabela przewijana wewnątrz, pierwsza kolumna przyklejona ─ */
+    @media (max-width: 767px) {
+      .plan-compare-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain; }
+      table.plan-compare { min-width: 480px; }
+      table.plan-compare th, table.plan-compare td { padding: 12px; }
+      table.plan-compare thead th { position: static; top: auto; padding: 16px 12px 12px; font-size: 14px; }
+      table.plan-compare thead th:first-child { width: 168px; }
+      table.plan-compare tr > :first-child {
+        position: sticky; left: 0; z-index: 1; background: var(--surface);
+        box-shadow: 1px 0 0 var(--gray-200);
+      }
+      /* Przełączniki: okres i waluta w jednym rzędzie, plakietka pod nimi */
+      .billing-group { display: contents; }
+      .save-badge { order: 3; }
+    }
+
     /* ── RESPONSYWNOŚĆ ────────────────────────────────────────────────── */
     @media (min-width: 768px) {
-      .pricing-hero { padding: 72px 0 80px; }
+      .pricing-hero { padding: 72px 0 48px; }
       .pricing-hero h1 { font-size: 40px; }
       .plan-card { padding: 36px 32px 40px; }
+      .plan-card--featured { padding: 35px 31px 39px; }
       .price-amount { font-size: 56px; }
       .price-contact { font-size: 32px; }
-      .pricing-section { padding-bottom: 96px; }
-      .pricing-notes { padding: 56px 0 80px; }
+      .plan-price { min-height: 64px; }
+      .pricing-section { padding-bottom: 80px; }
+      .plans-compare { padding-bottom: 80px; }
+      .plans-compare h2 { font-size: 30px; margin-bottom: 32px; }
+      .pricing-notes { padding: 64px 0; }
+      .pricing-notes__inner { grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: none; }
+      .pricing-contact { padding: 64px 0 80px; }
+      .pricing-contact h2 { font-size: 30px; }
     }
     @media (min-width: 1024px) {
-      .pricing-grid { grid-template-columns: repeat(3, 1fr); max-width: none; }
-      .plan-tagline { min-height: 48px; }
-      .plan-card--featured { transform: translateY(-8px); }
-      .pricing-notes__inner { grid-template-columns: repeat(3, 1fr); max-width: none; }
+      .pricing-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: none; align-items: stretch; }
+      .plan-card { padding: 32px 24px 36px; }
+      .plan-card--featured { padding: 31px 23px 35px; transform: translateY(-8px); }
+      .price-amount { font-size: 48px; }
+      .price-contact { font-size: 28px; }
+      .price-contact br { display: inline; }
+      /* Równe bloki nagłówek + cena + notka: przyciski na jednej wysokości */
+      @supports (grid-template-rows: subgrid) {
+        .pricing-grid { grid-template-rows: repeat(7, auto); row-gap: 0; }
+        .plan-card { display: grid; grid-row: span 7; grid-template-rows: subgrid; align-content: start; }
+        .plan-card > * { min-width: 0; }
+      }
     }
     @media (min-width: 1200px) {
       .pricing-hero h1 { font-size: 46px; }
+      .plan-card { padding: 36px 32px 40px; }
+      .plan-card--featured { padding: 35px 31px 39px; }
+      .price-amount { font-size: 56px; }
+      .price-contact { font-size: 32px; }
     }
   </style>
 </head>
@@ -455,19 +333,20 @@
       <p>Płacisz tylko za aktywnych użytkowników. Bez ukrytych opłat, bez długoterminowych zobowiązań.</p>
 
       <div class="pricing-switches">
-      <!-- BILLING TOGGLE -->
-      <div class="billing-toggle" id="billingToggle">
-        <span class="billing-toggle__label active" id="labelAnnual">Rozliczenie roczne</span>
-        <button type="button" class="toggle-switch" id="toggleSwitch" role="switch" aria-checked="false" aria-labelledby="labelMonthly"></button>
-        <span class="billing-toggle__label" id="labelMonthly">Miesięczne</span>
-        <span class="save-badge" id="saveBadge">Oszczędzasz do 32%</span>
-      </div>
+        <!-- OKRES ROZLICZENIA -->
+        <div class="billing-group">
+          <div class="seg" id="billingToggle" role="group" aria-label="Rozliczenie" data-i18n-aria-label="pricing.billing_label">
+            <button type="button" class="active" aria-pressed="true" data-billing="annual" data-i18n="pricing.billing_annual">Rocznie</button>
+            <button type="button" aria-pressed="false" data-billing="monthly" data-i18n="pricing.billing_monthly">Miesięcznie</button>
+          </div>
+          <span class="save-badge" id="saveBadge">Oszczędzasz do 32%</span>
+        </div>
 
-      <!-- CURRENCY TOGGLE -->
-      <div class="currency-toggle" id="currencyToggle" role="group" aria-label="Waluta">
-        <button type="button" class="active" aria-pressed="true" data-currency="eur">EUR €</button>
-        <button type="button" aria-pressed="false" data-currency="pln">PLN zł</button>
-      </div>
+        <!-- WALUTA -->
+        <div class="seg seg--currency" id="currencyToggle" role="group" aria-label="Waluta">
+          <button type="button" aria-pressed="false" data-currency="pln">zł</button>
+          <button type="button" aria-pressed="false" data-currency="eur">€</button>
+        </div>
       </div>
       <span class="currency-note">Ceny w PLN są orientacyjne - przelicznik ~4,30 PLN/EUR, aktualizowany okresowo.</span>
     </div>
@@ -480,20 +359,22 @@
 
         <!-- ── LITE ───────────────────────────────────────── -->
         <div class="plan-card">
-          <h2 class="plan-name">Lite</h2>
-          <div class="plan-tagline">Dla zespołów sprzedaży, które zaczynają porządkować swój CRM.</div>
+          <div class="plan-head">
+            <h2 class="plan-name">Lite</h2>
+            <div class="plan-tagline">Dla zespołów sprzedaży, które zaczynają porządkować swój CRM.</div>
+          </div>
 
-          <!-- Annual price -->
+          <div class="plan-price-wrap">
           <div class="plan-price price-annual">
             <span class="price-currency" data-eur="€" data-pln="zł">€</span>
             <span class="price-amount" data-eur="19" data-pln="82">19</span>
-            <span class="price-period">/użytkownik<br>/miesiąc</span>
+            <span class="price-period">/użytkownik/miesiąc</span>
           </div>
-          <!-- Monthly price -->
           <div class="plan-price price-monthly">
             <span class="price-currency" data-eur="€" data-pln="zł">€</span>
             <span class="price-amount" data-eur="28" data-pln="120">28</span>
-            <span class="price-period">/użytkownik<br>/miesiąc</span>
+            <span class="price-period">/użytkownik/miesiąc</span>
+          </div>
           </div>
 
           <div class="plan-billing-note">
@@ -501,57 +382,39 @@
             <span class="monthly-note">Rozliczenie miesięczne</span>
           </div>
 
-          <a href="/#contact" class="plan-cta plan-cta--outline">Zapytaj o dostęp</a>
+          <a href="/#contact" class="btn btn--ghost btn--lg plan-cta">Zapytaj o dostęp</a>
 
           <hr class="plan-divider" />
           <div class="plan-features-label">Co zawiera</div>
           <ul class="plan-features">
-            <li>
-              <span class="check">✓</span>
-              Kompletny moduł zarządzania leadami i klientami
-            </li>
-            <li>
-              <span class="check">✓</span>
-              Lejki sprzedaży i budżety handlowców
-            </li>
-            <li>
-              <span class="check">✓</span>
-              Komunikacja end-to-end email (Gmail)
-            </li>
-            <li>
-              <span class="check">✓</span>
-              Zadania i workflow przypisań
-            </li>
-            <li>
-              <span class="check">✓</span>
-              Elastyczna konfiguracja słowników i ról
-            </li>
-            <li>
-              <span class="check">✓</span>
-              Przestrzeń na dane
-              <span class="storage">10 GB</span>
-            </li>
+            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Kompletny moduł zarządzania leadami i klientami</span></li>
+            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Lejki sprzedaży i budżety handlowców</span></li>
+            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Komunikacja end-to-end email (Gmail)</span></li>
+            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Zadania i workflow przypisań</span></li>
+            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Elastyczna konfiguracja słowników i ról</span></li>
+            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Przestrzeń na dane</span><span class="storage">10 GB</span></li>
           </ul>
         </div>
 
         <!-- ── STANDARD (FEATURED) ────────────────────────── -->
         <div class="plan-card plan-card--featured">
           <div class="plan-badge">Najpopularniejszy</div>
+          <div class="plan-head">
+            <h2 class="plan-name">Standard</h2>
+            <div class="plan-tagline">Pełna obsługa sprzedaży - od leada po raport i integrację danych.</div>
+          </div>
 
-          <h2 class="plan-name">Standard</h2>
-          <div class="plan-tagline">Pełna obsługa sprzedaży - od leada po raport i integrację danych.</div>
-
-          <!-- Annual price -->
+          <div class="plan-price-wrap">
           <div class="plan-price price-annual">
             <span class="price-currency" data-eur="€" data-pln="zł">€</span>
             <span class="price-amount" data-eur="28" data-pln="120">28</span>
-            <span class="price-period">/użytkownik<br>/miesiąc</span>
+            <span class="price-period">/użytkownik/miesiąc</span>
           </div>
-          <!-- Monthly price -->
           <div class="plan-price price-monthly">
             <span class="price-currency" data-eur="€" data-pln="zł">€</span>
             <span class="price-amount" data-eur="36" data-pln="155">36</span>
-            <span class="price-period">/użytkownik<br>/miesiąc</span>
+            <span class="price-period">/użytkownik/miesiąc</span>
+          </div>
           </div>
 
           <div class="plan-billing-note">
@@ -559,100 +422,95 @@
             <span class="monthly-note">Rozliczenie miesięczne</span>
           </div>
 
-          <a href="/#contact" class="plan-cta plan-cta--primary">Zapytaj o dostęp</a>
+          <a href="/#contact" class="btn btn--primary btn--lg plan-cta">Zapytaj o dostęp</a>
 
           <hr class="plan-divider" />
           <div class="plan-features-label">Co zawiera</div>
           <ul class="plan-features">
-            <li>
-              <span class="plan-inherits">Wszystko z planu Lite, plus:</span>
-            </li>
-            <li>
-              <span class="check">✓</span>
-              Pełna obsługa procesu partnerskiego
-            </li>
-            <li>
-              <span class="check">✓</span>
-              Workflows onboarding (4-etapowy proces wdrożenia)
-            </li>
-            <li>
-              <span class="check">✓</span>
-              Raporty sprzedaży i analityka (trendy, KPI, win rate)
-            </li>
-            <li>
-              <span class="check">✓</span>
-              Integracja z hurtownią danych (DWH)
-            </li>
-            <li>
-              <span class="check">✓</span>
-              Przestrzeń na dane
-              <span class="storage">100 GB</span>
-            </li>
+            <li><span class="plan-inherits">Wszystko z planu Lite, plus:</span></li>
+            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Pełna obsługa procesu partnerskiego</span></li>
+            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Workflows onboarding (4-etapowy proces wdrożenia)</span></li>
+            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Raporty sprzedaży i analityka (trendy, KPI, win rate)</span></li>
+            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Integracja z hurtownią danych (DWH)</span></li>
+            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Przestrzeń na dane</span><span class="storage">100 GB</span></li>
           </ul>
         </div>
 
         <!-- ── PROFESSIONAL ───────────────────────────────── -->
         <div class="plan-card">
-          <h2 class="plan-name">Professional</h2>
-          <div class="plan-tagline">Dla organizacji wymagających dedykowanych kanałów i zaawansowanej analityki.</div>
+          <div class="plan-head">
+            <h2 class="plan-name">Professional</h2>
+            <div class="plan-tagline">Dla organizacji wymagających dedykowanych kanałów i zaawansowanej analityki.</div>
+          </div>
 
+          <div class="plan-price-wrap">
           <div class="plan-price">
-            <span class="price-contact">Skontaktuj<br/>się z nami</span>
+            <span class="price-contact">Skontaktuj<br/> się z nami</span>
+          </div>
           </div>
 
           <div class="plan-billing-note">
             Wycena indywidualna · SLA gwarantowane
           </div>
 
-          <a href="/#contact" class="plan-cta plan-cta--dark">Umów rozmowę</a>
+          <a href="/#contact" class="btn btn--ghost btn--lg plan-cta">Umów rozmowę</a>
 
           <hr class="plan-divider" />
           <div class="plan-features-label">Co zawiera</div>
           <ul class="plan-features">
-            <li>
-              <span class="plan-inherits">Wszystko z planu Standard, plus:</span>
-            </li>
-            <li>
-              <span class="check">✓</span>
-              Zasilanie hurtowni danych przez dedykowany interfejs API
-            </li>
-            <li>
-              <span class="check">✓</span>
-              Rozbudowane raporty i analiza churn
-            </li>
-            <li>
-              <span class="check">✓</span>
-              Moduł Customer Service
-            </li>
-            <li>
-              <span class="check">✓</span>
-              Dedykowany kanał telefoniczny
-            </li>
-            <li>
-              <span class="check">✓</span>
-              Zarządzanie kolejką agentów
-            </li>
-            <li>
-              <span class="check">✓</span>
-              Baza wiedzy
-            </li>
-            <li>
-              <span class="check">✓</span>
-              Portal self-service dla klienta
-            </li>
-            <li>
-              <span class="check">✓</span>
-              Dedykowana integracja komunikacji mailowej
-            </li>
-            <li>
-              <span class="check">✓</span>
-              Przestrzeń na dane
-              <span class="storage">1 TB</span>
-            </li>
+            <li><span class="plan-inherits">Wszystko z planu Standard, plus:</span></li>
+            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Zasilanie hurtowni danych przez dedykowany interfejs API</span></li>
+            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Rozbudowane raporty i analiza churn</span></li>
+            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Moduł Customer Service</span></li>
+            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Dedykowany kanał telefoniczny</span></li>
+            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Zarządzanie kolejką agentów</span></li>
+            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Baza wiedzy</span></li>
+            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Portal self-service dla klienta</span></li>
+            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Dedykowana integracja komunikacji mailowej</span></li>
+            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Przestrzeń na dane</span><span class="storage">1 TB</span></li>
           </ul>
         </div>
 
       </div><!-- /pricing-grid -->
+    </div>
+  </section>
+
+  <!-- PORÓWNAJ PLANY -->
+  <section class="plans-compare" aria-labelledby="plansCompareTitle">
+    <div class="container">
+      <h2 id="plansCompareTitle" data-i18n="pricing.compare_h2">Porównaj plany</h2>
+      <div class="plan-compare-wrap" role="region" aria-labelledby="plansCompareTitle" tabindex="0">
+        <table class="plan-compare">
+          <thead>
+            <tr>
+              <th scope="col" data-i18n="compare.col_feature">Cecha</th>
+              <th scope="col">Lite</th>
+              <th scope="col" class="col-hl">Standard</th>
+              <th scope="col">Professional</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Kompletny moduł zarządzania leadami i klientami</th><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td class="col-hl"><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
+            <tr><th scope="row">Lejki sprzedaży i budżety handlowców</th><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td class="col-hl"><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
+            <tr><th scope="row">Komunikacja end-to-end email (Gmail)</th><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td class="col-hl"><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
+            <tr><th scope="row">Zadania i workflow przypisań</th><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td class="col-hl"><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
+            <tr><th scope="row">Elastyczna konfiguracja słowników i ról</th><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td class="col-hl"><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
+            <tr><th scope="row">Pełna obsługa procesu partnerskiego</th><td><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td class="col-hl"><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
+            <tr><th scope="row">Workflows onboarding (4-etapowy proces wdrożenia)</th><td><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td class="col-hl"><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
+            <tr><th scope="row">Raporty sprzedaży i analityka (trendy, KPI, win rate)</th><td><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td class="col-hl"><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
+            <tr><th scope="row">Integracja z hurtownią danych (DWH)</th><td><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td class="col-hl"><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
+            <tr><th scope="row">Zasilanie hurtowni danych przez dedykowany interfejs API</th><td><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td class="col-hl"><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
+            <tr><th scope="row">Rozbudowane raporty i analiza churn</th><td><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td class="col-hl"><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
+            <tr><th scope="row">Moduł Customer Service</th><td><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td class="col-hl"><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
+            <tr><th scope="row">Dedykowany kanał telefoniczny</th><td><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td class="col-hl"><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
+            <tr><th scope="row">Zarządzanie kolejką agentów</th><td><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td class="col-hl"><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
+            <tr><th scope="row">Baza wiedzy</th><td><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td class="col-hl"><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
+            <tr><th scope="row">Portal self-service dla klienta</th><td><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td class="col-hl"><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
+            <tr><th scope="row">Dedykowana integracja komunikacji mailowej</th><td><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td class="col-hl"><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
+            <tr><th scope="row">Przestrzeń na dane</th><td><span class="pc-val">10 GB</span></td><td class="col-hl"><span class="pc-val">100 GB</span></td><td><span class="pc-val">1 TB</span></td></tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </section>
 
@@ -661,17 +519,17 @@
     <div class="container">
       <div class="pricing-notes__inner">
         <div class="note-item">
-          <div class="note-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+          <div class="note-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
           <h3>Wdrożenie w 24h</h3>
           <p>Po podpisaniu umowy Twoje środowisko jest gotowe następnego dnia roboczego. Import danych z pliku CSV w kilka minut.</p>
         </div>
         <div class="note-item">
-          <div class="note-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.2-7 10-4-1.8-7-5.5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <div class="note-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.2-7 10-4-1.8-7-5.5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></div>
           <h3>Bezpieczeństwo enterprise</h3>
           <p>SAML 2.0, izolacja danych per klient, audit trail, Azure Poland Central. Twoje dane zostają w UE.</p>
         </div>
         <div class="note-item">
-          <div class="note-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.2A8 8 0 1 1 20 12z"/></svg></div>
+          <div class="note-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.2A8 8 0 1 1 20 12z"/></svg></div>
           <h3>Wsparcie w języku polskim</h3>
           <p>Dedykowany opiekun wdrożeniowy, dokumentacja po polsku, wsparcie mailowe i telefoniczne.</p>
         </div>
@@ -679,14 +537,12 @@
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="login-cta">
-    <div class="container login-cta__inner">
-      <div class="login-cta__text">
-        <h2>Masz pytania o cennik?</h2>
-        <p>Odpowiemy w ciągu jednego dnia roboczego</p>
-      </div>
-      <a href="/#contact" class="btn btn--primary btn--lg">Napisz do nas →</a>
+  <!-- KONTAKT -->
+  <section class="pricing-contact">
+    <div class="container">
+      <h2>Masz pytania o cennik?</h2>
+      <p>Odpowiemy w ciągu jednego dnia roboczego</p>
+      <a href="/#contact" class="btn btn--ghost btn--lg">Napisz do nas <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
   </section>
 
@@ -732,39 +588,40 @@
   </footer>
 
   <script>
-    const toggle = document.getElementById('toggleSwitch');
-    const labelAnnual = document.getElementById('labelAnnual');
-    const labelMonthly = document.getElementById('labelMonthly');
-    const saveBadge = document.getElementById('saveBadge');
-    let isMonthly = false;
+    // ── OKRES ROZLICZENIA (roczne / miesięczne) ──────────────────────
+    const billingButtons = document.querySelectorAll('#billingToggle button');
+    function setBilling(mode) {
+      document.body.classList.toggle('billing-monthly', mode === 'monthly');
+      billingButtons.forEach(b => {
+        const on = b.dataset.billing === mode;
+        b.classList.toggle('active', on);
+        b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
+    }
+    billingButtons.forEach(b => b.addEventListener('click', () => setBilling(b.dataset.billing)));
 
-    toggle.addEventListener('click', () => {
-      isMonthly = !isMonthly;
-      toggle.classList.toggle('monthly', isMonthly);
-      toggle.setAttribute('aria-checked', isMonthly ? 'true' : 'false');
-      labelAnnual.classList.toggle('active', !isMonthly);
-      labelMonthly.classList.toggle('active', isMonthly);
-      saveBadge.style.opacity = isMonthly ? '0' : '1';
-      document.body.classList.toggle('billing-monthly', isMonthly);
-    });
-
-    // Kliknięcie na etykiety też przełącza
-    labelAnnual.addEventListener('click', () => { if (isMonthly) toggle.click(); });
-    labelMonthly.addEventListener('click', () => { if (!isMonthly) toggle.click(); });
-
-    // ── CURRENCY TOGGLE (EUR / PLN) ──────────────────────────────────
+    // ── WALUTA (zł / €): domyślnie wg języka strony, PL = zł, reszta = € ──
     const currencyButtons = document.querySelectorAll('#currencyToggle button');
+    let currencyChosen = false;
     function setCurrency(cur) {
       document.body.classList.toggle('currency-pln', cur === 'pln');
       currencyButtons.forEach(b => {
-        b.classList.toggle('active', b.dataset.currency === cur);
-        b.setAttribute('aria-pressed', b.dataset.currency === cur ? 'true' : 'false');
+        const on = b.dataset.currency === cur;
+        b.classList.toggle('active', on);
+        b.setAttribute('aria-pressed', on ? 'true' : 'false');
       });
       document.querySelectorAll('[data-eur][data-pln]').forEach(el => {
         el.textContent = cur === 'pln' ? el.dataset.pln : el.dataset.eur;
       });
     }
-    currencyButtons.forEach(b => b.addEventListener('click', () => setCurrency(b.dataset.currency)));
+    function currencyForLang() {
+      return (document.documentElement.getAttribute('lang') || 'pl').slice(0, 2) === 'pl' ? 'pln' : 'eur';
+    }
+    currencyButtons.forEach(b => b.addEventListener('click', () => { currencyChosen = true; setCurrency(b.dataset.currency); }));
+    setCurrency(currencyForLang());
+    // i18n.js ustawia <html lang> po wybraniu języka - dopóki ktoś nie wybrał waluty sam, idzie za językiem
+    new MutationObserver(() => { if (!currencyChosen) setCurrency(currencyForLang()); })
+      .observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
   </script>
 
   <script src="i18n.js"></script>
