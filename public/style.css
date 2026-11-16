@@ -272,10 +272,10 @@ body.nav-open .navbar__cta { visibility: hidden; }
   .navbar__right { display: flex; align-items: center; gap: 10px; flex-shrink: 0; margin-left: auto; }
   /* Jedna wysokość (40px) i jeden promień w prawej grupie. „Zaloguj się” = cichy
      przycisk-tekst (jak Pipedrive/Linear/Stripe); jedyny wyraźny to zielone CTA. */
-  .navbar__right .btn { white-space: nowrap; flex-shrink: 0; height: 40px; min-height: 40px; padding: 0 20px; font-size: 16px; font-weight: 600; }
+  .navbar__right .btn { white-space: nowrap; flex-shrink: 0; height: 40px; min-height: 40px; padding: 0 16px; }
   .navbar__right .btn--outline-light { border-color: transparent; background: transparent; padding: 0 8px 0 6px; }
   .navbar__right .btn--primary { margin-left: 6px; }
-  .navbar__right .langbtn { padding: 0 8px; font-size: 16px; font-weight: 600; }
+  .navbar__right .langbtn { padding: 0 8px; }
   .navbar__right .btn--outline-light:hover { border-color: transparent; background: rgba(255,255,255,.08); }
   .navbar__right .langbtn { border-radius: var(--radius-btn); }
 
@@ -389,12 +389,12 @@ body.nav-open .navbar__cta { visibility: hidden; }
 .mockup__phone { position: absolute; right: 0; bottom: 0; width: 128px; }
 
 /* Telefon (CSS) — ten sam w hero i w sekcji „Aplikacja mobilna”.
-   Cienka równa ramka z grafitu z jaśniejszym obrysem 1px, dynamic island
+   Cienka równa ramka z grafitu z jaśniejszym obrysem 1px
    jako pigułka położona na górze zrzutu (bez osobnego paska),
    ekran zaokrąglony zgodnie z ramką. Zrzut 540×1083 w ekranie 1:2 —
    bez przybliżania, ginie najwyżej 1px na dole. Wszystkie wymiary parzyste. */
 .phone {
-  --phone-pad: 4px; --phone-r: 20px; --island-w: 36px; --island-h: 10px; --island-top: 4px;
+  --phone-pad: 4px; --phone-r: 20px;
   position: relative; padding: var(--phone-pad); border-radius: var(--phone-r);
   background: #1F2024;
   box-shadow:
@@ -406,10 +406,6 @@ body.nav-open .navbar__cta { visibility: hidden; }
   position: relative; overflow: hidden; background: #F2F3F5;
   border-radius: calc(var(--phone-r) - var(--phone-pad));
 }
-.phone__screen::before {
-  content: ''; position: absolute; z-index: 1; top: var(--island-top); left: 50%; transform: translateX(-50%);
-  width: var(--island-w); height: var(--island-h); border-radius: 999px; background: #0E0F11;
-}
 .phone__screen img {
   display: block; width: 100%; height: auto; aspect-ratio: 1 / 2; object-fit: cover; object-position: top;
 }
@@ -417,7 +413,7 @@ body.nav-open .navbar__cta { visibility: hidden; }
 @media (max-width: 479px) { .hero__cta .btn { width: 100%; } }
 @media (min-width: 480px) {
   .mockup__phone { width: 168px; }
-  .mockup__phone .phone { --phone-pad: 6px; --phone-r: 26px; --island-w: 48px; --island-h: 14px; --island-top: 6px; }
+  .mockup__phone .phone { --phone-pad: 6px; --phone-r: 26px; }
 }
 @media (min-width: 640px) {
   .mockup { padding-bottom: 12%; }
@@ -427,20 +423,20 @@ body.nav-open .navbar__cta { visibility: hidden; }
 @media (min-width: 768px) {
   .hero { padding: 64px 0 80px; }
   .mockup__phone { width: 200px; }
-  .mockup__phone .phone { --phone-pad: 6px; --phone-r: 28px; --island-w: 56px; --island-h: 16px; --island-top: 6px; }
+  .mockup__phone .phone { --phone-pad: 6px; --phone-r: 28px; }
   .hero__content h1 { font-size: 36px; }
 }
 @media (min-width: 1024px) {
   .hero__inner { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px; }
   .mockup__phone { width: 132px; }
-  .mockup__phone .phone { --phone-pad: 4px; --phone-r: 20px; --island-w: 38px; --island-h: 10px; --island-top: 4px; }
+  .mockup__phone .phone { --phone-pad: 4px; --phone-r: 20px; }
   .hero__content h1 { font-size: 42px; }
 }
 @media (min-width: 1200px) {
   .hero { padding: 80px 0 96px; }
   .hero__inner { grid-template-columns: minmax(0, 1fr) minmax(0, 1.12fr); gap: 56px; }
   .mockup__phone { width: 164px; }
-  .mockup__phone .phone { --phone-pad: 6px; --phone-r: 26px; --island-w: 48px; --island-h: 14px; --island-top: 6px; }
+  .mockup__phone .phone { --phone-pad: 6px; --phone-r: 26px; }
   .hero__content h1 { font-size: 46px; }
 }
 
@@ -543,8 +539,8 @@ textarea { resize: vertical; min-height: 128px; }
   content: ''; position: absolute; z-index: 0; inset: 6% -40%; pointer-events: none;
   background: radial-gradient(closest-side, rgba(59,170,93,.14), rgba(59,170,93,0));
 }
-.product-phone .phone { z-index: 1; --phone-pad: 8px; --phone-r: 40px; --island-w: 76px; --island-h: 22px; --island-top: 8px; }
-@media (max-width: 479px) { .product-section__text .btn { width: 100%; } .product-phone { max-width: 240px; } .product-phone .phone { --phone-pad: 6px; --phone-r: 34px; --island-w: 64px; --island-h: 18px; --island-top: 6px; } }
+.product-phone .phone { z-index: 1; --phone-pad: 8px; --phone-r: 40px; }
+@media (max-width: 479px) { .product-section__text .btn { width: 100%; } .product-phone { max-width: 240px; } .product-phone .phone { --phone-pad: 6px; --phone-r: 34px; } }
 @media (min-width: 768px) {
   .product-section { padding: 72px 0; }
   .product-section__text h2 { font-size: 32px; }
