@@ -169,7 +169,7 @@ img, svg { max-width: 100%; }
 
 /* ── NAVBAR ──────────────────────────────────────────────────────────
    Jeden pasek 64px w szerokości kontenera strony. ≥1200px: logo, zaraz za nim
-   linki (40px od logo, 24px między), po prawej język · Zaloguj · Wypróbuj (16px).
+   linki (32px od logo, 20px między), po prawej język · Zaloguj · Wypróbuj (widocznie 14–16px).
    Poniżej: logo · Wypróbuj · ☰; menu na całą wysokość ekranu pod paskiem.      */
 .navbar {
   position: sticky; top: 0; z-index: 100;
@@ -257,10 +257,10 @@ body.nav-open .navbar__cta { visibility: hidden; }
 
 /* Pełne menu w pasku (desktop) */
 @media (min-width: 1200px) {
-  .navbar__inner { gap: 40px; }
+  .navbar__inner { gap: 32px; }
   .navbar__toggle, .navbar__cta { display: none; }
   .navbar__menu { display: flex; align-items: center; gap: 32px; flex: 1; min-width: 0; }
-  .navbar__links { display: flex; align-items: center; gap: 24px; }
+  .navbar__links { display: flex; align-items: center; gap: 20px; }
   .navbar__links > a, .mega-trigger {
     display: inline-flex; align-items: center; gap: 6px; min-height: 40px;
     color: rgba(255,255,255,.8); font-size: 14px; font-weight: 500; text-decoration: none; white-space: nowrap;
@@ -268,11 +268,14 @@ body.nav-open .navbar__cta { visibility: hidden; }
   }
   .navbar__links > a:hover, .mega-trigger:hover, .has-mega:focus-within .mega-trigger { color: var(--on-dark); }
   .navbar__links > a[aria-current="page"] { color: var(--on-dark); box-shadow: inset 0 -2px 0 var(--brand-light); }
-  .navbar__right { display: flex; align-items: center; gap: 16px; flex-shrink: 0; margin-left: auto; }
+  /* gap 0: odstęp robią same paddingi (8px + 8px = 16px widocznie), CTA +6px */
+  .navbar__right { display: flex; align-items: center; gap: 0; flex-shrink: 0; margin-left: auto; }
   /* Jedna wysokość (40px) i jeden promień w prawej grupie. „Zaloguj się” = cichy
      przycisk-tekst (jak Pipedrive/Linear/Stripe); jedyny wyraźny to zielone CTA. */
   .navbar__right .btn { white-space: nowrap; flex-shrink: 0; height: 40px; min-height: 40px; padding: 0 16px; }
-  .navbar__right .btn--outline-light { border-color: transparent; background: transparent; padding: 0 12px; }
+  .navbar__right .btn--outline-light { border-color: transparent; background: transparent; padding: 0 8px 0 6px; }
+  .navbar__right .btn--primary { margin-left: 6px; }
+  .navbar__right .langbtn { padding: 0 8px; }
   .navbar__right .btn--outline-light:hover { border-color: transparent; background: rgba(255,255,255,.08); }
   .navbar__right .langbtn { border-radius: var(--radius-btn); }
 
@@ -387,69 +390,73 @@ body.nav-open .navbar__cta { visibility: hidden; }
 }
 .mockup__dots { display: flex; gap: 4px; flex-shrink: 0; }
 .mockup__dots i { display: block; width: 6px; height: 6px; border-radius: 50%; background: var(--gray-300); }
-.mockup__url {
-  display: none; flex: 0 1 260px; margin: 0 auto; transform: translateX(-24px);
-  height: 20px; border-radius: 6px; background: var(--surface); box-shadow: inset 0 0 0 1px var(--gray-200);
-  font-size: 12px; line-height: 20px; color: var(--gray-500); text-align: center; white-space: nowrap; overflow: hidden;
-  align-items: center; justify-content: center; gap: 6px;
-}
-.mockup__url svg { flex-shrink: 0; color: var(--gray-400); }
 .mockup__browser img { display: block; width: 100%; height: auto; }
-/* Szerokość telefonu w parzystych px na każdym progu (ekran 1:2, więc wysokość też parzysta) */
+/* Szerokość telefonu w parzystych px na każdym progu */
 .mockup__phone { position: absolute; right: 0; bottom: 0; width: 128px; }
-@media (min-width: 480px) { .mockup__phone { width: 168px; } }
 
-/* Ramka telefonu (CSS) — ta sama w hero i w sekcji „Aplikacja mobilna”.
-   Cienki grafitowy bezel z jasnym refleksem krawędzi; ekran ma proporcje
-   zrzutu (540×1083), więc nic nie jest ucinane ani przybliżane. */
+/* Telefon (CSS) — ten sam w hero i w sekcji „Aplikacja mobilna”.
+   Cienka równa ramka z grafitu z jaśniejszym obrysem 1px, dynamic island
+   jako pigułka nad treścią (pasek statusu w kolorze nagłówka aplikacji),
+   ekran zaokrąglony zgodnie z ramką. Zrzut 540×1083 w ekranie 1:2 —
+   bez przybliżania, ginie najwyżej 1px na dole. Wszystkie wymiary parzyste. */
 .phone {
-  --phone-pad: 4px; --phone-r: 20px;
+  --phone-pad: 4px; --phone-r: 20px; --island-w: 36px; --island-h: 10px; --island-top: 4px;
   position: relative; padding: var(--phone-pad); border-radius: var(--phone-r);
-  background: linear-gradient(160deg, #45474E 0%, #2A2B30 40%, #232428 100%);
+  background: #1F2024;
   box-shadow:
-    inset 0 0 0 1px rgba(255,255,255,.16),
-    0 0 0 1px rgba(24,24,27,.24),
-    0 2px 4px rgba(0,0,0,.06), 0 12px 24px rgba(0,0,0,.12), 0 32px 64px rgba(16,24,40,.16);
+    inset 0 0 0 1px rgba(255,255,255,.18),
+    0 0 0 1px rgba(24,24,27,.18),
+    0 2px 4px rgba(0,0,0,.06), 0 10px 20px rgba(0,0,0,.10), 0 28px 48px -8px rgba(16,24,40,.28);
 }
-.phone img {
-  /* zrzut 540×1083 ≈ 1:2 — ekran 1:2 ucina najwyżej 1–2px na dole, bez przybliżania */
+.phone__screen {
+  position: relative; overflow: hidden; background: #FFFFFF;
+  border-radius: calc(var(--phone-r) - var(--phone-pad));
+  padding-top: calc(var(--island-top) * 2 + var(--island-h));
+}
+.phone__screen::before {
+  content: ''; position: absolute; z-index: 1; top: var(--island-top); left: 50%; transform: translateX(-50%);
+  width: var(--island-w); height: var(--island-h); border-radius: 999px; background: #0E0F11;
+}
+.phone__screen img {
   display: block; width: 100%; height: auto; aspect-ratio: 1 / 2; object-fit: cover; object-position: top;
-  border-radius: calc(var(--phone-r) - var(--phone-pad)); background: #F2F3F5;
-  box-shadow: 0 0 0 1px rgba(0,0,0,.28);
+  background: #F2F3F5;
 }
 
 @media (max-width: 479px) { .hero__cta .btn { width: 100%; } }
+@media (min-width: 480px) {
+  .mockup__phone { width: 168px; }
+  .mockup__phone .phone { --phone-pad: 6px; --phone-r: 26px; --island-w: 48px; --island-h: 14px; --island-top: 6px; }
+}
 @media (min-width: 640px) {
   .mockup { padding-bottom: 12%; }
   .mockup__browser { width: 88%; border-radius: 12px; }
   .mockup__bar { height: 32px; padding: 0 14px; }
   .mockup__dots { gap: 6px; }
   .mockup__dots i { width: 10px; height: 10px; }
-  .mockup__url { display: flex; }
   .mockup__phone { width: 180px; }
-  .phone { --phone-pad: 6px; --phone-r: 26px; }
 }
 @media (min-width: 768px) {
   .hero { padding: 64px 0 80px; }
   .mockup__phone { width: 200px; }
+  .mockup__phone .phone { --phone-pad: 6px; --phone-r: 28px; --island-w: 56px; --island-h: 16px; --island-top: 6px; }
   .hero__content h1 { font-size: 44px; }
 }
 @media (min-width: 1024px) {
   .hero__inner { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px; }
   .mockup__phone { width: 132px; }
+  .mockup__phone .phone { --phone-pad: 4px; --phone-r: 20px; --island-w: 38px; --island-h: 10px; --island-top: 4px; }
   .hero__content h1 { font-size: 42px; }
   .mockup__bar { height: 28px; }
   .mockup__dots i { width: 8px; height: 8px; }
-  .phone { --phone-pad: 6px; --phone-r: 24px; }
 }
 @media (min-width: 1200px) {
   .hero { padding: 80px 0 96px; }
   .hero__inner { grid-template-columns: minmax(0, 1fr) minmax(0, 1.12fr); gap: 56px; }
   .mockup__phone { width: 164px; }
+  .mockup__phone .phone { --phone-pad: 6px; --phone-r: 26px; --island-w: 48px; --island-h: 14px; --island-top: 6px; }
   .hero__content h1 { font-size: 52px; }
   .mockup__bar { height: 32px; }
   .mockup__dots i { width: 10px; height: 10px; }
-  .phone { --phone-pad: 6px; --phone-r: 26px; }
 }
 
 /* ── NAGŁÓWKI SEKCJI ─────────────────────────────────────────────── */
@@ -551,8 +558,8 @@ textarea { resize: vertical; min-height: 128px; }
   content: ''; position: absolute; z-index: 0; inset: 6% -40%; pointer-events: none;
   background: radial-gradient(closest-side, rgba(59,170,93,.14), rgba(59,170,93,0));
 }
-.product-phone .phone { z-index: 1; --phone-pad: 8px; --phone-r: 38px; }
-@media (max-width: 479px) { .product-section__text .btn { width: 100%; } .product-phone { max-width: 240px; } .product-phone .phone { --phone-pad: 6px; --phone-r: 32px; } }
+.product-phone .phone { z-index: 1; --phone-pad: 8px; --phone-r: 40px; --island-w: 76px; --island-h: 22px; --island-top: 8px; }
+@media (max-width: 479px) { .product-section__text .btn { width: 100%; } .product-phone { max-width: 240px; } .product-phone .phone { --phone-pad: 6px; --phone-r: 34px; --island-w: 64px; --island-h: 18px; --island-top: 6px; } }
 @media (min-width: 768px) {
   .product-section { padding: 72px 0; }
   .product-section__text h2 { font-size: 32px; }
