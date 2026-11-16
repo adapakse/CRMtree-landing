@@ -540,7 +540,7 @@ textarea { resize: vertical; min-height: 128px; }
   background: radial-gradient(closest-side, rgba(59,170,93,.14), rgba(59,170,93,0));
 }
 .product-phone .phone { z-index: 1; --phone-pad: 8px; --phone-r: 40px; }
-.product-phone .phone__screen img { aspect-ratio: 264 / 574; }
+.product-phone .phone__screen img { aspect-ratio: 264 / 542; }
 @media (max-width: 479px) { .product-section__text .btn { width: 100%; } .product-phone { max-width: 240px; } .product-phone .phone { --phone-pad: 6px; --phone-r: 34px; } }
 @media (min-width: 768px) {
   .product-section { padding: 72px 0; }
