@@ -386,7 +386,7 @@ body.nav-open .navbar__cta { visibility: hidden; }
 }
 .mockup__browser img { display: block; width: 100%; height: auto; }
 /* Szerokość telefonu w parzystych px na każdym progu */
-.mockup__phone { position: absolute; right: 0; bottom: 0; width: 128px; }
+.mockup__phone { position: absolute; right: 0; bottom: 0; width: 28%; max-width: 164px; }
 
 /* Telefon (CSS) — ten sam w hero i w sekcji „Aplikacja mobilna”.
    Cienka równa ramka z grafitu z jaśniejszym obrysem 1px
@@ -412,30 +412,25 @@ body.nav-open .navbar__cta { visibility: hidden; }
 
 @media (max-width: 479px) { .hero__cta .btn { width: 100%; } }
 @media (min-width: 480px) {
-  .mockup__phone { width: 168px; }
   .mockup__phone .phone { --phone-pad: 6px; --phone-r: 26px; }
 }
 @media (min-width: 640px) {
   .mockup { padding-bottom: 12%; }
   .mockup__browser { width: 88%; }
-  .mockup__phone { width: 180px; }
 }
 @media (min-width: 768px) {
   .hero { padding: 64px 0 80px; }
-  .mockup__phone { width: 200px; }
   .mockup__phone .phone { --phone-pad: 6px; --phone-r: 28px; }
   .hero__content h1 { font-size: 36px; }
 }
 @media (min-width: 1024px) {
   .hero__inner { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px; }
-  .mockup__phone { width: 132px; }
   .mockup__phone .phone { --phone-pad: 4px; --phone-r: 20px; }
   .hero__content h1 { font-size: 42px; }
 }
 @media (min-width: 1200px) {
   .hero { padding: 80px 0 96px; }
   .hero__inner { grid-template-columns: minmax(0, 1fr) minmax(0, 1.12fr); gap: 56px; }
-  .mockup__phone { width: 164px; }
   .mockup__phone .phone { --phone-pad: 6px; --phone-r: 26px; }
   .hero__content h1 { font-size: 46px; }
 }
