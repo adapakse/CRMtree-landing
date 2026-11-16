@@ -138,8 +138,26 @@
     update();
   }
 
+  // ── Kotwice do zwiniętych modułów ─────────────────────────────────
+  // Kafelki modułów to <details>. Link z menu, cyklu albo stopki do takiego
+  // kafelka (np. #f-seobot) ma go rozwinąć, a nie przewinąć do zamkniętego.
+  function openTarget(hash) {
+    if (!hash || hash.length < 2) return;
+    var el = document.getElementById(decodeURIComponent(hash.slice(1)));
+    if (el && el.tagName === "DETAILS") el.open = true;
+  }
+  function initDetailsAnchors() {
+    document.addEventListener("click", function (e) {
+      var a = e.target.closest && e.target.closest('a[href^="#"]');
+      if (a) openTarget(a.getAttribute("href"));
+    });
+    window.addEventListener("hashchange", function () { openTarget(location.hash); });
+    openTarget(location.hash);
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     initMenu();
     initChat();
+    initDetailsAnchors();
   });
 })();

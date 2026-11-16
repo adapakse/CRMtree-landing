@@ -95,6 +95,7 @@
     "s8_d": "Wyniki sprzedaży, partnerów i budżetów w jednym dashboardzie."
   },
   "features": {
+    "more": "Zobacz więcej",
     "eyebrow": "Funkcje",
     "h2": "Wszystko, czego potrzebujesz",
     "sub": "Jeden system zamiast dziesiątek arkuszy i narzędzi",
@@ -149,6 +150,10 @@
     "label_example": "Przykład zastosowania"
   },
   "compare": {
+    "show_full": "Pokaż pełne porównanie",
+    "legend_yes": "Jest",
+    "legend_partial": "Częściowo",
+    "legend_no": "Brak",
     "eyebrow": "Porównanie",
     "h2": "CRMtree na tle innych systemów CRM",
     "sub": "CRMtree ma wszystko, co konkurencja, a wyprzedza ją w następujących obszarach funkcjonalnych.",
@@ -265,6 +270,7 @@
     "submitting": "Wysyłanie…"
   },
   "footer": {
+    "col_modules": "Moduły",
     "tagline": "CRM dla nowoczesnej firmy",
     "col_product": "Produkt",
     "col_resources": "Zasoby",
@@ -350,6 +356,7 @@
     "s8_d": "Sales, partner, and budget results in one dashboard."
   },
   "features": {
+    "more": "Show more",
     "eyebrow": "Features",
     "h2": "Everything you need",
     "sub": "One system instead of dozens of spreadsheets and tools",
@@ -404,6 +411,10 @@
     "label_example": "Example in practice"
   },
   "compare": {
+    "show_full": "Show full comparison",
+    "legend_yes": "Available",
+    "legend_partial": "Partially",
+    "legend_no": "Not available",
     "eyebrow": "Comparison",
     "h2": "CRMtree vs. other CRM systems",
     "sub": "CRMtree has everything the competition offers, and is ahead of it in the following functional areas.",
@@ -520,6 +531,7 @@
     "submitting": "Sending…"
   },
   "footer": {
+    "col_modules": "Modules",
     "tagline": "CRM for the modern company",
     "col_product": "Product",
     "col_resources": "Resources",
@@ -605,6 +617,7 @@
     "s8_d": "Vertriebs-, Partner- und Budgetergebnisse in einem Dashboard."
   },
   "features": {
+    "more": "Mehr anzeigen",
     "eyebrow": "Funktionen",
     "h2": "Alles, was Sie brauchen",
     "sub": "Ein System statt Dutzender Tabellen und Tools",
@@ -659,6 +672,10 @@
     "label_example": "Anwendungsbeispiel"
   },
   "compare": {
+    "show_full": "Vollständigen Vergleich anzeigen",
+    "legend_yes": "Vorhanden",
+    "legend_partial": "Teilweise",
+    "legend_no": "Nicht vorhanden",
     "eyebrow": "Vergleich",
     "h2": "CRMtree im Vergleich zu anderen CRM-Systemen",
     "sub": "CRMtree bietet alles, was die Konkurrenz bietet, und ist ihr in den folgenden Funktionsbereichen voraus.",
@@ -775,6 +792,7 @@
     "submitting": "Wird gesendet…"
   },
   "footer": {
+    "col_modules": "Module",
     "tagline": "CRM für moderne Unternehmen",
     "col_product": "Produkt",
     "col_resources": "Ressourcen",
@@ -860,6 +878,7 @@
     "s8_d": "Risultati di vendite, partner e budget in un'unica dashboard."
   },
   "features": {
+    "more": "Mostra di più",
     "eyebrow": "Funzionalità",
     "h2": "Tutto ciò di cui hai bisogno",
     "sub": "Un solo sistema al posto di decine di fogli e strumenti",
@@ -914,6 +933,10 @@
     "label_example": "Esempio pratico"
   },
   "compare": {
+    "show_full": "Mostra il confronto completo",
+    "legend_yes": "Disponibile",
+    "legend_partial": "Parzialmente",
+    "legend_no": "Non disponibile",
     "eyebrow": "Confronto",
     "h2": "CRMtree a confronto con altri CRM",
     "sub": "CRMtree ha tutto ciò che offre la concorrenza e la supera nelle seguenti aree funzionali.",
@@ -1030,6 +1053,7 @@
     "submitting": "Invio in corso…"
   },
   "footer": {
+    "col_modules": "Moduli",
     "tagline": "CRM per l'azienda moderna",
     "col_product": "Prodotto",
     "col_resources": "Risorse",
@@ -1115,6 +1139,7 @@
     "s8_d": "Resultados de ventas, clientes y presupuestos en un solo panel."
   },
   "features": {
+    "more": "Ver más",
     "eyebrow": "Funciones",
     "h2": "Todo lo que necesitas",
     "sub": "Un sistema en lugar de decenas de hojas de cálculo y herramientas",
@@ -1169,6 +1194,10 @@
     "label_example": "Ejemplo práctico"
   },
   "compare": {
+    "show_full": "Ver la comparación completa",
+    "legend_yes": "Disponible",
+    "legend_partial": "Parcialmente",
+    "legend_no": "No disponible",
     "eyebrow": "Comparativa",
     "h2": "CRMtree frente a otros sistemas CRM",
     "sub": "CRMtree tiene todo lo que ofrece la competencia y la supera en las siguientes áreas funcionales.",
@@ -1285,6 +1314,7 @@
     "submitting": "Enviando…"
   },
   "footer": {
+    "col_modules": "Módulos",
     "tagline": "CRM para la empresa moderna",
     "col_product": "Producto",
     "col_resources": "Recursos",
@@ -1370,6 +1400,7 @@
     "s8_d": "Résultats commerciaux, partenaires et budgets réunis sur un seul tableau de bord."
   },
   "features": {
+    "more": "Voir plus",
     "eyebrow": "Fonctionnalités",
     "h2": "Tout ce dont vous avez besoin",
     "sub": "Un seul système au lieu de dizaines de fichiers et d'outils",
@@ -1424,6 +1455,10 @@
     "label_example": "Exemple concret"
   },
   "compare": {
+    "show_full": "Voir la comparaison complète",
+    "legend_yes": "Disponible",
+    "legend_partial": "Partiellement",
+    "legend_no": "Non disponible",
     "eyebrow": "Comparatif",
     "h2": "CRMtree face aux autres CRM",
     "sub": "CRMtree a tout ce que propose la concurrence et la devance dans les domaines fonctionnels suivants.",
@@ -1540,6 +1575,7 @@
     "submitting": "Envoi en cours…"
   },
   "footer": {
+    "col_modules": "Modules",
     "tagline": "Le CRM des entreprises modernes",
     "col_product": "Produit",
     "col_resources": "Ressources",
@@ -1625,6 +1661,7 @@
     "s8_d": "Rezultate de vânzări, parteneri și bugete într-un singur tablou de bord."
   },
   "features": {
+    "more": "Vezi mai mult",
     "eyebrow": "Funcționalități",
     "h2": "Tot ce ai nevoie",
     "sub": "Un singur sistem în loc de zeci de fișiere și instrumente",
@@ -1679,6 +1716,10 @@
     "label_example": "Exemplu practic"
   },
   "compare": {
+    "show_full": "Vezi comparația completă",
+    "legend_yes": "Disponibil",
+    "legend_partial": "Parțial",
+    "legend_no": "Indisponibil",
     "eyebrow": "Comparație",
     "h2": "CRMtree față de alte sisteme CRM",
     "sub": "CRMtree are tot ce oferă concurența și o depășește în următoarele arii funcționale.",
@@ -1795,6 +1836,7 @@
     "submitting": "Se trimite…"
   },
   "footer": {
+    "col_modules": "Module",
     "tagline": "CRM pentru compania modernă",
     "col_product": "Produs",
     "col_resources": "Resurse",
@@ -1880,6 +1922,7 @@
     "s8_d": "Результаты по продажам, партнёрам и бюджетам в одном дашборде."
   },
   "features": {
+    "more": "Подробнее",
     "eyebrow": "Возможности",
     "h2": "Всё, что нужно",
     "sub": "Одна система вместо десятков таблиц и инструментов",
@@ -1934,6 +1977,10 @@
     "label_example": "Пример использования"
   },
   "compare": {
+    "show_full": "Показать полное сравнение",
+    "legend_yes": "Есть",
+    "legend_partial": "Частично",
+    "legend_no": "Нет",
     "eyebrow": "Сравнение",
     "h2": "CRMtree на фоне других CRM-систем",
     "sub": "В CRMtree есть всё, что предлагают конкуренты, и он опережает их в следующих функциональных областях.",
@@ -2050,6 +2097,7 @@
     "submitting": "Отправка…"
   },
   "footer": {
+    "col_modules": "Модули",
     "tagline": "CRM для современной компании",
     "col_product": "Продукт",
     "col_resources": "Ресурсы",
@@ -2135,6 +2183,7 @@
     "s8_d": "Rezultati prodaje, partnerjev in proračunov na eni nadzorni plošči."
   },
   "features": {
+    "more": "Več",
     "eyebrow": "Funkcije",
     "h2": "Vse, kar potrebujete",
     "sub": "En sistem namesto deset preglednic in orodij",
@@ -2189,6 +2238,10 @@
     "label_example": "Praktični primer"
   },
   "compare": {
+    "show_full": "Prikaži celotno primerjavo",
+    "legend_yes": "Na voljo",
+    "legend_partial": "Delno",
+    "legend_no": "Ni na voljo",
     "eyebrow": "Primerjava",
     "h2": "CRMtree v primerjavi z drugimi CRM sistemi",
     "sub": "CRMtree ima vse, kar ponuja konkurenca, in jo prehiteva na naslednjih funkcionalnih področjih.",
@@ -2305,6 +2358,7 @@
     "submitting": "Pošiljanje…"
   },
   "footer": {
+    "col_modules": "Moduli",
     "tagline": "CRM za sodobno podjetje",
     "col_product": "Izdelek",
     "col_resources": "Viri",
@@ -2390,6 +2444,7 @@
     "s8_d": "Rezultati prodaje, partnera i proračuna na jednoj nadzornoj ploči."
   },
   "features": {
+    "more": "Prikaži više",
     "eyebrow": "Značajke",
     "h2": "Sve što vam treba",
     "sub": "Jedan sustav umjesto desetaka tablica i alata",
@@ -2444,6 +2499,10 @@
     "label_example": "Praktični primjer"
   },
   "compare": {
+    "show_full": "Prikaži cijelu usporedbu",
+    "legend_yes": "Dostupno",
+    "legend_partial": "Djelomično",
+    "legend_no": "Nije dostupno",
     "eyebrow": "Usporedba",
     "h2": "CRMtree u odnosu na druge CRM sustave",
     "sub": "CRMtree ima sve što nudi konkurencija, a prednjači pred njom u sljedećim funkcionalnim područjima.",
@@ -2560,6 +2619,7 @@
     "submitting": "Slanje…"
   },
   "footer": {
+    "col_modules": "Moduli",
     "tagline": "CRM za modernu tvrtku",
     "col_product": "Proizvod",
     "col_resources": "Resursi",
