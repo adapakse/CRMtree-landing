@@ -615,9 +615,9 @@ a.cycle__stage:hover .cycle__go { transform: translateX(2px); }
 }
 
 /* ── TABELA PORÓWNANIA ───────────────────────────────────────────────
-   ≥720px: tabela jak w porównaniach planów — kolumna CRMtree podświetlona na całej
+   ≥768px: tabela jak w porównaniach planów — kolumna CRMtree podświetlona na całej
    wysokości, nagłówek przyklejony pod paskiem menu, ikony linią zamiast znaków.
-   <720px: grupa = jedna karta, cecha = wiersz z CRMtree i 4 konkurentami.  */
+   <768px: ta sama tabela, 3 kolumny: Cecha | CRMtree | konkurent wybrany chipem.  */
 .compare-section { background: var(--page-bg); padding: var(--section-y) 0; }
 .compare-wrap {
   border: 1px solid var(--border); border-radius: var(--radius);
@@ -671,46 +671,54 @@ tr.compare-group td { padding: 0; }
 .compare-legend li { display: inline-flex; align-items: center; gap: 6px; }
 .compare-note { font-size: 14px; color: var(--text-muted); margin-top: 16px; max-width: 44em; }
 
-@media (min-width: 720px) and (max-width: 1023px) {
+@media (min-width: 768px) and (max-width: 1023px) {
   table.compare th, table.compare td { padding: 12px 10px; }
   table.compare thead th { padding: 16px 10px 12px; }
 }
 
-@media (max-width: 719px) {
-  .compare-wrap { border: 0; box-shadow: none; background: transparent; border-radius: 0; }
-  table.compare, table.compare tbody, table.compare tr, table.compare td, table.compare th { display: block; width: 100%; }
-  table.compare thead { display: none; } /* etykiety kolumn są w data-label każdej komórki */
-  /* Wiersze jednej grupy sklejone w jedną kartę */
-  table.compare tbody tr {
-    background: var(--surface); border: 1px solid var(--border); border-top: 0;
-    box-shadow: 0 4px 14px rgba(0,0,0,.05);
-  }
-  table.compare tbody tr.compare-group { background: none; border: 0; box-shadow: none; margin: 28px 0 8px; }
-  table.compare tbody tr.compare-group:first-child { margin-top: 0; }
-  table.compare tbody tr.compare-group + tr { border-top: 1px solid var(--border); border-radius: var(--radius) var(--radius) 0 0; }
-  table.compare tbody tr:not(.compare-group):has(+ tr.compare-group), table.compare tbody tr:last-child { border-radius: 0 0 var(--radius) var(--radius); }
-  table.compare tbody tr.compare-group + tr:has(+ tr.compare-group), table.compare tbody tr.compare-group + tr:last-child { border-radius: var(--radius); }
-  tr.compare-group th { padding: 0 4px; border: 0; }
-  tr.compare-group td { display: none; }
-  table.compare td { border-bottom: 0; padding: 10px 16px; }
-  table.compare tbody tr:last-child > * { border-radius: 0; }
-  table.compare tbody td:first-child { font-weight: 700; font-size: 16px; padding: 16px 16px 8px; }
-  table.compare tbody tr:not(.compare-group) { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); padding-bottom: 8px; }
-  table.compare td:first-child, table.compare td.col-us { grid-column: 1 / -1; }
-  table.compare td[data-label] {
-    display: flex; flex-direction: column; align-items: flex-start; gap: 4px; padding: 6px 4px;
-    font-size: 12px; line-height: 1.4; overflow-wrap: break-word; text-align: left;
-  }
-  table.compare td[data-label] .cmp { align-items: flex-start; }
-  table.compare td[data-label]:nth-child(3) { padding-left: 16px; }
-  table.compare td[data-label]:last-child { padding-right: 12px; }
-  table.compare td[data-label]::before { content: attr(data-label); color: var(--text-muted); font-size: 12px; font-weight: 500; }
-  table.compare td.col-us[data-label] {
-    flex-direction: row; justify-content: space-between; align-items: center; gap: 16px;
-    margin: 0 16px 8px; width: auto; padding: 8px 12px; font-size: 14px; border-radius: var(--radius-sm);
-  }
-  table.compare tbody tr:last-child td.col-us { border-radius: var(--radius-sm); }
-  table.compare td.col-us[data-label]::before { color: var(--brand-text); font-size: 14px; font-weight: 700; }
+/* Telefon (<768px): wzorzec „porównaj z” - Cecha | CRMtree | wybrany konkurent.
+   Wszystkie kolumny zostają w HTML; chipy nad tabelą ustawiają data-compare,
+   a CSS pokazuje tylko kolumnę wybranego konkurenta. */
+.compare-pick { margin: -16px 0 16px; }
+.compare-pick__label { display: block; font-size: 14px; font-weight: 600; color: var(--text-muted); margin-bottom: 8px; }
+.compare-pick__chips {
+  display: flex; gap: 2px; padding: 4px; overflow-x: auto; scrollbar-width: none;
+  background: var(--surface); border: 1px solid var(--border); border-radius: 999px; box-shadow: var(--shadow-field);
+}
+.compare-pick__chips::-webkit-scrollbar { display: none; }
+.compare-pick__chips button {
+  flex: 1 0 auto; min-height: 40px; padding: 0 12px; border: 0; border-radius: 999px; background: none;
+  font-family: inherit; font-size: 14px; font-weight: 600; line-height: 1.2; color: var(--text-muted);
+  white-space: nowrap; cursor: pointer; transition: background-color .15s, color .15s;
+}
+.compare-pick__chips button:hover { color: var(--ink); }
+.compare-pick__chips button[aria-pressed="true"] { background: var(--brand-pale); color: var(--brand-text); }
+.compare-pick__chips button:focus-visible { outline-offset: -2px; border-radius: 999px; }
+@media (min-width: 768px) { .compare-pick { display: none; } }
+
+@media (max-width: 767px) {
+  table.compare th, table.compare td { padding: 8px 12px; }
+  table.compare tbody td { height: 52px; }
+  table.compare thead th { padding: 14px 12px 12px; }
+  table.compare thead th:first-child { width: 50%; }
+  table.compare thead th.col-us { width: 25%; }
+  table.compare tbody td:first-child { font-size: 14px; }
+  tr.compare-group th { padding: 20px 12px 8px; }
+  tr.compare-group > * { border-bottom: 0; }
+  tr.compare-group > td[colspan] { display: none; }
+  /* Tylko kolumna wybranego konkurenta */
+  table.compare thead th:nth-child(n+3),
+  table.compare tbody tr:not(.compare-group) > td:nth-child(n+3) { display: none; }
+  table.compare thead th:nth-child(n+3) { border-top-right-radius: var(--radius); }
+  table.compare tbody tr:last-child > td:nth-child(n+3) { border-bottom-right-radius: var(--radius); }
+  table.compare[data-compare="hubspot"] thead th:nth-child(3),
+  table.compare[data-compare="hubspot"] tbody tr:not(.compare-group) > td:nth-child(3),
+  table.compare[data-compare="pipedrive"] thead th:nth-child(4),
+  table.compare[data-compare="pipedrive"] tbody tr:not(.compare-group) > td:nth-child(4),
+  table.compare[data-compare="firmao"] thead th:nth-child(5),
+  table.compare[data-compare="firmao"] tbody tr:not(.compare-group) > td:nth-child(5),
+  table.compare[data-compare="livespace"] thead th:nth-child(6),
+  table.compare[data-compare="livespace"] tbody tr:not(.compare-group) > td:nth-child(6) { display: table-cell; }
 }
 
 /* ── BEZPIECZEŃSTWO + AI ACT ─────────────────────────────────────── */

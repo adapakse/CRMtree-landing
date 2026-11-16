@@ -631,8 +631,18 @@
         <h2 id="compareTitle" data-i18n="compare.h2">CRMtree na tle innych systemów CRM</h2>
         <p data-i18n="compare.sub">CRMtree ma wszystko, co konkurencja, a wyprzedza ją w następujących obszarach funkcjonalnych.</p>
       </div>
+      <!-- Telefon: wybór jednego konkurenta (CSS ukrywa pozostałe kolumny, dane zostają w tabeli) -->
+      <div class="compare-pick">
+        <span class="compare-pick__label" id="comparePickLabel" data-i18n="compare.pick_label">Porównaj z</span>
+        <div class="compare-pick__chips" id="comparePick" role="group" aria-labelledby="comparePickLabel">
+          <button type="button" aria-pressed="true" aria-controls="compareTable" data-compare="hubspot">HubSpot</button>
+          <button type="button" aria-pressed="false" aria-controls="compareTable" data-compare="pipedrive">Pipedrive</button>
+          <button type="button" aria-pressed="false" aria-controls="compareTable" data-compare="firmao">Firmao</button>
+          <button type="button" aria-pressed="false" aria-controls="compareTable" data-compare="livespace">Livespace</button>
+        </div>
+      </div>
       <div class="compare-wrap" role="region" aria-labelledby="compareTitle" tabindex="0">
-        <table class="compare">
+        <table class="compare" id="compareTable" data-compare="hubspot">
           <thead>
             <tr>
               <th scope="col" data-i18n="compare.col_feature">Cecha</th>
@@ -684,6 +694,20 @@
       <p class="compare-note" data-i18n="compare.note">Zestawienie na podstawie wewnętrznej analizy funkcjonalnej CRMtree, zweryfikowanej względem publicznie dostępnej dokumentacji konkurentów.</p>
     </div>
   </section>
+  <script>
+    // Porównanie na telefonie: chip wybiera konkurenta widocznego obok CRMtree
+    (function () {
+      var table = document.getElementById('compareTable');
+      var chips = document.querySelectorAll('#comparePick button');
+      if (!table || !chips.length) return;
+      chips.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          table.setAttribute('data-compare', btn.getAttribute('data-compare'));
+          chips.forEach(function (b) { b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'); });
+        });
+      });
+    })();
+  </script>
 
   <!-- TODO(legal): sformułowania o zgodności z AI Act wymagają przeglądu prawnego przed publikacją,
        tak samo jak przy każdym twierdzeniu o zgodności z regulacją. GovAI = wewnętrzny produkt/bramka
