@@ -131,8 +131,7 @@
     .price-currency { font-size: 24px; font-weight: 700; color: var(--ink); line-height: 1; }
     .price-amount { font-size: 48px; font-weight: 800; color: var(--ink); line-height: 1.1; letter-spacing: -.02em; }
     .price-period { font-size: 14px; color: var(--text-muted); line-height: 1.4; white-space: nowrap; margin-left: 4px; }
-    .price-contact { font-size: 28px; font-weight: 800; color: var(--ink); line-height: 1.14; letter-spacing: -.01em; }
-    .price-contact br { display: none; }
+    .price-contact { font-size: 28px; font-weight: 800; color: var(--ink); line-height: 1.14; letter-spacing: -.01em; text-wrap: balance; }
 
     .plan-billing-note { font-size: 14px; line-height: 1.4; color: var(--text-muted); min-height: 20px; margin-bottom: 24px; }
     .plan-billing-note .annual-note { display: block; }
@@ -269,7 +268,6 @@
       .plan-card--featured { padding: 31px 23px 35px; transform: translateY(-8px); }
       .price-amount { font-size: 48px; }
       .price-contact { font-size: 28px; }
-      .price-contact br { display: inline; }
       /* Równe bloki nagłówek + cena + notka: przyciski na jednej wysokości */
       @supports (grid-template-rows: subgrid) {
         .pricing-grid { grid-template-rows: repeat(7, auto); row-gap: 0; }
@@ -329,8 +327,8 @@
   <!-- HERO -->
   <section class="pricing-hero">
     <div class="container">
-      <h1>Prosty, przejrzysty cennik</h1>
-      <p>Płacisz tylko za aktywnych użytkowników. Bez ukrytych opłat, bez długoterminowych zobowiązań.</p>
+      <h1 data-i18n="pricing.hero_h1">Prosty, przejrzysty cennik</h1>
+      <p data-i18n="pricing.hero_sub">Płacisz tylko za aktywnych użytkowników. Bez ukrytych opłat, bez długoterminowych zobowiązań.</p>
 
       <div class="pricing-switches">
         <!-- OKRES ROZLICZENIA -->
@@ -339,16 +337,16 @@
             <button type="button" class="active" aria-pressed="true" data-billing="annual" data-i18n="pricing.billing_annual">Rocznie</button>
             <button type="button" aria-pressed="false" data-billing="monthly" data-i18n="pricing.billing_monthly">Miesięcznie</button>
           </div>
-          <span class="save-badge" id="saveBadge">Oszczędzasz do 32%</span>
+          <span class="save-badge" id="saveBadge" data-i18n="pricing.save_badge">Oszczędzasz do 32%</span>
         </div>
 
         <!-- WALUTA -->
-        <div class="seg seg--currency" id="currencyToggle" role="group" aria-label="Waluta">
+        <div class="seg seg--currency" id="currencyToggle" role="group" aria-label="Waluta" data-i18n-aria-label="pricing.currency_label">
           <button type="button" aria-pressed="false" data-currency="pln">zł</button>
           <button type="button" aria-pressed="false" data-currency="eur">€</button>
         </div>
       </div>
-      <span class="currency-note">Ceny w PLN są orientacyjne - przelicznik ~4,30 PLN/EUR, aktualizowany okresowo.</span>
+      <span class="currency-note" data-i18n="pricing.currency_note">Ceny w PLN są orientacyjne - przelicznik ~4,30 PLN/EUR, aktualizowany okresowo.</span>
     </div>
   </section>
 
@@ -361,78 +359,78 @@
         <div class="plan-card">
           <div class="plan-head">
             <h2 class="plan-name">Lite</h2>
-            <div class="plan-tagline">Dla zespołów sprzedaży, które zaczynają porządkować swój CRM.</div>
+            <div class="plan-tagline" data-i18n="pricing.tag_lite">Dla zespołów sprzedaży, które zaczynają porządkować swój CRM.</div>
           </div>
 
           <div class="plan-price-wrap">
           <div class="plan-price price-annual">
             <span class="price-currency" data-eur="€" data-pln="zł">€</span>
             <span class="price-amount" data-eur="19" data-pln="82">19</span>
-            <span class="price-period">/użytkownik/miesiąc</span>
+            <span class="price-period" data-i18n="pricing.per_user_month">/użytkownik/miesiąc</span>
           </div>
           <div class="plan-price price-monthly">
             <span class="price-currency" data-eur="€" data-pln="zł">€</span>
             <span class="price-amount" data-eur="28" data-pln="120">28</span>
-            <span class="price-period">/użytkownik/miesiąc</span>
+            <span class="price-period" data-i18n="pricing.per_user_month">/użytkownik/miesiąc</span>
           </div>
           </div>
 
           <div class="plan-billing-note">
-            <span class="annual-note" data-eur="Rozliczenie roczne · €228/rok/użytkownik" data-pln="Rozliczenie roczne · 980 zł/rok/użytkownik">Rozliczenie roczne · €228/rok/użytkownik</span>
-            <span class="monthly-note">Rozliczenie miesięczne</span>
+            <span class="annual-note" data-i18n-tpl="pricing.note_annual" data-eur-price="€228" data-pln-price="980 zł">Rozliczenie roczne · €228/rok/użytkownik</span>
+            <span class="monthly-note" data-i18n="pricing.note_monthly">Rozliczenie miesięczne</span>
           </div>
 
-          <a href="/#contact" class="btn btn--ghost btn--lg plan-cta">Zapytaj o dostęp</a>
+          <a href="/#contact" class="btn btn--ghost btn--lg plan-cta" data-i18n="contact.h2">Zapytaj o dostęp</a>
 
           <hr class="plan-divider" />
-          <div class="plan-features-label">Co zawiera</div>
+          <div class="plan-features-label" data-i18n="pricing.features_label">Co zawiera</div>
           <ul class="plan-features">
-            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Kompletny moduł zarządzania leadami i klientami</span></li>
-            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Lejki sprzedaży i budżety handlowców</span></li>
-            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Komunikacja end-to-end email (Gmail)</span></li>
-            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Zadania i workflow przypisań</span></li>
-            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Elastyczna konfiguracja słowników i ról</span></li>
-            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Przestrzeń na dane</span><span class="storage">10 GB</span></li>
+            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pricing.f_leads">Kompletny moduł zarządzania leadami i klientami</span></li>
+            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pricing.f_funnels">Lejki sprzedaży i budżety handlowców</span></li>
+            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pricing.f_email">Komunikacja end-to-end email (Gmail)</span></li>
+            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pricing.f_tasks">Zadania i workflow przypisań</span></li>
+            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pricing.f_config">Elastyczna konfiguracja słowników i ról</span></li>
+            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pricing.f_storage">Przestrzeń na dane</span><span class="storage">10 GB</span></li>
           </ul>
         </div>
 
         <!-- ── STANDARD (FEATURED) ────────────────────────── -->
         <div class="plan-card plan-card--featured">
-          <div class="plan-badge">Najpopularniejszy</div>
+          <div class="plan-badge" data-i18n="pricing.badge_popular">Najpopularniejszy</div>
           <div class="plan-head">
             <h2 class="plan-name">Standard</h2>
-            <div class="plan-tagline">Pełna obsługa sprzedaży - od leada po raport i integrację danych.</div>
+            <div class="plan-tagline" data-i18n="pricing.tag_standard">Pełna obsługa sprzedaży - od leada po raport i integrację danych.</div>
           </div>
 
           <div class="plan-price-wrap">
           <div class="plan-price price-annual">
             <span class="price-currency" data-eur="€" data-pln="zł">€</span>
             <span class="price-amount" data-eur="28" data-pln="120">28</span>
-            <span class="price-period">/użytkownik/miesiąc</span>
+            <span class="price-period" data-i18n="pricing.per_user_month">/użytkownik/miesiąc</span>
           </div>
           <div class="plan-price price-monthly">
             <span class="price-currency" data-eur="€" data-pln="zł">€</span>
             <span class="price-amount" data-eur="36" data-pln="155">36</span>
-            <span class="price-period">/użytkownik/miesiąc</span>
+            <span class="price-period" data-i18n="pricing.per_user_month">/użytkownik/miesiąc</span>
           </div>
           </div>
 
           <div class="plan-billing-note">
-            <span class="annual-note" data-eur="Rozliczenie roczne · €336/rok/użytkownik" data-pln="Rozliczenie roczne · 1445 zł/rok/użytkownik">Rozliczenie roczne · €336/rok/użytkownik</span>
-            <span class="monthly-note">Rozliczenie miesięczne</span>
+            <span class="annual-note" data-i18n-tpl="pricing.note_annual" data-eur-price="€336" data-pln-price="1445 zł">Rozliczenie roczne · €336/rok/użytkownik</span>
+            <span class="monthly-note" data-i18n="pricing.note_monthly">Rozliczenie miesięczne</span>
           </div>
 
-          <a href="/#contact" class="btn btn--primary btn--lg plan-cta">Zapytaj o dostęp</a>
+          <a href="/#contact" class="btn btn--primary btn--lg plan-cta" data-i18n="contact.h2">Zapytaj o dostęp</a>
 
           <hr class="plan-divider" />
-          <div class="plan-features-label">Co zawiera</div>
+          <div class="plan-features-label" data-i18n="pricing.features_label">Co zawiera</div>
           <ul class="plan-features">
-            <li><span class="plan-inherits">Wszystko z planu Lite, plus:</span></li>
-            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Pełna obsługa procesu partnerskiego</span></li>
-            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Workflows onboarding (4-etapowy proces wdrożenia)</span></li>
-            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Raporty sprzedaży i analityka (trendy, KPI, win rate)</span></li>
-            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Integracja z hurtownią danych (DWH)</span></li>
-            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Przestrzeń na dane</span><span class="storage">100 GB</span></li>
+            <li><span class="plan-inherits" data-i18n="pricing.inherits_lite">Wszystko z planu Lite, plus:</span></li>
+            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pricing.f_partner">Pełna obsługa procesu partnerskiego</span></li>
+            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pricing.f_onboarding">Workflows onboarding (4-etapowy proces wdrożenia)</span></li>
+            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pricing.f_reports">Raporty sprzedaży i analityka (trendy, KPI, win rate)</span></li>
+            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="compare.r11">Integracja z hurtownią danych (DWH)</span></li>
+            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pricing.f_storage">Przestrzeń na dane</span><span class="storage">100 GB</span></li>
           </ul>
         </div>
 
@@ -440,34 +438,32 @@
         <div class="plan-card">
           <div class="plan-head">
             <h2 class="plan-name">Professional</h2>
-            <div class="plan-tagline">Dla organizacji wymagających dedykowanych kanałów i zaawansowanej analityki.</div>
+            <div class="plan-tagline" data-i18n="pricing.tag_pro">Dla organizacji wymagających dedykowanych kanałów i zaawansowanej analityki.</div>
           </div>
 
           <div class="plan-price-wrap">
           <div class="plan-price">
-            <span class="price-contact">Skontaktuj<br/> się z nami</span>
+            <span class="price-contact" data-i18n="pricing.price_contact">Skontaktuj się z nami</span>
           </div>
           </div>
 
-          <div class="plan-billing-note">
-            Wycena indywidualna · SLA gwarantowane
-          </div>
+          <div class="plan-billing-note" data-i18n="pricing.note_pro">Wycena indywidualna · SLA gwarantowane</div>
 
-          <a href="/#contact" class="btn btn--ghost btn--lg plan-cta">Umów rozmowę</a>
+          <a href="/#contact" class="btn btn--ghost btn--lg plan-cta" data-i18n="pricing.cta_call">Umów rozmowę</a>
 
           <hr class="plan-divider" />
-          <div class="plan-features-label">Co zawiera</div>
+          <div class="plan-features-label" data-i18n="pricing.features_label">Co zawiera</div>
           <ul class="plan-features">
-            <li><span class="plan-inherits">Wszystko z planu Standard, plus:</span></li>
-            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Zasilanie hurtowni danych przez dedykowany interfejs API</span></li>
-            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Rozbudowane raporty i analiza churn</span></li>
-            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Moduł Customer Service</span></li>
-            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Dedykowany kanał telefoniczny</span></li>
-            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Zarządzanie kolejką agentów</span></li>
-            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Baza wiedzy</span></li>
-            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Portal self-service dla klienta</span></li>
-            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Dedykowana integracja komunikacji mailowej</span></li>
-            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Przestrzeń na dane</span><span class="storage">1 TB</span></li>
+            <li><span class="plan-inherits" data-i18n="pricing.inherits_standard">Wszystko z planu Standard, plus:</span></li>
+            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pricing.f_dwh_api">Zasilanie hurtowni danych przez dedykowany interfejs API</span></li>
+            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pricing.f_churn">Rozbudowane raporty i analiza churn</span></li>
+            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pricing.f_cs">Moduł Customer Service</span></li>
+            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pricing.f_phone">Dedykowany kanał telefoniczny</span></li>
+            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pricing.f_queue">Zarządzanie kolejką agentów</span></li>
+            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pricing.f_kb">Baza wiedzy</span></li>
+            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pricing.f_portal">Portal self-service dla klienta</span></li>
+            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pricing.f_mail">Dedykowana integracja komunikacji mailowej</span></li>
+            <li><svg class="ic-check" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pricing.f_storage">Przestrzeń na dane</span><span class="storage">1 TB</span></li>
           </ul>
         </div>
 
@@ -490,24 +486,24 @@
             </tr>
           </thead>
           <tbody>
-            <tr><th scope="row">Kompletny moduł zarządzania leadami i klientami</th><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td class="col-hl"><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
-            <tr><th scope="row">Lejki sprzedaży i budżety handlowców</th><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td class="col-hl"><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
-            <tr><th scope="row">Komunikacja end-to-end email (Gmail)</th><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td class="col-hl"><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
-            <tr><th scope="row">Zadania i workflow przypisań</th><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td class="col-hl"><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
-            <tr><th scope="row">Elastyczna konfiguracja słowników i ról</th><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td class="col-hl"><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
-            <tr><th scope="row">Pełna obsługa procesu partnerskiego</th><td><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td class="col-hl"><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
-            <tr><th scope="row">Workflows onboarding (4-etapowy proces wdrożenia)</th><td><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td class="col-hl"><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
-            <tr><th scope="row">Raporty sprzedaży i analityka (trendy, KPI, win rate)</th><td><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td class="col-hl"><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
-            <tr><th scope="row">Integracja z hurtownią danych (DWH)</th><td><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td class="col-hl"><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
-            <tr><th scope="row">Zasilanie hurtowni danych przez dedykowany interfejs API</th><td><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td class="col-hl"><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
-            <tr><th scope="row">Rozbudowane raporty i analiza churn</th><td><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td class="col-hl"><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
-            <tr><th scope="row">Moduł Customer Service</th><td><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td class="col-hl"><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
-            <tr><th scope="row">Dedykowany kanał telefoniczny</th><td><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td class="col-hl"><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
-            <tr><th scope="row">Zarządzanie kolejką agentów</th><td><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td class="col-hl"><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
-            <tr><th scope="row">Baza wiedzy</th><td><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td class="col-hl"><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
-            <tr><th scope="row">Portal self-service dla klienta</th><td><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td class="col-hl"><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
-            <tr><th scope="row">Dedykowana integracja komunikacji mailowej</th><td><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td class="col-hl"><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
-            <tr><th scope="row">Przestrzeń na dane</th><td><span class="pc-val">10 GB</span></td><td class="col-hl"><span class="pc-val">100 GB</span></td><td><span class="pc-val">1 TB</span></td></tr>
+            <tr><th scope="row" data-i18n="pricing.f_leads">Kompletny moduł zarządzania leadami i klientami</th><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td class="col-hl"><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
+            <tr><th scope="row" data-i18n="pricing.f_funnels">Lejki sprzedaży i budżety handlowców</th><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td class="col-hl"><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
+            <tr><th scope="row" data-i18n="pricing.f_email">Komunikacja end-to-end email (Gmail)</th><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td class="col-hl"><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
+            <tr><th scope="row" data-i18n="pricing.f_tasks">Zadania i workflow przypisań</th><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td class="col-hl"><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
+            <tr><th scope="row" data-i18n="pricing.f_config">Elastyczna konfiguracja słowników i ról</th><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td class="col-hl"><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
+            <tr><th scope="row" data-i18n="pricing.f_partner">Pełna obsługa procesu partnerskiego</th><td><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td class="col-hl"><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
+            <tr><th scope="row" data-i18n="pricing.f_onboarding">Workflows onboarding (4-etapowy proces wdrożenia)</th><td><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td class="col-hl"><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
+            <tr><th scope="row" data-i18n="pricing.f_reports">Raporty sprzedaży i analityka (trendy, KPI, win rate)</th><td><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td class="col-hl"><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
+            <tr><th scope="row" data-i18n="compare.r11">Integracja z hurtownią danych (DWH)</th><td><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td class="col-hl"><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
+            <tr><th scope="row" data-i18n="pricing.f_dwh_api">Zasilanie hurtowni danych przez dedykowany interfejs API</th><td><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td class="col-hl"><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
+            <tr><th scope="row" data-i18n="pricing.f_churn">Rozbudowane raporty i analiza churn</th><td><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td class="col-hl"><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
+            <tr><th scope="row" data-i18n="pricing.f_cs">Moduł Customer Service</th><td><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td class="col-hl"><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
+            <tr><th scope="row" data-i18n="pricing.f_phone">Dedykowany kanał telefoniczny</th><td><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td class="col-hl"><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
+            <tr><th scope="row" data-i18n="pricing.f_queue">Zarządzanie kolejką agentów</th><td><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td class="col-hl"><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
+            <tr><th scope="row" data-i18n="pricing.f_kb">Baza wiedzy</th><td><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td class="col-hl"><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
+            <tr><th scope="row" data-i18n="pricing.f_portal">Portal self-service dla klienta</th><td><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td class="col-hl"><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
+            <tr><th scope="row" data-i18n="pricing.f_mail">Dedykowana integracja komunikacji mailowej</th><td><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td class="col-hl"><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
+            <tr><th scope="row" data-i18n="pricing.f_storage">Przestrzeń na dane</th><td><span class="pc-val">10 GB</span></td><td class="col-hl"><span class="pc-val">100 GB</span></td><td><span class="pc-val">1 TB</span></td></tr>
           </tbody>
         </table>
       </div>
@@ -520,18 +516,18 @@
       <div class="pricing-notes__inner">
         <div class="note-item">
           <div class="note-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
-          <h3>Wdrożenie w 24h</h3>
-          <p>Po podpisaniu umowy Twoje środowisko jest gotowe następnego dnia roboczego. Import danych z pliku CSV w kilka minut.</p>
+          <h3 data-i18n="pricing.note1_t">Wdrożenie w 24h</h3>
+          <p data-i18n="pricing.note1_d">Po podpisaniu umowy Twoje środowisko jest gotowe następnego dnia roboczego. Import danych z pliku CSV w kilka minut.</p>
         </div>
         <div class="note-item">
           <div class="note-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.2-7 10-4-1.8-7-5.5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></div>
-          <h3>Bezpieczeństwo enterprise</h3>
-          <p>SAML 2.0, izolacja danych per klient, audit trail, Azure Poland Central. Twoje dane zostają w UE.</p>
+          <h3 data-i18n="pricing.note2_t">Bezpieczeństwo enterprise</h3>
+          <p data-i18n="pricing.note2_d">SAML 2.0, izolacja danych per klient, audit trail, Azure Poland Central. Twoje dane zostają w UE.</p>
         </div>
         <div class="note-item">
           <div class="note-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.2A8 8 0 1 1 20 12z"/></svg></div>
-          <h3>Wsparcie w języku polskim</h3>
-          <p>Dedykowany opiekun wdrożeniowy, dokumentacja po polsku, wsparcie mailowe i telefoniczne.</p>
+          <h3 data-i18n="pricing.note3_t">Wsparcie w języku polskim</h3>
+          <p data-i18n="pricing.note3_d">Dedykowany opiekun wdrożeniowy, dokumentacja po polsku, wsparcie mailowe i telefoniczne.</p>
         </div>
       </div>
     </div>
@@ -540,9 +536,9 @@
   <!-- KONTAKT -->
   <section class="pricing-contact">
     <div class="container">
-      <h2>Masz pytania o cennik?</h2>
-      <p>Odpowiemy w ciągu jednego dnia roboczego</p>
-      <a href="/#contact" class="btn btn--ghost btn--lg">Napisz do nas <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <h2 data-i18n="pricing.cta_h2">Masz pytania o cennik?</h2>
+      <p data-i18n="pricing.cta_sub">Odpowiemy w ciągu jednego dnia roboczego</p>
+      <a href="/#contact" class="btn btn--ghost btn--lg"><span data-i18n="pricing.cta_btn">Napisz do nas</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
   </section>
 
@@ -587,6 +583,8 @@
     </div>
   </footer>
 
+
+  <script src="i18n.js"></script>
   <script>
     // ── OKRES ROZLICZENIA (roczne / miesięczne) ──────────────────────
     const billingButtons = document.querySelectorAll('#billingToggle button');
@@ -613,6 +611,15 @@
       document.querySelectorAll('[data-eur][data-pln]').forEach(el => {
         el.textContent = cur === 'pln' ? el.dataset.pln : el.dataset.eur;
       });
+      renderPriceNotes();
+    }
+    // Notki z kwotą: tekst z i18n (szablon {price}) + kwota w bieżącej walucie
+    function renderPriceNotes() {
+      const pln = document.body.classList.contains('currency-pln');
+      document.querySelectorAll('[data-i18n-tpl]').forEach(el => {
+        const tpl = window.CRMtreeI18N ? window.CRMtreeI18N.t(el.dataset.i18nTpl) : null;
+        if (tpl) el.textContent = tpl.replace('{price}', pln ? el.dataset.plnPrice : el.dataset.eurPrice);
+      });
     }
     function currencyForLang() {
       return (document.documentElement.getAttribute('lang') || 'pl').slice(0, 2) === 'pl' ? 'pln' : 'eur';
@@ -620,11 +627,9 @@
     currencyButtons.forEach(b => b.addEventListener('click', () => { currencyChosen = true; setCurrency(b.dataset.currency); }));
     setCurrency(currencyForLang());
     // i18n.js ustawia <html lang> po wybraniu języka - dopóki ktoś nie wybrał waluty sam, idzie za językiem
-    new MutationObserver(() => { if (!currencyChosen) setCurrency(currencyForLang()); })
+    new MutationObserver(() => { if (!currencyChosen) setCurrency(currencyForLang()); else renderPriceNotes(); })
       .observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
   </script>
-
-  <script src="i18n.js"></script>
   <script src="nav.js"></script>
 </body>
 </html>
