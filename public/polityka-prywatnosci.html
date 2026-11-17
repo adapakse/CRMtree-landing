@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Polityka prywatności — CRMtree</title>
-  <meta name="description" content="Polityka prywatności serwisu CRMtree oraz dane administratora danych osobowych — Comparme Sp. z o.o." />
+  <title>Polityka prywatności - CRMtree</title>
+  <meta name="description" content="Polityka prywatności serwisu CRMtree oraz dane administratora danych osobowych - Comparme Sp. z o.o." />
   <link rel="canonical" href="https://crmtree.pl/polityka-prywatnosci.html" />
   <meta name="robots" content="noindex, follow" />
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="CRMtree" />
-  <meta property="og:title" content="Polityka prywatności — CRMtree" />
-  <meta property="og:description" content="Polityka prywatności serwisu CRMtree oraz dane administratora danych osobowych — Comparme Sp. z o.o." />
+  <meta property="og:title" content="Polityka prywatności - CRMtree" />
+  <meta property="og:description" content="Polityka prywatności serwisu CRMtree oraz dane administratora danych osobowych - Comparme Sp. z o.o." />
   <meta property="og:url" content="https://crmtree.pl/polityka-prywatnosci.html" />
   <meta property="og:locale" content="pl_PL" />
 
@@ -20,25 +20,30 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400..800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <style>
-    .legal { padding: 56px 0 80px; }
-    .legal h1 { font-size: 34px; font-weight: 800; color: var(--navy); margin-bottom: 8px; }
+    .legal { padding: 48px 0 64px; }
+    .legal__inner { max-width: calc(720px + 2 * var(--gutter)); }
+    .legal h1 { font-size: 32px; font-weight: 800; line-height: 1.2; color: var(--ink); margin-bottom: 8px; }
     .legal .legal__updated { font-size: 14px; color: var(--text-muted); margin-bottom: 40px; }
-    .legal h2 { font-size: 20px; font-weight: 700; color: var(--navy); margin: 36px 0 12px; }
+    .legal h2 { font-size: 20px; font-weight: 700; line-height: 1.3; color: var(--ink); margin: 36px 0 12px; }
+    .legal p, .legal li { max-width: 45.5em; }
     .legal p { margin-bottom: 14px; color: var(--text); }
     .legal ul { margin: 0 0 14px 22px; }
     .legal li { margin-bottom: 8px; }
     .legal__box {
-      background: var(--bg-alt);
+      background: var(--gray-50);
       border: 1px solid var(--border);
       border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
       padding: 20px 24px;
       margin-bottom: 8px;
+      overflow-wrap: anywhere;
     }
     .legal__box p { margin-bottom: 4px; }
-    .legal a { color: var(--green); }
+    .legal a { color: var(--brand-text); overflow-wrap: anywhere; }
+    @media (min-width: 768px) { .legal { padding: 56px 0 80px; } .legal h1 { font-size: 34px; } }
   </style>
 </head>
 <body>
@@ -47,22 +52,34 @@
   <header class="navbar">
     <div class="container navbar__inner">
       <a href="/" class="navbar__logo">
-        <img src="logo.webp" alt="CRMtree" class="navbar__logo-img" width="300" height="200" />
+        <img src="logo-white.webp" alt="CRMtree" class="navbar__logo-img" width="172" height="96" />
       </a>
-      <nav class="navbar__links">
+      <a href="/#trial" class="btn btn--primary navbar__cta">Wypróbuj 14 dni</a>
+      <button type="button" class="navbar__toggle" aria-expanded="false" aria-controls="siteMenu" aria-label="Otwórz menu" data-i18n-aria-label="nav.menu_open">
+        <svg class="ic-open" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <svg class="ic-close" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <div class="navbar__menu" id="siteMenu">
+      <nav class="navbar__links" aria-label="Menu">
         <a href="/#features">Funkcje</a>
-        <a href="/#how-it-works">Jak działa</a>
+        <a href="/#compare">Porównanie</a>
+        <a href="/#security">Bezpieczeństwo</a>
+        <a href="/#aiact">AI Act</a>
         <a href="/pricing.html">Cennik</a>
         <a href="/blog">Blog</a>
         <a href="/#contact">Kontakt</a>
       </nav>
-      <a href="https://demo.crmtree.pl/login" class="btn btn--outline-light">Zaloguj się</a>
+      <div class="navbar__right">
+        <a href="https://demo.crmtree.pl/login" class="btn btn--outline-light">Zaloguj się</a>
+        <a href="/#trial" class="btn btn--primary">Wypróbuj 14 dni</a>
+      </div>
+      </div>
     </div>
   </header>
 
   <!-- LEGAL CONTENT -->
   <section class="legal">
-    <div class="container" style="max-width: 780px;">
+    <div class="container legal__inner">
       <h1>Polityka prywatności</h1>
       <p class="legal__updated">Ostatnia aktualizacja: 14 września 2026</p>
 
@@ -82,13 +99,13 @@
       <h2>2. Jakie dane przetwarzamy i w jakim celu</h2>
       <p>Dane osobowe podane w formularzu kontaktowym na stronie (imię i nazwisko, nazwa firmy, adres e-mail, opcjonalnie numer telefonu, treść wiadomości) przetwarzamy w celu:</p>
       <ul>
-        <li>udzielenia odpowiedzi na zapytanie i podjęcia kontaktu handlowego — na podstawie art. 6 ust. 1 lit. b RODO (działania przed zawarciem umowy) oraz lit. f RODO (prawnie uzasadniony interes administratora, jakim jest prowadzenie korespondencji z osobami zainteresowanymi ofertą),</li>
-        <li>ewentualnego zawarcia i wykonania umowy o świadczenie usług CRMtree — na podstawie art. 6 ust. 1 lit. b RODO.</li>
+        <li>udzielenia odpowiedzi na zapytanie i podjęcia kontaktu handlowego - na podstawie art. 6 ust. 1 lit. b RODO (działania przed zawarciem umowy) oraz lit. f RODO (prawnie uzasadniony interes administratora, jakim jest prowadzenie korespondencji z osobami zainteresowanymi ofertą),</li>
+        <li>ewentualnego zawarcia i wykonania umowy o świadczenie usług CRMtree - na podstawie art. 6 ust. 1 lit. b RODO.</li>
       </ul>
       <p>Formularz kontaktowy jest obsługiwany przez zewnętrznego dostawcę usługi przekazywania wiadomości e-mail (Web3Forms), który przetwarza treść zgłoszenia wyłącznie w celu jego doręczenia do administratora.</p>
 
       <h2>3. Okres przechowywania danych</h2>
-      <p>Dane z formularza kontaktowego przechowujemy przez okres niezbędny do obsługi zapytania oraz prowadzonej korespondencji handlowej, a w przypadku zawarcia umowy — przez okres jej obowiązywania i okres wymagany przepisami prawa (m.in. podatkowymi i rachunkowymi).</p>
+      <p>Dane z formularza kontaktowego przechowujemy przez okres niezbędny do obsługi zapytania oraz prowadzonej korespondencji handlowej, a w przypadku zawarcia umowy - przez okres jej obowiązywania i okres wymagany przepisami prawa (m.in. podatkowymi i rachunkowymi).</p>
 
       <h2>4. Odbiorcy danych</h2>
       <p>Dane mogą być powierzane podmiotom wspierającym administratora w świadczeniu usług, w szczególności:</p>
@@ -99,26 +116,26 @@
       </ul>
 
       <h2>5. Pliki cookies i technologie zewnętrzne</h2>
-      <p>Serwis crmtree.pl nie wykorzystuje własnych plików cookies do celów analitycznych ani marketingowych. Strona korzysta z czcionek Google Fonts ładowanych z serwerów Google — w związku z tym przeglądarka użytkownika nawiązuje połączenie z serwerami Google, co może wiązać się z przekazaniem adresu IP. Szczegóły znajdują się w polityce prywatności Google.</p>
+      <p>Serwis crmtree.pl nie wykorzystuje własnych plików cookies do celów analitycznych ani marketingowych. Strona korzysta z czcionek Google Fonts ładowanych z serwerów Google - w związku z tym przeglądarka użytkownika nawiązuje połączenie z serwerami Google, co może wiązać się z przekazaniem adresu IP. Szczegóły znajdują się w polityce prywatności Google.</p>
 
-      <h2 style="margin-top:44px; font-size:24px; border-bottom:2px solid var(--green); padding-bottom:8px;">Część II. Platforma CRMtree — Tenant i jego użytkownicy</h2>
+      <h2 style="margin-top:44px; font-size:24px; border-bottom:2px solid var(--green); padding-bottom:8px;">Część II. Platforma CRMtree - Tenant i jego użytkownicy</h2>
 
-      <p>Platforma CRMtree jest udostępniana w modelu wielotenantowym (multi-tenant) — każda firma korzystająca z systemu (dalej: <strong>Tenant</strong>) otrzymuje odizolowane środowisko, w którym jej pracownicy (dalej: <strong>Użytkownicy</strong>) zarządzają lejkiem sprzedażowym, partnerami biznesowymi i komunikacją z nimi.</p>
+      <p>Platforma CRMtree jest udostępniana w modelu wielotenantowym (multi-tenant) - każda firma korzystająca z systemu (dalej: <strong>Tenant</strong>) otrzymuje odizolowane środowisko, w którym jej pracownicy (dalej: <strong>Użytkownicy</strong>) zarządzają lejkiem sprzedażowym, partnerami biznesowymi i komunikacją z nimi.</p>
 
       <h2>6. Podział ról: administrator a podmiot przetwarzający</h2>
       <p>W tym kontekście dane osobowe przetwarzane są w dwóch odrębnych rolach określonych w RODO:</p>
       <ul>
-        <li><strong>Comparme jako administrator danych</strong> — w odniesieniu do danych kont Użytkowników Tenanta niezbędnych do świadczenia usługi (imię i nazwisko, służbowy adres e-mail, rola/uprawnienia w systemie, dane logowania, logi aktywności) oraz danych rozliczeniowych i kontaktowych samego Tenanta.</li>
-        <li><strong>Comparme jako podmiot przetwarzający (procesor)</strong> — w odniesieniu do danych osobowych, które Tenant i jego Użytkownicy samodzielnie wprowadzają do systemu w ramach prowadzonej działalności, np. dane kontaktowe leadów i partnerów biznesowych, treść korespondencji e-mail i WhatsApp, dokumenty i umowy. W tym zakresie <strong>administratorem danych pozostaje Tenant</strong>, a Comparme przetwarza je wyłącznie na jego udokumentowane polecenie, na podstawie odrębnej umowy powierzenia przetwarzania danych osobowych (art. 28 RODO), zawieranej jako załącznik do umowy o świadczenie usług CRMtree.</li>
+        <li><strong>Comparme jako administrator danych</strong> - w odniesieniu do danych kont Użytkowników Tenanta niezbędnych do świadczenia usługi (imię i nazwisko, służbowy adres e-mail, rola/uprawnienia w systemie, dane logowania, logi aktywności) oraz danych rozliczeniowych i kontaktowych samego Tenanta.</li>
+        <li><strong>Comparme jako podmiot przetwarzający (procesor)</strong> - w odniesieniu do danych osobowych, które Tenant i jego Użytkownicy samodzielnie wprowadzają do systemu w ramach prowadzonej działalności, np. dane kontaktowe leadów i partnerów biznesowych, treść korespondencji e-mail i WhatsApp, dokumenty i umowy. W tym zakresie <strong>administratorem danych pozostaje Tenant</strong>, a Comparme przetwarza je wyłącznie na jego udokumentowane polecenie, na podstawie odrębnej umowy powierzenia przetwarzania danych osobowych (art. 28 RODO), zawieranej jako załącznik do umowy o świadczenie usług CRMtree.</li>
       </ul>
       <p>Tenant, wprowadzając do systemu dane osób trzecich (leadów, partnerów, klientów), odpowiada we własnym zakresie za posiadanie podstawy prawnej do ich przetwarzania oraz za realizację względem tych osób obowiązków informacyjnych wynikających z RODO.</p>
 
       <h2>7. Jakie dane przetwarza platforma</h2>
       <p>W zależności od modułów aktywowanych przez Tenanta, platforma CRMtree przetwarza w szczególności:</p>
       <ul>
-        <li>dane kont Użytkowników — imię, nazwisko, służbowy e-mail, rola i uprawnienia, historia logowań,</li>
-        <li>dane leadów i partnerów biznesowych Tenanta — dane kontaktowe, historia transakcji, przypisani opiekunowie, tagi/segmenty,</li>
-        <li>korespondencję e-mail synchronizowaną z kontem Gmail Użytkownika (integracja Gmail) — widoczną przy karcie partnera,</li>
+        <li>dane kont Użytkowników - imię, nazwisko, służbowy e-mail, rola i uprawnienia, historia logowań,</li>
+        <li>dane leadów i partnerów biznesowych Tenanta - dane kontaktowe, historia transakcji, przypisani opiekunowie, tagi/segmenty,</li>
+        <li>korespondencję e-mail synchronizowaną z kontem Gmail Użytkownika (integracja Gmail) - widoczną przy karcie partnera,</li>
         <li>korespondencję WhatsApp prowadzoną z poziomu firmowego numeru WhatsApp Business skonfigurowanego przez Tenanta (integracja z WhatsApp Business Platform, Meta),</li>
         <li>dokumenty, oferty i umowy załączane do kart partnerów.</li>
       </ul>
@@ -126,21 +143,21 @@
       <h2>8. Odbiorcy i podprocesorzy w ramach platformy</h2>
       <p>W związku ze świadczeniem usługi CRMtree dane mogą być przetwarzane przez podprocesorów, w szczególności:</p>
       <ul>
-        <li>Microsoft Azure — hosting aplikacji i baz danych,</li>
-        <li>Google LLC — w zakresie integracji z Gmail (za wyraźną zgodą i autoryzacją Użytkownika),</li>
-        <li>Meta Platforms Ireland Ltd. — w zakresie integracji z WhatsApp Business Platform (numer konfigurowany przez Tenanta),</li>
+        <li>Microsoft Azure - hosting aplikacji i baz danych,</li>
+        <li>Google LLC - w zakresie integracji z Gmail (za wyraźną zgodą i autoryzacją Użytkownika),</li>
+        <li>Meta Platforms Ireland Ltd. - w zakresie integracji z WhatsApp Business Platform (numer konfigurowany przez Tenanta),</li>
         <li>inni podprocesorzy wskazani w umowie powierzenia przetwarzania danych zawartej z Tenantem.</li>
       </ul>
-      <p>Część z powyższych podmiotów może przetwarzać dane poza Europejskim Obszarem Gospodarczym — w takich przypadkach transfer odbywa się w oparciu o standardowe klauzule umowne zatwierdzone przez Komisję Europejską lub inny mechanizm zgodny z Rozdziałem V RODO.</p>
+      <p>Część z powyższych podmiotów może przetwarzać dane poza Europejskim Obszarem Gospodarczym - w takich przypadkach transfer odbywa się w oparciu o standardowe klauzule umowne zatwierdzone przez Komisję Europejską lub inny mechanizm zgodny z Rozdziałem V RODO.</p>
 
       <h2>9. Bezpieczeństwo i izolacja danych</h2>
-      <p>Środowiska poszczególnych Tenantów są od siebie logicznie izolowane — Użytkownicy jednego Tenanta nie mają dostępu do danych innego Tenanta. Dostęp do danych w ramach środowiska Tenanta jest kontrolowany poprzez system ról i uprawnień (RBAC), a logowanie może odbywać się z wykorzystaniem SSO/SAML zgodnie z konfiguracją Tenanta.</p>
+      <p>Środowiska poszczególnych Tenantów są od siebie logicznie izolowane - Użytkownicy jednego Tenanta nie mają dostępu do danych innego Tenanta. Dostęp do danych w ramach środowiska Tenanta jest kontrolowany poprzez system ról i uprawnień (RBAC), a logowanie może odbywać się z wykorzystaniem SSO/SAML zgodnie z konfiguracją Tenanta.</p>
 
       <h2>10. Okres przechowywania danych w platformie</h2>
       <p>Dane przetwarzane w ramach platformy CRMtree przechowywane są przez czas obowiązywania umowy o świadczenie usług zawartej z Tenantem. Po jej zakończeniu dane są usuwane lub zwracane Tenantowi zgodnie z warunkami tej umowy oraz umowy powierzenia przetwarzania danych, chyba że dalsze przechowywanie wynika z obowiązujących przepisów prawa.</p>
 
       <h2>11. Prawa osób, których dane dotyczą</h2>
-      <p>Każdej osobie, której dane przetwarzamy — niezależnie od tego, czy jako administrator, czy jako podmiot przetwarzający na rzecz Tenanta — przysługuje prawo do:</p>
+      <p>Każdej osobie, której dane przetwarzamy - niezależnie od tego, czy jako administrator, czy jako podmiot przetwarzający na rzecz Tenanta - przysługuje prawo do:</p>
       <ul>
         <li>dostępu do swoich danych oraz otrzymania ich kopii,</li>
         <li>sprostowania (poprawiania) danych,</li>
@@ -158,23 +175,45 @@
 
   <!-- FOOTER -->
   <footer class="footer">
-    <div class="container footer__inner">
-      <div class="footer__brand">
-        <img src="logo.webp" alt="CRMtree" class="footer__logo-img" width="300" height="200" loading="lazy" />
-        <p>CRM dla nowoczesnej firmy</p>
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="/" class="footer__logo"><img src="logo-white.webp" alt="CRMtree" class="footer__logo-img" width="172" height="96" loading="lazy" /></a>
+          <p>CRM dla nowoczesnej firmy</p>
+        </div>
+        <div class="footer__cols">
+          <details class="footer__col" open>
+            <summary class="footer__heading">Produkt</summary>
+            <ul>
+              <li><a href="/#features">Funkcje</a></li>
+              <li><a href="/pricing.html">Cennik</a></li>
+              <li><a href="/#aiact">AI Act</a></li>
+              <li><a href="https://demo.crmtree.pl/login">Zaloguj się</a></li>
+            </ul>
+          </details>
+          <details class="footer__col" open>
+            <summary class="footer__heading">Zasoby</summary>
+            <ul>
+              <li><a href="/blog">Blog</a></li>
+              <li><a href="/#faq">FAQ</a></li>
+            </ul>
+          </details>
+          <details class="footer__col" open>
+            <summary class="footer__heading">Firma</summary>
+            <ul>
+              <li><a href="/#contact">Kontakt</a></li>
+              <li><a href="/polityka-prywatnosci.html">Polityka prywatności</a></li>
+            </ul>
+          </details>
+        </div>
       </div>
-      <div class="footer__links">
-        <a href="https://demo.crmtree.pl/login">Zaloguj się</a>
-        <a href="/#features">Funkcje</a>
-        <a href="/pricing.html">Cennik</a>
-        <a href="/blog">Blog</a>
-        <a href="/#contact">Kontakt</a>
-        <a href="/polityka-prywatnosci.html">Polityka prywatności</a>
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2026 CRMtree. Wszelkie prawa zastrzeżone.</p>
+        <p class="footer__legal">Właściciel marki CRMtree: Comparme Sp. z o.o. · ul. Herbu Janina 5, 02-972 Warszawa · NIP 5213664910 · REGON 147067912</p>
       </div>
-      <p class="footer__legal">Właściciel marki CRMtree: Comparme Sp. z o.o. · ul. Herbu Janina 5, 02-972 Warszawa · NIP 5213664910 · REGON 147067912</p>
-      <p class="footer__copy">&copy; 2026 CRMtree. Wszelkie prawa zastrzeżone.</p>
     </div>
   </footer>
 
+  <script src="nav.js"></script>
 </body>
 </html>

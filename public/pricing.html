@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cennik — CRMtree</title>
+  <title>Cennik - CRMtree</title>
   <meta name="description" content="Przejrzyste ceny CRMtree. Wybierz plan dopasowany do potrzeb Twojego zespołu sprzedaży." />
   <link rel="canonical" href="https://crmtree.pl/pricing.html" />
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="CRMtree" />
-  <meta property="og:title" content="Cennik — CRMtree" />
+  <meta property="og:title" content="Cennik - CRMtree" />
   <meta property="og:description" content="Przejrzyste ceny CRMtree. Wybierz plan dopasowany do potrzeb Twojego zespołu sprzedaży." />
   <meta property="og:url" content="https://crmtree.pl/pricing.html" />
   <meta property="og:image" content="https://crmtree.pl/screenshot.webp" />
   <meta property="og:locale" content="pl_PL" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Cennik — CRMtree" />
+  <meta name="twitter:title" content="Cennik - CRMtree" />
   <meta name="twitter:description" content="Przejrzyste ceny CRMtree. Wybierz plan dopasowany do potrzeb Twojego zespołu sprzedaży." />
   <meta name="twitter:image" content="https://crmtree.pl/screenshot.webp" />
 
@@ -24,371 +24,276 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400..800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* ── PRICING PAGE SPECIFIC ─────────────────────────────────────────── */
+    /* ── CENNIK (style tylko tej strony; tokeny z style.css) ─────────── */
 
     .pricing-hero {
-      background: linear-gradient(135deg, #fff 0%, var(--green-light) 100%);
-      padding: 72px 0 80px;
+      background: linear-gradient(135deg, var(--surface) 0%, var(--brand-pale) 100%);
+      padding: 48px 0 40px;
       text-align: center;
     }
     .pricing-hero h1 {
-      font-size: 46px; font-weight: 800; color: var(--navy); margin-bottom: 16px;
+      font-size: 32px; font-weight: 800; line-height: 1.16; color: var(--ink); margin-bottom: 16px; letter-spacing: -.01em;
     }
     .pricing-hero p {
-      font-size: 18px; color: var(--text-muted); max-width: 540px; margin: 0 auto 40px;
+      font-size: 18px; color: var(--text-muted); max-width: 540px; margin: 0 auto 32px;
     }
+    .pricing-switches {
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 16px 40px;
+    }
+    .switch-group { display: inline-flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px 12px; }
+    .switch-group__label { font-size: 14px; font-weight: 600; color: var(--text-muted); }
+    .switch-group__label::after { content: ':'; }
 
-    /* ── BILLING TOGGLE ───────────────────────────────────────────────── */
-    .billing-toggle {
-      display: inline-flex;
-      align-items: center;
-      gap: 14px;
-      background: #fff;
-      border: 1.5px solid var(--border);
-      border-radius: 999px;
-      padding: 6px 20px;
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--text-muted);
-      user-select: none;
+    /* ── PRZEŁĄCZNIKI (segmented control: okres i waluta) ─────────────── */
+    .seg {
+      display: inline-flex; align-items: center; gap: 2px; padding: 4px;
+      background: var(--surface); border: 1px solid var(--border); border-radius: 999px;
+      box-shadow: var(--shadow-field);
     }
-    .billing-toggle__label {
-      cursor: pointer;
-      transition: color .15s;
-      padding: 2px 4px;
+    .seg button {
+      display: inline-flex; align-items: center; gap: 8px;
+      min-height: 44px; padding: 0 16px; border: 0; border-radius: 999px; background: none;
+      font-family: inherit; font-size: 14px; font-weight: 600; line-height: 1.2; color: var(--text-muted);
+      cursor: pointer; white-space: nowrap; transition: background-color .15s, color .15s;
     }
-    .billing-toggle__label.active { color: var(--navy); }
+    .seg button:hover { color: var(--ink); }
+    .seg button.active { background: var(--brand-pale); color: var(--brand-text); }
+    .seg button:focus-visible { outline-offset: 0; border-radius: 999px; }
+    .seg--currency button { justify-content: center; padding: 0 14px; }
 
-    .toggle-switch {
-      position: relative;
-      width: 44px; height: 24px;
-      background: var(--green);
-      border-radius: 999px;
-      cursor: pointer;
-      transition: background .2s;
-      flex-shrink: 0;
-    }
-    .toggle-switch::after {
-      content: '';
-      position: absolute;
-      top: 3px; left: 3px;
-      width: 18px; height: 18px;
-      background: #fff;
-      border-radius: 50%;
-      transition: transform .2s;
-    }
-    .toggle-switch.monthly::after { transform: translateX(20px); }
-
+    /* Znaczek oszczędności w segmencie „Rocznie”: jasna zieleń, w aktywnym segmencie biało na zielonym */
     .save-badge {
-      display: inline-flex;
-      align-items: center;
-      background: #dcfce7;
-      color: var(--green-dark);
-      font-size: 12px;
-      font-weight: 700;
-      padding: 2px 9px;
-      border-radius: 999px;
-      margin-left: 2px;
-      letter-spacing: .02em;
+      display: inline-flex; align-items: center; height: 20px; padding: 0 6px; border-radius: 999px;
+      background: var(--brand-pale); color: var(--brand-text);
+      font-size: 12px; font-weight: 700; line-height: 1; letter-spacing: .01em;
     }
-    .toggle-switch.monthly ~ .save-badge { opacity: 0; }
+    .seg button.active .save-badge { background: var(--brand-text); color: #fff; }
+    .currency-note { display: block; font-size: 12px; color: var(--text-muted); margin: 16px auto 0; max-width: 40em; }
 
-    /* ── CURRENCY TOGGLE ──────────────────────────────────────────────── */
-    .currency-toggle {
-      display: inline-flex; align-items: center; gap: 2px; background: #fff; border: 1.5px solid var(--border);
-      border-radius: 999px; padding: 3px; margin-left: 12px; vertical-align: middle;
-    }
-    .currency-toggle button {
-      border: none; background: none; font-family: inherit; font-weight: 700; font-size: 13px;
-      padding: 6px 14px; border-radius: 999px; color: var(--text-muted); cursor: pointer;
-    }
-    .currency-toggle button.active { background: var(--navy); color: #fff; }
-    .currency-note { display: block; font-size: 12px; color: var(--text-muted); margin-top: 10px; }
-
-    /* Reorder currency symbol vs amount depending on selected currency */
+    /* Kolejność symbolu waluty i kwoty */
     .plan-price .price-currency { order: 1; }
     .plan-price .price-amount { order: 2; }
     .plan-price .price-period { order: 3; }
-    body.currency-pln .plan-price .price-currency { order: 2; margin-left: 4px; padding-bottom: 12px; }
+    body.currency-pln .plan-price .price-currency { order: 2; }
     body.currency-pln .plan-price .price-amount { order: 1; }
 
-    /* ── PRICING GRID ─────────────────────────────────────────────────── */
+    /* ── SIATKA PLANÓW ────────────────────────────────────────────────── */
     .pricing-section {
-      padding: 0 0 100px;
-      background: linear-gradient(180deg, var(--green-light) 0%, #fff 200px);
+      padding: 32px 0 56px;
+      background: linear-gradient(180deg, var(--brand-pale) 0%, var(--surface) 240px);
     }
     .pricing-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: minmax(0, 1fr);
       gap: 24px;
-      align-items: start;
+      max-width: 480px;
+      margin: 0 auto;
     }
 
-    /* ── CARD BASE ────────────────────────────────────────────────────── */
+    /* ── KARTA PLANU ──────────────────────────────────────────────────── */
     .plan-card {
-      background: #fff;
-      border: 1.5px solid var(--border);
-      border-radius: 20px;
-      padding: 36px 32px 40px;
+      display: flex; flex-direction: column;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      padding: 28px 24px 32px;
       position: relative;
-      transition: box-shadow .2s, transform .2s;
+      min-width: 0;
     }
-    .plan-card:hover {
-      box-shadow: 0 12px 40px rgba(0,0,0,.10);
-      transform: translateY(-4px);
-    }
-
-    /* ── FEATURED (Standard) ──────────────────────────────────────────── */
     .plan-card--featured {
-      border-color: var(--green);
-      border-width: 2px;
-      box-shadow: 0 8px 32px rgba(59,170,93,.18);
-      transform: translateY(-8px);
-    }
-    .plan-card--featured:hover {
-      box-shadow: 0 16px 48px rgba(59,170,93,.24);
-      transform: translateY(-12px);
+      border: 2px solid var(--brand);
+      padding: 27px 23px 31px; /* ramka 2px zamiast 1px - treść w tym samym miejscu */
+      box-shadow: 0 8px 24px rgba(59,170,93,.14), 0 2px 6px rgba(0,0,0,.04);
     }
     .plan-badge {
-      position: absolute;
-      top: -14px; left: 50%;
-      transform: translateX(-50%);
-      background: var(--green);
-      color: #fff;
-      font-size: 12px;
-      font-weight: 700;
-      padding: 4px 16px;
-      border-radius: 999px;
-      white-space: nowrap;
-      letter-spacing: .04em;
-      text-transform: uppercase;
+      position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+      background: var(--brand-pale); color: var(--brand-text);
+      border: 1px solid var(--brand-muted);
+      font-size: 12px; font-weight: 700; line-height: 1.4;
+      padding: 3px 12px; border-radius: 999px; white-space: nowrap; letter-spacing: .02em;
     }
 
-    /* ── PLAN HEADER ──────────────────────────────────────────────────── */
+    /* Nagłówek planu */
+    .plan-head { display: flex; flex-direction: column; }
     .plan-name {
-      font-size: 13px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .08em;
-      color: var(--text-muted);
-      margin-bottom: 8px;
+      font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em;
+      color: var(--text-muted); line-height: 1.4; margin-bottom: 8px;
     }
-    .plan-card--featured .plan-name { color: var(--green); }
+    .plan-card--featured .plan-name { color: var(--brand-text); }
+    .plan-tagline { font-size: 16px; line-height: 1.5; color: var(--text-muted); margin-bottom: 24px; }
 
-    .plan-tagline {
-      font-size: 15px;
-      color: var(--text-muted);
-      margin-bottom: 28px;
-      min-height: 44px;
-    }
-
-    /* ── PRICE ────────────────────────────────────────────────────────── */
+    /* Cena: duża cyfra, mniejsza waluta, okres jednym wierszem */
     .plan-price {
-      margin-bottom: 6px;
-      display: flex;
-      align-items: flex-end;
-      gap: 4px;
-      min-height: 64px;
+      display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 4px; row-gap: 0;
+      min-height: 56px; margin-bottom: 8px;
     }
-    .price-currency {
-      font-size: 22px;
-      font-weight: 700;
-      color: var(--navy);
-      line-height: 1;
-      padding-bottom: 10px;
-    }
-    .price-amount {
-      font-size: 56px;
-      font-weight: 800;
-      color: var(--navy);
-      line-height: 1;
-    }
-    .price-period {
-      font-size: 14px;
-      color: var(--text-muted);
-      line-height: 1;
-      padding-bottom: 10px;
-    }
-    .price-contact {
-      font-size: 32px;
-      font-weight: 800;
-      color: var(--navy);
-      line-height: 1;
-      padding-bottom: 4px;
-    }
+    .price-currency { font-size: 24px; font-weight: 700; color: var(--ink); line-height: 1; }
+    .price-amount { font-size: 48px; font-weight: 800; color: var(--ink); line-height: 1.1; letter-spacing: -.02em; }
+    .price-period { font-size: 14px; color: var(--text-muted); line-height: 1.4; white-space: nowrap; margin-left: 4px; }
+    .price-contact { font-size: 28px; font-weight: 800; color: var(--ink); line-height: 1.14; letter-spacing: -.01em; text-wrap: balance; }
 
-    .plan-billing-note {
-      font-size: 13px;
-      color: var(--text-muted);
-      margin-bottom: 28px;
-      min-height: 20px;
-    }
+    .plan-billing-note { font-size: 14px; line-height: 1.4; color: var(--text-muted); min-height: 20px; margin-bottom: 24px; }
     .plan-billing-note .annual-note { display: block; }
     .plan-billing-note .monthly-note { display: none; }
     body.billing-monthly .plan-billing-note .annual-note { display: none; }
     body.billing-monthly .plan-billing-note .monthly-note { display: block; }
 
     /* Przełączanie cen */
-    .price-annual { display: flex; align-items: flex-end; gap: 4px; }
-    .price-monthly { display: none; align-items: flex-end; gap: 4px; }
+    .price-monthly { display: none; }
     body.billing-monthly .price-annual { display: none; }
     body.billing-monthly .price-monthly { display: flex; }
 
-    /* ── CTA BUTTON ───────────────────────────────────────────────────── */
-    .plan-cta {
-      display: block;
-      width: 100%;
-      padding: 14px;
-      border-radius: 10px;
-      font-size: 15px;
-      font-weight: 700;
-      text-align: center;
-      text-decoration: none;
-      cursor: pointer;
-      border: 2px solid transparent;
-      transition: all .18s;
-      margin-bottom: 32px;
-    }
-    .plan-cta--primary {
-      background: var(--green);
-      color: #fff;
-    }
-    .plan-cta--primary:hover { background: var(--green-dark); }
+    /* Przycisk planu: główny tylko w planie wyróżnionym, reszta drugorzędne */
+    .plan-cta { width: 100%; margin-bottom: 28px; }
 
-    .plan-cta--outline {
-      background: transparent;
-      border-color: var(--green);
-      color: var(--green);
-    }
-    .plan-cta--outline:hover { background: var(--green-light); }
-
-    .plan-cta--dark {
-      background: var(--navy);
-      color: #fff;
-    }
-    .plan-cta--dark:hover { background: #2d3748; }
-
-    /* ── FEATURE LIST ─────────────────────────────────────────────────── */
-    .plan-divider {
-      border: none;
-      border-top: 1px solid var(--border);
-      margin-bottom: 24px;
-    }
+    /* Lista funkcji */
+    .plan-divider { border: none; border-top: 1px solid var(--border); margin-bottom: 24px; }
     .plan-features-label {
-      font-size: 12px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .07em;
-      color: var(--text-muted);
-      margin-bottom: 16px;
+      font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em;
+      color: var(--text-muted); line-height: 1.4; margin-bottom: 16px;
     }
-    .plan-card--featured .plan-features-label { color: var(--green); }
-
-    .plan-features {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 11px;
+    .plan-features { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .plan-features li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; line-height: 20px; color: var(--text); }
+    .plan-features .check {
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+      width: 20px; height: 20px; border-radius: 50%;
+      background: var(--brand-pale); color: var(--brand-text);
     }
-    .plan-features li {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      font-size: 14.5px;
-      color: var(--text);
-      line-height: 1.5;
-    }
-    .plan-features li .check {
-      width: 18px; height: 18px;
-      border-radius: 50%;
-      background: var(--green-light);
-      color: var(--green-dark);
-      font-size: 11px;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-      margin-top: 2px;
-      font-weight: 700;
-    }
-    .plan-card--featured .plan-features li .check {
-      background: var(--green);
-      color: #fff;
-    }
+    .plan-features .check svg { display: block; }
+    .plan-card--featured .plan-features .check { background: var(--brand-text); color: #fff; }
     .plan-features li .storage {
-      display: inline-flex;
-      align-items: center;
-      background: var(--bg-alt);
-      border: 1px solid var(--border);
-      font-size: 12px;
-      font-weight: 600;
-      padding: 1px 8px;
-      border-radius: 6px;
-      color: var(--text-muted);
-      margin-left: auto;
-      flex-shrink: 0;
+      display: inline-flex; align-items: center; flex-shrink: 0; margin-left: auto;
+      background: var(--gray-50); border: 1px solid var(--border); border-radius: 6px;
+      font-size: 12px; font-weight: 600; line-height: 18px; padding: 0 8px; color: var(--text-muted);
     }
     .plan-inherits {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--text-muted);
-      font-style: italic;
-      display: flex;
-      align-items: center;
-      gap: 6px;
+      display: flex; align-items: center; gap: 8px;
+      font-size: 14px; font-weight: 600; color: var(--text-muted);
     }
-    .plan-inherits::before {
-      content: '';
-      display: block;
-      width: 12px; height: 1px;
-      background: var(--border);
-    }
+    .plan-inherits::before { content: ''; display: block; width: 12px; height: 2px; border-radius: 2px; background: var(--gray-300); }
 
-    /* ── FAQ / NOTES ──────────────────────────────────────────────────── */
-    .pricing-notes {
-      padding: 48px 0 80px;
-      background: var(--bg-alt);
+    /* ── PORÓWNAJ PLANY ───────────────────────────────────────────────── */
+    .plans-compare { padding: 0 0 64px; }
+    .plans-compare h2 {
+      text-align: center; font-size: 26px; font-weight: 800; line-height: 1.2; color: var(--ink);
+      letter-spacing: -.01em; margin-bottom: 24px;
     }
+    .plan-compare-wrap {
+      border: 1px solid var(--border); border-radius: var(--radius);
+      box-shadow: var(--shadow-sm); background: var(--surface);
+      max-width: 960px; margin: 0 auto;
+    }
+    table.plan-compare { width: 100%; border-collapse: separate; border-spacing: 0; table-layout: fixed; font-size: 14px; }
+    table.plan-compare th, table.plan-compare td {
+      padding: 14px 16px; border-bottom: 1px solid var(--gray-200); vertical-align: middle; text-align: center; line-height: 1.4;
+    }
+    table.plan-compare th:first-child, table.plan-compare td:first-child { text-align: left; }
+    table.plan-compare tbody th { color: var(--ink); font-weight: 500; }
+    table.plan-compare thead th {
+      position: sticky; top: var(--nav-h); z-index: 2; background: var(--surface);
+      padding: 20px 16px 16px; border-bottom: 1px solid var(--gray-300);
+      font-size: 16px; font-weight: 800; color: var(--ink);
+    }
+    table.plan-compare thead th:first-child {
+      width: 46%; border-top-left-radius: var(--radius);
+      font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--text-muted);
+    }
+    table.plan-compare thead th:last-child { border-top-right-radius: var(--radius); }
+    table.plan-compare .col-hl { background: var(--brand-pale); }
+    table.plan-compare thead th.col-hl { color: var(--brand-text); border-radius: var(--radius) var(--radius) 0 0; }
+    table.plan-compare tbody tr:last-child > * { border-bottom: 0; }
+    table.plan-compare tbody tr:last-child > :first-child { border-bottom-left-radius: var(--radius); }
+    table.plan-compare tbody tr:last-child > :last-child { border-bottom-right-radius: var(--radius); }
+    table.plan-compare tbody tr:last-child .col-hl { border-radius: 0 0 var(--radius) var(--radius); }
+    .pc-yes, .pc-no { display: inline-flex; vertical-align: middle; }
+    .pc-yes { color: var(--brand-text); }
+    .pc-no { color: var(--gray-400); }
+    .pc-val { font-weight: 600; color: var(--ink); white-space: nowrap; }
+
+    /* ── UWAGI: trzy kafelki ──────────────────────────────────────────── */
+    .pricing-notes { padding: 56px 0; background: var(--page-bg); }
     .pricing-notes__inner {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
-      text-align: center;
+      display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; max-width: 480px; margin: 0 auto;
     }
-    .note-item h4 {
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 8px;
+    .note-item {
+      background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+      box-shadow: 0 4px 14px rgba(0,0,0,.05); padding: 24px;
     }
-    .note-item p {
-      font-size: 14px;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
+    .note-item h3 { font-size: 16px; font-weight: 700; line-height: 1.4; color: var(--ink); margin-bottom: 8px; }
+    .note-item p { font-size: 14px; line-height: 1.6; color: var(--text-muted); }
     .note-icon {
-      font-size: 26px;
-      margin-bottom: 10px;
+      display: flex; align-items: center; justify-content: center;
+      width: 48px; height: 48px; margin-bottom: 16px; border-radius: var(--radius);
+      background: var(--brand-pale); color: var(--brand-text);
+    }
+    .note-icon svg { width: 24px; height: 24px; }
+
+    /* ── KONTAKT: spokojny blok jak koniec strony głównej ─────────────── */
+    .pricing-contact { padding: 56px 0 64px; background: var(--surface); text-align: center; }
+    .pricing-contact h2 { font-size: 26px; font-weight: 800; line-height: 1.2; color: var(--ink); letter-spacing: -.01em; margin-bottom: 8px; }
+    .pricing-contact p { font-size: 16px; color: var(--text-muted); margin-bottom: 24px; }
+    .pricing-contact .btn svg { flex-shrink: 0; }
+
+    /* Kopia nagłówka tabeli przyklejona pod paskiem (telefon): sticky nie działa
+       w kontenerze z overflow-x, więc JS pokazuje kopię i przesuwa ją razem z tabelą */
+    .plan-compare-sticky {
+      position: fixed; top: var(--nav-h); z-index: 50; overflow: hidden;
+      background: var(--surface); border: 1px solid var(--border); border-top: 0;
+      box-shadow: 0 4px 10px rgba(0,0,0,.06);
+    }
+    .plan-compare-sticky[hidden] { display: none; }
+    .plan-compare-sticky__scroll { overflow: hidden; }
+    .plan-compare-sticky table.plan-compare thead th { border-radius: 0; }
+
+    /* ── TELEFON: tabela przewijana wewnątrz, pierwsza kolumna przyklejona ─ */
+    @media (max-width: 767px) {
+      .plan-compare-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain; }
+      table.plan-compare { min-width: 480px; }
+      table.plan-compare th, table.plan-compare td { padding: 12px; }
+      table.plan-compare thead th { position: static; top: auto; padding: 16px 12px 12px; font-size: 14px; }
+      table.plan-compare thead th:first-child { width: 168px; }
+      table.plan-compare tr > :first-child {
+        position: sticky; left: 0; z-index: 1; background: var(--surface);
+        box-shadow: 1px 0 0 var(--gray-200);
+      }
+      /* Przełączniki: etykieta nad przełącznikiem */
+      .switch-group { flex-direction: column; gap: 8px; }
     }
 
-    /* ── RESPONSIVE ───────────────────────────────────────────────────── */
-    @media (max-width: 960px) {
-      .pricing-grid {
-        grid-template-columns: 1fr;
-        max-width: 460px;
-        margin: 0 auto;
-      }
-      .plan-card--featured { transform: none; }
-      .plan-card--featured:hover { transform: translateY(-4px); }
-      .pricing-hero h1 { font-size: 34px; }
-      .pricing-notes__inner { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+    /* ── RESPONSYWNOŚĆ ────────────────────────────────────────────────── */
+    @media (min-width: 768px) {
+      .pricing-hero { padding: 72px 0 48px; }
+      .pricing-hero h1 { font-size: 40px; }
+      .plan-card { padding: 36px 32px 40px; }
+      .plan-card--featured { padding: 35px 31px 39px; }
+      .price-amount { font-size: 56px; }
+      .price-contact { font-size: 32px; }
+      .plan-price { min-height: 64px; }
+      .pricing-section { padding-bottom: 80px; }
+      .plans-compare { padding-bottom: 80px; }
+      .plans-compare h2 { font-size: 30px; margin-bottom: 32px; }
+      .pricing-notes { padding: 64px 0; }
+      .pricing-notes__inner { grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: none; }
+      .pricing-contact { padding: 64px 0 80px; }
+      .pricing-contact h2 { font-size: 30px; }
     }
-    @media (max-width: 600px) {
-      .pricing-hero { padding: 48px 0 56px; }
-      .pricing-hero h1 { font-size: 28px; }
-      .plan-card { padding: 28px 24px 32px; }
-      .price-amount { font-size: 44px; }
+    @media (min-width: 1024px) {
+      .pricing-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: none; align-items: start; }
+      .plan-card { padding: 32px 24px 36px; }
+      .plan-card--featured { padding: 31px 23px 35px; }
+      .price-amount { font-size: 48px; }
+      .price-contact { font-size: 28px; }
+    }
+    @media (min-width: 1200px) {
+      .pricing-hero h1 { font-size: 46px; }
+      .plan-card { padding: 36px 32px 40px; }
+      .plan-card--featured { padding: 35px 31px 39px; }
+      .price-amount { font-size: 56px; }
+      .price-contact { font-size: 32px; }
     }
   </style>
 </head>
@@ -398,27 +303,36 @@
   <header class="navbar">
     <div class="container navbar__inner">
       <a href="/" class="navbar__logo">
-        <img src="logo.webp" alt="CRMtree" class="navbar__logo-img" width="300" height="200" />
+        <img src="logo-white.webp" alt="CRMtree" class="navbar__logo-img" width="172" height="96" />
       </a>
-      <nav class="navbar__links">
+      <a href="/#trial" class="btn btn--primary navbar__cta" data-i18n="nav.cta_trial">Wypróbuj 14 dni</a>
+      <button type="button" class="navbar__toggle" aria-expanded="false" aria-controls="siteMenu" aria-label="Otwórz menu" data-i18n-aria-label="nav.menu_open">
+        <svg class="ic-open" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <svg class="ic-close" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <div class="navbar__menu" id="siteMenu">
+      <nav class="navbar__links" aria-label="Menu">
         <a href="/#features" data-i18n="nav.features">Funkcje</a>
         <a href="/#compare" data-i18n="nav.compare">Porównanie</a>
         <a href="/#security" data-i18n="nav.security">Bezpieczeństwo</a>
         <a href="/#aiact" data-i18n="nav.aiact">AI Act</a>
-        <a href="/pricing.html" style="color:#fff" data-i18n="nav.pricing">Cennik</a>
+        <a href="/pricing.html" aria-current="page" data-i18n="nav.pricing">Cennik</a>
         <a href="/blog" data-i18n="nav.blog">Blog</a>
         <a href="/#contact" data-i18n="nav.contact">Kontakt</a>
       </nav>
       <div class="navbar__right">
         <div class="langpicker">
-          <button class="langbtn" id="langBtn" type="button" aria-haspopup="true" aria-expanded="false">
-            <span id="langBtnLabel">PL</span>
-            <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <button class="langbtn" id="langBtn" type="button" aria-haspopup="listbox" aria-expanded="false" aria-controls="langMenu" aria-label="Język: Polski">
+            <img class="flag" id="langBtnFlag" src="flags/pl.svg" alt="" width="20" height="14" />
+            <span class="langbtn__code" id="langBtnLabel">PL</span>
+            <span class="langbtn__name" id="langBtnName">Polski</span>
+            <svg class="langbtn__chev" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
-          <div class="langmenu" id="langMenu"></div>
+          <ul class="langmenu" id="langMenu" role="listbox" tabindex="-1" aria-label="Język" data-i18n-aria-label="nav.language"></ul>
         </div>
         <a href="https://demo.crmtree.pl/login" class="btn btn--outline-light" data-i18n="nav.login">Zaloguj się</a>
         <a href="/#trial" class="btn btn--primary" data-i18n="nav.cta_trial">Wypróbuj 14 dni</a>
+      </div>
       </div>
     </div>
   </header>
@@ -426,23 +340,29 @@
   <!-- HERO -->
   <section class="pricing-hero">
     <div class="container">
-      <h1>Prosty, przejrzysty cennik</h1>
-      <p>Płacisz tylko za aktywnych użytkowników. Bez ukrytych opłat, bez długoterminowych zobowiązań.</p>
+      <h1 data-i18n="pricing.hero_h1">Prosty, przejrzysty cennik</h1>
+      <p data-i18n="pricing.hero_sub">Płacisz tylko za aktywnych użytkowników. Bez ukrytych opłat, bez długoterminowych zobowiązań.</p>
 
-      <!-- BILLING TOGGLE -->
-      <div class="billing-toggle" id="billingToggle">
-        <span class="billing-toggle__label active" id="labelAnnual">Rozliczenie roczne</span>
-        <div class="toggle-switch" id="toggleSwitch"></div>
-        <span class="billing-toggle__label" id="labelMonthly">Miesięczne</span>
-        <span class="save-badge" id="saveBadge">Oszczędzasz do 32%</span>
-      </div>
+      <div class="pricing-switches">
+        <!-- OKRES ROZLICZENIA -->
+        <div class="switch-group">
+          <span class="switch-group__label" id="billingLabel" data-i18n="pricing.billing_label">Rozliczenie</span>
+          <div class="seg" id="billingToggle" role="group" aria-labelledby="billingLabel">
+            <button type="button" class="active" aria-pressed="true" data-billing="annual"><span data-i18n="pricing.billing_annual">Rocznie</span><span class="save-badge" aria-hidden="true">-32%</span><span class="sr-only" data-i18n="pricing.save_badge">Oszczędzasz do 32%</span></button>
+            <button type="button" aria-pressed="false" data-billing="monthly" data-i18n="pricing.billing_monthly">Miesięcznie</button>
+          </div>
+        </div>
 
-      <!-- CURRENCY TOGGLE -->
-      <div class="currency-toggle" id="currencyToggle">
-        <button type="button" class="active" data-currency="eur">EUR €</button>
-        <button type="button" data-currency="pln">PLN zł</button>
+        <!-- WALUTA -->
+        <div class="switch-group">
+          <span class="switch-group__label" id="currencyLabel" data-i18n="pricing.currency_label">Waluta</span>
+          <div class="seg seg--currency" id="currencyToggle" role="group" aria-labelledby="currencyLabel">
+            <button type="button" aria-pressed="false" data-currency="pln">PLN zł</button>
+            <button type="button" aria-pressed="false" data-currency="eur">EUR €</button>
+          </div>
+        </div>
       </div>
-      <span class="currency-note">Ceny w PLN są orientacyjne — przelicznik ~4,30 PLN/EUR, aktualizowany okresowo.</span>
+      <span class="currency-note" data-i18n="pricing.currency_note">Ceny w PLN są orientacyjne - przelicznik ~4,30 PLN/EUR, aktualizowany okresowo.</span>
     </div>
   </section>
 
@@ -453,179 +373,156 @@
 
         <!-- ── LITE ───────────────────────────────────────── -->
         <div class="plan-card">
-          <div class="plan-name">Lite</div>
-          <div class="plan-tagline">Dla zespołów sprzedaży, które zaczynają porządkować swój CRM.</div>
+          <div class="plan-head">
+            <h2 class="plan-name">Lite</h2>
+            <div class="plan-tagline" data-i18n="pricing.tag_lite">Dla zespołów sprzedaży, które zaczynają porządkować swój CRM.</div>
+          </div>
 
-          <!-- Annual price -->
+          <div class="plan-price-wrap">
           <div class="plan-price price-annual">
             <span class="price-currency" data-eur="€" data-pln="zł">€</span>
             <span class="price-amount" data-eur="19" data-pln="82">19</span>
-            <span class="price-period">/użytkownik<br>/miesiąc</span>
+            <span class="price-period" data-i18n="pricing.per_user_month">/użytkownik/miesiąc</span>
           </div>
-          <!-- Monthly price -->
           <div class="plan-price price-monthly">
             <span class="price-currency" data-eur="€" data-pln="zł">€</span>
             <span class="price-amount" data-eur="28" data-pln="120">28</span>
-            <span class="price-period">/użytkownik<br>/miesiąc</span>
+            <span class="price-period" data-i18n="pricing.per_user_month">/użytkownik/miesiąc</span>
+          </div>
           </div>
 
           <div class="plan-billing-note">
-            <span class="annual-note" data-eur="Rozliczenie roczne · €228/rok/użytkownik" data-pln="Rozliczenie roczne · 980 zł/rok/użytkownik">Rozliczenie roczne · €228/rok/użytkownik</span>
-            <span class="monthly-note">Rozliczenie miesięczne</span>
+            <span class="annual-note" data-i18n-tpl="pricing.note_annual" data-eur-price="€228" data-pln-price="980 zł">Rozliczenie roczne · €228/rok/użytkownik</span>
+            <span class="monthly-note" data-i18n="pricing.note_monthly">Rozliczenie miesięczne</span>
           </div>
 
-          <a href="/#contact" class="plan-cta plan-cta--outline">Zapytaj o dostęp</a>
+          <a href="/#contact" class="btn btn--ghost btn--lg plan-cta" data-i18n="contact.h2">Zapytaj o dostęp</a>
 
           <hr class="plan-divider" />
-          <div class="plan-features-label">Co zawiera</div>
+          <div class="plan-features-label" data-i18n="pricing.features_label">Co zawiera</div>
           <ul class="plan-features">
-            <li>
-              <span class="check">✓</span>
-              Kompletny moduł zarządzania leadami i klientami
-            </li>
-            <li>
-              <span class="check">✓</span>
-              Lejki sprzedaży i budżety handlowców
-            </li>
-            <li>
-              <span class="check">✓</span>
-              Komunikacja end-to-end email (Gmail)
-            </li>
-            <li>
-              <span class="check">✓</span>
-              Zadania i workflow przypisań
-            </li>
-            <li>
-              <span class="check">✓</span>
-              Elastyczna konfiguracja słowników i ról
-            </li>
-            <li>
-              <span class="check">✓</span>
-              Przestrzeń na dane
-              <span class="storage">10 GB</span>
-            </li>
+            <li><span class="check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.3 2.3 4.7-4.9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="pricing.f_leads">Kompletny moduł zarządzania leadami i klientami</span></li>
+            <li><span class="check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.3 2.3 4.7-4.9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="pricing.f_funnels">Lejki sprzedaży i budżety handlowców</span></li>
+            <li><span class="check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.3 2.3 4.7-4.9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="pricing.f_email">Komunikacja end-to-end email (Gmail)</span></li>
+            <li><span class="check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.3 2.3 4.7-4.9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="pricing.f_tasks">Zadania i workflow przypisań</span></li>
+            <li><span class="check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.3 2.3 4.7-4.9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="pricing.f_config">Elastyczna konfiguracja słowników i ról</span></li>
+            <li><span class="check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.3 2.3 4.7-4.9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="pricing.f_storage">Przestrzeń na dane</span><span class="storage">10 GB</span></li>
           </ul>
         </div>
 
         <!-- ── STANDARD (FEATURED) ────────────────────────── -->
         <div class="plan-card plan-card--featured">
-          <div class="plan-badge">⭐ Najpopularniejszy</div>
+          <div class="plan-badge" data-i18n="pricing.badge_popular">Najpopularniejszy</div>
+          <div class="plan-head">
+            <h2 class="plan-name">Standard</h2>
+            <div class="plan-tagline" data-i18n="pricing.tag_standard">Pełna obsługa sprzedaży - od leada po raport i integrację danych.</div>
+          </div>
 
-          <div class="plan-name">Standard</div>
-          <div class="plan-tagline">Pełna obsługa sprzedaży — od leada po raport i integrację danych.</div>
-
-          <!-- Annual price -->
+          <div class="plan-price-wrap">
           <div class="plan-price price-annual">
             <span class="price-currency" data-eur="€" data-pln="zł">€</span>
             <span class="price-amount" data-eur="28" data-pln="120">28</span>
-            <span class="price-period">/użytkownik<br>/miesiąc</span>
+            <span class="price-period" data-i18n="pricing.per_user_month">/użytkownik/miesiąc</span>
           </div>
-          <!-- Monthly price -->
           <div class="plan-price price-monthly">
             <span class="price-currency" data-eur="€" data-pln="zł">€</span>
             <span class="price-amount" data-eur="36" data-pln="155">36</span>
-            <span class="price-period">/użytkownik<br>/miesiąc</span>
+            <span class="price-period" data-i18n="pricing.per_user_month">/użytkownik/miesiąc</span>
+          </div>
           </div>
 
           <div class="plan-billing-note">
-            <span class="annual-note" data-eur="Rozliczenie roczne · €336/rok/użytkownik" data-pln="Rozliczenie roczne · 1445 zł/rok/użytkownik">Rozliczenie roczne · €336/rok/użytkownik</span>
-            <span class="monthly-note">Rozliczenie miesięczne</span>
+            <span class="annual-note" data-i18n-tpl="pricing.note_annual" data-eur-price="€336" data-pln-price="1445 zł">Rozliczenie roczne · €336/rok/użytkownik</span>
+            <span class="monthly-note" data-i18n="pricing.note_monthly">Rozliczenie miesięczne</span>
           </div>
 
-          <a href="/#contact" class="plan-cta plan-cta--primary">Zapytaj o dostęp</a>
+          <a href="/#contact" class="btn btn--primary btn--lg plan-cta" data-i18n="contact.h2">Zapytaj o dostęp</a>
 
           <hr class="plan-divider" />
-          <div class="plan-features-label">Co zawiera</div>
+          <div class="plan-features-label" data-i18n="pricing.features_label">Co zawiera</div>
           <ul class="plan-features">
-            <li>
-              <span class="plan-inherits">Wszystko z planu Lite, plus:</span>
-            </li>
-            <li>
-              <span class="check">✓</span>
-              Pełna obsługa procesu partnerskiego
-            </li>
-            <li>
-              <span class="check">✓</span>
-              Workflows onboarding (4-etapowy proces wdrożenia)
-            </li>
-            <li>
-              <span class="check">✓</span>
-              Raporty sprzedaży i analityka (trendy, KPI, win rate)
-            </li>
-            <li>
-              <span class="check">✓</span>
-              Integracja z hurtownią danych (DWH)
-            </li>
-            <li>
-              <span class="check">✓</span>
-              Przestrzeń na dane
-              <span class="storage">100 GB</span>
-            </li>
+            <li><span class="plan-inherits" data-i18n="pricing.inherits_lite">Wszystko z planu Lite, plus:</span></li>
+            <li><span class="check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.3 2.3 4.7-4.9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="pricing.f_partner">Pełna obsługa procesu partnerskiego</span></li>
+            <li><span class="check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.3 2.3 4.7-4.9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="pricing.f_onboarding">Workflows onboarding (4-etapowy proces wdrożenia)</span></li>
+            <li><span class="check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.3 2.3 4.7-4.9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="pricing.f_reports">Raporty sprzedaży i analityka (trendy, KPI, win rate)</span></li>
+            <li><span class="check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.3 2.3 4.7-4.9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="compare.r11">Integracja z hurtownią danych (DWH)</span></li>
+            <li><span class="check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.3 2.3 4.7-4.9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="pricing.f_storage">Przestrzeń na dane</span><span class="storage">100 GB</span></li>
           </ul>
         </div>
 
         <!-- ── PROFESSIONAL ───────────────────────────────── -->
         <div class="plan-card">
-          <div class="plan-name">Professional</div>
-          <div class="plan-tagline">Dla organizacji wymagających dedykowanych kanałów i zaawansowanej analityki.</div>
+          <div class="plan-head">
+            <h2 class="plan-name">Professional</h2>
+            <div class="plan-tagline" data-i18n="pricing.tag_pro">Dla organizacji wymagających dedykowanych kanałów i zaawansowanej analityki.</div>
+          </div>
 
+          <div class="plan-price-wrap">
           <div class="plan-price">
-            <span class="price-contact">Skontaktuj<br/>się z nami</span>
+            <span class="price-contact" data-i18n="pricing.price_contact">Skontaktuj się z nami</span>
+          </div>
           </div>
 
-          <div class="plan-billing-note">
-            Wycena indywidualna · SLA gwarantowane
-          </div>
+          <div class="plan-billing-note" data-i18n="pricing.note_pro">Wycena indywidualna · SLA gwarantowane</div>
 
-          <a href="/#contact" class="plan-cta plan-cta--dark">Umów rozmowę</a>
+          <a href="/#contact" class="btn btn--ghost btn--lg plan-cta" data-i18n="pricing.cta_call">Umów rozmowę</a>
 
           <hr class="plan-divider" />
-          <div class="plan-features-label">Co zawiera</div>
+          <div class="plan-features-label" data-i18n="pricing.features_label">Co zawiera</div>
           <ul class="plan-features">
-            <li>
-              <span class="plan-inherits">Wszystko z planu Standard, plus:</span>
-            </li>
-            <li>
-              <span class="check">✓</span>
-              Zasilanie hurtowni danych przez dedykowany interfejs API
-            </li>
-            <li>
-              <span class="check">✓</span>
-              Rozbudowane raporty i analiza churn
-            </li>
-            <li>
-              <span class="check">✓</span>
-              Moduł Customer Service
-            </li>
-            <li>
-              <span class="check">✓</span>
-              Dedykowany kanał telefoniczny
-            </li>
-            <li>
-              <span class="check">✓</span>
-              Zarządzanie kolejką agentów
-            </li>
-            <li>
-              <span class="check">✓</span>
-              Baza wiedzy
-            </li>
-            <li>
-              <span class="check">✓</span>
-              Portal self-service dla klienta
-            </li>
-            <li>
-              <span class="check">✓</span>
-              Dedykowana integracja komunikacji mailowej
-            </li>
-            <li>
-              <span class="check">✓</span>
-              Przestrzeń na dane
-              <span class="storage">1 TB</span>
-            </li>
+            <li><span class="plan-inherits" data-i18n="pricing.inherits_standard">Wszystko z planu Standard, plus:</span></li>
+            <li><span class="check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.3 2.3 4.7-4.9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="pricing.f_dwh_api">Zasilanie hurtowni danych przez dedykowany interfejs API</span></li>
+            <li><span class="check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.3 2.3 4.7-4.9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="pricing.f_churn">Rozbudowane raporty i analiza churn</span></li>
+            <li><span class="check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.3 2.3 4.7-4.9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="pricing.f_cs">Moduł Customer Service</span></li>
+            <li><span class="check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.3 2.3 4.7-4.9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="pricing.f_phone">Dedykowany kanał telefoniczny</span></li>
+            <li><span class="check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.3 2.3 4.7-4.9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="pricing.f_queue">Zarządzanie kolejką agentów</span></li>
+            <li><span class="check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.3 2.3 4.7-4.9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="pricing.f_kb">Baza wiedzy</span></li>
+            <li><span class="check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.3 2.3 4.7-4.9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="pricing.f_portal">Portal self-service dla klienta</span></li>
+            <li><span class="check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.3 2.3 4.7-4.9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="pricing.f_mail">Dedykowana integracja komunikacji mailowej</span></li>
+            <li><span class="check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.3 2.3 4.7-4.9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="pricing.f_storage">Przestrzeń na dane</span><span class="storage">1 TB</span></li>
           </ul>
         </div>
 
       </div><!-- /pricing-grid -->
+    </div>
+  </section>
+
+  <!-- PORÓWNAJ PLANY -->
+  <section class="plans-compare" aria-labelledby="plansCompareTitle">
+    <div class="container">
+      <h2 id="plansCompareTitle" data-i18n="pricing.compare_h2">Porównaj plany</h2>
+      <div class="plan-compare-wrap" role="region" aria-labelledby="plansCompareTitle" tabindex="0">
+        <table class="plan-compare">
+          <thead>
+            <tr>
+              <th scope="col" data-i18n="compare.col_feature">Cecha</th>
+              <th scope="col">Lite</th>
+              <th scope="col" class="col-hl">Standard</th>
+              <th scope="col">Professional</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row" data-i18n="pricing.f_leads">Kompletny moduł zarządzania leadami i klientami</th><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td class="col-hl"><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
+            <tr><th scope="row" data-i18n="pricing.f_funnels">Lejki sprzedaży i budżety handlowców</th><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td class="col-hl"><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
+            <tr><th scope="row" data-i18n="pricing.f_email">Komunikacja end-to-end email (Gmail)</th><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td class="col-hl"><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
+            <tr><th scope="row" data-i18n="pricing.f_tasks">Zadania i workflow przypisań</th><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td class="col-hl"><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
+            <tr><th scope="row" data-i18n="pricing.f_config">Elastyczna konfiguracja słowników i ról</th><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td class="col-hl"><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
+            <tr><th scope="row" data-i18n="pricing.f_partner">Pełna obsługa procesu partnerskiego</th><td><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td class="col-hl"><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
+            <tr><th scope="row" data-i18n="pricing.f_onboarding">Workflows onboarding (4-etapowy proces wdrożenia)</th><td><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td class="col-hl"><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
+            <tr><th scope="row" data-i18n="pricing.f_reports">Raporty sprzedaży i analityka (trendy, KPI, win rate)</th><td><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td class="col-hl"><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
+            <tr><th scope="row" data-i18n="compare.r11">Integracja z hurtownią danych (DWH)</th><td><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td class="col-hl"><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
+            <tr><th scope="row" data-i18n="pricing.f_dwh_api">Zasilanie hurtowni danych przez dedykowany interfejs API</th><td><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td class="col-hl"><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
+            <tr><th scope="row" data-i18n="pricing.f_churn">Rozbudowane raporty i analiza churn</th><td><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td class="col-hl"><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
+            <tr><th scope="row" data-i18n="pricing.f_cs">Moduł Customer Service</th><td><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td class="col-hl"><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
+            <tr><th scope="row" data-i18n="pricing.f_phone">Dedykowany kanał telefoniczny</th><td><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td class="col-hl"><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
+            <tr><th scope="row" data-i18n="pricing.f_queue">Zarządzanie kolejką agentów</th><td><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td class="col-hl"><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
+            <tr><th scope="row" data-i18n="pricing.f_kb">Baza wiedzy</th><td><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td class="col-hl"><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
+            <tr><th scope="row" data-i18n="pricing.f_portal">Portal self-service dla klienta</th><td><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td class="col-hl"><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
+            <tr><th scope="row" data-i18n="pricing.f_mail">Dedykowana integracja komunikacji mailowej</th><td><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td class="col-hl"><span class="pc-no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td><span class="pc-yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
+            <tr><th scope="row" data-i18n="pricing.f_storage">Przestrzeń na dane</th><td><span class="pc-val">10 GB</span></td><td class="col-hl"><span class="pc-val">100 GB</span></td><td><span class="pc-val">1 TB</span></td></tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </section>
 
@@ -634,88 +531,172 @@
     <div class="container">
       <div class="pricing-notes__inner">
         <div class="note-item">
-          <div class="note-icon">🚀</div>
-          <h4>Wdrożenie w 24h</h4>
-          <p>Po podpisaniu umowy Twoje środowisko jest gotowe następnego dnia roboczego. Import danych z pliku CSV w kilka minut.</p>
+          <div class="note-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+          <h3 data-i18n="pricing.note1_t">Wdrożenie w 24h</h3>
+          <p data-i18n="pricing.note1_d">Po podpisaniu umowy Twoje środowisko jest gotowe następnego dnia roboczego. Import danych z pliku CSV w kilka minut.</p>
         </div>
         <div class="note-item">
-          <div class="note-icon">🔒</div>
-          <h4>Bezpieczeństwo enterprise</h4>
-          <p>SAML 2.0, izolacja danych per klient, audit trail, Azure Poland Central. Twoje dane zostają w UE.</p>
+          <div class="note-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.2-7 10-4-1.8-7-5.5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <h3 data-i18n="pricing.note2_t">Bezpieczeństwo enterprise</h3>
+          <p data-i18n="pricing.note2_d">SAML 2.0, izolacja danych per klient, audit trail, Azure Poland Central. Twoje dane zostają w UE.</p>
         </div>
         <div class="note-item">
-          <div class="note-icon">💬</div>
-          <h4>Wsparcie w języku polskim</h4>
-          <p>Dedykowany opiekun wdrożeniowy, dokumentacja po polsku, wsparcie mailowe i telefoniczne.</p>
+          <div class="note-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.2A8 8 0 1 1 20 12z"/></svg></div>
+          <h3 data-i18n="pricing.note3_t">Wsparcie w języku polskim</h3>
+          <p data-i18n="pricing.note3_d">Dedykowany opiekun wdrożeniowy, dokumentacja po polsku, wsparcie mailowe i telefoniczne.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="login-cta">
-    <div class="container login-cta__inner">
-      <div class="login-cta__text">
-        <h2>Masz pytania o cennik?</h2>
-        <p>Odpowiemy w ciągu jednego dnia roboczego</p>
-      </div>
-      <a href="/#contact" class="btn btn--primary btn--lg">Napisz do nas →</a>
+  <!-- KONTAKT -->
+  <section class="pricing-contact">
+    <div class="container">
+      <h2 data-i18n="pricing.cta_h2">Masz pytania o cennik?</h2>
+      <p data-i18n="pricing.cta_sub">Odpowiemy w ciągu jednego dnia roboczego</p>
+      <a href="/#contact" class="btn btn--ghost btn--lg"><span data-i18n="pricing.cta_btn">Napisz do nas</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="footer">
-    <div class="container footer__inner">
-      <div class="footer__brand">
-        <img src="logo.webp" alt="CRMtree" class="footer__logo-img" width="300" height="200" loading="lazy" />
-        <p>CRM dla nowoczesnej firmy</p>
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="/" class="footer__logo"><img src="logo-white.webp" alt="CRMtree" class="footer__logo-img" width="172" height="96" loading="lazy" /></a>
+          <p data-i18n="footer.tagline">CRM dla nowoczesnej firmy</p>
+        </div>
+        <div class="footer__cols">
+          <details class="footer__col" open>
+            <summary class="footer__heading" data-i18n="footer.col_product">Produkt</summary>
+            <ul>
+              <li><a href="/#features" data-i18n="footer.features">Funkcje</a></li>
+              <li><a href="/pricing.html" data-i18n="footer.pricing">Cennik</a></li>
+              <li><a href="/#aiact" data-i18n="footer.aiact">AI Act</a></li>
+              <li><a href="https://demo.crmtree.pl/login" data-i18n="footer.login">Zaloguj się</a></li>
+            </ul>
+          </details>
+          <details class="footer__col" open>
+            <summary class="footer__heading" data-i18n="footer.col_resources">Zasoby</summary>
+            <ul>
+              <li><a href="/blog" data-i18n="footer.blog">Blog</a></li>
+              <li><a href="/#faq" data-i18n="footer.faq">FAQ</a></li>
+            </ul>
+          </details>
+          <details class="footer__col" open>
+            <summary class="footer__heading" data-i18n="footer.col_company">Firma</summary>
+            <ul>
+              <li><a href="/#contact" data-i18n="footer.contact">Kontakt</a></li>
+              <li><a href="/polityka-prywatnosci.html" data-i18n="footer.privacy">Polityka prywatności</a></li>
+            </ul>
+          </details>
+        </div>
       </div>
-      <div class="footer__links">
-        <a href="https://demo.crmtree.pl/login" data-i18n="footer.login">Zaloguj się</a>
-        <a href="/#features" data-i18n="footer.features">Funkcje</a>
-        <a href="/pricing.html" data-i18n="footer.pricing">Cennik</a>
-        <a href="/blog" data-i18n="footer.blog">Blog</a>
-        <a href="/#aiact" data-i18n="footer.aiact">AI Act</a>
-        <a href="/#contact" data-i18n="footer.contact">Kontakt</a>
-        <a href="/polityka-prywatnosci.html" data-i18n="footer.privacy">Polityka prywatności</a>
+      <div class="footer__bottom">
+        <p class="footer__copy" data-i18n="footer.copyright">&copy; 2026 CRMtree. Wszelkie prawa zastrzeżone.</p>
+        <p class="footer__legal">Właściciel marki CRMtree: Comparme Sp. z o.o. · ul. Herbu Janina 5, 02-972 Warszawa · NIP 5213664910 · REGON 147067912</p>
       </div>
-      <p class="footer__legal">Właściciel marki CRMtree: Comparme Sp. z o.o. · ul. Herbu Janina 5, 02-972 Warszawa · NIP 5213664910 · REGON 147067912</p>
-      <p class="footer__copy">&copy; 2026 CRMtree. Wszelkie prawa zastrzeżone.</p>
     </div>
   </footer>
 
+
+  <script src="i18n.js"></script>
   <script>
-    const toggle = document.getElementById('toggleSwitch');
-    const labelAnnual = document.getElementById('labelAnnual');
-    const labelMonthly = document.getElementById('labelMonthly');
-    const saveBadge = document.getElementById('saveBadge');
-    let isMonthly = false;
+    // ── KARTY: nazwa+opis, cena i notka równej wysokości (od 1024px), żeby przyciski
+    // stały w jednej linii; listy funkcji kończą się naturalnie
+    const alignParts = ['.plan-head', '.plan-price-wrap', '.plan-billing-note'];
+    function alignCards() {
+      const wide = window.matchMedia('(min-width: 1024px)').matches;
+      alignParts.forEach(sel => {
+        const els = document.querySelectorAll('.pricing-grid ' + sel);
+        els.forEach(el => { el.style.minHeight = ''; });
+        if (!wide) return;
+        const h = Math.max(...[...els].map(el => el.getBoundingClientRect().height));
+        els.forEach(el => { el.style.minHeight = Math.ceil(h) + 'px'; });
+      });
+    }
+    window.addEventListener('resize', alignCards);
+    if (document.fonts) document.fonts.ready.then(alignCards);
+    document.addEventListener('DOMContentLoaded', alignCards);
 
-    toggle.addEventListener('click', () => {
-      isMonthly = !isMonthly;
-      toggle.classList.toggle('monthly', isMonthly);
-      labelAnnual.classList.toggle('active', !isMonthly);
-      labelMonthly.classList.toggle('active', isMonthly);
-      saveBadge.style.opacity = isMonthly ? '0' : '1';
-      document.body.classList.toggle('billing-monthly', isMonthly);
-    });
+    // ── OKRES ROZLICZENIA (roczne / miesięczne) ──────────────────────
+    const billingButtons = document.querySelectorAll('#billingToggle button');
+    function setBilling(mode) {
+      document.body.classList.toggle('billing-monthly', mode === 'monthly');
+      billingButtons.forEach(b => {
+        const on = b.dataset.billing === mode;
+        b.classList.toggle('active', on);
+        b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
+    }
+    billingButtons.forEach(b => b.addEventListener('click', () => { setBilling(b.dataset.billing); alignCards(); }));
 
-    // Kliknięcie na etykiety też przełącza
-    labelAnnual.addEventListener('click', () => { if (isMonthly) toggle.click(); });
-    labelMonthly.addEventListener('click', () => { if (!isMonthly) toggle.click(); });
-
-    // ── CURRENCY TOGGLE (EUR / PLN) ──────────────────────────────────
+    // ── WALUTA (zł / €): domyślnie wg języka strony, PL = zł, reszta = € ──
     const currencyButtons = document.querySelectorAll('#currencyToggle button');
+    let currencyChosen = false;
     function setCurrency(cur) {
       document.body.classList.toggle('currency-pln', cur === 'pln');
-      currencyButtons.forEach(b => b.classList.toggle('active', b.dataset.currency === cur));
+      currencyButtons.forEach(b => {
+        const on = b.dataset.currency === cur;
+        b.classList.toggle('active', on);
+        b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
       document.querySelectorAll('[data-eur][data-pln]').forEach(el => {
         el.textContent = cur === 'pln' ? el.dataset.pln : el.dataset.eur;
       });
+      renderPriceNotes();
+      alignCards();
     }
-    currencyButtons.forEach(b => b.addEventListener('click', () => setCurrency(b.dataset.currency)));
+    // Notki z kwotą: tekst z i18n (szablon {price}) + kwota w bieżącej walucie
+    function renderPriceNotes() {
+      const pln = document.body.classList.contains('currency-pln');
+      document.querySelectorAll('[data-i18n-tpl]').forEach(el => {
+        const tpl = window.CRMtreeI18N ? window.CRMtreeI18N.t(el.dataset.i18nTpl) : null;
+        if (tpl) el.textContent = tpl.replace('{price}', pln ? el.dataset.plnPrice : el.dataset.eurPrice);
+      });
+    }
+    function currencyForLang() {
+      return (document.documentElement.getAttribute('lang') || 'pl').slice(0, 2) === 'pl' ? 'pln' : 'eur';
+    }
+    currencyButtons.forEach(b => b.addEventListener('click', () => { currencyChosen = true; setCurrency(b.dataset.currency); }));
+    setCurrency(currencyForLang());
+    // i18n.js ustawia <html lang> po wybraniu języka - dopóki ktoś nie wybrał waluty sam, idzie za językiem
+    new MutationObserver(() => { if (!currencyChosen) setCurrency(currencyForLang()); else renderPriceNotes(); requestAnimationFrame(alignCards); })
+      .observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
   </script>
-
-  <script src="i18n.js"></script>
+  <script>
+    // ── Tabela „Porównaj plany” na telefonie: przyklejony nagłówek (kopia thead) ──
+    (function () {
+      const wrap = document.querySelector('.plan-compare-wrap');
+      const table = wrap && wrap.querySelector('table');
+      if (!table || !table.tHead) return;
+      const mq = window.matchMedia('(max-width: 767px)');
+      const bar = document.createElement('div');
+      bar.className = 'plan-compare-sticky'; bar.hidden = true; bar.setAttribute('aria-hidden', 'true');
+      const scroller = document.createElement('div'); scroller.className = 'plan-compare-sticky__scroll';
+      const copy = document.createElement('table'); copy.className = 'plan-compare';
+      copy.appendChild(table.tHead.cloneNode(true));
+      scroller.appendChild(copy); bar.appendChild(scroller);
+      wrap.parentNode.insertBefore(bar, wrap);
+      function sync() {
+        if (!mq.matches) { bar.hidden = true; return; }
+        const navH = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 64;
+        const head = table.tHead.getBoundingClientRect();
+        const box = wrap.getBoundingClientRect();
+        const show = head.top < navH && box.bottom > navH + head.height;
+        bar.hidden = !show;
+        if (!show) return;
+        bar.style.left = box.left + 'px';
+        bar.style.width = box.width + 'px';
+        copy.style.width = table.offsetWidth + 'px';
+        scroller.scrollLeft = wrap.scrollLeft;
+      }
+      window.addEventListener('scroll', sync, { passive: true });
+      wrap.addEventListener('scroll', sync, { passive: true });
+      window.addEventListener('resize', sync);
+      sync();
+    })();
+  </script>
+  <script src="nav.js"></script>
 </body>
 </html>

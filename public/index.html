@@ -4,19 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="google-site-verification" content="tohgFcFkcCKHAvsfp-tDcdcyG1NQIyymCMoe80mVg70" />
-  <title>CRMtree — CRM dla sprzedaży i zarządzania partnerami</title>
+  <title>CRMtree - CRM dla sprzedaży i zarządzania partnerami</title>
   <meta name="description" content="CRMtree to nowoczesny, elastyczny system CRM dla firm z różnych branż. Zarządzaj lejkiem sprzedażowym, partnerami i budżetami w jednym miejscu." />
   <link rel="canonical" href="https://crmtree.pl/" />
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="CRMtree" />
-  <meta property="og:title" content="CRMtree — CRM dla sprzedaży i zarządzania partnerami" />
+  <meta property="og:title" content="CRMtree - CRM dla sprzedaży i zarządzania partnerami" />
   <meta property="og:description" content="CRMtree to nowoczesny, elastyczny system CRM dla firm z różnych branż. Zarządzaj lejkiem sprzedażowym, partnerami i budżetami w jednym miejscu." />
   <meta property="og:url" content="https://crmtree.pl/" />
   <meta property="og:image" content="https://crmtree.pl/screenshot.webp" />
   <meta property="og:locale" content="pl_PL" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="CRMtree — CRM dla sprzedaży i zarządzania partnerami" />
+  <meta name="twitter:title" content="CRMtree - CRM dla sprzedaży i zarządzania partnerami" />
   <meta name="twitter:description" content="CRMtree to nowoczesny, elastyczny system CRM dla firm z różnych branż. Zarządzaj lejkiem sprzedażowym, partnerami i budżetami w jednym miejscu." />
   <meta name="twitter:image" content="https://crmtree.pl/screenshot.webp" />
 
@@ -25,7 +25,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400..800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 
   <script type="application/ld+json">
@@ -51,26 +51,32 @@
   <header class="navbar">
     <div class="container navbar__inner">
       <a href="/" class="navbar__logo">
-        <img src="logo.webp" alt="CRMtree" class="navbar__logo-img" width="300" height="200" />
+        <img src="logo-white.webp" alt="CRMtree" class="navbar__logo-img" width="172" height="96" />
       </a>
-      <nav class="navbar__links">
+      <a href="#trial" class="btn btn--primary navbar__cta" data-i18n="nav.cta_trial">Wypróbuj 14 dni</a>
+      <button type="button" class="navbar__toggle" aria-expanded="false" aria-controls="siteMenu" aria-label="Otwórz menu" data-i18n-aria-label="nav.menu_open">
+        <svg class="ic-open" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <svg class="ic-close" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <div class="navbar__menu" id="siteMenu">
+      <nav class="navbar__links" aria-label="Menu">
         <div class="has-mega">
-          <button type="button" class="mega-trigger">
+          <button type="button" class="mega-trigger" aria-expanded="false" aria-controls="megaPanel">
             <span data-i18n="nav.products">Produkty</span>
-            <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
           </button>
-          <div class="mega-panel">
-            <a class="mega-item" href="#f-dashboard" data-i18n="features.f1_t">Dashboard sprzedaży</a>
-            <a class="mega-item" href="#f-partnerzy" data-i18n="features.f2_t">Zarządzanie partnerami</a>
-            <a class="mega-item" href="#f-budzety" data-i18n="features.f3_t">Budżety i cele</a>
-            <a class="mega-item" href="#f-komunikacja" data-i18n="features.f4_t">Komunikacja wielokanałowa</a>
-            <a class="mega-item" href="#f-analiza-ai" data-i18n="features.f5_t">Analiza rozmów AI</a>
-            <a class="mega-item" href="#f-seobot" data-i18n="features.f6_t">SEObot</a>
-            <a class="mega-item" href="#f-dokumenty" data-i18n="features.f7_t">Dokumenty i workflow</a>
-            <a class="mega-item" href="#f-bezpieczenstwo" data-i18n="features.f8_t">Bezpieczeństwo i role</a>
-            <a class="mega-item" href="#f-mobile" data-i18n="features.f9_t">Aplikacja mobilna</a>
-            <a class="mega-item" href="#f-prospekty" data-i18n="features.f10_t">Prospekty</a>
-            <a class="mega-item" href="#f-projekty" data-i18n="features.f11_t">Projekty</a>
+          <div class="mega-panel" id="megaPanel">
+            <a class="mega-item" href="#f-dashboard"><svg class="mega-item__ic" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17V10M8 17V4M13 17v-7M18 17V7"/></svg><span data-i18n="features.f1_t">Dashboard sprzedaży</span></a>
+            <a class="mega-item" href="#f-partnerzy"><svg class="mega-item__ic" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="7" r="3"/><path d="M2 17c0-3 2.5-5 6-5s6 2 6 5"/><path d="M14 4a3 3 0 0 1 0 6"/><path d="M16 12c1.5.6 2 2.4 2 5"/></svg><span data-i18n="features.f2_t">Zarządzanie partnerami</span></a>
+            <a class="mega-item" href="#f-budzety"><svg class="mega-item__ic" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10" cy="10" r="8"/><circle cx="10" cy="10" r="4"/><circle cx="10" cy="10" r="1"/></svg><span data-i18n="features.f3_t">Budżety i cele</span></a>
+            <a class="mega-item" href="#f-komunikacja"><svg class="mega-item__ic" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h14v10H8l-4 3v-3H3z"/></svg><span data-i18n="features.f4_t">Komunikacja wielokanałowa</span></a>
+            <a class="mega-item" href="#f-analiza-ai"><svg class="mega-item__ic" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 10h2l2-5 3 10 3-8 2 5 1-2h3"/></svg><span data-i18n="features.f5_t">Analiza rozmów AI</span></a>
+            <a class="mega-item" href="#f-seobot"><svg class="mega-item__ic" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 16l1-4 8-8 3 3-8 8z"/><path d="M11 6l3 3"/><path d="M4 18h12"/></svg><span data-i18n="features.f6_t">SEObot</span></a>
+            <a class="mega-item" href="#f-dokumenty"><svg class="mega-item__ic" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 2h7l4 4v12H5z"/><path d="M12 2v4h4"/><path d="M8 12l2 2 3-4"/></svg><span data-i18n="features.f7_t">Dokumenty i workflow</span></a>
+            <a class="mega-item" href="#f-bezpieczenstwo"><svg class="mega-item__ic" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 2l7 3v5c0 4-3 7-7 8-4-1-7-4-7-8V5z"/><path d="M7 10l2 2 4-4"/></svg><span data-i18n="features.f8_t">Bezpieczeństwo i role</span></a>
+            <a class="mega-item" href="#f-mobile"><svg class="mega-item__ic" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="8" height="16" rx="2"/><path d="M9 15h2"/></svg><span data-i18n="features.f9_t">Aplikacja mobilna</span></a>
+            <a class="mega-item" href="#f-prospekty"><svg class="mega-item__ic" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="9" r="6"/><path d="M14 14l4 4"/></svg><span data-i18n="features.f10_t">Prospekty</span></a>
+            <a class="mega-item" href="#f-projekty"><svg class="mega-item__ic" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="16" height="14" rx="2"/><path d="M5 7h6M7 10h7M5 13h4"/></svg><span data-i18n="features.f11_t">Projekty</span></a>
           </div>
         </div>
         <a href="#compare" data-i18n="nav.compare">Porównanie</a>
@@ -82,14 +88,17 @@
       </nav>
       <div class="navbar__right">
         <div class="langpicker">
-          <button class="langbtn" id="langBtn" type="button" aria-haspopup="true" aria-expanded="false">
-            <span id="langBtnLabel">PL</span>
-            <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <button class="langbtn" id="langBtn" type="button" aria-haspopup="listbox" aria-expanded="false" aria-controls="langMenu" aria-label="Język: Polski">
+            <img class="flag" id="langBtnFlag" src="flags/pl.svg" alt="" width="20" height="14" />
+            <span class="langbtn__code" id="langBtnLabel">PL</span>
+            <span class="langbtn__name" id="langBtnName">Polski</span>
+            <svg class="langbtn__chev" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
-          <div class="langmenu" id="langMenu"></div>
+          <ul class="langmenu" id="langMenu" role="listbox" tabindex="-1" aria-label="Język" data-i18n-aria-label="nav.language"></ul>
         </div>
         <a href="https://demo.crmtree.pl/login" class="btn btn--outline-light" data-i18n="nav.login">Zaloguj się</a>
         <a href="#trial" class="btn btn--primary" data-i18n="nav.cta_trial">Wypróbuj 14 dni</a>
+      </div>
       </div>
     </div>
   </header>
@@ -107,8 +116,15 @@
         </div>
       </div>
       <div class="hero__visual">
-        <div class="screenshot-frame">
-          <img src="screenshot.webp" alt="Raport Sprzedaży — CRMtree" class="screenshot-img" width="1050" height="645" fetchpriority="high" />
+        <div class="mockup">
+          <div class="mockup__browser">
+            <img src="screenshot.webp" alt="Dashboard CRMtree w przeglądarce" data-i18n-alt="hero.shot_web_alt" width="1440" height="900" fetchpriority="high" />
+          </div>
+          <div class="mockup__phone">
+            <div class="phone">
+              <div class="phone__screen"><img src="app-mobile-start.webp" alt="Aplikacja mobilna CRMtree - ekran Start" data-i18n-alt="hero.shot_mobile_alt" width="540" height="1110" fetchpriority="high" /></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -124,12 +140,13 @@
         <form class="trial-form" id="trialForm">
           <input type="hidden" name="access_key" value="f2f53912-5f35-4b8f-b3d8-743e8759f76b" />
           <input type="hidden" name="subject" value="Zgłoszenie do 14-dniowego triala z crmtree.pl" />
-          <input type="hidden" name="from_name" value="CRMtree Landing — Trial" />
-          <input type="email" name="email" required data-i18n-placeholder="trial.email_placeholder" placeholder="Firmowy adres e-mail" />
+          <input type="hidden" name="from_name" value="CRMtree Landing - Trial" />
+          <label for="trialEmail" class="sr-only" data-i18n="trial.email_placeholder">Firmowy adres e-mail</label>
+          <input type="email" id="trialEmail" name="email" autocomplete="email" required data-i18n-placeholder="trial.email_placeholder" placeholder="Firmowy adres e-mail" />
           <button type="submit" class="btn btn--primary btn--lg" data-i18n="trial.cta">Rozpocznij za darmo</button>
         </form>
-        <div id="trialSuccess" class="form-success" style="display:none" data-i18n="contact.success">✅ Dziękujemy! Odezwiemy się wkrótce.</div>
-        <div id="trialError" class="form-error" style="display:none" data-i18n="contact.error">❌ Coś poszło nie tak. Spróbuj ponownie.</div>
+        <div id="trialSuccess" class="form-success" role="status" style="display:none" data-i18n="contact.success">Dziękujemy! Odezwiemy się wkrótce.</div>
+        <div id="trialError" class="form-error" role="alert" style="display:none" data-i18n="contact.error">Coś poszło nie tak. Spróbuj ponownie.</div>
         <p class="trial__note" data-i18n="trial.note">Nie potrzebujesz karty płatniczej. Zrezygnujesz w każdej chwili.</p>
       </div>
     </div>
@@ -153,31 +170,34 @@
     <div class="container">
       <div class="section-header">
         <span class="eyebrow" data-i18n="cycle.eyebrow">Jak rośniemy razem z Tobą</span>
-        <h2 data-i18n="cycle.h2">Cały cykl wzrostu — od zimnego leada do stałego klienta</h2>
+        <h2 data-i18n="cycle.h2">Cały cykl wzrostu - od zimnego leada do stałego klienta</h2>
         <p data-i18n="cycle.sub">CRMtree nie kończy się na zamknięciu transakcji. Prowadzi cały proces: pozyskanie, kwalifikację, konwersję i utrzymanie klienta.</p>
       </div>
       <div class="cycle">
-        <div class="cycle__stage"><div class="cycle__num">01</div><h3 data-i18n="cycle.s1_t">Wzbogacanie baz danych</h3><p data-i18n="cycle.s1_d">Domena firmy z zimnej bazy leadów jest automatycznie uzupełniana o branżę i wielkość.</p></div>
-        <div class="cycle__stage"><div class="cycle__num">02</div><h3 data-i18n="cycle.s2_t">Cold calling</h3><p data-i18n="cycle.s2_d">Handlowiec dzwoni do zakwalifikowanych leadów wprost z CRM, jednym kliknięciem.</p></div>
-        <div class="cycle__stage"><div class="cycle__num">03</div><h3 data-i18n="cycle.s3_t">Analiza rozmowy AI</h3><p data-i18n="cycle.s3_d">AI ocenia rozmowę, wystawia skłonność do zakupu i sama oznacza follow-up z datą kontaktu.</p></div>
-        <div class="cycle__stage"><div class="cycle__num">04</div><h3 data-i18n="cycle.s4_t">Ciepłe prospekty</h3><p data-i18n="cycle.s4_d">Firma z wysokim scoringiem trafia do lejka sprzedażowego z priorytetem.</p></div>
-        <div class="cycle__stage"><div class="cycle__num">05</div><h3 data-i18n="cycle.s5_t">Inbound przez SEObot</h3><p data-i18n="cycle.s5_d">SEObot pisze i publikuje artykuły SEO, które przyciągają leady bez telefonowania.</p></div>
-        <div class="cycle__stage"><div class="cycle__num">06</div><h3 data-i18n="cycle.s6_t">Performance klientów</h3><p data-i18n="cycle.s6_d">Każdy partner ma raporty wyników i opiekuna widocznego na jednej karcie.</p></div>
-        <div class="cycle__stage"><div class="cycle__num">07</div><h3 data-i18n="cycle.s7_t">Churn i klienci uśpieni</h3><p data-i18n="cycle.s7_d">System liczy churn score i oznacza partnerów bez aktywności.</p></div>
-        <div class="cycle__stage"><div class="cycle__num">08</div><h3 data-i18n="cycle.s8_t">Rozbudowana analityka</h3><p data-i18n="cycle.s8_d">Wyniki sprzedaży, partnerów i budżetów w jednym dashboardzie.</p></div>
+        <a class="cycle__stage" href="#f-prospekty"><div class="cycle__num">01</div><h3 data-i18n="cycle.s1_t">Wzbogacanie baz danych</h3><p data-i18n="cycle.s1_d">Domena firmy z zimnej bazy leadów jest automatycznie uzupełniana o branżę i wielkość.</p><span class="cycle__go"><svg class="ic-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+        <a class="cycle__stage" href="#f-komunikacja"><div class="cycle__num">02</div><h3 data-i18n="cycle.s2_t">Cold calling</h3><p data-i18n="cycle.s2_d">Handlowiec dzwoni do zakwalifikowanych leadów wprost z CRM, jednym kliknięciem.</p><span class="cycle__go"><svg class="ic-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+        <a class="cycle__stage" href="#f-analiza-ai"><div class="cycle__num">03</div><h3 data-i18n="cycle.s3_t">Analiza rozmowy AI</h3><p data-i18n="cycle.s3_d">AI ocenia rozmowę, wystawia skłonność do zakupu i sama oznacza follow-up z datą kontaktu.</p><span class="cycle__go"><svg class="ic-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+        <a class="cycle__stage" href="#f-prospekty"><div class="cycle__num">04</div><h3 data-i18n="cycle.s4_t">Ciepłe prospekty</h3><p data-i18n="cycle.s4_d">Firma z wysokim scoringiem trafia do lejka sprzedażowego z priorytetem.</p><span class="cycle__go"><svg class="ic-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+        <a class="cycle__stage" href="#f-seobot"><div class="cycle__num">05</div><h3 data-i18n="cycle.s5_t">Inbound przez SEObot</h3><p data-i18n="cycle.s5_d">SEObot pisze i publikuje artykuły SEO, które przyciągają leady bez telefonowania.</p><span class="cycle__go"><svg class="ic-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+        <a class="cycle__stage" href="#f-partnerzy"><div class="cycle__num">06</div><h3 data-i18n="cycle.s6_t">Performance klientów</h3><p data-i18n="cycle.s6_d">Każdy partner ma raporty wyników i opiekuna widocznego na jednej karcie.</p><span class="cycle__go"><svg class="ic-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+        <a class="cycle__stage" href="#f-partnerzy"><div class="cycle__num">07</div><h3 data-i18n="cycle.s7_t">Churn i klienci uśpieni</h3><p data-i18n="cycle.s7_d">System liczy churn score i oznacza partnerów bez aktywności.</p><span class="cycle__go"><svg class="ic-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+        <a class="cycle__stage" href="#f-dashboard"><div class="cycle__num">08</div><h3 data-i18n="cycle.s8_t">Rozbudowana analityka</h3><p data-i18n="cycle.s8_d">Wyniki sprzedaży, partnerów i budżetów w jednym dashboardzie.</p><span class="cycle__go"><svg class="ic-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
       </div>
     </div>
   </section>
 
-  <!-- FEATURES INTRO -->
-  <section class="products-intro" id="features">
-    <div class="container section-header">
-      <h2 data-i18n="features.h2">Wszystko, czego potrzebujesz</h2>
-      <p data-i18n="features.sub">Jeden system zamiast dziesiątek arkuszy i narzędzi</p>
+  <!-- FUNKCJE: wszystkie moduły jako pełne sekcje, w kolejności z oryginału, potem pas CTA -->
+  <div id="features">
+  <!-- PRODUKTY: wstęp (jak w oryginale) -->
+  <section class="products-intro">
+    <div class="container">
+      <div class="section-header">
+        <h2 data-i18n="features.h2">Wszystko, czego potrzebujesz</h2>
+        <p data-i18n="features.sub">Jeden system zamiast dziesiątek arkuszy i narzędzi</p>
+      </div>
     </div>
   </section>
-
-  <!-- PRODUCT 1: DASHBOARD -->
+  <!-- PRODUCT: DASHBOARD -->
   <section class="product-section" id="f-dashboard">
     <div class="container product-section__inner">
       <div class="product-section__text">
@@ -192,9 +212,9 @@
         </div>
         <div class="product-block">
           <span class="product-label" data-i18n="features.label_example">Przykład zastosowania</span>
-          <p data-i18n="features.f1_example">W piątek rano kierownik jednym rzutem oka widzi, że handlowiec Kowalski ma 40% mniej aktywności niż reszta zespołu — i może zareagować tego samego dnia, zamiast na koniec miesiąca.</p>
+          <p data-i18n="features.f1_example">W piątek rano kierownik jednym rzutem oka widzi, że handlowiec Kowalski ma 40% mniej aktywności niż reszta zespołu - i może zareagować tego samego dnia, zamiast na koniec miesiąca.</p>
         </div>
-        <a href="#trial" class="btn btn--primary btn--lg" data-i18n="features.cta">Wypróbuj za darmo</a>
+        <a href="#trial" class="text-link"><span data-i18n="features.cta">Wypróbuj za darmo</span><svg class="ic-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
       <div class="product-section__visual">
         <div class="screenshot-frame"><img src="dashboard.webp" alt="" loading="lazy" width="900" height="675" /></div>
@@ -202,7 +222,6 @@
     </div>
   </section>
 
-  <!-- PRODUCT 2: PARTNERZY -->
   <section class="product-section product-section--alt" id="f-partnerzy">
     <div class="container product-section__inner">
       <div class="product-section__text">
@@ -217,9 +236,9 @@
         </div>
         <div class="product-block">
           <span class="product-label" data-i18n="features.label_example">Przykład zastosowania</span>
-          <p data-i18n="features.f2_example">Gdy opiekun klienta idzie na urlop, zastępujący go handlowiec w dwie minuty widzi całą historię współpracy z firmą ABC — bez dzwonienia do kolegi.</p>
+          <p data-i18n="features.f2_example">Gdy opiekun klienta idzie na urlop, zastępujący go handlowiec w dwie minuty widzi całą historię współpracy z firmą ABC - bez dzwonienia do kolegi.</p>
         </div>
-        <a href="#trial" class="btn btn--primary btn--lg" data-i18n="features.cta">Wypróbuj za darmo</a>
+        <a href="#trial" class="text-link"><span data-i18n="features.cta">Wypróbuj za darmo</span><svg class="ic-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
       <div class="product-section__visual">
         <div class="screenshot-frame"><img src="partnerzy.webp" alt="" loading="lazy" width="900" height="675" /></div>
@@ -227,7 +246,6 @@
     </div>
   </section>
 
-  <!-- PRODUCT 3: BUDŻETY -->
   <section class="product-section" id="f-budzety">
     <div class="container product-section__inner">
       <div class="product-section__text">
@@ -242,9 +260,9 @@
         </div>
         <div class="product-block">
           <span class="product-label" data-i18n="features.label_example">Przykład zastosowania</span>
-          <p data-i18n="features.f3_example">System sam pokazuje, że dział handlowy w Q3 zrealizował tylko 60% celu — zanim będzie za późno na korektę strategii.</p>
+          <p data-i18n="features.f3_example">System sam pokazuje, że dział handlowy w Q3 zrealizował tylko 60% celu - zanim będzie za późno na korektę strategii.</p>
         </div>
-        <a href="#trial" class="btn btn--primary btn--lg" data-i18n="features.cta">Wypróbuj za darmo</a>
+        <a href="#trial" class="text-link"><span data-i18n="features.cta">Wypróbuj za darmo</span><svg class="ic-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
       <div class="product-section__visual">
         <div class="screenshot-frame"><img src="budzety.webp" alt="" loading="lazy" width="900" height="675" /></div>
@@ -252,7 +270,7 @@
     </div>
   </section>
 
-  <!-- PRODUCT 4: KOMUNIKACJA -->
+  <!-- PRODUCT: KOMUNIKACJA -->
   <section class="product-section product-section--alt" id="f-komunikacja">
     <div class="container product-section__inner">
       <div class="product-section__text">
@@ -267,9 +285,9 @@
         </div>
         <div class="product-block">
           <span class="product-label" data-i18n="features.label_example">Przykład zastosowania</span>
-          <p data-i18n="features.f4_example">Handlowiec widzi na WhatsAppie reklamację klienta, zanim jeszcze odbierze od niego telefon — i jest przygotowany na rozmowę.</p>
+          <p data-i18n="features.f4_example">Handlowiec widzi na WhatsAppie reklamację klienta, zanim jeszcze odbierze od niego telefon - i jest przygotowany na rozmowę.</p>
         </div>
-        <a href="#trial" class="btn btn--primary btn--lg" data-i18n="features.cta">Wypróbuj za darmo</a>
+        <a href="#trial" class="text-link"><span data-i18n="features.cta">Wypróbuj za darmo</span><svg class="ic-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
       <div class="product-section__visual">
         <div class="screenshot-frame"><img src="komunikacja.webp" alt="" loading="lazy" width="900" height="675" /></div>
@@ -277,7 +295,7 @@
     </div>
   </section>
 
-  <!-- PRODUCT 5: ANALIZA ROZMÓW AI -->
+  <!-- PRODUCT: ANALIZA ROZMÓW AI -->
   <section class="product-section" id="f-analiza-ai">
     <div class="container product-section__inner">
       <div class="product-section__text">
@@ -292,9 +310,9 @@
         </div>
         <div class="product-block">
           <span class="product-label" data-i18n="features.label_example">Przykład zastosowania</span>
-          <p data-i18n="features.f5_example">System oznacza rozmowę jako "niski potencjał" po wykryciu trzech odmów pod rząd — handlowiec nie traci czasu na dalsze wygrzewanie tego leada.</p>
+          <p data-i18n="features.f5_example">System oznacza rozmowę jako "niski potencjał" po wykryciu trzech odmów pod rząd - handlowiec nie traci czasu na dalsze wygrzewanie tego leada.</p>
         </div>
-        <a href="#trial" class="btn btn--primary btn--lg" data-i18n="features.cta">Wypróbuj za darmo</a>
+        <a href="#trial" class="text-link"><span data-i18n="features.cta">Wypróbuj za darmo</span><svg class="ic-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
       <div class="product-section__visual">
         <div class="screenshot-frame"><img src="analiza-ai.webp" alt="" loading="lazy" width="900" height="675" /></div>
@@ -302,7 +320,6 @@
     </div>
   </section>
 
-  <!-- PRODUCT 6: SEOBOT -->
   <section class="product-section product-section--alt" id="f-seobot">
     <div class="container product-section__inner">
       <div class="product-section__text">
@@ -317,9 +334,9 @@
         </div>
         <div class="product-block">
           <span class="product-label" data-i18n="features.label_example">Przykład zastosowania</span>
-          <p data-i18n="features.f6_example">W jeden dzień powstaje artykuł "Jak wybrać CRM dla małej firmy" — zaplanowany do publikacji i śledzony pod kątem wejść z Google.</p>
+          <p data-i18n="features.f6_example">W jeden dzień powstaje artykuł "Jak wybrać CRM dla małej firmy" - zaplanowany do publikacji i śledzony pod kątem wejść z Google.</p>
         </div>
-        <a href="#trial" class="btn btn--primary btn--lg" data-i18n="features.cta">Wypróbuj za darmo</a>
+        <a href="#trial" class="text-link"><span data-i18n="features.cta">Wypróbuj za darmo</span><svg class="ic-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
       <div class="product-section__visual">
         <div class="screenshot-frame"><img src="seobot.webp" alt="" loading="lazy" width="900" height="675" /></div>
@@ -327,7 +344,6 @@
     </div>
   </section>
 
-  <!-- PRODUCT 7: DOKUMENTY -->
   <section class="product-section" id="f-dokumenty">
     <div class="container product-section__inner">
       <div class="product-section__text">
@@ -342,9 +358,9 @@
         </div>
         <div class="product-block">
           <span class="product-label" data-i18n="features.label_example">Przykład zastosowania</span>
-          <p data-i18n="features.f7_example">Nowa umowa czeka na akceptację działu prawnego — system pokazuje dokładnie, na czyim biurku utknęła, zamiast kolejnego przypominającego maila.</p>
+          <p data-i18n="features.f7_example">Nowa umowa czeka na akceptację działu prawnego - system pokazuje dokładnie, na czyim biurku utknęła, zamiast kolejnego przypominającego maila.</p>
         </div>
-        <a href="#trial" class="btn btn--primary btn--lg" data-i18n="features.cta">Wypróbuj za darmo</a>
+        <a href="#trial" class="text-link"><span data-i18n="features.cta">Wypróbuj za darmo</span><svg class="ic-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
       <div class="product-section__visual">
         <div class="screenshot-frame"><img src="dokumenty.webp" alt="" loading="lazy" width="900" height="675" /></div>
@@ -352,7 +368,6 @@
     </div>
   </section>
 
-  <!-- PRODUCT 8: BEZPIECZEŃSTWO -->
   <section class="product-section product-section--alt" id="f-bezpieczenstwo">
     <div class="container product-section__inner">
       <div class="product-section__text">
@@ -367,9 +382,9 @@
         </div>
         <div class="product-block">
           <span class="product-label" data-i18n="features.label_example">Przykład zastosowania</span>
-          <p data-i18n="features.f8_example">Stażysta w dziale marketingu nie zobaczy warunków finansowych klientów działu sprzedaży — bo jego rola po prostu nie ma tam dostępu.</p>
+          <p data-i18n="features.f8_example">Stażysta w dziale marketingu nie zobaczy warunków finansowych klientów działu sprzedaży - bo jego rola po prostu nie ma tam dostępu.</p>
         </div>
-        <a href="#trial" class="btn btn--primary btn--lg" data-i18n="features.cta">Wypróbuj za darmo</a>
+        <a href="#trial" class="text-link"><span data-i18n="features.cta">Wypróbuj za darmo</span><svg class="ic-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
       <div class="product-section__visual">
         <div class="screenshot-frame"><img src="bezpieczenstwo.webp" alt="" loading="lazy" width="900" height="675" /></div>
@@ -377,7 +392,7 @@
     </div>
   </section>
 
-  <!-- PRODUCT 9: APLIKACJA MOBILNA -->
+  <!-- PRODUCT: APLIKACJA MOBILNA -->
   <section class="product-section" id="f-mobile">
     <div class="container product-section__inner">
       <div class="product-section__text">
@@ -392,84 +407,21 @@
         </div>
         <div class="product-block">
           <span class="product-label" data-i18n="features.label_example">Przykład zastosowania</span>
-          <p data-i18n="features.f9_example">Zaraz po spotkaniu z klientem handlowiec dodaje notatkę z telefonu w windzie — zanim zdąży o czymkolwiek zapomnieć.</p>
+          <p data-i18n="features.f9_example">Zaraz po spotkaniu z klientem handlowiec dodaje notatkę z telefonu w windzie - zanim zdąży o czymkolwiek zapomnieć.</p>
         </div>
-        <a href="#trial" class="btn btn--primary btn--lg" data-i18n="features.cta">Wypróbuj za darmo</a>
+        <a href="#trial" class="text-link"><span data-i18n="features.cta">Wypróbuj za darmo</span><svg class="ic-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
       <div class="product-section__visual">
-        <div class="app-shot-frame">
-          <svg class="app-shot" viewBox="0 0 300 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Podgląd aplikacji mobilnej CRMtree">
-            <defs>
-              <filter id="cardShadow" x="-30%" y="-30%" width="160%" height="160%">
-                <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#1F2933" flood-opacity="0.10"/>
-              </filter>
-            </defs>
-            <rect x="0" y="0" width="300" height="600" rx="42" fill="#1F2933"/>
-            <rect x="10" y="10" width="280" height="580" rx="34" fill="#FAFAF9"/>
-            <rect x="120" y="20" width="60" height="16" rx="8" fill="#1F2933"/>
-            <text x="30" y="52" font-family="monospace" font-size="12" fill="#1F2933" font-weight="600">9:41</text>
-            <g fill="#1F2933">
-              <rect x="238" y="44" width="3" height="6" rx="1"/><rect x="243" y="41" width="3" height="9" rx="1"/>
-              <rect x="248" y="38" width="3" height="12" rx="1"/><rect x="253" y="35" width="3" height="15" rx="1"/>
-              <rect x="263" y="40" width="20" height="10" rx="2.5" fill="none" stroke="#1F2933" stroke-width="1.2"/>
-              <rect x="265" y="42" width="12" height="6" rx="1"/><rect x="283.5" y="43" width="2" height="4"/>
-            </g>
-            <rect x="10" y="64" width="280" height="56" fill="#3BAA5D"/>
-            <text x="30" y="98" font-family="sans-serif" font-size="18" font-weight="700" fill="#fff">CRMtree</text>
-            <circle cx="258" cy="92" r="12" fill="rgba(255,255,255,.22)"/>
-            <path d="M258 85.5c-3 0-5.4 2.4-5.4 5.4v3.1c0 1.5-.6 2.9-1.6 3.9l-.5.5h15l-.5-.5c-1-1-1.6-2.4-1.6-3.9v-3.1c0-3-2.4-5.4-5.4-5.4z" fill="#fff"/>
-            <path d="M255.6 99.5a2.4 2.4 0 004.8 0z" fill="#fff"/>
-            <circle cx="266" cy="82" r="4" fill="#B4650A"/>
-            <text x="30" y="140" font-family="sans-serif" font-size="11" font-weight="700" letter-spacing="0.5" fill="#6B7280">LEADY — DZIŚ (4)</text>
-            <g font-family="sans-serif">
-              <rect x="24" y="150" width="252" height="60" rx="12" fill="#fff" stroke="#E5E7EB" filter="url(#cardShadow)"/>
-              <circle cx="46" cy="180" r="14" fill="#E6F4EA"/><text x="46" y="184" font-size="11" text-anchor="middle" fill="#2F8F4D" font-weight="700">VT</text>
-              <text x="70" y="176" font-size="13" font-weight="700" fill="#1F2933">Vantex Sp. z o.o.</text>
-              <text x="70" y="192" font-size="11" fill="#6B7280">Oferta wysłana · 25 200 PLN</text>
-              <circle cx="262" cy="180" r="5" fill="#3BAA5D"/>
-
-              <rect x="24" y="220" width="252" height="60" rx="12" fill="#fff" stroke="#E5E7EB" filter="url(#cardShadow)"/>
-              <circle cx="46" cy="250" r="14" fill="#FBEEE0"/><text x="46" y="254" font-size="11" text-anchor="middle" fill="#B4650A" font-weight="700">KM</text>
-              <text x="70" y="246" font-size="13" font-weight="700" fill="#1F2933">Kolmex S.A.</text>
-              <text x="70" y="262" font-size="11" fill="#6B7280">Follow-up jutro, 10:00</text>
-              <circle cx="262" cy="250" r="5" fill="#B4650A"/>
-
-              <rect x="24" y="290" width="252" height="60" rx="12" fill="#fff" stroke="#E5E7EB" filter="url(#cardShadow)"/>
-              <circle cx="46" cy="320" r="14" fill="#E6F4EA"/><text x="46" y="324" font-size="11" text-anchor="middle" fill="#2F8F4D" font-weight="700">NG</text>
-              <text x="70" y="316" font-size="13" font-weight="700" fill="#1F2933">Nortex Group</text>
-              <text x="70" y="332" font-size="11" fill="#6B7280">Negocjacje · 3 zadania</text>
-              <circle cx="262" cy="320" r="5" fill="#3BAA5D"/>
-
-              <rect x="24" y="360" width="252" height="60" rx="12" fill="#fff" stroke="#E5E7EB" filter="url(#cardShadow)"/>
-              <circle cx="46" cy="390" r="14" fill="#FCE8EC"/><text x="46" y="394" font-size="11" text-anchor="middle" fill="#B4223F" font-weight="700">KL</text>
-              <text x="70" y="386" font-size="13" font-weight="700" fill="#1F2933">Kowalski Logistyka</text>
-              <text x="70" y="402" font-size="11" fill="#B4223F">Churn risk — kontakt pilny</text>
-              <circle cx="262" cy="390" r="5" fill="#B4223F"/>
-            </g>
-            <circle cx="256" cy="438" r="20" fill="#3BAA5D" filter="url(#cardShadow)"/>
-            <text x="256" y="444" font-size="20" fill="#fff" text-anchor="middle" font-weight="700">+</text>
-            <path d="M10,520 L290,520 L290,556 A34,34 0 0 1 256,590 L44,590 A34,34 0 0 1 10,556 Z" fill="#fff"/>
-            <line x1="10" y1="520" x2="290" y2="520" stroke="#E5E7EB"/>
-            <g font-family="sans-serif" font-size="9" fill="#6B7280" text-anchor="middle">
-              <circle cx="55" cy="543" r="11" fill="#3BAA5D"/>
-              <g stroke="#fff" stroke-width="1.6" stroke-linecap="round">
-                <line x1="48" y1="539" x2="62" y2="539"/><line x1="48" y1="543" x2="62" y2="543"/><line x1="48" y1="547" x2="58" y2="547"/>
-              </g>
-              <text x="55" y="565">Leady</text>
-              <g fill="none" stroke="#6B7280" stroke-width="1.4"><circle cx="121" cy="543" r="5"/><circle cx="129" cy="543" r="5"/></g>
-              <text x="125" y="565">Partnerzy</text>
-              <path d="M188 543l5 5 9-9" fill="none" stroke="#6B7280" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
-              <text x="195" y="565">Zadania</text>
-              <g fill="#6B7280"><circle cx="248" cy="543" r="1.8"/><circle cx="255" cy="543" r="1.8"/><circle cx="262" cy="543" r="1.8"/></g>
-              <text x="255" y="565">Więcej</text>
-            </g>
-          </svg>
+        <div class="product-phone">
+          <div class="phone">
+            <div class="phone__screen"><img src="app-mobile-leady.webp" alt="Aplikacja mobilna CRMtree - lista leadów" data-i18n-alt="features.f9_shot_alt" loading="lazy" width="540" height="1110" /></div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PRODUCT 10: PROSPEKTY -->
+  <!-- PRODUCT: PROSPEKTY -->
   <section class="product-section product-section--alt" id="f-prospekty">
     <div class="container product-section__inner">
       <div class="product-section__text">
@@ -484,9 +436,9 @@
         </div>
         <div class="product-block">
           <span class="product-label" data-i18n="features.label_example">Przykład zastosowania</span>
-          <p data-i18n="features.f10_example">Z listy 500 nowych firm system od razu pokazuje 40 z najwyższym dopasowaniem — handlowiec dzwoni najpierw do nich, nie po kolei od góry listy.</p>
+          <p data-i18n="features.f10_example">Z listy 500 nowych firm system od razu pokazuje 40 z najwyższym dopasowaniem - handlowiec dzwoni najpierw do nich, nie po kolei od góry listy.</p>
         </div>
-        <a href="#trial" class="btn btn--primary btn--lg" data-i18n="features.cta">Wypróbuj za darmo</a>
+        <a href="#trial" class="text-link"><span data-i18n="features.cta">Wypróbuj za darmo</span><svg class="ic-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
       <div class="product-section__visual">
         <div class="screenshot-frame"><img src="prospekty.webp" alt="" loading="lazy" width="900" height="675" /></div>
@@ -494,175 +446,188 @@
     </div>
   </section>
 
-  <!-- PRODUCT 11: PROJEKTY -->
+  <!-- PRODUCT: PROJEKTY -->
   <section class="product-section" id="f-projekty">
     <div class="container product-section__inner">
       <div class="product-section__text">
         <h2 data-i18n="features.f11_t">Projekty</h2>
         <div class="product-block">
           <span class="product-label" data-i18n="features.label_problem">Jaki problem rozwiązuje CRMtree</span>
-          <p data-i18n="features.f11_problem">Po podpisaniu umowy wdrożenie u klienta rozjeżdża się po mailach, arkuszach i komunikatorach — nikt nie wie, kto za co odpowiada ani na jakim etapie jest praca.</p>
+          <p data-i18n="features.f11_problem">Po podpisaniu umowy wdrożenie u klienta rozjeżdża się po mailach, arkuszach i komunikatorach - nikt nie wie, kto za co odpowiada ani na jakim etapie jest praca.</p>
         </div>
         <div class="product-block">
           <span class="product-label" data-i18n="features.label_how">W jaki sposób</span>
-          <p data-i18n="features.f11_how">Projekt ma kartę z zespołem, zadania z podzadaniami, oś czasu (Gantt) i czat — z rolami dla PM-a, uczestników, kontrolera i osób spoza firmy.</p>
+          <p data-i18n="features.f11_how">Projekt ma kartę z zespołem, zadania z podzadaniami, oś czasu (Gantt) i czat - z rolami dla PM-a, uczestników, kontrolera i osób spoza firmy.</p>
         </div>
         <div class="product-block">
           <span class="product-label" data-i18n="features.label_example">Przykład zastosowania</span>
-          <p data-i18n="features.f11_example">PM zakłada projekt wdrożenia i przypisuje zadania swoim ludziom oraz osobie po stronie klienta — ta po zalogowaniu widzi wyłącznie swoje zadania i zamyka je na bieżąco.</p>
+          <p data-i18n="features.f11_example">PM zakłada projekt wdrożenia i przypisuje zadania swoim ludziom oraz osobie po stronie klienta - ta po zalogowaniu widzi wyłącznie swoje zadania i zamyka je na bieżąco.</p>
         </div>
-        <a href="#trial" class="btn btn--primary btn--lg" data-i18n="features.cta">Wypróbuj za darmo</a>
+        <a href="#trial" class="text-link"><span data-i18n="features.cta">Wypróbuj za darmo</span><svg class="ic-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
       <div class="product-section__visual">
-        <div class="screenshot-frame">
-          <svg class="app-shot" viewBox="0 0 900 675" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Podgląd modułu Projekty w CRMtree: oś czasu zadań, szczegóły zadania i czat" font-family="Inter, sans-serif">
-            <defs>
-              <filter id="projShadow" x="-10%" y="-20%" width="120%" height="150%">
-                <feDropShadow dx="0" dy="6" stdDeviation="9" flood-color="#1F2933" flood-opacity="0.14"/>
-              </filter>
-              <linearGradient id="projBg" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#F9FAFB"/><stop offset="1" stop-color="#E6F4EA"/>
-              </linearGradient>
-            </defs>
+    <div class="screenshot-frame">
+      <svg class="app-shot" viewBox="0 0 900 675" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Podgląd modułu Projekty w CRMtree: oś czasu zadań, szczegóły zadania i czat" font-family="Inter, sans-serif">
+        <defs>
+          <filter id="projShadow" x="-10%" y="-20%" width="120%" height="150%">
+            <feDropShadow dx="0" dy="6" stdDeviation="9" flood-color="#1F2933" flood-opacity="0.14"/>
+          </filter>
+          <linearGradient id="projBg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#F9FAFB"/><stop offset="1" stop-color="#E6F4EA"/>
+          </linearGradient>
+        </defs>
 
-            <rect width="900" height="675" fill="url(#projBg)"/>
+        <rect width="900" height="675" fill="url(#projBg)"/>
 
-            <!-- Sidebar -->
-            <rect width="60" height="675" fill="#1F2933"/>
-            <rect x="16" y="18" width="28" height="28" rx="8" fill="#3BAA5D"/>
-            <path d="M30 25v14M30 31l-5-4M30 34l5-4" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/>
-            <g fill="#4B5563">
-              <rect x="20" y="76" width="20" height="20" rx="5"/><rect x="20" y="112" width="20" height="20" rx="5"/>
-              <rect x="20" y="184" width="20" height="20" rx="5"/><rect x="20" y="220" width="20" height="20" rx="5"/>
-            </g>
-            <rect x="12" y="142" width="36" height="32" rx="9" fill="#3BAA5D" fill-opacity="0.22"/>
-            <rect x="3" y="148" width="3" height="20" rx="1.5" fill="#3BAA5D"/>
-            <g stroke="#6EE7A0" stroke-width="2" stroke-linecap="round">
-              <line x1="23" y1="152" x2="32" y2="152"/><line x1="27" y1="158" x2="37" y2="158"/><line x1="23" y1="164" x2="30" y2="164"/>
-            </g>
+        <!-- Sidebar -->
+        <rect width="60" height="675" fill="#1F2933"/>
+        <rect x="16" y="18" width="28" height="28" rx="8" fill="#3BAA5D"/>
+        <path d="M30 25v14M30 31l-5-4M30 34l5-4" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/>
+        <g fill="#4B5563">
+          <rect x="20" y="76" width="20" height="20" rx="5"/><rect x="20" y="112" width="20" height="20" rx="5"/>
+          <rect x="20" y="184" width="20" height="20" rx="5"/><rect x="20" y="220" width="20" height="20" rx="5"/>
+        </g>
+        <rect x="12" y="142" width="36" height="32" rx="9" fill="#3BAA5D" fill-opacity="0.22"/>
+        <rect x="3" y="148" width="3" height="20" rx="1.5" fill="#3BAA5D"/>
+        <g stroke="#6EE7A0" stroke-width="2" stroke-linecap="round">
+          <line x1="23" y1="152" x2="32" y2="152"/><line x1="27" y1="158" x2="37" y2="158"/><line x1="23" y1="164" x2="30" y2="164"/>
+        </g>
 
-            <!-- Top bar -->
-            <rect x="60" width="840" height="60" fill="#fff"/>
-            <line x1="60" y1="60" x2="900" y2="60" stroke="#E5E7EB"/>
-            <rect x="82" y="19" width="46" height="22" rx="6" fill="#E6F4EA"/>
-            <text x="105" y="34.5" text-anchor="middle" font-size="11.5" font-weight="700" fill="#2F8F4D">WSC</text>
-            <text x="140" y="36" font-size="16.5" font-weight="700" fill="#111827">Wdrożenie systemu CRM</text>
-            <g font-size="10.5" font-weight="700" fill="#fff" text-anchor="middle">
-              <circle cx="622" cy="30" r="14" fill="#3B82F6" stroke="#fff" stroke-width="2"/><text x="622" y="34">AM</text>
-              <circle cx="648" cy="30" r="14" fill="#8B5CF6" stroke="#fff" stroke-width="2"/><text x="648" y="34">KN</text>
-              <circle cx="674" cy="30" r="14" fill="#F59E0B" stroke="#fff" stroke-width="2"/><text x="674" y="34">JW</text>
-              <circle cx="700" cy="30" r="14" fill="#9CA3AF" stroke="#fff" stroke-width="2"/><text x="700" y="34">+3</text>
-            </g>
-            <rect x="734" y="15" width="142" height="30" rx="8" fill="#3BAA5D"/>
-            <text x="805" y="35" text-anchor="middle" font-size="12.5" font-weight="600" fill="#fff">+ Nowe zadanie</text>
+        <!-- Top bar -->
+        <rect x="60" width="840" height="60" fill="#fff"/>
+        <line x1="60" y1="60" x2="900" y2="60" stroke="#E5E7EB"/>
+        <rect x="82" y="19" width="46" height="22" rx="6" fill="#E6F4EA"/>
+        <text x="105" y="34.5" text-anchor="middle" font-size="11.5" font-weight="700" fill="#2F8F4D">WSC</text>
+        <text x="140" y="36" font-size="16.5" font-weight="700" fill="#111827">Wdrożenie systemu CRM</text>
+        <g font-size="10.5" font-weight="700" fill="#fff" text-anchor="middle">
+          <circle cx="622" cy="30" r="14" fill="#3B82F6" stroke="#fff" stroke-width="2"/><text x="622" y="34">AM</text>
+          <circle cx="648" cy="30" r="14" fill="#8B5CF6" stroke="#fff" stroke-width="2"/><text x="648" y="34">KN</text>
+          <circle cx="674" cy="30" r="14" fill="#F59E0B" stroke="#fff" stroke-width="2"/><text x="674" y="34">JW</text>
+          <circle cx="700" cy="30" r="14" fill="#9CA3AF" stroke="#fff" stroke-width="2"/><text x="700" y="34">+3</text>
+        </g>
+        <rect x="734" y="15" width="142" height="30" rx="8" fill="#3BAA5D"/>
+        <text x="805" y="35" text-anchor="middle" font-size="12.5" font-weight="600" fill="#fff">+ Nowe zadanie</text>
 
-            <!-- Tabs -->
-            <rect x="82" y="76" width="392" height="34" rx="9" fill="#E5E7EB" fill-opacity="0.7"/>
-            <rect x="180" y="79" width="96" height="28" rx="7" fill="#fff" filter="url(#projShadow)"/>
-            <g font-size="12.5" text-anchor="middle">
-              <text x="131" y="98" fill="#6B7280">Zadania (8)</text>
-              <text x="228" y="98" fill="#2F8F4D" font-weight="700">Oś czasu</text>
-              <text x="313" y="98" fill="#6B7280">Czat</text>
-              <text x="405" y="98" fill="#6B7280">Karta projektu</text>
-            </g>
-            <rect x="494.75" y="85.75" width="14.5" height="14.5" rx="4" fill="#fff" stroke="#D1D5DB" stroke-width="1.5"/>
-            <text x="518" y="98" font-size="12.5" fill="#374151">Pokaż moje zadania</text>
+        <!-- Tabs -->
+        <rect x="82" y="76" width="392" height="34" rx="9" fill="#E5E7EB" fill-opacity="0.7"/>
+        <rect x="180" y="79" width="96" height="28" rx="7" fill="#fff" filter="url(#projShadow)"/>
+        <g font-size="12.5" text-anchor="middle">
+          <text x="131" y="98" fill="#6B7280">Zadania (8)</text>
+          <text x="228" y="98" fill="#2F8F4D" font-weight="700">Oś czasu</text>
+          <text x="313" y="98" fill="#6B7280">Czat</text>
+          <text x="405" y="98" fill="#6B7280">Karta projektu</text>
+        </g>
+        <rect x="494.75" y="85.75" width="14.5" height="14.5" rx="4" fill="#fff" stroke="#D1D5DB" stroke-width="1.5"/>
+        <text x="518" y="98" font-size="12.5" fill="#374151">Pokaż moje zadania</text>
 
-            <!-- Timeline card -->
-            <rect x="82" y="126" width="794" height="380" rx="12" fill="#fff" stroke="#E5E7EB"/>
-            <path d="M82 138a12 12 0 0 1 12-12h770a12 12 0 0 1 12 12v40H82z" fill="#F9FAFB"/>
-            <line x1="82" y1="178" x2="876" y2="178" stroke="#E5E7EB"/>
-            <line x1="366" y1="126" x2="366" y2="506" stroke="#E5E7EB"/>
-            <text x="100" y="158" font-size="10.5" font-weight="700" fill="#6B7280" letter-spacing=".6">ZADANIE</text>
-            <text x="378" y="150" font-size="11.5" font-weight="600" fill="#4B5563">październik 2026</text>
-            <text x="652" y="150" font-size="11.5" font-weight="600" fill="#4B5563">listopad 2026</text>
-            <g font-size="10" fill="#9CA3AF">
-              <text x="378" y="169">5</text><text x="439" y="169">12</text><text x="500" y="169">19</text><text x="561" y="169">26</text>
-              <text x="652" y="169">2</text><text x="713" y="169">9</text><text x="774" y="169">16</text><text x="835" y="169">23</text>
-            </g>
-            <g stroke="#F3F4F6">
-              <line x1="427" y1="178" x2="427" y2="506"/><line x1="488" y1="178" x2="488" y2="506"/><line x1="549" y1="178" x2="549" y2="506"/>
-              <line x1="701" y1="178" x2="701" y2="506"/><line x1="762" y1="178" x2="762" y2="506"/><line x1="823" y1="178" x2="823" y2="506"/>
-              <line x1="82" y1="219" x2="876" y2="219"/><line x1="82" y1="260" x2="876" y2="260"/><line x1="82" y1="301" x2="876" y2="301"/>
-              <line x1="82" y1="342" x2="876" y2="342"/><line x1="82" y1="383" x2="876" y2="383"/><line x1="82" y1="424" x2="876" y2="424"/>
-              <line x1="82" y1="465" x2="876" y2="465"/>
-            </g>
-            <line x1="640" y1="126" x2="640" y2="506" stroke="#E5E7EB"/>
+        <!-- Timeline card -->
+        <rect x="82" y="126" width="794" height="380" rx="12" fill="#fff" stroke="#E5E7EB"/>
+        <path d="M82 138a12 12 0 0 1 12-12h770a12 12 0 0 1 12 12v40H82z" fill="#F9FAFB"/>
+        <line x1="82" y1="178" x2="876" y2="178" stroke="#E5E7EB"/>
+        <line x1="366" y1="126" x2="366" y2="506" stroke="#E5E7EB"/>
+        <text x="100" y="158" font-size="10.5" font-weight="700" fill="#6B7280" letter-spacing=".6">ZADANIE</text>
+        <text x="378" y="150" font-size="11.5" font-weight="600" fill="#4B5563">październik 2026</text>
+        <text x="652" y="150" font-size="11.5" font-weight="600" fill="#4B5563">listopad 2026</text>
+        <g font-size="10" fill="#9CA3AF">
+          <text x="378" y="169">5</text><text x="439" y="169">12</text><text x="500" y="169">19</text><text x="561" y="169">26</text>
+          <text x="652" y="169">2</text><text x="713" y="169">9</text><text x="774" y="169">16</text><text x="835" y="169">23</text>
+        </g>
+        <g stroke="#F3F4F6">
+          <line x1="427" y1="178" x2="427" y2="506"/><line x1="488" y1="178" x2="488" y2="506"/><line x1="549" y1="178" x2="549" y2="506"/>
+          <line x1="701" y1="178" x2="701" y2="506"/><line x1="762" y1="178" x2="762" y2="506"/><line x1="823" y1="178" x2="823" y2="506"/>
+          <line x1="82" y1="219" x2="876" y2="219"/><line x1="82" y1="260" x2="876" y2="260"/><line x1="82" y1="301" x2="876" y2="301"/>
+          <line x1="82" y1="342" x2="876" y2="342"/><line x1="82" y1="383" x2="876" y2="383"/><line x1="82" y1="424" x2="876" y2="424"/>
+          <line x1="82" y1="465" x2="876" y2="465"/>
+        </g>
+        <line x1="640" y1="126" x2="640" y2="506" stroke="#E5E7EB"/>
 
-            <!-- Task names: parent tasks carry the layered icon, subtasks are indented -->
-            <g font-size="12.5" fill="#111827">
-              <g fill="none" stroke="#3BAA5D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M106 193l-7 4 7 4 7-4z"/><path d="M99 202l7 4 7-4"/>
-                <path d="M106 316l-7 4 7 4 7-4z"/><path d="M99 325l7 4 7-4"/>
-                <path d="M106 439l-7 4 7 4 7-4z"/><path d="M99 448l7 4 7-4"/>
-                <path d="M106 480l-7 4 7 4 7-4z"/><path d="M99 489l7 4 7-4"/>
-              </g>
-              <g fill="none" stroke="#9CA3AF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M120 232v6a3 3 0 0 0 3 3h7"/><path d="M120 273v6a3 3 0 0 0 3 3h7"/>
-                <path d="M120 355v6a3 3 0 0 0 3 3h7"/><path d="M120 396v6a3 3 0 0 0 3 3h7"/>
-              </g>
-              <text x="122" y="203" font-weight="700">Analiza potrzeb</text>
-              <text x="138" y="244" fill="#374151">Warsztat z klientem</text>
-              <text x="138" y="285" fill="#374151">Mapa procesów</text>
-              <text x="122" y="326" font-weight="700">Konfiguracja</text>
-              <text x="138" y="367" fill="#374151">Import danych</text>
-              <text x="138" y="408" fill="#374151">Integracja poczty</text>
-              <text x="122" y="449" font-weight="700">Szkolenie zespołu</text>
-              <text x="122" y="490" font-weight="700">Start produkcyjny</text>
-            </g>
-            <g font-size="10" font-weight="600" fill="#9CA3AF" text-anchor="end">
-              <text x="354" y="203">WSC-1</text><text x="354" y="244">WSC-2</text><text x="354" y="285">WSC-3</text><text x="354" y="326">WSC-4</text>
-              <text x="354" y="367">WSC-5</text><text x="354" y="408">WSC-6</text><text x="354" y="449">WSC-7</text><text x="354" y="490">WSC-8</text>
-            </g>
+        <!-- Task names: parent tasks carry the layered icon, subtasks are indented -->
+        <g font-size="12.5" fill="#111827">
+          <g fill="none" stroke="#3BAA5D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M106 193l-7 4 7 4 7-4z"/><path d="M99 202l7 4 7-4"/>
+            <path d="M106 316l-7 4 7 4 7-4z"/><path d="M99 325l7 4 7-4"/>
+            <path d="M106 439l-7 4 7 4 7-4z"/><path d="M99 448l7 4 7-4"/>
+            <path d="M106 480l-7 4 7 4 7-4z"/><path d="M99 489l7 4 7-4"/>
+          </g>
+          <g fill="none" stroke="#9CA3AF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M120 232v6a3 3 0 0 0 3 3h7"/><path d="M120 273v6a3 3 0 0 0 3 3h7"/>
+            <path d="M120 355v6a3 3 0 0 0 3 3h7"/><path d="M120 396v6a3 3 0 0 0 3 3h7"/>
+          </g>
+          <text x="122" y="203" font-weight="700">Analiza potrzeb</text>
+          <text x="138" y="244" fill="#374151">Warsztat z klientem</text>
+          <text x="138" y="285" fill="#374151">Mapa procesów</text>
+          <text x="122" y="326" font-weight="700">Konfiguracja</text>
+          <text x="138" y="367" fill="#374151">Import danych</text>
+          <text x="138" y="408" fill="#374151">Integracja poczty</text>
+          <text x="122" y="449" font-weight="700">Szkolenie zespołu</text>
+          <text x="122" y="490" font-weight="700">Start produkcyjny</text>
+        </g>
+        <g font-size="10" font-weight="600" fill="#9CA3AF" text-anchor="end">
+          <text x="354" y="203">WSC-1</text><text x="354" y="244">WSC-2</text><text x="354" y="285">WSC-3</text><text x="354" y="326">WSC-4</text>
+          <text x="354" y="367">WSC-5</text><text x="354" y="408">WSC-6</text><text x="354" y="449">WSC-7</text><text x="354" y="490">WSC-8</text>
+        </g>
 
-            <!-- Bars coloured by status: done (green, faded), in progress (blue), in review (amber), to do (grey) -->
-            <rect x="378" y="190" width="132" height="17" rx="5" fill="#3BAA5D" fill-opacity="0.5"/>
-            <rect x="378" y="231" width="52" height="17" rx="5" fill="#3BAA5D" fill-opacity="0.5"/>
-            <rect x="436" y="272" width="74" height="17" rx="5" fill="#3BAA5D" fill-opacity="0.5"/>
-            <rect x="516" y="313" width="196" height="17" rx="5" fill="#3B82F6"/>
-            <rect x="516" y="354" width="98" height="17" rx="5" fill="#3B82F6"/>
-            <rect x="590" y="395" width="122" height="17" rx="5" fill="#F59E0B"/>
-            <rect x="722" y="436" width="92" height="17" rx="5" fill="#9CA3AF"/>
-            <rect x="826" y="477" width="18" height="17" rx="5" fill="#9CA3AF"/>
+        <!-- Bars coloured by status: done (green, faded), in progress (blue), in review (amber), to do (grey) -->
+        <rect x="378" y="190" width="132" height="17" rx="5" fill="#3BAA5D" fill-opacity="0.5"/>
+        <rect x="378" y="231" width="52" height="17" rx="5" fill="#3BAA5D" fill-opacity="0.5"/>
+        <rect x="436" y="272" width="74" height="17" rx="5" fill="#3BAA5D" fill-opacity="0.5"/>
+        <rect x="516" y="313" width="196" height="17" rx="5" fill="#3B82F6"/>
+        <rect x="516" y="354" width="98" height="17" rx="5" fill="#3B82F6"/>
+        <rect x="590" y="395" width="122" height="17" rx="5" fill="#F59E0B"/>
+        <rect x="722" y="436" width="92" height="17" rx="5" fill="#9CA3AF"/>
+        <rect x="826" y="477" width="18" height="17" rx="5" fill="#9CA3AF"/>
 
-            <!-- Today -->
-            <line x1="606" y1="178" x2="606" y2="506" stroke="#DC2626" stroke-width="2" stroke-opacity="0.75"/>
-            <rect x="588" y="180" width="36" height="16" rx="8" fill="#DC2626"/>
-            <text x="606" y="191.5" text-anchor="middle" font-size="9.5" font-weight="700" fill="#fff">dziś</text>
+        <!-- Today -->
+        <line x1="606" y1="178" x2="606" y2="506" stroke="#DC2626" stroke-width="2" stroke-opacity="0.75"/>
+        <rect x="588" y="180" width="36" height="16" rx="8" fill="#DC2626"/>
+        <text x="606" y="191.5" text-anchor="middle" font-size="9.5" font-weight="700" fill="#fff">dziś</text>
 
-            <!-- Task card -->
-            <g filter="url(#projShadow)">
-              <rect x="104" y="532" width="340" height="120" rx="12" fill="#fff" stroke="#E5E7EB"/>
-            </g>
-            <text x="122" y="558" font-size="10.5" font-weight="700" fill="#9CA3AF">WSC-6</text>
-            <text x="122" y="579" font-size="14.5" font-weight="700" fill="#111827">Integracja poczty</text>
-            <rect x="122" y="592" width="114" height="22" rx="11" fill="#F59E0B" fill-opacity="0.14"/>
-            <circle cx="135" cy="603" r="3.5" fill="#F59E0B"/>
-            <text x="144" y="607" font-size="11" font-weight="600" fill="#B45309">Do weryfikacji</text>
-            <rect x="244" y="592" width="64" height="22" rx="11" fill="#DC2626" fill-opacity="0.1"/>
-            <text x="276" y="607" text-anchor="middle" font-size="11" font-weight="600" fill="#B91C1C">Wysoki</text>
-            <text x="122" y="637" font-size="11" fill="#6B7280">Termin 14.11 · Budżet 12 000 PLN</text>
-            <g font-size="10" font-weight="700" fill="#fff" text-anchor="middle">
-              <circle cx="390" cy="566" r="13" fill="#8B5CF6" stroke="#fff" stroke-width="2"/><text x="390" y="570">KN</text>
-              <circle cx="416" cy="566" r="13" fill="#F59E0B" stroke="#fff" stroke-width="2"/><text x="416" y="570">JW</text>
-            </g>
+        <!-- Task card -->
+        <g filter="url(#projShadow)">
+          <rect x="104" y="532" width="340" height="120" rx="12" fill="#fff" stroke="#E5E7EB"/>
+        </g>
+        <text x="122" y="558" font-size="10.5" font-weight="700" fill="#9CA3AF">WSC-6</text>
+        <text x="122" y="579" font-size="14.5" font-weight="700" fill="#111827">Integracja poczty</text>
+        <rect x="122" y="592" width="114" height="22" rx="11" fill="#F59E0B" fill-opacity="0.14"/>
+        <circle cx="135" cy="603" r="3.5" fill="#F59E0B"/>
+        <text x="144" y="607" font-size="11" font-weight="600" fill="#B45309">Do weryfikacji</text>
+        <rect x="244" y="592" width="64" height="22" rx="11" fill="#DC2626" fill-opacity="0.1"/>
+        <text x="276" y="607" text-anchor="middle" font-size="11" font-weight="600" fill="#B91C1C">Wysoki</text>
+        <text x="122" y="637" font-size="11" fill="#6B7280">Termin 14.11 · Budżet 12 000 PLN</text>
+        <g font-size="10" font-weight="700" fill="#fff" text-anchor="middle">
+          <circle cx="390" cy="566" r="13" fill="#8B5CF6" stroke="#fff" stroke-width="2"/><text x="390" y="570">KN</text>
+          <circle cx="416" cy="566" r="13" fill="#F59E0B" stroke="#fff" stroke-width="2"/><text x="416" y="570">JW</text>
+        </g>
 
-            <!-- Chat card -->
-            <g filter="url(#projShadow)">
-              <rect x="466" y="532" width="388" height="120" rx="12" fill="#fff" stroke="#E5E7EB"/>
-            </g>
-            <text x="484" y="556" font-size="10.5" font-weight="700" fill="#6B7280" letter-spacing=".6">ROZMOWA O ZADANIU</text>
-            <rect x="484" y="566" width="238" height="32" rx="10" fill="#F3F4F6"/>
-            <text x="496" y="579" font-size="9.5" font-weight="700" fill="#374151">Jan (klient)</text>
-            <text x="496" y="592" font-size="11" fill="#111827">Skrzynki podpięte, proszę o weryfikację.</text>
-            <rect x="634" y="606" width="202" height="32" rx="10" fill="#E6F4EA"/>
-            <text x="646" y="619" font-size="9.5" font-weight="700" fill="#2F8F4D">Kasia (PM)</text>
-            <text x="646" y="632" font-size="11" fill="#111827">Sprawdzone — zamykam zadanie.</text>
-          </svg>
-        </div>
+        <!-- Chat card -->
+        <g filter="url(#projShadow)">
+          <rect x="466" y="532" width="388" height="120" rx="12" fill="#fff" stroke="#E5E7EB"/>
+        </g>
+        <text x="484" y="556" font-size="10.5" font-weight="700" fill="#6B7280" letter-spacing=".6">ROZMOWA O ZADANIU</text>
+        <rect x="484" y="566" width="238" height="32" rx="10" fill="#F3F4F6"/>
+        <text x="496" y="579" font-size="9.5" font-weight="700" fill="#374151">Jan (klient)</text>
+        <text x="496" y="592" font-size="11" fill="#111827">Skrzynki podpięte, proszę o weryfikację.</text>
+        <rect x="634" y="606" width="202" height="32" rx="10" fill="#E6F4EA"/>
+        <text x="646" y="619" font-size="9.5" font-weight="700" fill="#2F8F4D">Kasia (PM)</text>
+        <text x="646" y="632" font-size="11" fill="#111827">Sprawdzone - zamykam zadanie.</text>
+      </svg>
+    </div>
       </div>
     </div>
   </section>
+
+
+  <!-- PAS CTA (jedyny główny przycisk w części produktowej) -->
+  <section class="cta-band">
+    <div class="container cta-band__inner">
+      <div class="cta-band__text">
+        <h2 data-i18n="trial.h2">Wypróbuj CRMtree przez 14 dni za darmo</h2>
+        <p data-i18n="trial.note">Nie potrzebujesz karty płatniczej. Zrezygnujesz w każdej chwili.</p>
+      </div>
+      <a href="#trial" class="btn btn--primary btn--lg" data-i18n="hero.cta_primary">Wypróbuj 14 dni za darmo</a>
+    </div>
+  </section>
+  </div>
 
   <!-- COMPARISON -->
   <!-- TODO(legal): przed publikacją zweryfikować aktualność każdego twierdzenia i skonsultować z prawnikiem
@@ -671,143 +636,164 @@
     <div class="container">
       <div class="section-header">
         <span class="eyebrow" data-i18n="compare.eyebrow">Porównanie</span>
-        <h2 data-i18n="compare.h2">CRMtree na tle innych systemów CRM</h2>
+        <h2 id="compareTitle" data-i18n="compare.h2">CRMtree na tle innych systemów CRM</h2>
         <p data-i18n="compare.sub">CRMtree ma wszystko, co konkurencja, a wyprzedza ją w następujących obszarach funkcjonalnych.</p>
       </div>
-      <div class="compare-wrap">
-        <table class="compare">
+      <!-- Telefon: wybór jednego konkurenta (CSS ukrywa pozostałe kolumny, dane zostają w tabeli) -->
+      <div class="compare-pick">
+        <span class="compare-pick__label" id="comparePickLabel" data-i18n="compare.pick_label">Porównaj z</span>
+        <div class="compare-pick__chips" id="comparePick" role="group" aria-labelledby="comparePickLabel">
+          <button type="button" aria-pressed="true" aria-controls="compareTable" data-compare="hubspot">HubSpot</button>
+          <button type="button" aria-pressed="false" aria-controls="compareTable" data-compare="pipedrive">Pipedrive</button>
+          <button type="button" aria-pressed="false" aria-controls="compareTable" data-compare="firmao">Firmao</button>
+          <button type="button" aria-pressed="false" aria-controls="compareTable" data-compare="livespace">Livespace</button>
+        </div>
+      </div>
+      <div class="compare-wrap" role="region" aria-labelledby="compareTitle" tabindex="0">
+        <table class="compare" id="compareTable" data-compare="hubspot">
           <thead>
             <tr>
-              <th data-i18n="compare.col_feature">Cecha</th>
-              <th class="col-us" data-i18n="compare.col_us">CRMtree</th>
-              <th>HubSpot</th><th>Pipedrive</th><th>Firmao</th><th>Livespace</th>
+              <th scope="col" data-i18n="compare.col_feature">Cecha</th>
+              <th class="col-us" scope="col"><span class="col-us__name" data-i18n="compare.col_us">CRMtree</span></th>
+              <th scope="col">HubSpot</th><th scope="col">Pipedrive</th><th scope="col">Firmao</th><th scope="col">Livespace</th>
             </tr>
           </thead>
           <tbody>
-            <tr class="compare-group"><td colspan="6" data-i18n="compare.g1">Wdrożenie</td></tr>
-            <tr><td data-i18n="compare.r1">Onboarding klienta krok po kroku</td><td class="col-us"><span class="mark--yes">✓</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td></tr>
-            <tr><td data-i18n="compare.r2">Model cenowy bez limitu stanowisk</td><td class="col-us"><span class="mark--yes">✓</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td></tr>
+            <tr class="compare-group"><th scope="rowgroup" data-i18n="compare.g1">Wdrożenie</th><td class="col-us"></td><td colspan="4"></td></tr>
+            <tr><td data-i18n="compare.r1">Onboarding klienta krok po kroku</td><td class="col-us" data-label="CRMtree"><span class="cmp cmp--yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td data-label="HubSpot"><span class="cmp cmp--no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td data-label="Pipedrive"><span class="cmp cmp--no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td data-label="Firmao"><span class="cmp cmp--no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td data-label="Livespace"><span class="cmp cmp--no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td></tr>
+            <tr><td data-i18n="compare.r2">Model cenowy bez limitu stanowisk</td><td class="col-us" data-label="CRMtree"><span class="cmp cmp--yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td data-label="HubSpot"><span class="cmp cmp--no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td data-label="Pipedrive"><span class="cmp cmp--no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td data-label="Firmao"><span class="cmp cmp--no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td data-label="Livespace"><span class="cmp cmp--no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td></tr>
 
-            <tr class="compare-group"><td colspan="6" data-i18n="compare.g2">E-mail i komunikacja real-time</td></tr>
-            <tr><td data-i18n="compare.r3">Real-time synchronizacja e-maili</td><td class="col-us"><span class="mark--yes">✓</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td></tr>
-            <tr><td data-i18n="compare.r4">Śledzenie odczytania wiadomości</td><td class="col-us"><span class="mark--yes">✓</span></td><td><span class="mark--partial">~</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td></tr>
-            <tr><td data-i18n="compare.r5">WhatsApp Business w Centrum komunikacji</td><td class="col-us"><span class="mark--yes">✓</span></td><td><span class="mark--no">nieznane</span></td><td><span class="mark--no">nieznane</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td></tr>
+            <tr class="compare-group"><th scope="rowgroup" data-i18n="compare.g2">E-mail i komunikacja real-time</th><td class="col-us"></td><td colspan="4"></td></tr>
+            <tr><td data-i18n="compare.r3">Real-time synchronizacja e-maili</td><td class="col-us" data-label="CRMtree"><span class="cmp cmp--yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td data-label="HubSpot"><span class="cmp cmp--no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td data-label="Pipedrive"><span class="cmp cmp--no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td data-label="Firmao"><span class="cmp cmp--no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td data-label="Livespace"><span class="cmp cmp--no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td></tr>
+            <tr><td data-i18n="compare.r4">Śledzenie odczytania wiadomości</td><td class="col-us" data-label="CRMtree"><span class="cmp cmp--yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td data-label="HubSpot"><span class="cmp cmp--partial"><span class="cmp__icon" role="img" aria-label="Częściowo" data-i18n-aria-label="compare.legend_partial"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="cmp__note" data-i18n="compare.legend_partial">Częściowo</span></span></td><td data-label="Pipedrive"><span class="cmp cmp--no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td data-label="Firmao"><span class="cmp cmp--no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td data-label="Livespace"><span class="cmp cmp--no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td></tr>
+            <tr><td data-i18n="compare.r5">WhatsApp Business w Centrum komunikacji</td><td class="col-us" data-label="CRMtree"><span class="cmp cmp--yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td data-label="HubSpot"><span class="cmp cmp--unknown" data-i18n="compare.unknown">Brak danych</span></td><td data-label="Pipedrive"><span class="cmp cmp--unknown" data-i18n="compare.unknown">Brak danych</span></td><td data-label="Firmao"><span class="cmp cmp--no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td data-label="Livespace"><span class="cmp cmp--no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td></tr>
 
-            <tr class="compare-group"><td colspan="6" data-i18n="compare.g3">Telefonia i analiza rozmów AI</td></tr>
-            <tr><td data-i18n="compare.r6">Wbudowany softphone WebRTC</td><td class="col-us"><span class="mark--yes">✓</span></td><td><span class="mark--yes">✓ (płatny moduł)</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td></tr>
-            <tr><td data-i18n="compare.r7">Nagrywanie i transkrypcja połączeń (AI)</td><td class="col-us"><span class="mark--yes">✓</span></td><td><span class="mark--partial">~</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td></tr>
-            <tr><td data-i18n="compare.r8">Analiza sentymentu i score'u rozmowy (AI)</td><td class="col-us"><span class="mark--yes">✓</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td></tr>
-            <tr><td data-i18n="compare.r9">Automatyczne wykrycie follow-up (AI, PL)</td><td class="col-us"><span class="mark--yes">✓</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td></tr>
+            <tr class="compare-group"><th scope="rowgroup" data-i18n="compare.g3">Telefonia i analiza rozmów AI</th><td class="col-us"></td><td colspan="4"></td></tr>
+            <tr><td data-i18n="compare.r6">Wbudowany softphone WebRTC</td><td class="col-us" data-label="CRMtree"><span class="cmp cmp--yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td data-label="HubSpot"><span class="cmp cmp--partial"><span class="cmp__icon" role="img" aria-label="Częściowo" data-i18n-aria-label="compare.legend_partial"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="cmp__note" data-i18n="compare.note_paid">Płatny moduł</span></span></td><td data-label="Pipedrive"><span class="cmp cmp--no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td data-label="Firmao"><span class="cmp cmp--no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td data-label="Livespace"><span class="cmp cmp--no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td></tr>
+            <tr><td data-i18n="compare.r7">Nagrywanie i transkrypcja połączeń (AI)</td><td class="col-us" data-label="CRMtree"><span class="cmp cmp--yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td data-label="HubSpot"><span class="cmp cmp--partial"><span class="cmp__icon" role="img" aria-label="Częściowo" data-i18n-aria-label="compare.legend_partial"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="cmp__note" data-i18n="compare.legend_partial">Częściowo</span></span></td><td data-label="Pipedrive"><span class="cmp cmp--no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td data-label="Firmao"><span class="cmp cmp--no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td data-label="Livespace"><span class="cmp cmp--no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td></tr>
+            <tr><td data-i18n="compare.r8">Analiza sentymentu i score'u rozmowy (AI)</td><td class="col-us" data-label="CRMtree"><span class="cmp cmp--yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td data-label="HubSpot"><span class="cmp cmp--no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td data-label="Pipedrive"><span class="cmp cmp--no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td data-label="Firmao"><span class="cmp cmp--no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td data-label="Livespace"><span class="cmp cmp--no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td></tr>
+            <tr><td data-i18n="compare.r9">Automatyczne wykrycie follow-up (AI, PL)</td><td class="col-us" data-label="CRMtree"><span class="cmp cmp--yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td data-label="HubSpot"><span class="cmp cmp--no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td data-label="Pipedrive"><span class="cmp cmp--no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td data-label="Firmao"><span class="cmp cmp--no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td data-label="Livespace"><span class="cmp cmp--no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td></tr>
 
-            <tr class="compare-group"><td colspan="6" data-i18n="compare.g4">Dane i wzbogacanie</td></tr>
-            <tr><td data-i18n="compare.r10">Wzbogacanie firmy z GUS/BIR 1.1</td><td class="col-us"><span class="mark--yes">✓</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--yes">✓</span></td><td><span class="mark--no">✗</span></td></tr>
-            <tr><td data-i18n="compare.r11">Integracja z hurtownią danych (DWH)</td><td class="col-us"><span class="mark--yes">✓</span></td><td><span class="mark--partial">~</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td></tr>
-            <tr><td data-i18n="compare.r12">Health Score i Churn Score</td><td class="col-us"><span class="mark--yes">✓</span></td><td><span class="mark--partial">~ (plan Enterprise)</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td></tr>
+            <tr class="compare-group"><th scope="rowgroup" data-i18n="compare.g4">Dane i wzbogacanie</th><td class="col-us"></td><td colspan="4"></td></tr>
+            <tr><td data-i18n="compare.r10">Wzbogacanie firmy z GUS/BIR 1.1</td><td class="col-us" data-label="CRMtree"><span class="cmp cmp--yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td data-label="HubSpot"><span class="cmp cmp--no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td data-label="Pipedrive"><span class="cmp cmp--no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td data-label="Firmao"><span class="cmp cmp--yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td data-label="Livespace"><span class="cmp cmp--no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td></tr>
+            <tr><td data-i18n="compare.r11">Integracja z hurtownią danych (DWH)</td><td class="col-us" data-label="CRMtree"><span class="cmp cmp--yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td data-label="HubSpot"><span class="cmp cmp--partial"><span class="cmp__icon" role="img" aria-label="Częściowo" data-i18n-aria-label="compare.legend_partial"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="cmp__note" data-i18n="compare.legend_partial">Częściowo</span></span></td><td data-label="Pipedrive"><span class="cmp cmp--no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td data-label="Firmao"><span class="cmp cmp--no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td data-label="Livespace"><span class="cmp cmp--no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td></tr>
+            <tr><td data-i18n="compare.r12">Health Score i Churn Score</td><td class="col-us" data-label="CRMtree"><span class="cmp cmp--yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td data-label="HubSpot"><span class="cmp cmp--partial"><span class="cmp__icon" role="img" aria-label="Częściowo" data-i18n-aria-label="compare.legend_partial"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="cmp__note" data-i18n="compare.note_enterprise">Plan Enterprise</span></span></td><td data-label="Pipedrive"><span class="cmp cmp--no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td data-label="Firmao"><span class="cmp cmp--no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td data-label="Livespace"><span class="cmp cmp--no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td></tr>
 
-            <tr class="compare-group"><td colspan="6" data-i18n="compare.g5">Analityka i powiadomienia</td></tr>
-            <tr><td data-i18n="compare.r13">5 dashboardów analitycznych bez BI</td><td class="col-us"><span class="mark--yes">✓</span></td><td><span class="mark--partial">~ (Enterprise)</span></td><td><span class="mark--partial">~ (Advanced)</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td></tr>
-            <tr><td data-i18n="compare.r14">Poranny mail zbiorczy (Daily Digest)</td><td class="col-us"><span class="mark--yes">✓</span></td><td><span class="mark--partial">~ (Enterprise)</span></td><td><span class="mark--partial">~ (dodatek)</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td></tr>
+            <tr class="compare-group"><th scope="rowgroup" data-i18n="compare.g5">Analityka i powiadomienia</th><td class="col-us"></td><td colspan="4"></td></tr>
+            <tr><td data-i18n="compare.r13">5 dashboardów analitycznych bez BI</td><td class="col-us" data-label="CRMtree"><span class="cmp cmp--yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td data-label="HubSpot"><span class="cmp cmp--partial"><span class="cmp__icon" role="img" aria-label="Częściowo" data-i18n-aria-label="compare.legend_partial"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="cmp__note" data-i18n="compare.note_enterprise">Plan Enterprise</span></span></td><td data-label="Pipedrive"><span class="cmp cmp--partial"><span class="cmp__icon" role="img" aria-label="Częściowo" data-i18n-aria-label="compare.legend_partial"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="cmp__note" data-i18n="compare.note_advanced">Plan Advanced</span></span></td><td data-label="Firmao"><span class="cmp cmp--no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td data-label="Livespace"><span class="cmp cmp--no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td></tr>
+            <tr><td data-i18n="compare.r14">Poranny mail zbiorczy (Daily Digest)</td><td class="col-us" data-label="CRMtree"><span class="cmp cmp--yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td data-label="HubSpot"><span class="cmp cmp--partial"><span class="cmp__icon" role="img" aria-label="Częściowo" data-i18n-aria-label="compare.legend_partial"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="cmp__note" data-i18n="compare.note_enterprise">Plan Enterprise</span></span></td><td data-label="Pipedrive"><span class="cmp cmp--partial"><span class="cmp__icon" role="img" aria-label="Częściowo" data-i18n-aria-label="compare.legend_partial"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="cmp__note" data-i18n="compare.note_addon">Dodatek</span></span></td><td data-label="Firmao"><span class="cmp cmp--no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td data-label="Livespace"><span class="cmp cmp--no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td></tr>
 
-            <tr class="compare-group"><td colspan="6" data-i18n="compare.g6">Dokumenty</td></tr>
-            <tr><td data-i18n="compare.r15">Zarządzanie dokumentami i akceptacje</td><td class="col-us"><span class="mark--yes">✓</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--partial">~</span></td><td><span class="mark--no">✗</span></td></tr>
+            <tr class="compare-group"><th scope="rowgroup" data-i18n="compare.g6">Dokumenty</th><td class="col-us"></td><td colspan="4"></td></tr>
+            <tr><td data-i18n="compare.r15">Zarządzanie dokumentami i akceptacje</td><td class="col-us" data-label="CRMtree"><span class="cmp cmp--yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td data-label="HubSpot"><span class="cmp cmp--no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td data-label="Pipedrive"><span class="cmp cmp--no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td data-label="Firmao"><span class="cmp cmp--partial"><span class="cmp__icon" role="img" aria-label="Częściowo" data-i18n-aria-label="compare.legend_partial"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="cmp__note" data-i18n="compare.legend_partial">Częściowo</span></span></td><td data-label="Livespace"><span class="cmp cmp--no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td></tr>
 
-            <tr class="compare-group"><td colspan="6" data-i18n="compare.g8">Projekty</td></tr>
-            <tr><td data-i18n="compare.r17">Zarządzanie projektami z osią czasu (Gantt)</td><td class="col-us"><span class="mark--yes">✓</span></td><td><span class="mark--yes">✓</span></td><td><span class="mark--partial">~ (dodatek, Gantt w becie)</span></td><td><span class="mark--partial">~ (od planu Professional)</span></td><td><span class="mark--no">✗</span></td></tr>
+            <tr class="compare-group"><th scope="rowgroup" data-i18n="compare.g8">Projekty</th><td class="col-us"></td><td colspan="4"></td></tr>
+            <tr><td data-i18n="compare.r17">Zarządzanie projektami z osią czasu (Gantt)</td><td class="col-us" data-label="CRMtree"><span class="cmp cmp--yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td data-label="HubSpot"><span class="cmp cmp--yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td data-label="Pipedrive"><span class="cmp cmp--partial"><span class="cmp__icon" role="img" aria-label="Częściowo" data-i18n-aria-label="compare.legend_partial"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="cmp__note" data-i18n="compare.note_addon_beta">Dodatek, Gantt w becie</span></span></td><td data-label="Firmao"><span class="cmp cmp--partial"><span class="cmp__icon" role="img" aria-label="Częściowo" data-i18n-aria-label="compare.legend_partial"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="cmp__note" data-i18n="compare.note_professional">Od planu Professional</span></span></td><td data-label="Livespace"><span class="cmp cmp--no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td></tr>
 
-            <tr class="compare-group"><td colspan="6" data-i18n="compare.g7">Bezpieczeństwo i infrastruktura</td></tr>
-            <tr><td data-i18n="compare.r16">Dedykowana infrastruktura / on-prem</td><td class="col-us"><span class="mark--yes">✓</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">✗</span></td><td><span class="mark--no">nieznane</span></td><td><span class="mark--no">✗</span></td></tr>
+            <tr class="compare-group"><th scope="rowgroup" data-i18n="compare.g7">Bezpieczeństwo i infrastruktura</th><td class="col-us"></td><td colspan="4"></td></tr>
+            <tr><td data-i18n="compare.r16">Dedykowana infrastruktura / on-prem</td><td class="col-us" data-label="CRMtree"><span class="cmp cmp--yes" role="img" aria-label="Jest" data-i18n-aria-label="compare.legend_yes"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td data-label="HubSpot"><span class="cmp cmp--no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td data-label="Pipedrive"><span class="cmp cmp--no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td><td data-label="Firmao"><span class="cmp cmp--unknown" data-i18n="compare.unknown">Brak danych</span></td><td data-label="Livespace"><span class="cmp cmp--no" role="img" aria-label="Brak" data-i18n-aria-label="compare.legend_no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td></tr>
           </tbody>
         </table>
       </div>
+      <ul class="compare-legend">
+        <li><span class="cmp cmp--yes" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="compare.legend_yes">Jest</span></li>
+        <li><span class="cmp cmp--partial" aria-hidden="true"><span class="cmp__icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span><span data-i18n="compare.legend_partial">Częściowo</span></li>
+        <li><span class="cmp cmp--no" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span data-i18n="compare.legend_no">Brak</span></li>
+      </ul>
       <p class="compare-note" data-i18n="compare.note">Zestawienie na podstawie wewnętrznej analizy funkcjonalnej CRMtree, zweryfikowanej względem publicznie dostępnej dokumentacji konkurentów.</p>
     </div>
   </section>
+  <script>
+    // Porównanie na telefonie: chip wybiera konkurenta widocznego obok CRMtree
+    (function () {
+      var table = document.getElementById('compareTable');
+      var chips = document.querySelectorAll('#comparePick button');
+      if (!table || !chips.length) return;
+      chips.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          table.setAttribute('data-compare', btn.getAttribute('data-compare'));
+          chips.forEach(function (b) { b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'); });
+        });
+      });
+    })();
+  </script>
 
-  <!-- HOW IT WORKS -->
-  <section class="how-it-works" id="how-it-works">
-    <div class="container">
-      <div class="section-header">
-        <h2 data-i18n="how.h2">Jak zacząć</h2>
-        <p data-i18n="how.sub">Trzy kroki, bez integracji IT</p>
-      </div>
-      <div class="steps">
-        <div class="step">
-          <div class="step__number">1</div>
-          <h3 data-i18n="how.step1_t">Zakładasz konto</h3>
-          <p data-i18n="how.step1_d">Wypełniasz formularz kontaktowy. Tworzymy dedykowane środowisko dla Twojej firmy w ciągu 24h.</p>
-        </div>
-        <div class="step__connector"></div>
-        <div class="step">
-          <div class="step__number">2</div>
-          <h3 data-i18n="how.step2_t">Importujesz dane</h3>
-          <p data-i18n="how.step2_d">Wgrywasz listę partnerów i handlowców z pliku CSV. System importuje dane automatycznie.</p>
-        </div>
-        <div class="step__connector"></div>
-        <div class="step">
-          <div class="step__number">3</div>
-          <h3 data-i18n="how.step3_t">Zaczynasz pracę</h3>
-          <p data-i18n="how.step3_d">Twój zespół loguje się i od razu widzi dashboard z wynikami. Zero szkolenia.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECURITY -->
-  <section class="security-section" id="security">
-    <div class="container">
-      <div class="section-header">
-        <span class="eyebrow" data-i18n="security.eyebrow">Bezpieczeństwo</span>
-        <h2 data-i18n="security.h2">Dane Twojej firmy są bezpiecznie wydzielone w dedykowanej przestrzeni</h2>
-        <p data-i18n="security.sub">Każda firma pracuje we w pełni odizolowanym środowisku — to jest wbudowane.</p>
-      </div>
-      <div class="trust-grid">
-        <div class="trust-card"><h3 data-i18n="security.sec1_t">Pełna izolacja danych</h3><p data-i18n="security.sec1_d">Środowisko każdej firmy jest odseparowane — użytkownicy jednej firmy nigdy nie widzą danych innej.</p></div>
-        <div class="trust-card"><h3 data-i18n="security.sec2_t">RBAC i SSO/SAML</h3><p data-i18n="security.sec2_d">Dostęp kontrolowany rolami i uprawnieniami. Logowanie firmowe przez SSO/SAML.</p></div>
-        <div class="trust-card"><h3 data-i18n="security.sec3_t">Serwery w UE</h3><p data-i18n="security.sec3_d">Infrastruktura hostowana w Microsoft Azure, region Polska Centralna.</p></div>
-        <div class="trust-card"><h3 data-i18n="security.sec4_t">Zgodność z RODO</h3><p data-i18n="security.sec4_d">Pełna polityka prywatności i jasny podział ról administrator / podmiot przetwarzający.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- AI ACT / GOVAI -->
   <!-- TODO(legal): sformułowania o zgodności z AI Act wymagają przeglądu prawnego przed publikacją,
        tak samo jak przy każdym twierdzeniu o zgodności z regulacją. GovAI = wewnętrzny produkt/bramka
        zgodności z AI Act (klasyfikacja ryzyka, nadzór człowieka, niezmienny log audytowy). -->
-  <section class="aiact-section" id="aiact">
-    <div class="container">
-      <div class="section-header">
-        <span class="eyebrow" data-i18n="aiact.eyebrow">Zgodność z prawem</span>
-        <h2 data-i18n="aiact.h2">Gotowi na AI Act — nie tylko na RODO</h2>
+  <!-- BEZPIECZEŃSTWO + AI ACT: jedna ciemna sekcja, dwie kolumny, teksty bez zmian -->
+  <section class="security-section" id="security">
+    <div class="container sec-cols">
+      <div class="sec-col">
+        <span class="eyebrow" data-i18n="security.eyebrow">Bezpieczeństwo</span>
+        <h2 data-i18n="security.h2">Dane Twojej firmy są bezpiecznie wydzielone w dedykowanej przestrzeni</h2>
+        <p data-i18n="security.sub">Każda firma pracuje we w pełni odizolowanym środowisku - to jest wbudowane.</p>
+        <ul class="sec-list">
+          <li class="sec-item">
+            <span class="sec-item__icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 2l7 3v5c0 4-3 7-7 8-4-1-7-4-7-8V5z"/><path d="M7 10l2 2 4-4"/></svg></span>
+            <div><h3 data-i18n="security.sec1_t">Pełna izolacja danych</h3><p data-i18n="security.sec1_d">Środowisko każdej firmy jest odseparowane - użytkownicy jednej firmy nigdy nie widzą danych innej.</p></div>
+          </li>
+          <li class="sec-item">
+            <span class="sec-item__icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="9" width="12" height="9" rx="2"/><path d="M7 9V6a3 3 0 0 1 6 0v3"/></svg></span>
+            <div><h3 data-i18n="security.sec2_t">RBAC i SSO/SAML</h3><p data-i18n="security.sec2_d">Dostęp kontrolowany rolami i uprawnieniami. Logowanie firmowe przez SSO/SAML.</p></div>
+          </li>
+          <li class="sec-item">
+            <span class="sec-item__icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="14" height="6" rx="2"/><rect x="3" y="11" width="14" height="6" rx="2"/><path d="M6 6h2M6 14h2"/></svg></span>
+            <div><h3 data-i18n="security.sec3_t">Serwery w UE</h3><p data-i18n="security.sec3_d">Infrastruktura hostowana w Microsoft Azure, region Polska Centralna.</p></div>
+          </li>
+          <li class="sec-item">
+            <span class="sec-item__icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 2h7l4 4v12H5z"/><path d="M12 2v4h4"/><path d="M8 12l2 2 3-4"/></svg></span>
+            <div><h3 data-i18n="security.sec4_t">Zgodność z RODO</h3><p data-i18n="security.sec4_d">Pełna polityka prywatności i jasny podział ról administrator / podmiot przetwarzający.</p></div>
+          </li>
+        </ul>
       </div>
-      <p class="aiact__body" data-i18n="aiact.body">Funkcje AI w CRMtree (Analiza rozmów, Prospekty, SEObot) działają w oparciu o natywną integrację z GovAI — naszą bramką zgodności z unijnym AI Act. Każde wywołanie modelu AI jest klasyfikowane pod kątem ryzyka, skanowane pod kątem danych osobowych i rejestrowane w niezmiennym dzienniku audytowym. Efekt: zgodność z AI Act od pierwszego dnia, tak samo jak zapewniamy zgodność z RODO.</p>
-      <div class="aiact-grid">
-        <div class="aiact-card"><h3 data-i18n="aiact.card1_t">Klasyfikacja ryzyka</h3><p data-i18n="aiact.card1_d">Automatyczna klasyfikacja każdego wywołania AI wg art. 5, Aneksu III i art. 50 AI Act.</p></div>
-        <div class="aiact-card"><h3 data-i18n="aiact.card2_t">Nadzór człowieka</h3><p data-i18n="aiact.card2_d">Wywołania wymagające przeglądu czekają na kwalifikowanego recenzenta, zanim trafią dalej.</p></div>
-        <div class="aiact-card"><h3 data-i18n="aiact.card3_t">Niezmienny dziennik audytowy</h3><p data-i18n="aiact.card3_d">Każda decyzja AI zapisana ze znacznikiem czasu — gotowy dowód na audyt.</p></div>
-        <div class="aiact-card"><h3 data-i18n="aiact.card4_t">RODO i AI Act razem</h3><p data-i18n="aiact.card4_d">Jedna, spójna warstwa zgodności zamiast osobnych wdrożeń dla każdej regulacji.</p></div>
+      <div class="sec-col" id="aiact">
+        <span class="eyebrow" data-i18n="aiact.eyebrow">Zgodność z prawem</span>
+        <h2 data-i18n="aiact.h2">Gotowi na AI Act - nie tylko na RODO</h2>
+        <p class="aiact__body" data-i18n="aiact.body">Funkcje AI w CRMtree (Analiza rozmów, Prospekty, SEObot) działają w oparciu o natywną integrację z GovAI - naszą bramką zgodności z unijnym AI Act. Każde wywołanie modelu AI jest klasyfikowane pod kątem ryzyka, skanowane pod kątem danych osobowych i rejestrowane w niezmiennym dzienniku audytowym. Efekt: zgodność z AI Act od pierwszego dnia, tak samo jak zapewniamy zgodność z RODO.</p>
+        <ul class="sec-list">
+          <li class="sec-item">
+            <span class="sec-item__icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3v14M6 17h8M4 6h12"/><path d="M4 6l-2 6a2 2 0 0 0 4 0zM16 6l-2 6a2 2 0 0 0 4 0z"/></svg></span>
+            <div><h3 data-i18n="aiact.card1_t">Klasyfikacja ryzyka</h3><p data-i18n="aiact.card1_d">Automatyczna klasyfikacja każdego wywołania AI wg art. 5, Aneksu III i art. 50 AI Act.</p></div>
+          </li>
+          <li class="sec-item">
+            <span class="sec-item__icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 10s3-6 8-6 8 6 8 6-3 6-8 6-8-6-8-6z"/><circle cx="10" cy="10" r="2"/></svg></span>
+            <div><h3 data-i18n="aiact.card2_t">Nadzór człowieka</h3><p data-i18n="aiact.card2_d">Wywołania wymagające przeglądu czekają na kwalifikowanego recenzenta, zanim trafią dalej.</p></div>
+          </li>
+          <li class="sec-item">
+            <span class="sec-item__icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 5h9M8 10h9M8 15h9M3 5h2M3 10h2M3 15h2"/></svg></span>
+            <div><h3 data-i18n="aiact.card3_t">Niezmienny dziennik audytowy</h3><p data-i18n="aiact.card3_d">Każda decyzja AI zapisana ze znacznikiem czasu - gotowy dowód na audyt.</p></div>
+          </li>
+          <li class="sec-item">
+            <span class="sec-item__icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 2l8 4-8 4-8-4z"/><path d="M2 10l8 4 8-4"/><path d="M2 14l8 4 8-4"/></svg></span>
+            <div><h3 data-i18n="aiact.card4_t">RODO i AI Act razem</h3><p data-i18n="aiact.card4_d">Jedna, spójna warstwa zgodności zamiast osobnych wdrożeń dla każdej regulacji.</p></div>
+          </li>
+        </ul>
       </div>
     </div>
   </section>
-
   <!-- FAQ -->
   <section class="faq-section" id="faq">
-    <div class="container">
-      <div class="section-header">
+    <div class="container faq-layout">
+      <div class="faq-aside">
         <span class="eyebrow" data-i18n="faq.eyebrow">Pytania</span>
         <h2 data-i18n="faq.h2">Najczęściej pytacie o to</h2>
+        <p class="faq-aside__hint">
+          <span data-i18n="contact.hint">Wolisz napisać bezpośrednio?</span>
+          <a href="mailto:crmtree_kontakt@crmtree.pl" class="contact-email-link">crmtree_kontakt@crmtree.pl</a>
+        </p>
       </div>
       <div class="faq-list">
         <details class="faq-item" open>
           <summary data-i18n="faq.q1">Czy CRMtree nadaje się dla mojej branży?</summary>
-          <p data-i18n="faq.a1">Tak — CRMtree nie jest zbudowany pod jeden konkretny model sprzedaży. Konfigurujesz lejek, pola i role pod proces, który już masz w firmie.</p>
+          <p data-i18n="faq.a1">Tak - CRMtree nie jest zbudowany pod jeden konkretny model sprzedaży. Konfigurujesz lejek, pola i role pod proces, który już masz w firmie.</p>
         </details>
         <details class="faq-item">
           <summary data-i18n="faq.q2">Czy mogę wypróbować CRMtree za darmo?</summary>
-          <p data-i18n="faq.a2">Tak — 14 dni pełnego dostępu, bez karty płatniczej. Zrezygnujesz w każdej chwili.</p>
+          <p data-i18n="faq.a2">Tak - 14 dni pełnego dostępu, bez karty płatniczej. Zrezygnujesz w każdej chwili.</p>
         </details>
         <details class="faq-item">
           <summary data-i18n="faq.q3">Jaką pocztę mogę podłączyć?</summary>
-          <p data-i18n="faq.a3">Gmail, Outlook i Zoho — korespondencja synchronizuje się bezpośrednio przy kartach leadów i partnerów.</p>
+          <p data-i18n="faq.a3">Gmail, Outlook i Zoho - korespondencja synchronizuje się bezpośrednio przy kartach leadów i partnerów.</p>
         </details>
         <details class="faq-item">
           <summary data-i18n="faq.q_migrate">Czy da się przenieść dane z innego CRM (np. Livespace, Pipedrive)?</summary>
@@ -819,7 +805,7 @@
         </details>
         <details class="faq-item">
           <summary data-i18n="faq.q_whatsapp">Czy WhatsApp Business działa od razu po założeniu konta?</summary>
-          <p data-i18n="faq.a_whatsapp">Numer WhatsApp Business konfiguruje administrator Twojej firmy w panelu — jeden wspólny, firmowy numer widoczny dla całego zespołu.</p>
+          <p data-i18n="faq.a_whatsapp">Numer WhatsApp Business konfiguruje administrator Twojej firmy w panelu - jeden wspólny, firmowy numer widoczny dla całego zespołu.</p>
         </details>
         <details class="faq-item">
           <summary data-i18n="faq.q5">Gdzie są przechowywane nasze dane?</summary>
@@ -833,7 +819,7 @@
     </div>
   </section>
 
-  <!-- LOGIN CTA -->
+  <!-- LOGIN CTA (jak w oryginale) -->
   <section class="login-cta">
     <div class="container login-cta__inner">
       <div class="login-cta__text">
@@ -855,6 +841,25 @@
           <a href="mailto:crmtree_kontakt@crmtree.pl" class="contact-email-link">crmtree_kontakt@crmtree.pl</a>
         </p>
       </div>
+      <div class="contact-layout">
+      <div class="contact-how" id="how-it-works">
+        <h3 data-i18n="how.h2">Jak zacząć</h3>
+        <p data-i18n="how.sub">Trzy kroki, bez integracji IT</p>
+        <ol class="contact-steps">
+          <li class="contact-step">
+            <span class="contact-step__num">1</span>
+            <div><h4 data-i18n="how.step1_t">Zakładasz konto</h4><p data-i18n="how.step1_d">Wypełniasz formularz kontaktowy. Tworzymy dedykowane środowisko dla Twojej firmy w ciągu 24h.</p></div>
+          </li>
+          <li class="contact-step">
+            <span class="contact-step__num">2</span>
+            <div><h4 data-i18n="how.step2_t">Importujesz dane</h4><p data-i18n="how.step2_d">Wgrywasz listę partnerów i handlowców z pliku CSV. System importuje dane automatycznie.</p></div>
+          </li>
+          <li class="contact-step">
+            <span class="contact-step__num">3</span>
+            <div><h4 data-i18n="how.step3_t">Zaczynasz pracę</h4><p data-i18n="how.step3_d">Twój zespół loguje się i od razu widzi dashboard z wynikami. Zero szkolenia.</p></div>
+          </li>
+        </ol>
+      </div>
       <form class="contact-form" id="contactForm">
         <input type="hidden" name="access_key" value="f2f53912-5f35-4b8f-b3d8-743e8759f76b" />
         <input type="hidden" name="subject" value="Zapytanie z crmtree.pl" />
@@ -862,35 +867,38 @@
         <div class="form-row">
           <div class="form-group">
             <label for="name" data-i18n="contact.name_label">Imię i nazwisko</label>
-            <input type="text" id="name" name="name" data-i18n-placeholder="contact.name_ph" placeholder="Jan Kowalski" required />
+            <input type="text" id="name" name="name" autocomplete="name" data-i18n-placeholder="contact.name_ph" placeholder="Jan Kowalski" required />
           </div>
           <div class="form-group">
             <label for="company" data-i18n="contact.company_label">Firma</label>
-            <input type="text" id="company" name="company" data-i18n-placeholder="contact.company_ph" placeholder="Nazwa firmy" required />
+            <input type="text" id="company" name="company" autocomplete="organization" data-i18n-placeholder="contact.company_ph" placeholder="Nazwa firmy" required />
           </div>
         </div>
         <div class="form-row">
           <div class="form-group">
             <label for="email" data-i18n="contact.email_label">Email służbowy</label>
-            <input type="email" id="email" name="email" data-i18n-placeholder="contact.email_ph" placeholder="jan@firma.pl" required />
+            <input type="email" id="email" name="email" autocomplete="email" data-i18n-placeholder="contact.email_ph" placeholder="jan@firma.pl" required />
           </div>
           <div class="form-group">
             <label for="phone"><span data-i18n="contact.phone_label">Telefon</span> <span class="optional" data-i18n="contact.phone_optional">(opcjonalnie)</span></label>
-            <input type="tel" id="phone" name="phone" data-i18n-placeholder="contact.phone_ph" placeholder="+48 500 000 000" />
+            <input type="tel" id="phone" name="phone" autocomplete="tel" data-i18n-placeholder="contact.phone_ph" placeholder="+48 500 000 000" />
           </div>
         </div>
         <div class="form-group">
           <label for="message" data-i18n="contact.message_label">Wiadomość</label>
           <textarea id="message" name="message" rows="4" data-i18n-placeholder="contact.message_ph" placeholder="Opisz krótko swoje potrzeby lub zadaj pytanie…"></textarea>
         </div>
-        <div id="formSuccess" class="form-success" style="display:none" data-i18n="contact.success">
-          ✅ Dziękujemy! Odezwiemy się wkrótce.
+        <div id="formSuccess" class="form-success" role="status" style="display:none" data-i18n="contact.success">
+          Dziękujemy! Odezwiemy się wkrótce.
         </div>
-        <div id="formError" class="form-error" style="display:none" data-i18n="contact.error">
-          ❌ Coś poszło nie tak. Spróbuj ponownie lub napisz bezpośrednio na crmtree_kontakt@crmtree.pl
+        <div id="formError" class="form-error" role="alert" style="display:none" data-i18n="contact.error">
+          Coś poszło nie tak. Spróbuj ponownie lub napisz bezpośrednio na crmtree_kontakt@crmtree.pl
         </div>
-        <button type="submit" id="formSubmit" class="btn btn--primary btn--lg" data-i18n="contact.submit">Wyślij zapytanie</button>
+        <div class="contact-form__foot">
+          <button type="submit" id="formSubmit" class="btn btn--primary btn--lg" data-i18n="contact.submit">Wyślij zapytanie</button>
+        </div>
       </form>
+      </div>
 
       <script>
         document.getElementById('contactForm').addEventListener('submit', async function(e) {
@@ -899,7 +907,7 @@
           const ok  = document.getElementById('formSuccess');
           const err = document.getElementById('formError');
           btn.disabled = true;
-          btn.textContent = (window.CRMtreeI18N && document.documentElement.lang !== 'pl') ? 'Sending…' : 'Wysyłanie…';
+          btn.textContent = window.CRMtreeI18N ? window.CRMtreeI18N.t('contact.submitting') : 'Wysyłanie…';
           ok.style.display = 'none';
           err.style.display = 'none';
           try {
@@ -926,29 +934,65 @@
 
   <!-- FOOTER -->
   <footer class="footer">
-    <div class="container footer__inner">
-      <div class="footer__brand">
-        <img src="logo.webp" alt="CRMtree" class="footer__logo-img" width="300" height="200" loading="lazy" />
-        <p data-i18n="footer.tagline">CRM dla nowoczesnej firmy</p>
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="/" class="footer__logo"><img src="logo-white.webp" alt="CRMtree" class="footer__logo-img" width="172" height="96" loading="lazy" /></a>
+          <p data-i18n="footer.tagline">CRM dla nowoczesnej firmy</p>
+        </div>
+        <div class="footer__cols">
+          <details class="footer__col footer__col--modules" open>
+            <summary class="footer__heading" data-i18n="footer.col_modules">Moduły</summary>
+            <ul>
+              <li><a href="#f-prospekty" data-i18n="features.f10_t">Prospekty</a></li>
+              <li><a href="#f-analiza-ai" data-i18n="features.f5_t">Analiza rozmów AI</a></li>
+              <li><a href="#f-komunikacja" data-i18n="features.f4_t">Komunikacja wielokanałowa</a></li>
+              <li><a href="#f-dashboard" data-i18n="features.f1_t">Dashboard sprzedaży</a></li>
+              <li><a href="#f-mobile" data-i18n="features.f9_t">Aplikacja mobilna</a></li>
+              <li><a href="#f-partnerzy" data-i18n="features.f2_t">Zarządzanie partnerami</a></li>
+              <li><a href="#f-budzety" data-i18n="features.f3_t">Budżety i cele</a></li>
+              <li><a href="#f-seobot" data-i18n="features.f6_t">SEObot</a></li>
+              <li><a href="#f-dokumenty" data-i18n="features.f7_t">Dokumenty i workflow</a></li>
+              <li><a href="#f-bezpieczenstwo" data-i18n="features.f8_t">Bezpieczeństwo i role</a></li>
+              <li><a href="#f-projekty" data-i18n="features.f11_t">Projekty</a></li>
+            </ul>
+          </details>
+          <details class="footer__col" open>
+            <summary class="footer__heading" data-i18n="footer.col_product">Produkt</summary>
+            <ul>
+              <li><a href="#features" data-i18n="footer.features">Funkcje</a></li>
+              <li><a href="/pricing.html" data-i18n="footer.pricing">Cennik</a></li>
+              <li><a href="#aiact" data-i18n="footer.aiact">AI Act</a></li>
+              <li><a href="https://demo.crmtree.pl/login" data-i18n="footer.login">Zaloguj się</a></li>
+            </ul>
+          </details>
+          <details class="footer__col" open>
+            <summary class="footer__heading" data-i18n="footer.col_resources">Zasoby</summary>
+            <ul>
+              <li><a href="/blog" data-i18n="footer.blog">Blog</a></li>
+              <li><a href="#faq" data-i18n="footer.faq">FAQ</a></li>
+            </ul>
+          </details>
+          <details class="footer__col" open>
+            <summary class="footer__heading" data-i18n="footer.col_company">Firma</summary>
+            <ul>
+              <li><a href="#contact" data-i18n="footer.contact">Kontakt</a></li>
+              <li><a href="/polityka-prywatnosci.html" data-i18n="footer.privacy">Polityka prywatności</a></li>
+            </ul>
+          </details>
+        </div>
       </div>
-      <div class="footer__links">
-        <a href="https://demo.crmtree.pl/login" data-i18n="footer.login">Zaloguj się</a>
-        <a href="#features" data-i18n="footer.features">Funkcje</a>
-        <a href="/pricing.html" data-i18n="footer.pricing">Cennik</a>
-        <a href="/blog" data-i18n="footer.blog">Blog</a>
-        <a href="#aiact" data-i18n="footer.aiact">AI Act</a>
-        <a href="#contact" data-i18n="footer.contact">Kontakt</a>
-        <a href="/polityka-prywatnosci.html" data-i18n="footer.privacy">Polityka prywatności</a>
+      <div class="footer__bottom">
+        <p class="footer__copy" data-i18n="footer.copyright">&copy; 2026 CRMtree. Wszelkie prawa zastrzeżone.</p>
+        <p class="footer__legal">Właściciel marki CRMtree: Comparme Sp. z o.o. · ul. Herbu Janina 5, 02-972 Warszawa · NIP 5213664910 · REGON 147067912</p>
       </div>
-      <p class="footer__legal">Właściciel marki CRMtree: Comparme Sp. z o.o. · ul. Herbu Janina 5, 02-972 Warszawa · NIP 5213664910 · REGON 147067912</p>
-      <p class="footer__copy" data-i18n="footer.copyright">&copy; 2026 CRMtree. Wszelkie prawa zastrzeżone.</p>
     </div>
   </footer>
 
   <!-- CHAT WIDGET -->
   <div class="chat-widget" id="chatWidget">
     <div class="chat-panel">
-      <button class="chat-panel__close" type="button" onclick="document.getElementById('chatWidget').classList.remove('open')" aria-label="Zamknij czat">✕</button>
+      <button class="chat-panel__close" type="button" onclick="document.getElementById('chatWidget').classList.remove('open')" aria-label="Zamknij czat"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 2l10 10M12 2L2 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
       <div class="chat-panel__head">
         <img class="chat-panel__avatar" src="chat-avatar.webp" alt="" />
         <div>
@@ -956,16 +1000,17 @@
           <span class="chat-panel__status"><span class="chat-panel__status-dot"></span><span data-i18n="chat.status">Online teraz</span></span>
         </div>
       </div>
-      <p class="chat-panel__msg" data-i18n="chat.msg1">Cześć! 👋 Chętnie odpowiemy, czego szukasz albo co chcesz usprawnić w swojej sprzedaży.</p>
+      <p class="chat-panel__msg" data-i18n="chat.msg1">Cześć! Chętnie odpowiemy, czego szukasz albo co chcesz usprawnić w swojej sprzedaży.</p>
       <p class="chat-panel__msg chat-panel__msg--soft" data-i18n="chat.msg2">Możemy też od razu umówić 14-dniowy dostęp testowy.</p>
       <a href="#contact" class="btn btn--primary" data-i18n="chat.cta">Napisz do nas</a>
     </div>
     <button class="chat-teaser" type="button" onclick="document.getElementById('chatWidget').classList.toggle('open')" aria-label="Otwórz czat">
       <img class="chat-teaser__avatar" src="chat-avatar.webp" alt="" />
-      <span class="chat-teaser__text" data-i18n="chat.pill">Cześć! 👋</span>
+      <span class="chat-teaser__text" data-i18n="chat.pill">Cześć!</span>
     </button>
   </div>
 
   <script src="i18n.js"></script>
+  <script src="nav.js"></script>
 </body>
 </html>

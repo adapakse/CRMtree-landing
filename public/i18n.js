@@ -1,11 +1,11 @@
 /*
- * CRMtree landing — lightweight client-side i18n.
+ * CRMtree landing - lightweight client-side i18n.
  * No build step (matches the rest of this repo): plain data-i18n="key.path"
  * attributes on elements, swapped at runtime from the I18N table below.
  *
  * TRANSLATION QUALITY NOTE (2026-09): PL and EN are the reviewed source
  * languages. DE/IT/ES/FR/RO/RU/SL/HR were machine-translated by Claude and
- * have NOT been reviewed by a native speaker or legal counsel — before
+ * have NOT been reviewed by a native speaker or legal counsel - before
  * relying on them publicly (especially the AI Act / RODO compliance
  * section), get a native + legal review per language.
  */
@@ -16,17 +16,20 @@
   // CRM's language into that key, so it still holds a language nobody chose here.
   var STORAGE_KEY = "crmtree_landing_lang";
 
+  // Flagi jako pliki (emoji flag nie działają na Windows). es/hr jako małe PNG -
+  // ich SVG z herbem ważą 40–90 KB, a przy 20×14 px herbu i tak nie widać.
+  var FLAG_DIR = "flags/";
   var LANGS = [
-    { code: "pl", name: "Polski" },
-    { code: "en", name: "English" },
-    { code: "de", name: "Deutsch" },
-    { code: "it", name: "Italiano" },
-    { code: "es", name: "Español" },
-    { code: "fr", name: "Français" },
-    { code: "ro", name: "Română" },
-    { code: "ru", name: "Русский" },
-    { code: "sl", name: "Slovenščina" },
-    { code: "hr", name: "Hrvatski" }
+    { code: "pl", name: "Polski",      flag: "pl.svg" },
+    { code: "en", name: "English",     flag: "gb.svg" },
+    { code: "de", name: "Deutsch",     flag: "de.svg" },
+    { code: "it", name: "Italiano",    flag: "it.svg" },
+    { code: "es", name: "Español",     flag: "es.png" },
+    { code: "fr", name: "Français",    flag: "fr.svg" },
+    { code: "ro", name: "Română",      flag: "ro.svg" },
+    { code: "ru", name: "Русский",     flag: "ru.svg" },
+    { code: "sl", name: "Slovenščina", flag: "si.svg" },
+    { code: "hr", name: "Hrvatski",    flag: "hr.png" }
   ];
 
   var I18N = {};
@@ -45,7 +48,10 @@
     "contact": "Kontakt",
     "login": "Zaloguj się",
     "cta_trial": "Wypróbuj 14 dni",
-    "products": "Produkty"
+    "products": "Produkty",
+    "menu_open": "Otwórz menu",
+    "menu_close": "Zamknij menu",
+    "language": "Język"
   },
   "hero": {
     "eyebrow": "CRM dla każdej branży",
@@ -55,7 +61,9 @@
     "cta_secondary": "Zobacz funkcje",
     "trust1": "14 dni za darmo",
     "trust2": "Wdrożenie bez integracji IT",
-    "trust3": "Dane w Azure, region Polska Centralna"
+    "trust3": "Dane w Azure, region Polska Centralna",
+    "shot_web_alt": "Dashboard CRMtree w przeglądarce",
+    "shot_mobile_alt": "Aplikacja mobilna CRMtree - ekran Start"
   },
   "trial": {
     "eyebrow": "Zacznij już dziś",
@@ -67,7 +75,7 @@
   },
   "cycle": {
     "eyebrow": "Jak rośniemy razem z Tobą",
-    "h2": "Cały cykl wzrostu — od zimnego leada do stałego klienta",
+    "h2": "Cały cykl wzrostu - od zimnego leada do stałego klienta",
     "sub": "CRMtree nie kończy się na zamknięciu transakcji. Prowadzi cały proces: pozyskanie, kwalifikację, konwersję i utrzymanie klienta.",
     "s1_t": "Wzbogacanie baz danych",
     "s1_d": "Domena firmy z zimnej bazy leadów jest automatycznie uzupełniana o branżę i wielkość.",
@@ -87,6 +95,7 @@
     "s8_d": "Wyniki sprzedaży, partnerów i budżetów w jednym dashboardzie."
   },
   "features": {
+    "more": "Zobacz więcej",
     "eyebrow": "Funkcje",
     "h2": "Wszystko, czego potrzebujesz",
     "sub": "Jeden system zamiast dziesiątek arkuszy i narzędzi",
@@ -104,47 +113,59 @@
     "cta": "Wypróbuj za darmo",
     "f1_problem": "Kierownik sprzedaży nie wie, jak naprawdę stoi zespół, dopóki nie zbierze ręcznie danych od każdego handlowca.",
     "f1_how": "Dashboard sprzedaży pokazuje wyniki w czasie rzeczywistym, z eksportem danych i filtrami po okresie, partnerze i handlowcu.",
-    "f1_example": "W piątek rano kierownik jednym rzutem oka widzi, że handlowiec Kowalski ma 40% mniej aktywności niż reszta zespołu — i może zareagować tego samego dnia, zamiast na koniec miesiąca.",
+    "f1_example": "W piątek rano kierownik jednym rzutem oka widzi, że handlowiec Kowalski ma 40% mniej aktywności niż reszta zespołu - i może zareagować tego samego dnia, zamiast na koniec miesiąca.",
     "f2_problem": "Dane o kliencie i partnerze są rozsiane w mailach, notatkach i pamięci różnych osób w firmie.",
     "f2_how": "Baza partnerów trzyma w jednym miejscu historię transakcji, dokumenty i przypisanego opiekuna.",
-    "f2_example": "Gdy opiekun klienta idzie na urlop, zastępujący go handlowiec w dwie minuty widzi całą historię współpracy z firmą ABC — bez dzwonienia do kolegi.",
+    "f2_example": "Gdy opiekun klienta idzie na urlop, zastępujący go handlowiec w dwie minuty widzi całą historię współpracy z firmą ABC - bez dzwonienia do kolegi.",
     "f3_problem": "Plan sprzedażowy żyje w osobnym arkuszu, którego nikt nie aktualizuje na bieżąco.",
     "f3_how": "Budżety roczne i miesięczne per handlowiec są automatycznie porównywane z wykonaniem.",
-    "f3_example": "System sam pokazuje, że dział handlowy w Q3 zrealizował tylko 60% celu — zanim będzie za późno na korektę strategii.",
+    "f3_example": "System sam pokazuje, że dział handlowy w Q3 zrealizował tylko 60% celu - zanim będzie za późno na korektę strategii.",
     "f4_problem": "Rozmowa z klientem toczy się w trzech różnych kanałach naraz, a nikt nie ma pełnego obrazu.",
     "f4_how": "E-mail, WhatsApp Business i telefon są widoczne przy jednej karcie leada i partnera.",
-    "f4_example": "Handlowiec widzi na WhatsAppie reklamację klienta, zanim jeszcze odbierze od niego telefon — i jest przygotowany na rozmowę.",
+    "f4_example": "Handlowiec widzi na WhatsAppie reklamację klienta, zanim jeszcze odbierze od niego telefon - i jest przygotowany na rozmowę.",
     "f5_problem": "Po rozmowie telefonicznej nikt nie ma czasu przesłuchać jej ponownie ani ocenić, czy klient faktycznie jest zainteresowany.",
     "f5_how": "AI automatycznie ocenia skłonność do zakupu z notatek lub transkrypcji i wskazuje sygnały oraz obiekcje.",
-    "f5_example": "System oznacza rozmowę jako \"niski potencjał\" po wykryciu trzech odmów pod rząd — handlowiec nie traci czasu na dalsze wygrzewanie tego leada.",
+    "f5_example": "System oznacza rozmowę jako \"niski potencjał\" po wykryciu trzech odmów pod rząd - handlowiec nie traci czasu na dalsze wygrzewanie tego leada.",
     "f6_problem": "Blog firmowy stoi od miesięcy, bo nikt w zespole nie ma czasu pisać artykułów.",
     "f6_how": "AI pisze i planuje publikację artykułów SEO oraz mierzy efekt w Google Search Console.",
-    "f6_example": "W jeden dzień powstaje artykuł \"Jak wybrać CRM dla małej firmy\" — zaplanowany do publikacji i śledzony pod kątem wejść z Google.",
+    "f6_example": "W jeden dzień powstaje artykuł \"Jak wybrać CRM dla małej firmy\" - zaplanowany do publikacji i śledzony pod kątem wejść z Google.",
     "f7_problem": "Umowa krąży w mailach jako załącznik \"wersja_final_v3\" i nikt nie wie, kto ją ostatnio zaakceptował.",
     "f7_how": "Obieg podpisów i akceptacji trzyma dokumenty bezpośrednio przy karcie partnera.",
-    "f7_example": "Nowa umowa czeka na akceptację działu prawnego — system pokazuje dokładnie, na czyim biurku utknęła, zamiast kolejnego przypominającego maila.",
+    "f7_example": "Nowa umowa czeka na akceptację działu prawnego - system pokazuje dokładnie, na czyim biurku utknęła, zamiast kolejnego przypominającego maila.",
     "f8_problem": "Nowy pracownik dostaje dostęp do wszystkiego \"na wszelki wypadek\", bo ręczne ustawianie uprawnień zajmuje zbyt dużo czasu.",
     "f8_how": "Środowisko każdej firmy jest w pełni odizolowane, z rolami, uprawnieniami i logowaniem przez SSO/SAML.",
-    "f8_example": "Stażysta w dziale marketingu nie zobaczy warunków finansowych klientów działu sprzedaży — bo jego rola po prostu nie ma tam dostępu.",
+    "f8_example": "Stażysta w dziale marketingu nie zobaczy warunków finansowych klientów działu sprzedaży - bo jego rola po prostu nie ma tam dostępu.",
     "f9_problem": "Handlowiec w terenie nie ma dostępu do CRM między spotkaniami i zapomina zapisać ustalenia, zanim wróci do biura.",
     "f9_how": "Leady, partnerzy i zadania są zawsze pod ręką, z powiadomieniami push.",
-    "f9_example": "Zaraz po spotkaniu z klientem handlowiec dodaje notatkę z telefonu w windzie — zanim zdąży o czymkolwiek zapomnieć.",
+    "f9_example": "Zaraz po spotkaniu z klientem handlowiec dodaje notatkę z telefonu w windzie - zanim zdąży o czymkolwiek zapomnieć.",
+    "f9_shot_alt": "Aplikacja mobilna CRMtree - lista leadów",
     "f10_problem": "Handlowiec traci godziny na ręczne sprawdzanie, czy firma z zimnej bazy w ogóle pasuje do profilu klienta.",
     "f10_how": "Automatyczny scoring ICP 0–100 sam wzbogaca dane firmy.",
-    "f10_example": "Z listy 500 nowych firm system od razu pokazuje 40 z najwyższym dopasowaniem — handlowiec dzwoni najpierw do nich, nie po kolei od góry listy.",
-    "f11_problem": "Po podpisaniu umowy wdrożenie u klienta rozjeżdża się po mailach, arkuszach i komunikatorach — nikt nie wie, kto za co odpowiada ani na jakim etapie jest praca.",
-    "f11_how": "Projekt ma kartę z zespołem, zadania z podzadaniami, oś czasu (Gantt) i czat — z rolami dla PM-a, uczestników, kontrolera i osób spoza firmy.",
-    "f11_example": "PM zakłada projekt wdrożenia i przypisuje zadania swoim ludziom oraz osobie po stronie klienta — ta po zalogowaniu widzi wyłącznie swoje zadania i zamyka je na bieżąco.",
+    "f10_example": "Z listy 500 nowych firm system od razu pokazuje 40 z najwyższym dopasowaniem - handlowiec dzwoni najpierw do nich, nie po kolei od góry listy.",
+    "f11_problem": "Po podpisaniu umowy wdrożenie u klienta rozjeżdża się po mailach, arkuszach i komunikatorach - nikt nie wie, kto za co odpowiada ani na jakim etapie jest praca.",
+    "f11_how": "Projekt ma kartę z zespołem, zadania z podzadaniami, oś czasu (Gantt) i czat - z rolami dla PM-a, uczestników, kontrolera i osób spoza firmy.",
+    "f11_example": "PM zakłada projekt wdrożenia i przypisuje zadania swoim ludziom oraz osobie po stronie klienta - ta po zalogowaniu widzi wyłącznie swoje zadania i zamyka je na bieżąco.",
     "label_problem": "Jaki problem rozwiązuje CRMtree",
     "label_how": "W jaki sposób",
     "label_example": "Przykład zastosowania"
   },
   "compare": {
+    "legend_yes": "Jest",
+    "legend_partial": "Częściowo",
+    "legend_no": "Brak",
+    "note_paid": "Płatny moduł",
+    "note_enterprise": "Plan Enterprise",
+    "note_advanced": "Plan Advanced",
+    "note_addon": "Dodatek",
+    "note_addon_beta": "Dodatek, Gantt w becie",
+    "note_professional": "Od planu Professional",
+    "unknown": "Brak danych",
     "eyebrow": "Porównanie",
     "h2": "CRMtree na tle innych systemów CRM",
     "sub": "CRMtree ma wszystko, co konkurencja, a wyprzedza ją w następujących obszarach funkcjonalnych.",
     "col_feature": "Cecha",
     "col_us": "CRMtree",
+    "pick_label": "Porównaj z",
     "g1": "Wdrożenie",
     "g2": "E-mail i komunikacja real-time",
     "g3": "Telefonia i analiza rozmów AI",
@@ -186,9 +207,9 @@
   "security": {
     "eyebrow": "Bezpieczeństwo",
     "h2": "Dane Twojej firmy są bezpiecznie wydzielone w dedykowanej przestrzeni",
-    "sub": "Każda firma pracuje we w pełni odizolowanym środowisku — to jest wbudowane.",
+    "sub": "Każda firma pracuje we w pełni odizolowanym środowisku - to jest wbudowane.",
     "sec1_t": "Pełna izolacja danych",
-    "sec1_d": "Środowisko każdej firmy jest odseparowane — użytkownicy jednej firmy nigdy nie widzą danych innej.",
+    "sec1_d": "Środowisko każdej firmy jest odseparowane - użytkownicy jednej firmy nigdy nie widzą danych innej.",
     "sec2_t": "RBAC i SSO/SAML",
     "sec2_d": "Dostęp kontrolowany rolami i uprawnieniami. Logowanie firmowe przez SSO/SAML.",
     "sec3_t": "Serwery w UE",
@@ -198,14 +219,14 @@
   },
   "aiact": {
     "eyebrow": "Zgodność z prawem",
-    "h2": "Gotowi na AI Act — nie tylko na RODO",
-    "body": "Funkcje AI w CRMtree (Analiza rozmów, Prospekty, SEObot) działają w oparciu o natywną integrację z GovAI — naszą bramką zgodności z unijnym AI Act. Każde wywołanie modelu AI jest klasyfikowane pod kątem ryzyka, skanowane pod kątem danych osobowych i rejestrowane w niezmiennym dzienniku audytowym. Efekt: zgodność z AI Act od pierwszego dnia, tak samo jak zapewniamy zgodność z RODO.",
+    "h2": "Gotowi na AI Act - nie tylko na RODO",
+    "body": "Funkcje AI w CRMtree (Analiza rozmów, Prospekty, SEObot) działają w oparciu o natywną integrację z GovAI - naszą bramką zgodności z unijnym AI Act. Każde wywołanie modelu AI jest klasyfikowane pod kątem ryzyka, skanowane pod kątem danych osobowych i rejestrowane w niezmiennym dzienniku audytowym. Efekt: zgodność z AI Act od pierwszego dnia, tak samo jak zapewniamy zgodność z RODO.",
     "card1_t": "Klasyfikacja ryzyka",
     "card1_d": "Automatyczna klasyfikacja każdego wywołania AI wg art. 5, Aneksu III i art. 50 AI Act.",
     "card2_t": "Nadzór człowieka",
     "card2_d": "Wywołania wymagające przeglądu czekają na kwalifikowanego recenzenta, zanim trafią dalej.",
     "card3_t": "Niezmienny dziennik audytowy",
-    "card3_d": "Każda decyzja AI zapisana z znacznikiem czasu — gotowy dowód na audyt.",
+    "card3_d": "Każda decyzja AI zapisana z znacznikiem czasu - gotowy dowód na audyt.",
     "card4_t": "RODO i AI Act razem",
     "card4_d": "Jedna, spójna warstwa zgodności zamiast osobnych wdrożeń dla każdej regulacji."
   },
@@ -213,11 +234,11 @@
     "eyebrow": "Pytania",
     "h2": "Najczęściej pytacie o to",
     "q1": "Czy CRMtree nadaje się dla mojej branży?",
-    "a1": "Tak — CRMtree nie jest zbudowany pod jeden konkretny model sprzedaży. Konfigurujesz lejek, pola i role pod proces, który już masz w firmie.",
+    "a1": "Tak - CRMtree nie jest zbudowany pod jeden konkretny model sprzedaży. Konfigurujesz lejek, pola i role pod proces, który już masz w firmie.",
     "q2": "Czy mogę wypróbować CRMtree za darmo?",
-    "a2": "Tak — 14 dni pełnego dostępu, bez karty płatniczej. Zrezygnujesz w każdej chwili.",
+    "a2": "Tak - 14 dni pełnego dostępu, bez karty płatniczej. Zrezygnujesz w każdej chwili.",
     "q3": "Jaką pocztę mogę podłączyć?",
-    "a3": "Gmail, Outlook i Zoho — korespondencja synchronizuje się bezpośrednio przy kartach leadów i partnerów.",
+    "a3": "Gmail, Outlook i Zoho - korespondencja synchronizuje się bezpośrednio przy kartach leadów i partnerów.",
     "q4": "Jak działa analiza rozmów AI?",
     "a4": "System analizuje notatki lub transkrypcje rozmów i wystawia ocenę skłonności do zakupu wraz z sygnałami i obiekcjami klienta.",
     "q5": "Gdzie są przechowywane nasze dane?",
@@ -225,7 +246,7 @@
     "q_migrate": "Czy da się przenieść dane z innego CRM (np. Livespace, Pipedrive)?",
     "a_migrate": "Tak, standardowo importujemy dane partnerów i handlowców z pliku CSV. Przy większych migracjach pomagamy indywidualnie.",
     "q_whatsapp": "Czy WhatsApp Business działa od razu po założeniu konta?",
-    "a_whatsapp": "Numer WhatsApp Business konfiguruje administrator Twojej firmy w panelu — jeden wspólny, firmowy numer widoczny dla całego zespołu.",
+    "a_whatsapp": "Numer WhatsApp Business konfiguruje administrator Twojej firmy w panelu - jeden wspólny, firmowy numer widoczny dla całego zespołu.",
     "q_price": "Ile to kosztuje?",
     "a_price": "Zależy od liczby użytkowników i wybranych modułów. Pełny cennik znajdziesz na stronie Cennik, a jeśli wolisz porozmawiać, napisz do nas."
   },
@@ -250,12 +271,13 @@
     "phone_ph": "+48 500 000 000",
     "message_label": "Wiadomość",
     "message_ph": "Opisz krótko swoje potrzeby lub zadaj pytanie…",
-    "success": "✅ Dziękujemy! Odezwiemy się wkrótce.",
-    "error": "❌ Coś poszło nie tak. Spróbuj ponownie lub napisz bezpośrednio.",
+    "success": "Dziękujemy! Odezwiemy się wkrótce.",
+    "error": "Coś poszło nie tak. Spróbuj ponownie lub napisz bezpośrednio.",
     "submit": "Wyślij zapytanie",
     "submitting": "Wysyłanie…"
   },
   "footer": {
+    "col_modules": "Moduły",
     "tagline": "CRM dla nowoczesnej firmy",
     "col_product": "Produkt",
     "col_resources": "Zasoby",
@@ -270,11 +292,61 @@
     "privacy": "Polityka prywatności",
     "copyright": "© 2026 CRMtree. Wszelkie prawa zastrzeżone."
   },
+  "pricing": {
+    "billing_label": "Rozliczenie",
+    "billing_annual": "Rocznie",
+    "billing_monthly": "Miesięcznie",
+    "compare_h2": "Porównaj plany",
+    "hero_h1": "Prosty, przejrzysty cennik",
+    "hero_sub": "Płacisz tylko za aktywnych użytkowników. Bez ukrytych opłat, bez długoterminowych zobowiązań.",
+    "save_badge": "Oszczędzasz do 32%",
+    "currency_label": "Waluta",
+    "currency_note": "Ceny w PLN są orientacyjne - przelicznik ~4,30 PLN/EUR, aktualizowany okresowo.",
+    "badge_popular": "Najpopularniejszy",
+    "tag_lite": "Dla zespołów sprzedaży, które zaczynają porządkować swój CRM.",
+    "tag_standard": "Pełna obsługa sprzedaży - od leada po raport i integrację danych.",
+    "tag_pro": "Dla organizacji wymagających dedykowanych kanałów i zaawansowanej analityki.",
+    "per_user_month": "/użytkownik/miesiąc",
+    "price_contact": "Skontaktuj się z nami",
+    "note_annual": "Rozliczenie roczne · {price}/rok/użytkownik",
+    "note_monthly": "Rozliczenie miesięczne",
+    "note_pro": "Wycena indywidualna · SLA gwarantowane",
+    "cta_call": "Umów rozmowę",
+    "features_label": "Co zawiera",
+    "inherits_lite": "Wszystko z planu Lite, plus:",
+    "inherits_standard": "Wszystko z planu Standard, plus:",
+    "f_leads": "Kompletny moduł zarządzania leadami i klientami",
+    "f_funnels": "Lejki sprzedaży i budżety handlowców",
+    "f_email": "Komunikacja end-to-end email (Gmail)",
+    "f_tasks": "Zadania i workflow przypisań",
+    "f_config": "Elastyczna konfiguracja słowników i ról",
+    "f_storage": "Przestrzeń na dane",
+    "f_partner": "Pełna obsługa procesu partnerskiego",
+    "f_onboarding": "Workflows onboarding (4-etapowy proces wdrożenia)",
+    "f_reports": "Raporty sprzedaży i analityka (trendy, KPI, win rate)",
+    "f_dwh_api": "Zasilanie hurtowni danych przez dedykowany interfejs API",
+    "f_churn": "Rozbudowane raporty i analiza churn",
+    "f_cs": "Moduł Customer Service",
+    "f_phone": "Dedykowany kanał telefoniczny",
+    "f_queue": "Zarządzanie kolejką agentów",
+    "f_kb": "Baza wiedzy",
+    "f_portal": "Portal self-service dla klienta",
+    "f_mail": "Dedykowana integracja komunikacji mailowej",
+    "note1_t": "Wdrożenie w 24h",
+    "note1_d": "Po podpisaniu umowy Twoje środowisko jest gotowe następnego dnia roboczego. Import danych z pliku CSV w kilka minut.",
+    "note2_t": "Bezpieczeństwo enterprise",
+    "note2_d": "SAML 2.0, izolacja danych per klient, audit trail, Azure Poland Central. Twoje dane zostają w UE.",
+    "note3_t": "Wsparcie w języku polskim",
+    "note3_d": "Dedykowany opiekun wdrożeniowy, dokumentacja po polsku, wsparcie mailowe i telefoniczne.",
+    "cta_h2": "Masz pytania o cennik?",
+    "cta_sub": "Odpowiemy w ciągu jednego dnia roboczego",
+    "cta_btn": "Napisz do nas"
+  },
   "chat": {
-    "pill": "Cześć! 👋",
+    "pill": "Cześć!",
     "name": "Zespół CRMtree",
     "status": "Online teraz",
-    "msg1": "Cześć! 👋 Chętnie odpowiemy, czego szukasz albo co chcesz usprawnić w swojej sprzedaży.",
+    "msg1": "Cześć! Chętnie odpowiemy, czego szukasz albo co chcesz usprawnić w swojej sprzedaży.",
     "msg2": "Możemy też od razu umówić 14-dniowy dostęp testowy.",
     "cta": "Napisz do nas"
   }
@@ -294,7 +366,10 @@
     "contact": "Contact",
     "login": "Log in",
     "cta_trial": "Try 14 days free",
-    "products": "Products"
+    "products": "Products",
+    "menu_open": "Open menu",
+    "menu_close": "Close menu",
+    "language": "Language"
   },
   "hero": {
     "eyebrow": "CRM for every industry",
@@ -304,7 +379,9 @@
     "cta_secondary": "See features",
     "trust1": "14 days free",
     "trust2": "No IT integration needed",
-    "trust3": "Data hosted in Azure, Poland Central"
+    "trust3": "Data hosted in Azure, Poland Central",
+    "shot_web_alt": "CRMtree dashboard in the browser",
+    "shot_mobile_alt": "CRMtree mobile app - Start screen"
   },
   "trial": {
     "eyebrow": "Start today",
@@ -316,7 +393,7 @@
   },
   "cycle": {
     "eyebrow": "How we grow with you",
-    "h2": "The full growth cycle — from cold lead to loyal customer",
+    "h2": "The full growth cycle - from cold lead to loyal customer",
     "sub": "CRMtree doesn't stop at closing the deal. It runs the whole process: acquisition, qualification, conversion, and retention.",
     "s1_t": "Database enrichment",
     "s1_d": "A cold lead's company domain is automatically enriched with industry and size data.",
@@ -336,6 +413,7 @@
     "s8_d": "Sales, partner, and budget results in one dashboard."
   },
   "features": {
+    "more": "Show more",
     "eyebrow": "Features",
     "h2": "Everything you need",
     "sub": "One system instead of dozens of spreadsheets and tools",
@@ -353,47 +431,59 @@
     "cta": "Try it for free",
     "f1_problem": "A sales manager has no idea how the team is really doing until someone manually pulls the numbers from every rep.",
     "f1_how": "The sales dashboard shows results in real time, with data export and filters by period, partner, and rep.",
-    "f1_example": "On Friday morning the manager spots at a glance that rep Kowalski logged 40% fewer activities than the rest of the team — and can act the same day instead of at month-end.",
+    "f1_example": "On Friday morning the manager spots at a glance that rep Kowalski logged 40% fewer activities than the rest of the team - and can act the same day instead of at month-end.",
     "f2_problem": "Client and partner information ends up scattered across emails, sticky notes, and other people's memory.",
     "f2_how": "The partner database keeps transaction history, documents, and an assigned owner in one place.",
-    "f2_example": "When the account owner goes on holiday, the covering rep sees the entire history with ABC Corp in two minutes — no phone calls to a colleague needed.",
+    "f2_example": "When the account owner goes on holiday, the covering rep sees the entire history with ABC Corp in two minutes - no phone calls to a colleague needed.",
     "f3_problem": "The sales plan lives in a separate spreadsheet nobody keeps up to date.",
     "f3_how": "Annual and monthly budgets per rep are compared against actual results automatically.",
-    "f3_example": "The system flags on its own that the sales team hit only 60% of its Q3 target — while there's still time to correct course.",
+    "f3_example": "The system flags on its own that the sales team hit only 60% of its Q3 target - while there's still time to correct course.",
     "f4_problem": "A conversation with a client runs across three different channels at once, and nobody has the full picture.",
     "f4_how": "Email, WhatsApp Business, and phone all show up on the same lead/partner card.",
-    "f4_example": "A rep sees a WhatsApp complaint from a client before picking up their call — and walks in prepared.",
+    "f4_example": "A rep sees a WhatsApp complaint from a client before picking up their call - and walks in prepared.",
     "f5_problem": "After a call, nobody has time to listen to it again or judge whether the client is actually interested.",
     "f5_how": "AI automatically scores purchase intent from notes or transcripts and surfaces signals and objections.",
-    "f5_example": "The system tags a call as \"low potential\" after detecting three objections in a row — so the rep stops spending time warming up a dead lead.",
+    "f5_example": "The system tags a call as \"low potential\" after detecting three objections in a row - so the rep stops spending time warming up a dead lead.",
     "f6_problem": "The company blog has been stalled for months because nobody on the team has time to write.",
     "f6_how": "AI writes and schedules SEO articles and tracks results in Google Search Console.",
     "f6_example": "An article on \"How to choose a CRM for a small business\" gets written in a day, scheduled for publishing, and tracked for organic traffic.",
     "f7_problem": "A contract circulates by email as an attachment called \"final_v3\" and nobody knows who approved it last.",
     "f7_how": "Signature and approval flows keep documents on the partner record.",
-    "f7_example": "A new contract is waiting on legal's desk — the system shows exactly where it's stuck instead of another reminder email.",
+    "f7_example": "A new contract is waiting on legal's desk - the system shows exactly where it's stuck instead of another reminder email.",
     "f8_problem": "A new hire gets access to everything \"just in case\" because setting permissions by hand takes too long.",
     "f8_how": "Every company's environment is fully isolated, with roles, permissions, and SSO/SAML login.",
-    "f8_example": "A marketing intern never sees the sales team's client pricing — their role simply doesn't grant access to it.",
+    "f8_example": "A marketing intern never sees the sales team's client pricing - their role simply doesn't grant access to it.",
     "f9_problem": "A field rep has no CRM access between meetings and forgets to log what was agreed before getting back to the office.",
     "f9_how": "Leads, partners, and tasks are always at hand, with push notifications.",
-    "f9_example": "Right after a client meeting, the rep adds a note from their phone in the elevator — before anything gets forgotten.",
+    "f9_example": "Right after a client meeting, the rep adds a note from their phone in the elevator - before anything gets forgotten.",
+    "f9_shot_alt": "CRMtree mobile app - leads list",
     "f10_problem": "A rep burns hours manually checking whether a company from a cold list even fits the target customer profile.",
     "f10_how": "Automatic 0–100 ICP scoring enriches company data on its own.",
-    "f10_example": "Out of 500 new companies, the system immediately surfaces the 40 best matches — so the rep calls them first, not in whatever order the list happened to load.",
-    "f11_problem": "Once the contract is signed, the client rollout scatters across emails, spreadsheets and chat apps — nobody knows who owns what or how far the work has got.",
-    "f11_how": "A project has a card with its team, tasks with subtasks, a timeline (Gantt) and a chat — with roles for the PM, participants, a controller and people outside your company.",
-    "f11_example": "The PM sets up a rollout project and assigns tasks to their own people and to a contact on the client side — who logs in, sees only their own tasks and closes them as they go.",
+    "f10_example": "Out of 500 new companies, the system immediately surfaces the 40 best matches - so the rep calls them first, not in whatever order the list happened to load.",
+    "f11_problem": "Once the contract is signed, the client rollout scatters across emails, spreadsheets and chat apps - nobody knows who owns what or how far the work has got.",
+    "f11_how": "A project has a card with its team, tasks with subtasks, a timeline (Gantt) and a chat - with roles for the PM, participants, a controller and people outside your company.",
+    "f11_example": "The PM sets up a rollout project and assigns tasks to their own people and to a contact on the client side - who logs in, sees only their own tasks and closes them as they go.",
     "label_problem": "What problem CRMtree solves",
     "label_how": "How",
     "label_example": "Example in practice"
   },
   "compare": {
+    "legend_yes": "Available",
+    "legend_partial": "Partially",
+    "legend_no": "Not available",
+    "note_paid": "Paid add-on",
+    "note_enterprise": "Enterprise plan",
+    "note_advanced": "Advanced plan",
+    "note_addon": "Add-on",
+    "note_addon_beta": "Add-on, Gantt in beta",
+    "note_professional": "From Professional plan",
+    "unknown": "No data",
     "eyebrow": "Comparison",
     "h2": "CRMtree vs. other CRM systems",
     "sub": "CRMtree has everything the competition offers, and is ahead of it in the following functional areas.",
     "col_feature": "Feature",
     "col_us": "CRMtree",
+    "pick_label": "Compare with",
     "g1": "Onboarding",
     "g2": "Email & real-time communication",
     "g3": "Telephony & AI call analysis",
@@ -435,9 +525,9 @@
   "security": {
     "eyebrow": "Security",
     "h2": "Your company's data is securely isolated in a dedicated space",
-    "sub": "Every company runs in a fully isolated environment — it's built in.",
+    "sub": "Every company runs in a fully isolated environment - it's built in.",
     "sec1_t": "Full data isolation",
-    "sec1_d": "Every company's environment is separated — one company's users never see another's data.",
+    "sec1_d": "Every company's environment is separated - one company's users never see another's data.",
     "sec2_t": "RBAC & SSO/SAML",
     "sec2_d": "Access controlled by roles and permissions. Company login via SSO/SAML.",
     "sec3_t": "EU-based servers",
@@ -447,14 +537,14 @@
   },
   "aiact": {
     "eyebrow": "Regulatory compliance",
-    "h2": "Ready for the AI Act — not just GDPR",
-    "body": "CRMtree's AI features (call analysis, prospect scoring, SEObot) run on a native integration with GovAI — our EU AI Act compliance gateway. Every AI model call is risk-classified, scanned for personal data, and logged to an immutable audit trail. The result: AI Act compliance from day one, the same way we already handle GDPR.",
+    "h2": "Ready for the AI Act - not just GDPR",
+    "body": "CRMtree's AI features (call analysis, prospect scoring, SEObot) run on a native integration with GovAI - our EU AI Act compliance gateway. Every AI model call is risk-classified, scanned for personal data, and logged to an immutable audit trail. The result: AI Act compliance from day one, the same way we already handle GDPR.",
     "card1_t": "Risk classification",
     "card1_d": "Every AI call is automatically classified per Articles 5, Annex III, and 50 of the AI Act.",
     "card2_t": "Human oversight",
     "card2_d": "Calls flagged for review wait for a qualified reviewer before proceeding.",
     "card3_t": "Immutable audit log",
-    "card3_d": "Every AI decision is timestamped and recorded — ready evidence for an audit.",
+    "card3_d": "Every AI decision is timestamped and recorded - ready evidence for an audit.",
     "card4_t": "GDPR and AI Act together",
     "card4_d": "One consistent compliance layer instead of separate projects per regulation."
   },
@@ -462,19 +552,19 @@
     "eyebrow": "FAQ",
     "h2": "Questions we hear the most",
     "q1": "Does CRMtree fit my industry?",
-    "a1": "Yes — CRMtree isn't built around one sales model. You configure the pipeline, fields, and roles around the process you already run.",
+    "a1": "Yes - CRMtree isn't built around one sales model. You configure the pipeline, fields, and roles around the process you already run.",
     "q2": "Can I try CRMtree for free?",
-    "a2": "Yes — 14 days of full access, no credit card required. Cancel anytime.",
+    "a2": "Yes - 14 days of full access, no credit card required. Cancel anytime.",
     "q3": "Which email providers can I connect?",
-    "a3": "Gmail, Outlook, and Zoho — mail syncs directly onto the lead and partner cards.",
+    "a3": "Gmail, Outlook, and Zoho - mail syncs directly onto the lead and partner cards.",
     "q4": "How does AI call analysis work?",
     "a4": "The system analyzes call notes or transcripts and scores purchase intent, along with buying signals and objections.",
     "q5": "Where is our data stored?",
     "a5": "On Microsoft Azure servers in the Poland Central region, in line with GDPR and the AI Act.",
     "q_migrate": "Can I migrate data from another CRM (e.g. Livespace, Pipedrive)?",
-    "a_migrate": "Yes — we import partner and rep data from a CSV file by default. For larger migrations we help individually.",
+    "a_migrate": "Yes - we import partner and rep data from a CSV file by default. For larger migrations we help individually.",
     "q_whatsapp": "Does WhatsApp Business work right after signup?",
-    "a_whatsapp": "Your company admin configures the WhatsApp Business number in the panel — one shared company number visible to the whole team.",
+    "a_whatsapp": "Your company admin configures the WhatsApp Business number in the panel - one shared company number visible to the whole team.",
     "q_price": "How much does it cost?",
     "a_price": "It depends on the number of users and the modules you choose. See the full pricing on the Pricing page, or write to us if you'd rather talk it through."
   },
@@ -499,12 +589,13 @@
     "phone_ph": "+1 555 000 0000",
     "message_label": "Message",
     "message_ph": "Briefly describe your needs or ask a question…",
-    "success": "✅ Thank you! We'll be in touch soon.",
-    "error": "❌ Something went wrong. Please try again or email us directly.",
+    "success": "Thank you! We'll be in touch soon.",
+    "error": "Something went wrong. Please try again or email us directly.",
     "submit": "Send inquiry",
     "submitting": "Sending…"
   },
   "footer": {
+    "col_modules": "Modules",
     "tagline": "CRM for the modern company",
     "col_product": "Product",
     "col_resources": "Resources",
@@ -519,11 +610,61 @@
     "privacy": "Privacy policy",
     "copyright": "© 2026 CRMtree. All rights reserved."
   },
+  "pricing": {
+    "billing_label": "Billing",
+    "billing_annual": "Annually",
+    "billing_monthly": "Monthly",
+    "compare_h2": "Compare plans",
+    "hero_h1": "Simple, transparent pricing",
+    "hero_sub": "You only pay for active users. No hidden fees, no long-term commitments.",
+    "save_badge": "Save up to 32%",
+    "currency_label": "Currency",
+    "currency_note": "PLN prices are approximate - exchange rate ~4.30 PLN/EUR, updated periodically.",
+    "badge_popular": "Most popular",
+    "tag_lite": "For sales teams starting to bring order to their CRM.",
+    "tag_standard": "Complete sales support - from lead to report and data integration.",
+    "tag_pro": "For organizations that need dedicated channels and advanced analytics.",
+    "per_user_month": "/user/month",
+    "price_contact": "Contact us",
+    "note_annual": "Billed annually · {price}/year/user",
+    "note_monthly": "Billed monthly",
+    "note_pro": "Custom quote · Guaranteed SLA",
+    "cta_call": "Book a call",
+    "features_label": "What's included",
+    "inherits_lite": "Everything in Lite, plus:",
+    "inherits_standard": "Everything in Standard, plus:",
+    "f_leads": "Complete lead and client management module",
+    "f_funnels": "Sales pipelines and rep budgets",
+    "f_email": "End-to-end email communication (Gmail)",
+    "f_tasks": "Tasks and assignment workflow",
+    "f_config": "Flexible configuration of dictionaries and roles",
+    "f_storage": "Data storage",
+    "f_partner": "Full partner process support",
+    "f_onboarding": "Onboarding workflows (4-stage rollout process)",
+    "f_reports": "Sales reports and analytics (trends, KPIs, win rate)",
+    "f_dwh_api": "Data warehouse feed via a dedicated API",
+    "f_churn": "Extended reports and churn analysis",
+    "f_cs": "Customer Service module",
+    "f_phone": "Dedicated phone channel",
+    "f_queue": "Agent queue management",
+    "f_kb": "Knowledge base",
+    "f_portal": "Self-service client portal",
+    "f_mail": "Dedicated email communication integration",
+    "note1_t": "Rollout in 24h",
+    "note1_d": "Once the contract is signed, your environment is ready the next business day. Import data from a CSV file in minutes.",
+    "note2_t": "Enterprise security",
+    "note2_d": "SAML 2.0, per-client data isolation, audit trail, Azure Poland Central. Your data stays in the EU.",
+    "note3_t": "Support in Polish",
+    "note3_d": "A dedicated onboarding manager, documentation in Polish, email and phone support.",
+    "cta_h2": "Questions about pricing?",
+    "cta_sub": "We'll get back to you within one business day",
+    "cta_btn": "Write to us"
+  },
   "chat": {
-    "pill": "Hey! 👋",
+    "pill": "Hey!",
     "name": "CRMtree team",
     "status": "Online now",
-    "msg1": "Hey! 👋 Happy to help you figure out what you're looking for, or what you'd like to improve in your sales process.",
+    "msg1": "Hey! Happy to help you figure out what you're looking for, or what you'd like to improve in your sales process.",
     "msg2": "We can also set you up with a 14-day trial right away.",
     "cta": "Message us"
   }
@@ -543,7 +684,10 @@
     "contact": "Kontakt",
     "login": "Anmelden",
     "cta_trial": "14 Tage kostenlos testen",
-    "products": "Produkte"
+    "products": "Produkte",
+    "menu_open": "Menü öffnen",
+    "menu_close": "Menü schließen",
+    "language": "Sprache"
   },
   "hero": {
     "eyebrow": "CRM für jede Branche",
@@ -553,7 +697,9 @@
     "cta_secondary": "Funktionen ansehen",
     "trust1": "14 Tage kostenlos",
     "trust2": "Keine IT-Integration nötig",
-    "trust3": "Daten in Azure, Region Polen Zentral"
+    "trust3": "Daten in Azure, Region Polen Zentral",
+    "shot_web_alt": "CRMtree-Dashboard im Browser",
+    "shot_mobile_alt": "CRMtree Mobile-App – Startbildschirm"
   },
   "trial": {
     "eyebrow": "Jetzt starten",
@@ -565,7 +711,7 @@
   },
   "cycle": {
     "eyebrow": "So wachsen wir mit Ihnen",
-    "h2": "Der gesamte Wachstumszyklus — vom kalten Lead zum treuen Kunden",
+    "h2": "Der gesamte Wachstumszyklus - vom kalten Lead zum treuen Kunden",
     "sub": "CRMtree endet nicht mit dem Geschäftsabschluss. Es begleitet den gesamten Prozess: Akquise, Qualifizierung, Konversion und Kundenbindung.",
     "s1_t": "Datenanreicherung",
     "s1_d": "Die Domain eines kalten Leads wird automatisch um Branche und Größe ergänzt.",
@@ -585,6 +731,7 @@
     "s8_d": "Vertriebs-, Partner- und Budgetergebnisse in einem Dashboard."
   },
   "features": {
+    "more": "Mehr anzeigen",
     "eyebrow": "Funktionen",
     "h2": "Alles, was Sie brauchen",
     "sub": "Ein System statt Dutzender Tabellen und Tools",
@@ -602,47 +749,59 @@
     "cta": "Kostenlos testen",
     "f1_problem": "Ein Vertriebsleiter weiß nicht wirklich, wie das Team dasteht, bis jemand die Zahlen manuell von jedem Vertriebler einsammelt.",
     "f1_how": "Das Vertriebs-Dashboard zeigt Ergebnisse in Echtzeit, mit Datenexport und Filtern nach Zeitraum, Partner und Vertriebler.",
-    "f1_example": "Am Freitagmorgen sieht der Leiter auf einen Blick, dass Vertriebler Kowalski 40 % weniger Aktivitäten hatte als der Rest des Teams — und kann noch am selben Tag reagieren, statt erst am Monatsende.",
+    "f1_example": "Am Freitagmorgen sieht der Leiter auf einen Blick, dass Vertriebler Kowalski 40 % weniger Aktivitäten hatte als der Rest des Teams - und kann noch am selben Tag reagieren, statt erst am Monatsende.",
     "f2_problem": "Kunden- und Partnerdaten verteilen sich auf E-Mails, Notizzettel und das Gedächtnis verschiedener Kollegen.",
     "f2_how": "Die Partnerdatenbank bündelt Transaktionshistorie, Dokumente und einen zuständigen Betreuer an einem Ort.",
-    "f2_example": "Geht der zuständige Betreuer in den Urlaub, sieht der Vertreter in zwei Minuten die komplette Historie mit der Firma ABC — ohne einen Kollegen anzurufen.",
+    "f2_example": "Geht der zuständige Betreuer in den Urlaub, sieht der Vertreter in zwei Minuten die komplette Historie mit der Firma ABC - ohne einen Kollegen anzurufen.",
     "f3_problem": "Der Vertriebsplan lebt in einer separaten Tabelle, die niemand aktuell hält.",
     "f3_how": "Jahres- und Monatsbudgets pro Vertriebler werden automatisch mit den tatsächlichen Ergebnissen verglichen.",
-    "f3_example": "Das System meldet von selbst, dass das Vertriebsteam im Q3 nur 60 % seines Ziels erreicht hat — solange noch Zeit bleibt, gegenzusteuern.",
+    "f3_example": "Das System meldet von selbst, dass das Vertriebsteam im Q3 nur 60 % seines Ziels erreicht hat - solange noch Zeit bleibt, gegenzusteuern.",
     "f4_problem": "Ein Kundengespräch verteilt sich auf drei Kanäle gleichzeitig, und niemand hat den vollen Überblick.",
     "f4_how": "E-Mail, WhatsApp Business und Telefon erscheinen auf derselben Lead-/Partnerkarte.",
-    "f4_example": "Ein Vertriebler sieht eine WhatsApp-Beschwerde des Kunden, bevor er dessen Anruf annimmt — und ist vorbereitet.",
+    "f4_example": "Ein Vertriebler sieht eine WhatsApp-Beschwerde des Kunden, bevor er dessen Anruf annimmt - und ist vorbereitet.",
     "f5_problem": "Nach einem Anruf hat niemand Zeit, ihn erneut anzuhören oder einzuschätzen, ob der Kunde wirklich interessiert ist.",
     "f5_how": "Die KI bewertet die Kaufbereitschaft automatisch aus Notizen oder Transkripten und zeigt Signale und Einwände.",
-    "f5_example": "Das System markiert ein Gespräch nach drei Einwänden in Folge als \"geringes Potenzial\" — der Vertriebler verschwendet keine weitere Zeit mit diesem Lead.",
+    "f5_example": "Das System markiert ein Gespräch nach drei Einwänden in Folge als \"geringes Potenzial\" - der Vertriebler verschwendet keine weitere Zeit mit diesem Lead.",
     "f6_problem": "Der Firmenblog steht seit Monaten still, weil niemand im Team Zeit zum Schreiben hat.",
     "f6_how": "Die KI schreibt und plant SEO-Artikel und misst den Erfolg in der Google Search Console.",
     "f6_example": "Ein Artikel \"Wie wählt man ein CRM für ein kleines Unternehmen\" entsteht an einem Tag, wird zur Veröffentlichung eingeplant und auf organischen Traffic hin verfolgt.",
     "f7_problem": "Ein Vertrag kursiert als E-Mail-Anhang \"final_v3\", und niemand weiß, wer ihn zuletzt freigegeben hat.",
     "f7_how": "Unterschrifts- und Freigabeprozesse halten Dokumente direkt beim Partnerdatensatz.",
-    "f7_example": "Ein neuer Vertrag wartet auf die Freigabe der Rechtsabteilung — das System zeigt genau, wo er hängt, statt einer weiteren Erinnerungs-E-Mail.",
+    "f7_example": "Ein neuer Vertrag wartet auf die Freigabe der Rechtsabteilung - das System zeigt genau, wo er hängt, statt einer weiteren Erinnerungs-E-Mail.",
     "f8_problem": "Ein neuer Mitarbeiter bekommt \"sicherheitshalber\" Zugriff auf alles, weil Berechtigungen manuell einzurichten zu lange dauert.",
     "f8_how": "Die Umgebung jedes Unternehmens ist vollständig isoliert, mit Rollen, Berechtigungen und SSO/SAML-Login.",
-    "f8_example": "Ein Marketing-Praktikant sieht nie die Kundenkonditionen des Vertriebsteams — seine Rolle gewährt dafür einfach keinen Zugriff.",
+    "f8_example": "Ein Marketing-Praktikant sieht nie die Kundenkonditionen des Vertriebsteams - seine Rolle gewährt dafür einfach keinen Zugriff.",
     "f9_problem": "Ein Außendienstler hat zwischen Terminen keinen CRM-Zugriff und vergisst, Absprachen festzuhalten, bevor er ins Büro zurückkommt.",
     "f9_how": "Leads, Partner und Aufgaben sind mit Push-Benachrichtigungen immer griffbereit.",
-    "f9_example": "Direkt nach dem Kundentermin trägt der Vertriebler eine Notiz vom Handy aus im Aufzug ein — bevor irgendetwas in Vergessenheit gerät.",
+    "f9_example": "Direkt nach dem Kundentermin trägt der Vertriebler eine Notiz vom Handy aus im Aufzug ein - bevor irgendetwas in Vergessenheit gerät.",
+    "f9_shot_alt": "CRMtree Mobile-App – Lead-Liste",
     "f10_problem": "Ein Vertriebler verschwendet Stunden damit, von Hand zu prüfen, ob eine Firma aus einer kalten Liste überhaupt zum Zielkundenprofil passt.",
     "f10_how": "Automatisches ICP-Scoring von 0–100 reichert die Firmendaten von selbst an.",
-    "f10_example": "Von 500 neuen Firmen zeigt das System sofort die 40 am besten passenden — der Vertriebler ruft zuerst diese an, nicht einfach von oben nach unten.",
-    "f11_problem": "Nach Vertragsabschluss verteilt sich die Einführung beim Kunden auf E-Mails, Tabellen und Messenger — niemand weiß, wer wofür zuständig ist und wie weit die Arbeit ist.",
-    "f11_how": "Ein Projekt hat eine Karte mit dem Team, Aufgaben mit Unteraufgaben, eine Zeitachse (Gantt) und einen Chat — mit Rollen für PM, Teilnehmer, Controller und externe Personen.",
-    "f11_example": "Der PM legt ein Einführungsprojekt an und weist Aufgaben seinen Leuten und einem Ansprechpartner beim Kunden zu — dieser sieht nach dem Login nur seine eigenen Aufgaben und schließt sie laufend ab.",
+    "f10_example": "Von 500 neuen Firmen zeigt das System sofort die 40 am besten passenden - der Vertriebler ruft zuerst diese an, nicht einfach von oben nach unten.",
+    "f11_problem": "Nach Vertragsabschluss verteilt sich die Einführung beim Kunden auf E-Mails, Tabellen und Messenger - niemand weiß, wer wofür zuständig ist und wie weit die Arbeit ist.",
+    "f11_how": "Ein Projekt hat eine Karte mit dem Team, Aufgaben mit Unteraufgaben, eine Zeitachse (Gantt) und einen Chat - mit Rollen für PM, Teilnehmer, Controller und externe Personen.",
+    "f11_example": "Der PM legt ein Einführungsprojekt an und weist Aufgaben seinen Leuten und einem Ansprechpartner beim Kunden zu - dieser sieht nach dem Login nur seine eigenen Aufgaben und schließt sie laufend ab.",
     "label_problem": "Welches Problem CRMtree löst",
     "label_how": "Wie",
     "label_example": "Anwendungsbeispiel"
   },
   "compare": {
+    "legend_yes": "Vorhanden",
+    "legend_partial": "Teilweise",
+    "legend_no": "Nicht vorhanden",
+    "note_paid": "Kostenpflichtiges Modul",
+    "note_enterprise": "Enterprise-Plan",
+    "note_advanced": "Advanced-Plan",
+    "note_addon": "Add-on",
+    "note_addon_beta": "Add-on, Gantt in der Beta",
+    "note_professional": "Ab Professional-Plan",
+    "unknown": "Keine Angaben",
     "eyebrow": "Vergleich",
     "h2": "CRMtree im Vergleich zu anderen CRM-Systemen",
     "sub": "CRMtree bietet alles, was die Konkurrenz bietet, und ist ihr in den folgenden Funktionsbereichen voraus.",
     "col_feature": "Merkmal",
     "col_us": "CRMtree",
+    "pick_label": "Vergleichen mit",
     "g1": "Einführung",
     "g2": "E-Mail & Echtzeitkommunikation",
     "g3": "Telefonie & KI-Gesprächsanalyse",
@@ -684,9 +843,9 @@
   "security": {
     "eyebrow": "Sicherheit",
     "h2": "Die Daten Ihres Unternehmens sind sicher in einem dedizierten Bereich isoliert",
-    "sub": "Jedes Unternehmen läuft in einer vollständig isolierten Umgebung — das ist fest eingebaut.",
+    "sub": "Jedes Unternehmen läuft in einer vollständig isolierten Umgebung - das ist fest eingebaut.",
     "sec1_t": "Vollständige Datenisolierung",
-    "sec1_d": "Die Umgebung jedes Unternehmens ist getrennt — Nutzer eines Unternehmens sehen nie Daten eines anderen.",
+    "sec1_d": "Die Umgebung jedes Unternehmens ist getrennt - Nutzer eines Unternehmens sehen nie Daten eines anderen.",
     "sec2_t": "RBAC & SSO/SAML",
     "sec2_d": "Zugriff über Rollen und Berechtigungen gesteuert. Firmen-Login per SSO/SAML.",
     "sec3_t": "Server in der EU",
@@ -696,14 +855,14 @@
   },
   "aiact": {
     "eyebrow": "Rechtskonformität",
-    "h2": "Bereit für den AI Act — nicht nur für die DSGVO",
-    "body": "Die KI-Funktionen von CRMtree (Gesprächsanalyse, Lead-Scoring, SEObot) laufen über eine native Integration mit GovAI — unserem Compliance-Gateway für den EU AI Act. Jeder Aufruf eines KI-Modells wird nach Risiko klassifiziert, auf personenbezogene Daten geprüft und in einem unveränderlichen Audit-Log erfasst. Das Ergebnis: AI-Act-Konformität ab dem ersten Tag, genau wie bei der DSGVO.",
+    "h2": "Bereit für den AI Act - nicht nur für die DSGVO",
+    "body": "Die KI-Funktionen von CRMtree (Gesprächsanalyse, Lead-Scoring, SEObot) laufen über eine native Integration mit GovAI - unserem Compliance-Gateway für den EU AI Act. Jeder Aufruf eines KI-Modells wird nach Risiko klassifiziert, auf personenbezogene Daten geprüft und in einem unveränderlichen Audit-Log erfasst. Das Ergebnis: AI-Act-Konformität ab dem ersten Tag, genau wie bei der DSGVO.",
     "card1_t": "Risikoklassifizierung",
     "card1_d": "Jeder KI-Aufruf wird automatisch nach Art. 5, Anhang III und Art. 50 des AI Act klassifiziert.",
     "card2_t": "Menschliche Aufsicht",
     "card2_d": "Zur Prüfung markierte Aufrufe warten auf eine qualifizierte Person, bevor sie weiterlaufen.",
     "card3_t": "Unveränderliches Audit-Log",
-    "card3_d": "Jede KI-Entscheidung wird mit Zeitstempel erfasst — als Nachweis für eine Prüfung.",
+    "card3_d": "Jede KI-Entscheidung wird mit Zeitstempel erfasst - als Nachweis für eine Prüfung.",
     "card4_t": "DSGVO und AI Act zusammen",
     "card4_d": "Eine einheitliche Compliance-Ebene statt getrennter Projekte pro Regulierung."
   },
@@ -711,11 +870,11 @@
     "eyebrow": "FAQ",
     "h2": "Die häufigsten Fragen",
     "q1": "Passt CRMtree zu meiner Branche?",
-    "a1": "Ja — CRMtree ist nicht auf ein einziges Vertriebsmodell festgelegt. Sie konfigurieren Pipeline, Felder und Rollen nach Ihrem bestehenden Prozess.",
+    "a1": "Ja - CRMtree ist nicht auf ein einziges Vertriebsmodell festgelegt. Sie konfigurieren Pipeline, Felder und Rollen nach Ihrem bestehenden Prozess.",
     "q2": "Kann ich CRMtree kostenlos testen?",
-    "a2": "Ja — 14 Tage voller Zugriff, ohne Kreditkarte. Jederzeit kündbar.",
+    "a2": "Ja - 14 Tage voller Zugriff, ohne Kreditkarte. Jederzeit kündbar.",
     "q3": "Welche E-Mail-Anbieter kann ich verbinden?",
-    "a3": "Gmail, Outlook und Zoho — die Korrespondenz synchronisiert sich direkt mit Lead- und Partnerkarten.",
+    "a3": "Gmail, Outlook und Zoho - die Korrespondenz synchronisiert sich direkt mit Lead- und Partnerkarten.",
     "q4": "Wie funktioniert die KI-Gesprächsanalyse?",
     "a4": "Das System analysiert Notizen oder Transkripte und bewertet die Kaufbereitschaft samt Kaufsignalen und Einwänden.",
     "q5": "Wo werden unsere Daten gespeichert?",
@@ -723,7 +882,7 @@
     "q_migrate": "Kann ich Daten aus einem anderen CRM übernehmen (z. B. Livespace, Pipedrive)?",
     "a_migrate": "Ja, standardmäßig importieren wir Partner- und Vertrieblerdaten aus einer CSV-Datei. Bei größeren Migrationen helfen wir individuell.",
     "q_whatsapp": "Funktioniert WhatsApp Business sofort nach der Registrierung?",
-    "a_whatsapp": "Die WhatsApp-Business-Nummer wird vom Administrator Ihres Unternehmens im Panel konfiguriert — eine gemeinsame Firmennummer, sichtbar für das ganze Team.",
+    "a_whatsapp": "Die WhatsApp-Business-Nummer wird vom Administrator Ihres Unternehmens im Panel konfiguriert - eine gemeinsame Firmennummer, sichtbar für das ganze Team.",
     "q_price": "Was kostet das?",
     "a_price": "Das hängt von der Nutzerzahl und den gewählten Modulen ab. Die vollständigen Preise finden Sie auf der Preise-Seite, oder schreiben Sie uns, wenn Sie lieber sprechen möchten."
   },
@@ -748,12 +907,13 @@
     "phone_ph": "+49 151 00000000",
     "message_label": "Nachricht",
     "message_ph": "Beschreiben Sie kurz Ihren Bedarf oder stellen Sie eine Frage…",
-    "success": "✅ Danke! Wir melden uns bald.",
-    "error": "❌ Etwas ist schiefgelaufen. Bitte erneut versuchen oder direkt schreiben.",
+    "success": "Danke! Wir melden uns bald.",
+    "error": "Etwas ist schiefgelaufen. Bitte erneut versuchen oder direkt schreiben.",
     "submit": "Anfrage senden",
     "submitting": "Wird gesendet…"
   },
   "footer": {
+    "col_modules": "Module",
     "tagline": "CRM für moderne Unternehmen",
     "col_product": "Produkt",
     "col_resources": "Ressourcen",
@@ -768,11 +928,61 @@
     "privacy": "Datenschutz",
     "copyright": "© 2026 CRMtree. Alle Rechte vorbehalten."
   },
+  "pricing": {
+    "billing_label": "Abrechnung",
+    "billing_annual": "Jährlich",
+    "billing_monthly": "Monatlich",
+    "compare_h2": "Pläne vergleichen",
+    "hero_h1": "Einfache, transparente Preise",
+    "hero_sub": "Sie zahlen nur für aktive Nutzer. Keine versteckten Gebühren, keine langfristigen Verpflichtungen.",
+    "save_badge": "Sie sparen bis zu 32%",
+    "currency_label": "Währung",
+    "currency_note": "PLN-Preise sind Richtwerte - Wechselkurs ~4,30 PLN/EUR, regelmäßig aktualisiert.",
+    "badge_popular": "Am beliebtesten",
+    "tag_lite": "Für Vertriebsteams, die beginnen, ihr CRM zu ordnen.",
+    "tag_standard": "Vollständige Vertriebsunterstützung - vom Lead bis zum Bericht und zur Datenintegration.",
+    "tag_pro": "Für Organisationen, die dedizierte Kanäle und fortgeschrittene Analytik benötigen.",
+    "per_user_month": "/Nutzer/Monat",
+    "price_contact": "Kontaktieren Sie uns",
+    "note_annual": "Jährliche Abrechnung · {price}/Jahr/Nutzer",
+    "note_monthly": "Monatliche Abrechnung",
+    "note_pro": "Individuelles Angebot · Garantiertes SLA",
+    "cta_call": "Gespräch vereinbaren",
+    "features_label": "Enthalten",
+    "inherits_lite": "Alles aus Lite, plus:",
+    "inherits_standard": "Alles aus Standard, plus:",
+    "f_leads": "Vollständiges Modul für Lead- und Kundenverwaltung",
+    "f_funnels": "Vertriebspipelines und Budgets der Vertriebler",
+    "f_email": "End-to-End-E-Mail-Kommunikation (Gmail)",
+    "f_tasks": "Aufgaben und Zuweisungs-Workflow",
+    "f_config": "Flexible Konfiguration von Wörterbüchern und Rollen",
+    "f_storage": "Datenspeicher",
+    "f_partner": "Vollständige Abwicklung des Partnerprozesses",
+    "f_onboarding": "Onboarding-Workflows (4-stufiger Einführungsprozess)",
+    "f_reports": "Vertriebsberichte und Analytik (Trends, KPIs, Win Rate)",
+    "f_dwh_api": "Befüllung des Data Warehouse über eine dedizierte API",
+    "f_churn": "Erweiterte Berichte und Churn-Analyse",
+    "f_cs": "Customer-Service-Modul",
+    "f_phone": "Dedizierter Telefonkanal",
+    "f_queue": "Verwaltung der Agenten-Warteschlange",
+    "f_kb": "Wissensdatenbank",
+    "f_portal": "Self-Service-Portal für Kunden",
+    "f_mail": "Dedizierte Integration der E-Mail-Kommunikation",
+    "note1_t": "Einführung in 24h",
+    "note1_d": "Nach Vertragsunterzeichnung ist Ihre Umgebung am nächsten Werktag bereit. Datenimport aus einer CSV-Datei in wenigen Minuten.",
+    "note2_t": "Sicherheit auf Enterprise-Niveau",
+    "note2_d": "SAML 2.0, Datenisolation pro Kunde, Audit-Trail, Azure Poland Central. Ihre Daten bleiben in der EU.",
+    "note3_t": "Support auf Polnisch",
+    "note3_d": "Ein dedizierter Onboarding-Betreuer, Dokumentation auf Polnisch, Support per E-Mail und Telefon.",
+    "cta_h2": "Fragen zu den Preisen?",
+    "cta_sub": "Wir antworten innerhalb eines Werktags",
+    "cta_btn": "Schreiben Sie uns"
+  },
   "chat": {
-    "pill": "Hallo! 👋",
+    "pill": "Hallo!",
     "name": "CRMtree-Team",
     "status": "Jetzt online",
-    "msg1": "Hallo! 👋 Wir helfen gern herauszufinden, wonach Sie suchen oder was Sie im Vertrieb verbessern möchten.",
+    "msg1": "Hallo! Wir helfen gern herauszufinden, wonach Sie suchen oder was Sie im Vertrieb verbessern möchten.",
     "msg2": "Wir können auch direkt einen 14-tägigen Testzugang einrichten.",
     "cta": "Schreiben Sie uns"
   }
@@ -792,7 +1002,10 @@
     "contact": "Contatti",
     "login": "Accedi",
     "cta_trial": "Prova gratis 14 giorni",
-    "products": "Prodotti"
+    "products": "Prodotti",
+    "menu_open": "Apri menu",
+    "menu_close": "Chiudi menu",
+    "language": "Lingua"
   },
   "hero": {
     "eyebrow": "CRM per ogni settore",
@@ -802,7 +1015,9 @@
     "cta_secondary": "Vedi le funzionalità",
     "trust1": "14 giorni gratis",
     "trust2": "Nessuna integrazione IT richiesta",
-    "trust3": "Dati su Azure, regione Polonia Centrale"
+    "trust3": "Dati su Azure, regione Polonia Centrale",
+    "shot_web_alt": "Dashboard di CRMtree nel browser",
+    "shot_mobile_alt": "App mobile CRMtree - schermata Start"
   },
   "trial": {
     "eyebrow": "Inizia oggi",
@@ -814,7 +1029,7 @@
   },
   "cycle": {
     "eyebrow": "Come cresciamo insieme a te",
-    "h2": "L'intero ciclo di crescita — dal lead freddo al cliente fedele",
+    "h2": "L'intero ciclo di crescita - dal lead freddo al cliente fedele",
     "sub": "CRMtree non si ferma alla chiusura della trattativa. Gestisce l'intero processo: acquisizione, qualifica, conversione e fidelizzazione.",
     "s1_t": "Arricchimento dati",
     "s1_d": "Il dominio dell'azienda da un lead freddo viene arricchito automaticamente con settore e dimensione.",
@@ -834,6 +1049,7 @@
     "s8_d": "Risultati di vendite, partner e budget in un'unica dashboard."
   },
   "features": {
+    "more": "Mostra di più",
     "eyebrow": "Funzionalità",
     "h2": "Tutto ciò di cui hai bisogno",
     "sub": "Un solo sistema al posto di decine di fogli e strumenti",
@@ -851,47 +1067,59 @@
     "cta": "Provalo gratis",
     "f1_problem": "Un sales manager non sa davvero come sta andando il team finché qualcuno non raccoglie i numeri a mano da ogni venditore.",
     "f1_how": "Il dashboard vendite mostra i risultati in tempo reale, con esportazione dati e filtri per periodo, partner e venditore.",
-    "f1_example": "Venerdì mattina il manager nota a colpo d'occhio che il venditore Kowalski ha registrato il 40% di attività in meno rispetto al resto del team — e può intervenire lo stesso giorno, non a fine mese.",
+    "f1_example": "Venerdì mattina il manager nota a colpo d'occhio che il venditore Kowalski ha registrato il 40% di attività in meno rispetto al resto del team - e può intervenire lo stesso giorno, non a fine mese.",
     "f2_problem": "I dati su clienti e partner finiscono sparsi tra email, appunti e la memoria di persone diverse.",
     "f2_how": "Il database partner tiene in un unico posto storico transazioni, documenti e un referente assegnato.",
-    "f2_example": "Quando il referente va in ferie, chi lo sostituisce vede in due minuti l'intera storia con l'azienda ABC — senza dover chiamare un collega.",
+    "f2_example": "Quando il referente va in ferie, chi lo sostituisce vede in due minuti l'intera storia con l'azienda ABC - senza dover chiamare un collega.",
     "f3_problem": "Il piano vendite vive in un foglio a parte che nessuno aggiorna.",
     "f3_how": "I budget annuali e mensili per venditore vengono confrontati automaticamente con i risultati reali.",
-    "f3_example": "Il sistema segnala da solo che il team vendite ha raggiunto solo il 60% dell'obiettivo del Q3 — mentre c'è ancora tempo per correggere la rotta.",
+    "f3_example": "Il sistema segnala da solo che il team vendite ha raggiunto solo il 60% dell'obiettivo del Q3 - mentre c'è ancora tempo per correggere la rotta.",
     "f4_problem": "Una conversazione con un cliente si svolge su tre canali diversi insieme, e nessuno ha il quadro completo.",
     "f4_how": "Email, WhatsApp Business e telefono compaiono sulla stessa scheda lead/partner.",
-    "f4_example": "Un venditore vede un reclamo su WhatsApp prima ancora di rispondere alla chiamata del cliente — e arriva preparato.",
+    "f4_example": "Un venditore vede un reclamo su WhatsApp prima ancora di rispondere alla chiamata del cliente - e arriva preparato.",
     "f5_problem": "Dopo una chiamata nessuno ha tempo di riascoltarla o valutare se il cliente è davvero interessato.",
     "f5_how": "L'IA valuta automaticamente la propensione all'acquisto da note o trascrizioni ed evidenzia segnali e obiezioni.",
-    "f5_example": "Il sistema etichetta una chiamata come \"basso potenziale\" dopo aver rilevato tre obiezioni di fila — il venditore smette di perdere tempo a scaldare un lead ormai freddo.",
+    "f5_example": "Il sistema etichetta una chiamata come \"basso potenziale\" dopo aver rilevato tre obiezioni di fila - il venditore smette di perdere tempo a scaldare un lead ormai freddo.",
     "f6_problem": "Il blog aziendale è fermo da mesi perché nessuno del team ha tempo di scrivere.",
     "f6_how": "L'IA scrive e pianifica articoli SEO e ne misura i risultati in Google Search Console.",
     "f6_example": "Un articolo \"Come scegliere un CRM per una piccola impresa\" viene scritto in un giorno, programmato per la pubblicazione e monitorato per il traffico organico.",
     "f7_problem": "Un contratto gira via email come allegato \"final_v3\" e nessuno sa chi lo ha approvato per ultimo.",
     "f7_how": "I flussi di firma e approvazione tengono i documenti direttamente sulla scheda partner.",
-    "f7_example": "Un nuovo contratto è in attesa dell'approvazione dell'ufficio legale — il sistema mostra esattamente dove si è bloccato, invece di un'altra email di sollecito.",
+    "f7_example": "Un nuovo contratto è in attesa dell'approvazione dell'ufficio legale - il sistema mostra esattamente dove si è bloccato, invece di un'altra email di sollecito.",
     "f8_problem": "Un nuovo assunto riceve accesso a tutto \"per sicurezza\" perché impostare i permessi a mano richiede troppo tempo.",
     "f8_how": "L'ambiente di ogni azienda è completamente isolato, con ruoli, permessi e login SSO/SAML.",
-    "f8_example": "Uno stagista marketing non vede mai le condizioni commerciali dei clienti del reparto vendite — il suo ruolo semplicemente non dà accesso a quei dati.",
+    "f8_example": "Uno stagista marketing non vede mai le condizioni commerciali dei clienti del reparto vendite - il suo ruolo semplicemente non dà accesso a quei dati.",
     "f9_problem": "Un venditore sul campo non ha accesso al CRM tra un appuntamento e l'altro e dimentica di annotare gli accordi prima di tornare in ufficio.",
     "f9_how": "Lead, partner e attività sono sempre a portata di mano, con notifiche push.",
-    "f9_example": "Subito dopo l'incontro col cliente, il venditore aggiunge una nota dal telefono in ascensore — prima di dimenticare qualcosa.",
+    "f9_example": "Subito dopo l'incontro col cliente, il venditore aggiunge una nota dal telefono in ascensore - prima di dimenticare qualcosa.",
+    "f9_shot_alt": "App mobile CRMtree - elenco dei lead",
     "f10_problem": "Un venditore perde ore a controllare a mano se un'azienda di una lista fredda corrisponda anche solo al profilo cliente target.",
     "f10_how": "Lo scoring ICP automatico da 0 a 100 arricchisce da solo i dati aziendali.",
-    "f10_example": "Su 500 nuove aziende, il sistema mostra subito le 40 con il punteggio più alto — il venditore chiama prima quelle, non semplicemente in ordine di lista.",
-    "f11_problem": "Dopo la firma del contratto, l'avvio presso il cliente si disperde tra email, fogli di calcolo e chat — nessuno sa chi è responsabile di cosa né a che punto è il lavoro.",
-    "f11_how": "Un progetto ha una scheda con il team, attività con sottoattività, una linea temporale (Gantt) e una chat — con ruoli per PM, partecipanti, controllore e persone esterne all'azienda.",
-    "f11_example": "Il PM crea il progetto di avvio e assegna le attività ai suoi e a un referente del cliente — che, dopo l'accesso, vede solo le proprie attività e le chiude man mano.",
+    "f10_example": "Su 500 nuove aziende, il sistema mostra subito le 40 con il punteggio più alto - il venditore chiama prima quelle, non semplicemente in ordine di lista.",
+    "f11_problem": "Dopo la firma del contratto, l'avvio presso il cliente si disperde tra email, fogli di calcolo e chat - nessuno sa chi è responsabile di cosa né a che punto è il lavoro.",
+    "f11_how": "Un progetto ha una scheda con il team, attività con sottoattività, una linea temporale (Gantt) e una chat - con ruoli per PM, partecipanti, controllore e persone esterne all'azienda.",
+    "f11_example": "Il PM crea il progetto di avvio e assegna le attività ai suoi e a un referente del cliente - che, dopo l'accesso, vede solo le proprie attività e le chiude man mano.",
     "label_problem": "Quale problema risolve CRMtree",
     "label_how": "In che modo",
     "label_example": "Esempio pratico"
   },
   "compare": {
+    "legend_yes": "Disponibile",
+    "legend_partial": "Parzialmente",
+    "legend_no": "Non disponibile",
+    "note_paid": "Modulo a pagamento",
+    "note_enterprise": "Piano Enterprise",
+    "note_advanced": "Piano Advanced",
+    "note_addon": "Componente aggiuntivo",
+    "note_addon_beta": "Componente aggiuntivo, Gantt in beta",
+    "note_professional": "Dal piano Professional",
+    "unknown": "Dati non disponibili",
     "eyebrow": "Confronto",
     "h2": "CRMtree a confronto con altri CRM",
     "sub": "CRMtree ha tutto ciò che offre la concorrenza e la supera nelle seguenti aree funzionali.",
     "col_feature": "Caratteristica",
     "col_us": "CRMtree",
+    "pick_label": "Confronta con",
     "g1": "Avvio",
     "g2": "E-mail e comunicazione in tempo reale",
     "g3": "Telefonia e analisi IA delle chiamate",
@@ -933,9 +1161,9 @@
   "security": {
     "eyebrow": "Sicurezza",
     "h2": "I dati della tua azienda sono isolati in modo sicuro in uno spazio dedicato",
-    "sub": "Ogni azienda opera in un ambiente completamente isolato — è integrato di default.",
+    "sub": "Ogni azienda opera in un ambiente completamente isolato - è integrato di default.",
     "sec1_t": "Isolamento completo dei dati",
-    "sec1_d": "L'ambiente di ogni azienda è separato — gli utenti di un'azienda non vedono mai i dati di un'altra.",
+    "sec1_d": "L'ambiente di ogni azienda è separato - gli utenti di un'azienda non vedono mai i dati di un'altra.",
     "sec2_t": "RBAC e SSO/SAML",
     "sec2_d": "Accesso controllato da ruoli e permessi. Login aziendale via SSO/SAML.",
     "sec3_t": "Server nell'UE",
@@ -945,14 +1173,14 @@
   },
   "aiact": {
     "eyebrow": "Conformità normativa",
-    "h2": "Pronti per l'AI Act — non solo per il GDPR",
-    "body": "Le funzioni IA di CRMtree (analisi delle chiamate, scoring dei prospect, SEObot) si basano su un'integrazione nativa con GovAI — il nostro gateway di conformità all'AI Act UE. Ogni chiamata a un modello IA viene classificata per rischio, scansionata per dati personali e registrata in un log di audit immutabile. Risultato: conformità all'AI Act fin dal primo giorno, come già garantiamo per il GDPR.",
+    "h2": "Pronti per l'AI Act - non solo per il GDPR",
+    "body": "Le funzioni IA di CRMtree (analisi delle chiamate, scoring dei prospect, SEObot) si basano su un'integrazione nativa con GovAI - il nostro gateway di conformità all'AI Act UE. Ogni chiamata a un modello IA viene classificata per rischio, scansionata per dati personali e registrata in un log di audit immutabile. Risultato: conformità all'AI Act fin dal primo giorno, come già garantiamo per il GDPR.",
     "card1_t": "Classificazione del rischio",
     "card1_d": "Ogni chiamata IA è classificata automaticamente secondo gli artt. 5, Allegato III e art. 50 dell'AI Act.",
     "card2_t": "Supervisione umana",
     "card2_d": "Le chiamate segnalate per revisione attendono un revisore qualificato prima di proseguire.",
     "card3_t": "Log di audit immutabile",
-    "card3_d": "Ogni decisione dell'IA viene registrata con timestamp — prova pronta per un audit.",
+    "card3_d": "Ogni decisione dell'IA viene registrata con timestamp - prova pronta per un audit.",
     "card4_t": "GDPR e AI Act insieme",
     "card4_d": "Un unico livello di conformità coerente, invece di progetti separati per ogni normativa."
   },
@@ -960,11 +1188,11 @@
     "eyebrow": "FAQ",
     "h2": "Le domande più frequenti",
     "q1": "CRMtree è adatto al mio settore?",
-    "a1": "Sì — CRMtree non è costruito attorno a un unico modello di vendita. Configuri pipeline, campi e ruoli sul processo che già usi.",
+    "a1": "Sì - CRMtree non è costruito attorno a un unico modello di vendita. Configuri pipeline, campi e ruoli sul processo che già usi.",
     "q2": "Posso provare CRMtree gratis?",
-    "a2": "Sì — 14 giorni di accesso completo, senza carta di credito. Annulla quando vuoi.",
+    "a2": "Sì - 14 giorni di accesso completo, senza carta di credito. Annulla quando vuoi.",
     "q3": "Quali provider e-mail posso collegare?",
-    "a3": "Gmail, Outlook e Zoho — la corrispondenza si sincronizza direttamente sulle schede lead e partner.",
+    "a3": "Gmail, Outlook e Zoho - la corrispondenza si sincronizza direttamente sulle schede lead e partner.",
     "q4": "Come funziona l'analisi IA delle chiamate?",
     "a4": "Il sistema analizza note o trascrizioni e valuta la propensione all'acquisto, con segnali e obiezioni del cliente.",
     "q5": "Dove sono conservati i nostri dati?",
@@ -972,7 +1200,7 @@
     "q_migrate": "Posso trasferire i dati da un altro CRM (es. Livespace, Pipedrive)?",
     "a_migrate": "Sì, di norma importiamo i dati di partner e venditori da un file CSV. Per migrazioni più grandi offriamo assistenza dedicata.",
     "q_whatsapp": "WhatsApp Business funziona subito dopo la registrazione?",
-    "a_whatsapp": "Il numero WhatsApp Business viene configurato dall'amministratore della tua azienda nel pannello — un unico numero aziendale condiviso, visibile a tutto il team.",
+    "a_whatsapp": "Il numero WhatsApp Business viene configurato dall'amministratore della tua azienda nel pannello - un unico numero aziendale condiviso, visibile a tutto il team.",
     "q_price": "Quanto costa?",
     "a_price": "Dipende dal numero di utenti e dai moduli scelti. Trovi il listino completo nella pagina Prezzi, oppure scrivici se preferisci parlarne."
   },
@@ -997,12 +1225,13 @@
     "phone_ph": "+39 300 0000000",
     "message_label": "Messaggio",
     "message_ph": "Descrivi brevemente le tue esigenze o fai una domanda…",
-    "success": "✅ Grazie! Ti risponderemo presto.",
-    "error": "❌ Qualcosa è andato storto. Riprova o scrivici direttamente.",
+    "success": "Grazie! Ti risponderemo presto.",
+    "error": "Qualcosa è andato storto. Riprova o scrivici direttamente.",
     "submit": "Invia richiesta",
     "submitting": "Invio in corso…"
   },
   "footer": {
+    "col_modules": "Moduli",
     "tagline": "CRM per l'azienda moderna",
     "col_product": "Prodotto",
     "col_resources": "Risorse",
@@ -1017,11 +1246,61 @@
     "privacy": "Informativa privacy",
     "copyright": "© 2026 CRMtree. Tutti i diritti riservati."
   },
+  "pricing": {
+    "billing_label": "Fatturazione",
+    "billing_annual": "Annuale",
+    "billing_monthly": "Mensile",
+    "compare_h2": "Confronta i piani",
+    "hero_h1": "Prezzi semplici e trasparenti",
+    "hero_sub": "Paghi solo per gli utenti attivi. Nessun costo nascosto, nessun vincolo a lungo termine.",
+    "save_badge": "Risparmi fino al 32%",
+    "currency_label": "Valuta",
+    "currency_note": "I prezzi in PLN sono indicativi - cambio ~4,30 PLN/EUR, aggiornato periodicamente.",
+    "badge_popular": "Il più scelto",
+    "tag_lite": "Per i team di vendita che iniziano a mettere ordine nel proprio CRM.",
+    "tag_standard": "Gestione completa delle vendite - dal lead al report e all'integrazione dei dati.",
+    "tag_pro": "Per le organizzazioni che richiedono canali dedicati e analisi avanzate.",
+    "per_user_month": "/utente/mese",
+    "price_contact": "Contattaci",
+    "note_annual": "Fatturazione annuale · {price}/anno/utente",
+    "note_monthly": "Fatturazione mensile",
+    "note_pro": "Preventivo personalizzato · SLA garantito",
+    "cta_call": "Fissa una chiamata",
+    "features_label": "Cosa include",
+    "inherits_lite": "Tutto del piano Lite, più:",
+    "inherits_standard": "Tutto del piano Standard, più:",
+    "f_leads": "Modulo completo di gestione di lead e clienti",
+    "f_funnels": "Pipeline di vendita e budget dei venditori",
+    "f_email": "Comunicazione e-mail end-to-end (Gmail)",
+    "f_tasks": "Attività e workflow di assegnazione",
+    "f_config": "Configurazione flessibile di dizionari e ruoli",
+    "f_storage": "Spazio dati",
+    "f_partner": "Gestione completa del processo partner",
+    "f_onboarding": "Workflow di onboarding (processo di attivazione in 4 fasi)",
+    "f_reports": "Report di vendita e analisi (trend, KPI, win rate)",
+    "f_dwh_api": "Alimentazione del data warehouse tramite API dedicata",
+    "f_churn": "Report avanzati e analisi del churn",
+    "f_cs": "Modulo Customer Service",
+    "f_phone": "Canale telefonico dedicato",
+    "f_queue": "Gestione della coda degli agenti",
+    "f_kb": "Knowledge base",
+    "f_portal": "Portale self-service per il cliente",
+    "f_mail": "Integrazione dedicata della comunicazione e-mail",
+    "note1_t": "Attivazione in 24h",
+    "note1_d": "Dopo la firma del contratto, il tuo ambiente è pronto il giorno lavorativo successivo. Importazione dei dati da file CSV in pochi minuti.",
+    "note2_t": "Sicurezza enterprise",
+    "note2_d": "SAML 2.0, isolamento dei dati per cliente, audit trail, Azure Poland Central. I tuoi dati restano nell'UE.",
+    "note3_t": "Supporto in lingua polacca",
+    "note3_d": "Un referente dedicato all'attivazione, documentazione in polacco, supporto via e-mail e telefono.",
+    "cta_h2": "Domande sui prezzi?",
+    "cta_sub": "Ti risponderemo entro un giorno lavorativo",
+    "cta_btn": "Scrivici"
+  },
   "chat": {
-    "pill": "Ciao! 👋",
+    "pill": "Ciao!",
     "name": "Team CRMtree",
     "status": "Online ora",
-    "msg1": "Ciao! 👋 Siamo felici di aiutarti a capire cosa cerchi o cosa vuoi migliorare nelle tue vendite.",
+    "msg1": "Ciao! Siamo felici di aiutarti a capire cosa cerchi o cosa vuoi migliorare nelle tue vendite.",
     "msg2": "Possiamo anche attivarti subito una prova gratuita di 14 giorni.",
     "cta": "Scrivici"
   }
@@ -1041,7 +1320,10 @@
     "contact": "Contacto",
     "login": "Iniciar sesión",
     "cta_trial": "Prueba 14 días gratis",
-    "products": "Productos"
+    "products": "Productos",
+    "menu_open": "Abrir menú",
+    "menu_close": "Cerrar menú",
+    "language": "Idioma"
   },
   "hero": {
     "eyebrow": "CRM para cualquier sector",
@@ -1051,7 +1333,9 @@
     "cta_secondary": "Ver funciones",
     "trust1": "14 días gratis",
     "trust2": "Sin integración de IT",
-    "trust3": "Datos en Azure, región Polonia Central"
+    "trust3": "Datos en Azure, región Polonia Central",
+    "shot_web_alt": "Panel de CRMtree en el navegador",
+    "shot_mobile_alt": "App móvil de CRMtree: pantalla de inicio"
   },
   "trial": {
     "eyebrow": "Empieza hoy",
@@ -1063,7 +1347,7 @@
   },
   "cycle": {
     "eyebrow": "Cómo crecemos contigo",
-    "h2": "Todo el ciclo de crecimiento — de lead frío a cliente fiel",
+    "h2": "Todo el ciclo de crecimiento - de lead frío a cliente fiel",
     "sub": "CRMtree no termina al cerrar la venta. Gestiona todo el proceso: captación, cualificación, conversión y fidelización.",
     "s1_t": "Enriquecimiento de datos",
     "s1_d": "El dominio de un lead frío se completa automáticamente con sector y tamaño de empresa.",
@@ -1083,6 +1367,7 @@
     "s8_d": "Resultados de ventas, clientes y presupuestos en un solo panel."
   },
   "features": {
+    "more": "Ver más",
     "eyebrow": "Funciones",
     "h2": "Todo lo que necesitas",
     "sub": "Un sistema en lugar de decenas de hojas de cálculo y herramientas",
@@ -1125,6 +1410,7 @@
     "f9_problem": "Un comercial en la calle no tiene acceso al CRM entre reuniones y se le olvida anotar lo acordado antes de volver a la oficina.",
     "f9_how": "Los leads, clientes y tareas están siempre a mano, con notificaciones push.",
     "f9_example": "Justo después de reunirse con un cliente, el comercial añade una nota desde el móvil en el ascensor, antes de que se le olvide algo.",
+    "f9_shot_alt": "App móvil de CRMtree: lista de leads",
     "f10_problem": "Un comercial pierde horas comprobando a mano si una empresa de una lista fría siquiera encaja con el perfil de cliente objetivo.",
     "f10_how": "La puntuación ICP automática de 0 a 100 enriquece los datos de la empresa por sí sola.",
     "f10_example": "De 500 empresas nuevas, el sistema muestra al momento las 40 con mejor encaje, así el comercial llama antes a esas, no simplemente por orden de lista.",
@@ -1136,11 +1422,22 @@
     "label_example": "Ejemplo práctico"
   },
   "compare": {
+    "legend_yes": "Disponible",
+    "legend_partial": "Parcialmente",
+    "legend_no": "No disponible",
+    "note_paid": "Módulo de pago",
+    "note_enterprise": "Plan Enterprise",
+    "note_advanced": "Plan Advanced",
+    "note_addon": "Complemento",
+    "note_addon_beta": "Complemento, Gantt en beta",
+    "note_professional": "Desde el plan Professional",
+    "unknown": "Sin datos",
     "eyebrow": "Comparativa",
     "h2": "CRMtree frente a otros sistemas CRM",
     "sub": "CRMtree tiene todo lo que ofrece la competencia y la supera en las siguientes áreas funcionales.",
     "col_feature": "Característica",
     "col_us": "CRMtree",
+    "pick_label": "Comparar con",
     "g1": "Puesta en marcha",
     "g2": "Correo y comunicación en tiempo real",
     "g3": "Telefonía y análisis de llamadas con IA",
@@ -1182,9 +1479,9 @@
   "security": {
     "eyebrow": "Seguridad",
     "h2": "Los datos de tu empresa están aislados de forma segura en un espacio dedicado",
-    "sub": "Cada empresa opera en un entorno totalmente aislado — está integrado por defecto.",
+    "sub": "Cada empresa opera en un entorno totalmente aislado - está integrado por defecto.",
     "sec1_t": "Aislamiento total de datos",
-    "sec1_d": "El entorno de cada empresa está separado — los usuarios de una empresa nunca ven los datos de otra.",
+    "sec1_d": "El entorno de cada empresa está separado - los usuarios de una empresa nunca ven los datos de otra.",
     "sec2_t": "RBAC y SSO/SAML",
     "sec2_d": "Acceso controlado por roles y permisos. Inicio de sesión corporativo vía SSO/SAML.",
     "sec3_t": "Servidores en la UE",
@@ -1194,14 +1491,14 @@
   },
   "aiact": {
     "eyebrow": "Cumplimiento normativo",
-    "h2": "Preparados para la AI Act — no solo para el RGPD",
-    "body": "Las funciones de IA de CRMtree (análisis de llamadas, puntuación de prospectos, SEObot) funcionan sobre una integración nativa con GovAI — nuestra pasarela de cumplimiento de la AI Act de la UE. Cada llamada a un modelo de IA se clasifica por riesgo, se analiza en busca de datos personales y se registra en un log de auditoría inmutable. El resultado: cumplimiento de la AI Act desde el primer día, igual que ya garantizamos con el RGPD.",
+    "h2": "Preparados para la AI Act - no solo para el RGPD",
+    "body": "Las funciones de IA de CRMtree (análisis de llamadas, puntuación de prospectos, SEObot) funcionan sobre una integración nativa con GovAI - nuestra pasarela de cumplimiento de la AI Act de la UE. Cada llamada a un modelo de IA se clasifica por riesgo, se analiza en busca de datos personales y se registra en un log de auditoría inmutable. El resultado: cumplimiento de la AI Act desde el primer día, igual que ya garantizamos con el RGPD.",
     "card1_t": "Clasificación de riesgo",
     "card1_d": "Cada llamada de IA se clasifica automáticamente según los arts. 5, Anexo III y art. 50 de la AI Act.",
     "card2_t": "Supervisión humana",
     "card2_d": "Las llamadas marcadas para revisión esperan a un revisor cualificado antes de continuar.",
     "card3_t": "Log de auditoría inmutable",
-    "card3_d": "Cada decisión de la IA queda registrada con marca de tiempo — prueba lista para una auditoría.",
+    "card3_d": "Cada decisión de la IA queda registrada con marca de tiempo - prueba lista para una auditoría.",
     "card4_t": "RGPD y AI Act juntos",
     "card4_d": "Una única capa de cumplimiento coherente, en lugar de proyectos separados por normativa."
   },
@@ -1209,11 +1506,11 @@
     "eyebrow": "FAQ",
     "h2": "Las preguntas que más nos hacen",
     "q1": "¿CRMtree encaja con mi sector?",
-    "a1": "Sí — CRMtree no está construido para un único modelo de ventas. Configuras el embudo, los campos y los roles según tu proceso actual.",
+    "a1": "Sí - CRMtree no está construido para un único modelo de ventas. Configuras el embudo, los campos y los roles según tu proceso actual.",
     "q2": "¿Puedo probar CRMtree gratis?",
-    "a2": "Sí — 14 días de acceso completo, sin tarjeta de crédito. Cancela cuando quieras.",
+    "a2": "Sí - 14 días de acceso completo, sin tarjeta de crédito. Cancela cuando quieras.",
     "q3": "¿Qué proveedores de correo puedo conectar?",
-    "a3": "Gmail, Outlook y Zoho — la correspondencia se sincroniza directamente en las fichas de leads y clientes.",
+    "a3": "Gmail, Outlook y Zoho - la correspondencia se sincroniza directamente en las fichas de leads y clientes.",
     "q4": "¿Cómo funciona el análisis de llamadas con IA?",
     "a4": "El sistema analiza notas o transcripciones y puntúa la intención de compra, junto con señales y objeciones.",
     "q5": "¿Dónde se almacenan nuestros datos?",
@@ -1221,7 +1518,7 @@
     "q_migrate": "¿Puedo migrar datos desde otro CRM (p. ej. Livespace, Pipedrive)?",
     "a_migrate": "Sí, por defecto importamos los datos de clientes y comerciales desde un archivo CSV. Para migraciones mayores, ayudamos de forma individual.",
     "q_whatsapp": "¿WhatsApp Business funciona nada más registrarse?",
-    "a_whatsapp": "El administrador de tu empresa configura el número de WhatsApp Business en el panel — un único número corporativo compartido, visible para todo el equipo.",
+    "a_whatsapp": "El administrador de tu empresa configura el número de WhatsApp Business en el panel - un único número corporativo compartido, visible para todo el equipo.",
     "q_price": "¿Cuánto cuesta?",
     "a_price": "Depende del número de usuarios y de los módulos elegidos. Encontrarás el precio completo en la página de Precios, o escríbenos si prefieres hablarlo."
   },
@@ -1246,12 +1543,13 @@
     "phone_ph": "+34 600 000 000",
     "message_label": "Mensaje",
     "message_ph": "Describe brevemente tus necesidades o haz una pregunta…",
-    "success": "✅ ¡Gracias! Te contactaremos pronto.",
-    "error": "❌ Algo salió mal. Inténtalo de nuevo o escríbenos directamente.",
+    "success": "¡Gracias! Te contactaremos pronto.",
+    "error": "Algo salió mal. Inténtalo de nuevo o escríbenos directamente.",
     "submit": "Enviar solicitud",
     "submitting": "Enviando…"
   },
   "footer": {
+    "col_modules": "Módulos",
     "tagline": "CRM para la empresa moderna",
     "col_product": "Producto",
     "col_resources": "Recursos",
@@ -1266,11 +1564,61 @@
     "privacy": "Política de privacidad",
     "copyright": "© 2026 CRMtree. Todos los derechos reservados."
   },
+  "pricing": {
+    "billing_label": "Facturación",
+    "billing_annual": "Anual",
+    "billing_monthly": "Mensual",
+    "compare_h2": "Compara los planes",
+    "hero_h1": "Precios simples y transparentes",
+    "hero_sub": "Solo pagas por los usuarios activos. Sin cargos ocultos, sin compromisos a largo plazo.",
+    "save_badge": "Ahorras hasta un 32%",
+    "currency_label": "Moneda",
+    "currency_note": "Los precios en PLN son orientativos - tipo de cambio ~4,30 PLN/EUR, actualizado periódicamente.",
+    "badge_popular": "El más popular",
+    "tag_lite": "Para equipos de ventas que empiezan a poner orden en su CRM.",
+    "tag_standard": "Gestión completa de ventas - del lead al informe y la integración de datos.",
+    "tag_pro": "Para organizaciones que necesitan canales dedicados y analítica avanzada.",
+    "per_user_month": "/usuario/mes",
+    "price_contact": "Contacta con nosotros",
+    "note_annual": "Facturación anual · {price}/año/usuario",
+    "note_monthly": "Facturación mensual",
+    "note_pro": "Presupuesto personalizado · SLA garantizado",
+    "cta_call": "Agenda una llamada",
+    "features_label": "Qué incluye",
+    "inherits_lite": "Todo lo del plan Lite, más:",
+    "inherits_standard": "Todo lo del plan Standard, más:",
+    "f_leads": "Módulo completo de gestión de leads y clientes",
+    "f_funnels": "Embudos de ventas y presupuestos de los comerciales",
+    "f_email": "Comunicación por correo end-to-end (Gmail)",
+    "f_tasks": "Tareas y workflow de asignaciones",
+    "f_config": "Configuración flexible de diccionarios y roles",
+    "f_storage": "Espacio de datos",
+    "f_partner": "Gestión completa del proceso con clientes",
+    "f_onboarding": "Workflows de incorporación (proceso de implantación en 4 etapas)",
+    "f_reports": "Informes de ventas y analítica (tendencias, KPI, win rate)",
+    "f_dwh_api": "Carga del almacén de datos mediante una API dedicada",
+    "f_churn": "Informes avanzados y análisis de churn",
+    "f_cs": "Módulo Customer Service",
+    "f_phone": "Canal telefónico dedicado",
+    "f_queue": "Gestión de la cola de agentes",
+    "f_kb": "Base de conocimiento",
+    "f_portal": "Portal de autoservicio para el cliente",
+    "f_mail": "Integración dedicada de la comunicación por correo",
+    "note1_t": "Implantación en 24h",
+    "note1_d": "Tras firmar el contrato, tu entorno está listo el siguiente día laborable. Importación de datos desde un archivo CSV en pocos minutos.",
+    "note2_t": "Seguridad enterprise",
+    "note2_d": "SAML 2.0, aislamiento de datos por cliente, audit trail, Azure Poland Central. Tus datos se quedan en la UE.",
+    "note3_t": "Soporte en polaco",
+    "note3_d": "Un responsable de implantación dedicado, documentación en polaco, soporte por correo y teléfono.",
+    "cta_h2": "¿Tienes preguntas sobre los precios?",
+    "cta_sub": "Te responderemos en un día laborable",
+    "cta_btn": "Escríbenos"
+  },
   "chat": {
-    "pill": "¡Hola! 👋",
+    "pill": "¡Hola!",
     "name": "Equipo CRMtree",
     "status": "En línea ahora",
-    "msg1": "¡Hola! 👋 Encantados de ayudarte a ver qué buscas o qué te gustaría mejorar en tus ventas.",
+    "msg1": "¡Hola! Encantados de ayudarte a ver qué buscas o qué te gustaría mejorar en tus ventas.",
     "msg2": "También podemos activarte ya una prueba gratuita de 14 días.",
     "cta": "Escríbenos"
   }
@@ -1290,7 +1638,10 @@
     "contact": "Contact",
     "login": "Se connecter",
     "cta_trial": "Essai gratuit 14 jours",
-    "products": "Produits"
+    "products": "Produits",
+    "menu_open": "Ouvrir le menu",
+    "menu_close": "Fermer le menu",
+    "language": "Langue"
   },
   "hero": {
     "eyebrow": "Un CRM pour tous les secteurs",
@@ -1300,7 +1651,9 @@
     "cta_secondary": "Voir les fonctionnalités",
     "trust1": "14 jours gratuits",
     "trust2": "Aucune intégration IT requise",
-    "trust3": "Données hébergées sur Azure, région Pologne Centrale"
+    "trust3": "Données hébergées sur Azure, région Pologne Centrale",
+    "shot_web_alt": "Tableau de bord CRMtree dans le navigateur",
+    "shot_mobile_alt": "Application mobile CRMtree - écran d'accueil"
   },
   "trial": {
     "eyebrow": "Commencez dès aujourd'hui",
@@ -1312,7 +1665,7 @@
   },
   "cycle": {
     "eyebrow": "Comment nous grandissons avec vous",
-    "h2": "Tout le cycle de croissance — du lead froid au client fidèle",
+    "h2": "Tout le cycle de croissance - du lead froid au client fidèle",
     "sub": "CRMtree ne s'arrête pas à la signature. Il gère tout le processus : acquisition, qualification, conversion et fidélisation.",
     "s1_t": "Enrichissement des données",
     "s1_d": "Le domaine d'une entreprise issue d'un lead froid est enrichi automatiquement (secteur, taille).",
@@ -1332,6 +1685,7 @@
     "s8_d": "Résultats commerciaux, partenaires et budgets réunis sur un seul tableau de bord."
   },
   "features": {
+    "more": "Voir plus",
     "eyebrow": "Fonctionnalités",
     "h2": "Tout ce dont vous avez besoin",
     "sub": "Un seul système au lieu de dizaines de fichiers et d'outils",
@@ -1367,13 +1721,14 @@
     "f6_example": "Un article « Comment choisir un CRM pour une petite entreprise » est rédigé en une journée, programmé pour publication et suivi côté trafic organique.",
     "f7_problem": "Un contrat circule par e-mail sous forme de pièce jointe « final_v3 » et personne ne sait qui l'a validé en dernier.",
     "f7_how": "Les circuits de signature et de validation gardent les documents directement sur la fiche partenaire.",
-    "f7_example": "Un nouveau contrat attend la validation du service juridique — le système montre exactement où il est bloqué, plutôt qu'un énième e-mail de relance.",
+    "f7_example": "Un nouveau contrat attend la validation du service juridique - le système montre exactement où il est bloqué, plutôt qu'un énième e-mail de relance.",
     "f8_problem": "Un nouvel employé reçoit accès à tout « par précaution » car configurer les droits à la main prend trop de temps.",
     "f8_how": "L'environnement de chaque entreprise est totalement isolé, avec rôles, permissions et connexion via SSO/SAML.",
     "f8_example": "Un stagiaire marketing ne voit jamais les conditions commerciales des clients de l'équipe commerciale, car son rôle n'y donne tout simplement pas accès.",
     "f9_problem": "Un commercial sur le terrain n'a pas accès au CRM entre deux rendez-vous et oublie de noter ce qui a été convenu avant de rentrer au bureau.",
     "f9_how": "Leads, partenaires et tâches restent toujours à portée de main, avec des notifications push.",
     "f9_example": "Juste après un rendez-vous client, le commercial ajoute une note depuis son téléphone dans l'ascenseur, avant d'avoir le temps d'oublier quoi que ce soit.",
+    "f9_shot_alt": "Application mobile CRMtree - liste des leads",
     "f10_problem": "Un commercial perd des heures à vérifier à la main si une entreprise d'une liste froide correspond ne serait-ce qu'au profil client visé.",
     "f10_how": "Le scoring ICP automatique de 0 à 100 enrichit lui-même les données de l'entreprise.",
     "f10_example": "Sur 500 nouvelles entreprises, le système fait tout de suite ressortir les 40 mieux notées, le commercial les appelle donc en premier, pas simplement dans l'ordre de la liste.",
@@ -1385,11 +1740,22 @@
     "label_example": "Exemple concret"
   },
   "compare": {
+    "legend_yes": "Disponible",
+    "legend_partial": "Partiellement",
+    "legend_no": "Non disponible",
+    "note_paid": "Module payant",
+    "note_enterprise": "Offre Enterprise",
+    "note_advanced": "Offre Advanced",
+    "note_addon": "Module complémentaire",
+    "note_addon_beta": "Module complémentaire, Gantt en bêta",
+    "note_professional": "À partir de l'offre Professional",
+    "unknown": "Non communiqué",
     "eyebrow": "Comparatif",
     "h2": "CRMtree face aux autres CRM",
     "sub": "CRMtree a tout ce que propose la concurrence et la devance dans les domaines fonctionnels suivants.",
     "col_feature": "Fonction",
     "col_us": "CRMtree",
+    "pick_label": "Comparer avec",
     "g1": "Mise en place",
     "g2": "E-mail et communication en temps réel",
     "g3": "Téléphonie et analyse d'appel par IA",
@@ -1431,9 +1797,9 @@
   "security": {
     "eyebrow": "Sécurité",
     "h2": "Les données de votre entreprise sont isolées en toute sécurité dans un espace dédié",
-    "sub": "Chaque entreprise évolue dans un environnement totalement isolé — c'est natif.",
+    "sub": "Chaque entreprise évolue dans un environnement totalement isolé - c'est natif.",
     "sec1_t": "Isolation totale des données",
-    "sec1_d": "L'environnement de chaque entreprise est séparé — les utilisateurs d'une entreprise ne voient jamais les données d'une autre.",
+    "sec1_d": "L'environnement de chaque entreprise est séparé - les utilisateurs d'une entreprise ne voient jamais les données d'une autre.",
     "sec2_t": "RBAC et SSO/SAML",
     "sec2_d": "Accès contrôlé par rôles et permissions. Connexion d'entreprise via SSO/SAML.",
     "sec3_t": "Serveurs dans l'UE",
@@ -1443,14 +1809,14 @@
   },
   "aiact": {
     "eyebrow": "Conformité réglementaire",
-    "h2": "Prêts pour l'AI Act — pas seulement pour le RGPD",
-    "body": "Les fonctions IA de CRMtree (analyse d'appels, scoring des prospects, SEObot) reposent sur une intégration native avec GovAI — notre passerelle de conformité à l'AI Act européen. Chaque appel à un modèle d'IA est classé par niveau de risque, analysé pour détecter des données personnelles, et enregistré dans un journal d'audit immuable. Résultat : conformité à l'AI Act dès le premier jour, comme nous le garantissons déjà pour le RGPD.",
+    "h2": "Prêts pour l'AI Act - pas seulement pour le RGPD",
+    "body": "Les fonctions IA de CRMtree (analyse d'appels, scoring des prospects, SEObot) reposent sur une intégration native avec GovAI - notre passerelle de conformité à l'AI Act européen. Chaque appel à un modèle d'IA est classé par niveau de risque, analysé pour détecter des données personnelles, et enregistré dans un journal d'audit immuable. Résultat : conformité à l'AI Act dès le premier jour, comme nous le garantissons déjà pour le RGPD.",
     "card1_t": "Classification du risque",
     "card1_d": "Chaque appel IA est classé automatiquement selon les art. 5, Annexe III et art. 50 de l'AI Act.",
     "card2_t": "Supervision humaine",
     "card2_d": "Les appels signalés pour révision attendent un relecteur qualifié avant de continuer.",
     "card3_t": "Journal d'audit immuable",
-    "card3_d": "Chaque décision de l'IA est horodatée et enregistrée — une preuve prête pour un audit.",
+    "card3_d": "Chaque décision de l'IA est horodatée et enregistrée - une preuve prête pour un audit.",
     "card4_t": "RGPD et AI Act ensemble",
     "card4_d": "Une seule couche de conformité cohérente, au lieu de projets séparés par réglementation."
   },
@@ -1458,11 +1824,11 @@
     "eyebrow": "FAQ",
     "h2": "Les questions les plus fréquentes",
     "q1": "CRMtree convient-il à mon secteur ?",
-    "a1": "Oui — CRMtree n'est pas conçu pour un seul modèle de vente. Vous configurez le pipeline, les champs et les rôles selon votre processus actuel.",
+    "a1": "Oui - CRMtree n'est pas conçu pour un seul modèle de vente. Vous configurez le pipeline, les champs et les rôles selon votre processus actuel.",
     "q2": "Puis-je essayer CRMtree gratuitement ?",
-    "a2": "Oui — 14 jours d'accès complet, sans carte bancaire. Annulez à tout moment.",
+    "a2": "Oui - 14 jours d'accès complet, sans carte bancaire. Annulez à tout moment.",
     "q3": "Quels fournisseurs e-mail puis-je connecter ?",
-    "a3": "Gmail, Outlook et Zoho — la correspondance se synchronise directement sur les fiches leads et partenaires.",
+    "a3": "Gmail, Outlook et Zoho - la correspondance se synchronise directement sur les fiches leads et partenaires.",
     "q4": "Comment fonctionne l'analyse d'appel par IA ?",
     "a4": "Le système analyse les notes ou transcriptions et note l'intention d'achat, avec les signaux et objections du client.",
     "q5": "Où sont stockées nos données ?",
@@ -1470,7 +1836,7 @@
     "q_migrate": "Puis-je transférer mes données depuis un autre CRM (Livespace, Pipedrive…) ?",
     "a_migrate": "Oui, nous importons par défaut les données de partenaires et commerciaux depuis un fichier CSV. Pour les migrations plus importantes, nous vous accompagnons individuellement.",
     "q_whatsapp": "WhatsApp Business fonctionne-t-il dès la création du compte ?",
-    "a_whatsapp": "L'administrateur de votre entreprise configure le numéro WhatsApp Business dans le panneau — un seul numéro d'entreprise partagé, visible par toute l'équipe.",
+    "a_whatsapp": "L'administrateur de votre entreprise configure le numéro WhatsApp Business dans le panneau - un seul numéro d'entreprise partagé, visible par toute l'équipe.",
     "q_price": "Combien ça coûte ?",
     "a_price": "Cela dépend du nombre d'utilisateurs et des modules choisis. Retrouvez le tarif complet sur la page Tarifs, ou écrivez-nous si vous préférez en discuter."
   },
@@ -1495,12 +1861,13 @@
     "phone_ph": "+33 6 00 00 00 00",
     "message_label": "Message",
     "message_ph": "Décrivez brièvement vos besoins ou posez une question…",
-    "success": "✅ Merci ! Nous vous recontactons bientôt.",
-    "error": "❌ Un problème est survenu. Réessayez ou écrivez-nous directement.",
+    "success": "Merci ! Nous vous recontactons bientôt.",
+    "error": "Un problème est survenu. Réessayez ou écrivez-nous directement.",
     "submit": "Envoyer la demande",
     "submitting": "Envoi en cours…"
   },
   "footer": {
+    "col_modules": "Modules",
     "tagline": "Le CRM des entreprises modernes",
     "col_product": "Produit",
     "col_resources": "Ressources",
@@ -1515,11 +1882,61 @@
     "privacy": "Politique de confidentialité",
     "copyright": "© 2026 CRMtree. Tous droits réservés."
   },
+  "pricing": {
+    "billing_label": "Facturation",
+    "billing_annual": "Annuel",
+    "billing_monthly": "Mensuel",
+    "compare_h2": "Comparer les offres",
+    "hero_h1": "Des tarifs simples et transparents",
+    "hero_sub": "Vous ne payez que pour les utilisateurs actifs. Sans frais cachés, sans engagement à long terme.",
+    "save_badge": "Économisez jusqu'à 32%",
+    "currency_label": "Devise",
+    "currency_note": "Les prix en PLN sont indicatifs - taux de change ~4,30 PLN/EUR, mis à jour périodiquement.",
+    "badge_popular": "Le plus choisi",
+    "tag_lite": "Pour les équipes commerciales qui commencent à structurer leur CRM.",
+    "tag_standard": "Gestion commerciale complète - du lead au rapport et à l'intégration des données.",
+    "tag_pro": "Pour les organisations qui ont besoin de canaux dédiés et d'une analytique avancée.",
+    "per_user_month": "/utilisateur/mois",
+    "price_contact": "Contactez-nous",
+    "note_annual": "Facturation annuelle · {price}/an/utilisateur",
+    "note_monthly": "Facturation mensuelle",
+    "note_pro": "Devis sur mesure · SLA garanti",
+    "cta_call": "Planifier un échange",
+    "features_label": "Inclus",
+    "inherits_lite": "Tout le plan Lite, plus :",
+    "inherits_standard": "Tout le plan Standard, plus :",
+    "f_leads": "Module complet de gestion des leads et des clients",
+    "f_funnels": "Pipelines commerciaux et budgets des commerciaux",
+    "f_email": "Communication e-mail de bout en bout (Gmail)",
+    "f_tasks": "Tâches et workflow d'attribution",
+    "f_config": "Configuration flexible des dictionnaires et des rôles",
+    "f_storage": "Espace de stockage",
+    "f_partner": "Gestion complète du processus partenaires",
+    "f_onboarding": "Workflows d'onboarding (processus de mise en place en 4 étapes)",
+    "f_reports": "Rapports commerciaux et analytique (tendances, KPI, win rate)",
+    "f_dwh_api": "Alimentation du data warehouse via une API dédiée",
+    "f_churn": "Rapports avancés et analyse du churn",
+    "f_cs": "Module Customer Service",
+    "f_phone": "Canal téléphonique dédié",
+    "f_queue": "Gestion de la file d'attente des agents",
+    "f_kb": "Base de connaissances",
+    "f_portal": "Portail self-service pour le client",
+    "f_mail": "Intégration dédiée de la communication e-mail",
+    "note1_t": "Mise en place en 24h",
+    "note1_d": "Après la signature du contrat, votre environnement est prêt le jour ouvré suivant. Import des données depuis un fichier CSV en quelques minutes.",
+    "note2_t": "Sécurité enterprise",
+    "note2_d": "SAML 2.0, isolation des données par client, audit trail, Azure Poland Central. Vos données restent dans l'UE.",
+    "note3_t": "Support en polonais",
+    "note3_d": "Un responsable de mise en place dédié, une documentation en polonais, un support par e-mail et par téléphone.",
+    "cta_h2": "Des questions sur les tarifs ?",
+    "cta_sub": "Nous vous répondrons sous un jour ouvré",
+    "cta_btn": "Écrivez-nous"
+  },
   "chat": {
-    "pill": "Salut ! 👋",
+    "pill": "Salut !",
     "name": "Équipe CRMtree",
     "status": "En ligne",
-    "msg1": "Salut ! 👋 On est là pour vous aider à trouver ce que vous cherchez ou ce que vous voulez améliorer dans vos ventes.",
+    "msg1": "Salut ! On est là pour vous aider à trouver ce que vous cherchez ou ce que vous voulez améliorer dans vos ventes.",
     "msg2": "On peut aussi vous activer directement un essai gratuit de 14 jours.",
     "cta": "Écrivez-nous"
   }
@@ -1539,7 +1956,10 @@
     "contact": "Contact",
     "login": "Autentificare",
     "cta_trial": "Testează gratuit 14 zile",
-    "products": "Produse"
+    "products": "Produse",
+    "menu_open": "Deschide meniul",
+    "menu_close": "Închide meniul",
+    "language": "Limbă"
   },
   "hero": {
     "eyebrow": "CRM pentru orice domeniu",
@@ -1549,7 +1969,9 @@
     "cta_secondary": "Vezi funcționalitățile",
     "trust1": "14 zile gratuit",
     "trust2": "Fără integrare IT",
-    "trust3": "Date găzduite pe Azure, regiunea Polonia Centrală"
+    "trust3": "Date găzduite pe Azure, regiunea Polonia Centrală",
+    "shot_web_alt": "Tabloul de bord CRMtree în browser",
+    "shot_mobile_alt": "Aplicația mobilă CRMtree - ecranul Start"
   },
   "trial": {
     "eyebrow": "Începe astăzi",
@@ -1561,7 +1983,7 @@
   },
   "cycle": {
     "eyebrow": "Cum creștem împreună cu tine",
-    "h2": "Întregul ciclu de creștere — de la lead rece la client fidel",
+    "h2": "Întregul ciclu de creștere - de la lead rece la client fidel",
     "sub": "CRMtree nu se oprește la închiderea vânzării. Gestionează tot procesul: achiziție, calificare, conversie și fidelizare.",
     "s1_t": "Îmbogățirea datelor",
     "s1_d": "Domeniul unei companii dintr-o bază de leaduri reci este completat automat cu domeniu de activitate și dimensiune.",
@@ -1581,6 +2003,7 @@
     "s8_d": "Rezultate de vânzări, parteneri și bugete într-un singur tablou de bord."
   },
   "features": {
+    "more": "Vezi mai mult",
     "eyebrow": "Funcționalități",
     "h2": "Tot ce ai nevoie",
     "sub": "Un singur sistem în loc de zeci de fișiere și instrumente",
@@ -1598,47 +2021,59 @@
     "cta": "Încearcă gratuit",
     "f1_problem": "Un manager de vânzări nu știe cu adevărat cum stă echipa până când cineva adună manual cifrele de la fiecare agent.",
     "f1_how": "Dashboard-ul de vânzări arată rezultatele în timp real, cu export de date și filtre după perioadă, partener și agent.",
-    "f1_example": "Vineri dimineața, managerul observă dintr-o privire că agentul Kowalski a avut cu 40% mai puține activități decât restul echipei — și poate reacționa chiar în aceeași zi, nu la finalul lunii.",
+    "f1_example": "Vineri dimineața, managerul observă dintr-o privire că agentul Kowalski a avut cu 40% mai puține activități decât restul echipei - și poate reacționa chiar în aceeași zi, nu la finalul lunii.",
     "f2_problem": "Datele despre clienți și parteneri ajung împrăștiate prin e-mailuri, notițe și memoria unor persoane diferite.",
     "f2_how": "Baza de parteneri păstrează într-un singur loc istoricul tranzacțiilor, documentele și un responsabil alocat.",
-    "f2_example": "Când responsabilul de cont pleacă în concediu, colegul care îl înlocuiește vede în două minute tot istoricul cu firma ABC — fără să sune pe nimeni.",
+    "f2_example": "Când responsabilul de cont pleacă în concediu, colegul care îl înlocuiește vede în două minute tot istoricul cu firma ABC - fără să sune pe nimeni.",
     "f3_problem": "Planul de vânzări trăiește într-un fișier separat pe care nimeni nu-l actualizează.",
     "f3_how": "Bugetele anuale și lunare per agent sunt comparate automat cu realizatul.",
-    "f3_example": "Sistemul semnalează singur că echipa de vânzări a atins doar 60% din ținta trimestrului 3 — cât mai este timp să se corecteze strategia.",
+    "f3_example": "Sistemul semnalează singur că echipa de vânzări a atins doar 60% din ținta trimestrului 3 - cât mai este timp să se corecteze strategia.",
     "f4_problem": "O conversație cu un client se desfășoară pe trei canale diferite deodată, iar nimeni nu are imaginea completă.",
     "f4_how": "E-mailul, WhatsApp Business și telefonul apar pe aceeași fișă a leadului/partenerului.",
-    "f4_example": "Un agent vede o reclamație pe WhatsApp înainte să răspundă la telefon clientului — și ajunge pregătit la discuție.",
+    "f4_example": "Un agent vede o reclamație pe WhatsApp înainte să răspundă la telefon clientului - și ajunge pregătit la discuție.",
     "f5_problem": "După un apel, nimeni nu are timp să-l asculte din nou sau să evalueze dacă clientul e cu adevărat interesat.",
     "f5_how": "AI evaluează automat intenția de cumpărare din notițe sau transcrieri și scoate în evidență semnalele și obiecțiile.",
-    "f5_example": "Sistemul marchează un apel drept „potențial scăzut” după ce detectează trei obiecții la rând — agentul nu mai pierde timp încălzind acel lead.",
+    "f5_example": "Sistemul marchează un apel drept „potențial scăzut” după ce detectează trei obiecții la rând - agentul nu mai pierde timp încălzind acel lead.",
     "f6_problem": "Blogul companiei stă blocat de luni de zile pentru că nimeni din echipă nu are timp să scrie.",
     "f6_how": "AI scrie și programează articole SEO și le urmărește rezultatele în Google Search Console.",
     "f6_example": "Un articol „Cum alegi un CRM pentru o afacere mică” e scris într-o zi, programat spre publicare și urmărit pentru trafic organic.",
     "f7_problem": "Un contract circulă prin e-mail ca atașament „final_v3”, iar nimeni nu știe cine l-a aprobat ultima dată.",
     "f7_how": "Fluxurile de semnătură și aprobare păstrează documentele direct la fișa partenerului.",
-    "f7_example": "Un contract nou așteaptă aprobarea departamentului juridic — sistemul arată exact unde a rămas blocat, în loc de încă un e-mail de reamintire.",
+    "f7_example": "Un contract nou așteaptă aprobarea departamentului juridic - sistemul arată exact unde a rămas blocat, în loc de încă un e-mail de reamintire.",
     "f8_problem": "Un angajat nou primește acces la tot „ca să fie sigur”, pentru că setarea manuală a permisiunilor durează prea mult.",
     "f8_how": "Mediul fiecărei companii este complet izolat, cu roluri, permisiuni și autentificare prin SSO/SAML.",
-    "f8_example": "Un stagiar de marketing nu vede niciodată condițiile comerciale ale clienților echipei de vânzări — rolul lui pur și simplu nu permite accesul la asta.",
+    "f8_example": "Un stagiar de marketing nu vede niciodată condițiile comerciale ale clienților echipei de vânzări - rolul lui pur și simplu nu permite accesul la asta.",
     "f9_problem": "Un agent de teren nu are acces la CRM între întâlniri și uită să noteze ce s-a stabilit înainte să ajungă înapoi la birou.",
     "f9_how": "Leadurile, partenerii și sarcinile sunt mereu la îndemână, cu notificări push.",
-    "f9_example": "Imediat după o întâlnire cu un client, agentul adaugă o notiță de pe telefon în lift — înainte să apuce să uite ceva.",
+    "f9_example": "Imediat după o întâlnire cu un client, agentul adaugă o notiță de pe telefon în lift - înainte să apuce să uite ceva.",
+    "f9_shot_alt": "Aplicația mobilă CRMtree - lista de leaduri",
     "f10_problem": "Un agent pierde ore verificând manual dacă o firmă dintr-o listă rece se potrivește măcar cu profilul clientului țintă.",
     "f10_how": "Scoring-ul ICP automat 0–100 îmbogățește singur datele companiei.",
-    "f10_example": "Din 500 de firme noi, sistemul arată imediat cele 40 cu cel mai bun scor — agentul le sună pe acestea primele, nu pur și simplu în ordinea din listă.",
-    "f11_problem": "După semnarea contractului, implementarea la client se împrăștie prin e-mailuri, foi de calcul și aplicații de chat — nimeni nu știe cine răspunde de ce și în ce stadiu este lucrul.",
-    "f11_how": "Un proiect are o fișă cu echipa, sarcini cu subsarcini, o axă a timpului (Gantt) și un chat — cu roluri pentru PM, participanți, controlor și persoane din afara firmei.",
-    "f11_example": "PM-ul creează proiectul de implementare și atribuie sarcini oamenilor săi și unei persoane de la client — care, după autentificare, își vede doar propriile sarcini și le închide pe parcurs.",
+    "f10_example": "Din 500 de firme noi, sistemul arată imediat cele 40 cu cel mai bun scor - agentul le sună pe acestea primele, nu pur și simplu în ordinea din listă.",
+    "f11_problem": "După semnarea contractului, implementarea la client se împrăștie prin e-mailuri, foi de calcul și aplicații de chat - nimeni nu știe cine răspunde de ce și în ce stadiu este lucrul.",
+    "f11_how": "Un proiect are o fișă cu echipa, sarcini cu subsarcini, o axă a timpului (Gantt) și un chat - cu roluri pentru PM, participanți, controlor și persoane din afara firmei.",
+    "f11_example": "PM-ul creează proiectul de implementare și atribuie sarcini oamenilor săi și unei persoane de la client - care, după autentificare, își vede doar propriile sarcini și le închide pe parcurs.",
     "label_problem": "Ce problemă rezolvă CRMtree",
     "label_how": "În ce mod",
     "label_example": "Exemplu practic"
   },
   "compare": {
+    "legend_yes": "Disponibil",
+    "legend_partial": "Parțial",
+    "legend_no": "Indisponibil",
+    "note_paid": "Modul plătit",
+    "note_enterprise": "Planul Enterprise",
+    "note_advanced": "Planul Advanced",
+    "note_addon": "Supliment",
+    "note_addon_beta": "Supliment, Gantt în beta",
+    "note_professional": "De la planul Professional",
+    "unknown": "Date indisponibile",
     "eyebrow": "Comparație",
     "h2": "CRMtree față de alte sisteme CRM",
     "sub": "CRMtree are tot ce oferă concurența și o depășește în următoarele arii funcționale.",
     "col_feature": "Caracteristică",
     "col_us": "CRMtree",
+    "pick_label": "Compară cu",
     "g1": "Implementare",
     "g2": "E-mail și comunicare în timp real",
     "g3": "Telefonie și analiza convorbirilor cu AI",
@@ -1680,9 +2115,9 @@
   "security": {
     "eyebrow": "Securitate",
     "h2": "Datele companiei tale sunt izolate în siguranță într-un spațiu dedicat",
-    "sub": "Fiecare companie funcționează într-un mediu complet izolat — este integrat din start.",
+    "sub": "Fiecare companie funcționează într-un mediu complet izolat - este integrat din start.",
     "sec1_t": "Izolare completă a datelor",
-    "sec1_d": "Mediul fiecărei companii este separat — utilizatorii unei companii nu văd niciodată datele alteia.",
+    "sec1_d": "Mediul fiecărei companii este separat - utilizatorii unei companii nu văd niciodată datele alteia.",
     "sec2_t": "RBAC și SSO/SAML",
     "sec2_d": "Acces controlat prin roluri și permisiuni. Autentificare de companie prin SSO/SAML.",
     "sec3_t": "Servere în UE",
@@ -1692,14 +2127,14 @@
   },
   "aiact": {
     "eyebrow": "Conformitate legală",
-    "h2": "Pregătiți pentru AI Act — nu doar pentru GDPR",
-    "body": "Funcțiile AI din CRMtree (analiza convorbirilor, scorarea prospecților, SEObot) rulează pe o integrare nativă cu GovAI — poarta noastră de conformitate cu AI Act al UE. Fiecare apel către un model AI este clasificat după risc, scanat pentru date cu caracter personal și înregistrat într-un jurnal de audit imuabil. Rezultatul: conformitate cu AI Act din prima zi, la fel cum asigurăm deja conformitatea cu GDPR.",
+    "h2": "Pregătiți pentru AI Act - nu doar pentru GDPR",
+    "body": "Funcțiile AI din CRMtree (analiza convorbirilor, scorarea prospecților, SEObot) rulează pe o integrare nativă cu GovAI - poarta noastră de conformitate cu AI Act al UE. Fiecare apel către un model AI este clasificat după risc, scanat pentru date cu caracter personal și înregistrat într-un jurnal de audit imuabil. Rezultatul: conformitate cu AI Act din prima zi, la fel cum asigurăm deja conformitatea cu GDPR.",
     "card1_t": "Clasificarea riscului",
     "card1_d": "Fiecare apel AI este clasificat automat conform art. 5, Anexa III și art. 50 din AI Act.",
     "card2_t": "Supraveghere umană",
     "card2_d": "Apelurile marcate pentru revizuire așteaptă un evaluator calificat înainte de a continua.",
     "card3_t": "Jurnal de audit imuabil",
-    "card3_d": "Fiecare decizie a AI este înregistrată cu marcaj de timp — dovadă pregătită pentru un audit.",
+    "card3_d": "Fiecare decizie a AI este înregistrată cu marcaj de timp - dovadă pregătită pentru un audit.",
     "card4_t": "GDPR și AI Act împreună",
     "card4_d": "Un singur nivel de conformitate coerent, în loc de proiecte separate pentru fiecare reglementare."
   },
@@ -1707,11 +2142,11 @@
     "eyebrow": "Întrebări frecvente",
     "h2": "Cele mai frecvente întrebări",
     "q1": "CRMtree se potrivește domeniului meu?",
-    "a1": "Da — CRMtree nu este construit pentru un singur model de vânzare. Configurezi pipeline-ul, câmpurile și rolurile după procesul pe care îl ai deja.",
+    "a1": "Da - CRMtree nu este construit pentru un singur model de vânzare. Configurezi pipeline-ul, câmpurile și rolurile după procesul pe care îl ai deja.",
     "q2": "Pot testa CRMtree gratuit?",
-    "a2": "Da — 14 zile de acces complet, fără card. Anulezi oricând.",
+    "a2": "Da - 14 zile de acces complet, fără card. Anulezi oricând.",
     "q3": "Ce furnizori de e-mail pot conecta?",
-    "a3": "Gmail, Outlook și Zoho — corespondența se sincronizează direct pe fișele leadurilor și partenerilor.",
+    "a3": "Gmail, Outlook și Zoho - corespondența se sincronizează direct pe fișele leadurilor și partenerilor.",
     "q4": "Cum funcționează analiza convorbirilor cu AI?",
     "a4": "Sistemul analizează notițe sau transcrieri și evaluează intenția de cumpărare, împreună cu semnale și obiecții.",
     "q5": "Unde sunt stocate datele noastre?",
@@ -1719,7 +2154,7 @@
     "q_migrate": "Pot muta datele dintr-un alt CRM (de ex. Livespace, Pipedrive)?",
     "a_migrate": "Da, în mod standard importăm datele partenerilor și agenților dintr-un fișier CSV. Pentru migrări mai mari oferim asistență individuală.",
     "q_whatsapp": "Funcționează WhatsApp Business imediat după crearea contului?",
-    "a_whatsapp": "Numărul WhatsApp Business este configurat de administratorul companiei tale în panou — un singur număr comun al companiei, vizibil pentru toată echipa.",
+    "a_whatsapp": "Numărul WhatsApp Business este configurat de administratorul companiei tale în panou - un singur număr comun al companiei, vizibil pentru toată echipa.",
     "q_price": "Cât costă?",
     "a_price": "Depinde de numărul de utilizatori și modulele alese. Găsești prețul complet pe pagina Prețuri, sau scrie-ne dacă preferi să discutăm."
   },
@@ -1744,12 +2179,13 @@
     "phone_ph": "+40 700 000 000",
     "message_label": "Mesaj",
     "message_ph": "Descrie pe scurt nevoile tale sau pune o întrebare…",
-    "success": "✅ Mulțumim! Revenim curând.",
-    "error": "❌ Ceva nu a mers bine. Încearcă din nou sau scrie-ne direct.",
+    "success": "Mulțumim! Revenim curând.",
+    "error": "Ceva nu a mers bine. Încearcă din nou sau scrie-ne direct.",
     "submit": "Trimite solicitarea",
     "submitting": "Se trimite…"
   },
   "footer": {
+    "col_modules": "Module",
     "tagline": "CRM pentru compania modernă",
     "col_product": "Produs",
     "col_resources": "Resurse",
@@ -1764,11 +2200,61 @@
     "privacy": "Politica de confidențialitate",
     "copyright": "© 2026 CRMtree. Toate drepturile rezervate."
   },
+  "pricing": {
+    "billing_label": "Facturare",
+    "billing_annual": "Anual",
+    "billing_monthly": "Lunar",
+    "compare_h2": "Compară planurile",
+    "hero_h1": "Prețuri simple și transparente",
+    "hero_sub": "Plătești doar pentru utilizatorii activi. Fără taxe ascunse, fără angajamente pe termen lung.",
+    "save_badge": "Economisești până la 32%",
+    "currency_label": "Monedă",
+    "currency_note": "Prețurile în PLN sunt orientative - curs ~4,30 PLN/EUR, actualizat periodic.",
+    "badge_popular": "Cel mai popular",
+    "tag_lite": "Pentru echipele de vânzări care încep să pună ordine în CRM.",
+    "tag_standard": "Gestionare completă a vânzărilor - de la lead la raport și integrarea datelor.",
+    "tag_pro": "Pentru organizațiile care au nevoie de canale dedicate și analiză avansată.",
+    "per_user_month": "/utilizator/lună",
+    "price_contact": "Contactează-ne",
+    "note_annual": "Facturare anuală · {price}/an/utilizator",
+    "note_monthly": "Facturare lunară",
+    "note_pro": "Ofertă personalizată · SLA garantat",
+    "cta_call": "Programează o discuție",
+    "features_label": "Ce include",
+    "inherits_lite": "Tot din planul Lite, plus:",
+    "inherits_standard": "Tot din planul Standard, plus:",
+    "f_leads": "Modul complet de gestionare a leadurilor și clienților",
+    "f_funnels": "Pipeline-uri de vânzări și bugetele agenților",
+    "f_email": "Comunicare e-mail end-to-end (Gmail)",
+    "f_tasks": "Sarcini și workflow de alocare",
+    "f_config": "Configurare flexibilă a dicționarelor și rolurilor",
+    "f_storage": "Spațiu de date",
+    "f_partner": "Gestionare completă a procesului cu partenerii",
+    "f_onboarding": "Workflow-uri de onboarding (proces de implementare în 4 etape)",
+    "f_reports": "Rapoarte de vânzări și analiză (tendințe, KPI, win rate)",
+    "f_dwh_api": "Alimentarea data warehouse prin API dedicat",
+    "f_churn": "Rapoarte extinse și analiză churn",
+    "f_cs": "Modul Customer Service",
+    "f_phone": "Canal telefonic dedicat",
+    "f_queue": "Gestionarea cozii de agenți",
+    "f_kb": "Bază de cunoștințe",
+    "f_portal": "Portal self-service pentru client",
+    "f_mail": "Integrare dedicată a comunicării prin e-mail",
+    "note1_t": "Implementare în 24h",
+    "note1_d": "După semnarea contractului, mediul tău este gata în următoarea zi lucrătoare. Import de date din fișier CSV în câteva minute.",
+    "note2_t": "Securitate enterprise",
+    "note2_d": "SAML 2.0, izolarea datelor per client, audit trail, Azure Poland Central. Datele tale rămân în UE.",
+    "note3_t": "Suport în limba polonă",
+    "note3_d": "Un responsabil dedicat de implementare, documentație în polonă, suport prin e-mail și telefon.",
+    "cta_h2": "Ai întrebări despre prețuri?",
+    "cta_sub": "Îți răspundem într-o zi lucrătoare",
+    "cta_btn": "Scrie-ne"
+  },
   "chat": {
-    "pill": "Bună! 👋",
+    "pill": "Bună!",
     "name": "Echipa CRMtree",
     "status": "Online acum",
-    "msg1": "Bună! 👋 Te ajutăm cu drag să vezi ce cauți sau ce vrei să îmbunătățești în vânzări.",
+    "msg1": "Bună! Te ajutăm cu drag să vezi ce cauți sau ce vrei să îmbunătățești în vânzări.",
     "msg2": "Îți putem activa și acum o perioadă de testare gratuită de 14 zile.",
     "cta": "Scrie-ne"
   }
@@ -1788,7 +2274,10 @@
     "contact": "Контакты",
     "login": "Войти",
     "cta_trial": "14 дней бесплатно",
-    "products": "Продукты"
+    "products": "Продукты",
+    "menu_open": "Открыть меню",
+    "menu_close": "Закрыть меню",
+    "language": "Язык"
   },
   "hero": {
     "eyebrow": "CRM для любой отрасли",
@@ -1798,7 +2287,9 @@
     "cta_secondary": "Смотреть возможности",
     "trust1": "14 дней бесплатно",
     "trust2": "Без интеграции с ИТ",
-    "trust3": "Данные в Azure, регион Центральная Польша"
+    "trust3": "Данные в Azure, регион Центральная Польша",
+    "shot_web_alt": "Дашборд CRMtree в браузере",
+    "shot_mobile_alt": "Мобильное приложение CRMtree - стартовый экран"
   },
   "trial": {
     "eyebrow": "Начните уже сегодня",
@@ -1810,7 +2301,7 @@
   },
   "cycle": {
     "eyebrow": "Как мы растём вместе с вами",
-    "h2": "Весь цикл роста — от холодного лида до постоянного клиента",
+    "h2": "Весь цикл роста - от холодного лида до постоянного клиента",
     "sub": "CRMtree не заканчивается на закрытии сделки. Он ведёт весь процесс: привлечение, квалификацию, конверсию и удержание клиента.",
     "s1_t": "Обогащение баз данных",
     "s1_d": "Домен компании из холодной базы лидов автоматически дополняется отраслью и размером.",
@@ -1830,6 +2321,7 @@
     "s8_d": "Результаты по продажам, партнёрам и бюджетам в одном дашборде."
   },
   "features": {
+    "more": "Подробнее",
     "eyebrow": "Возможности",
     "h2": "Всё, что нужно",
     "sub": "Одна система вместо десятков таблиц и инструментов",
@@ -1847,47 +2339,59 @@
     "cta": "Попробовать бесплатно",
     "f1_problem": "Руководитель отдела продаж не знает, как реально обстоят дела в команде, пока кто-то вручную не соберёт цифры по каждому менеджеру.",
     "f1_how": "Дашборд продаж показывает результаты в реальном времени, с экспортом данных и фильтрами по периоду, партнёру и менеджеру.",
-    "f1_example": "В пятницу утром руководитель видит с одного взгляда, что у менеджера Ковальского на 40% меньше активности, чем у остальной команды — и может отреагировать в тот же день, а не в конце месяца.",
+    "f1_example": "В пятницу утром руководитель видит с одного взгляда, что у менеджера Ковальского на 40% меньше активности, чем у остальной команды - и может отреагировать в тот же день, а не в конце месяца.",
     "f2_problem": "Данные о клиентах и партнёрах разбросаны по письмам, заметкам и памяти разных сотрудников.",
     "f2_how": "База партнёров хранит в одном месте историю сделок, документы и закреплённого менеджера.",
-    "f2_example": "Когда ответственный менеджер уходит в отпуск, замещающий его сотрудник за две минуты видит всю историю по компании ABC — не звоня коллеге.",
+    "f2_example": "Когда ответственный менеджер уходит в отпуск, замещающий его сотрудник за две минуты видит всю историю по компании ABC - не звоня коллеге.",
     "f3_problem": "План продаж живёт в отдельной таблице, которую никто не обновляет.",
     "f3_how": "Годовые и месячные бюджеты по менеджерам автоматически сравниваются с фактом.",
-    "f3_example": "Система сама сигнализирует, что отдел продаж выполнил только 60% цели за третий квартал — пока ещё есть время скорректировать стратегию.",
+    "f3_example": "Система сама сигнализирует, что отдел продаж выполнил только 60% цели за третий квартал - пока ещё есть время скорректировать стратегию.",
     "f4_problem": "Общение с клиентом идёт сразу по трём каналам одновременно, и ни у кого нет полной картины.",
     "f4_how": "Почта, WhatsApp Business и телефон видны на одной карточке лида или партнёра.",
-    "f4_example": "Менеджер видит жалобу в WhatsApp ещё до того, как ответит на звонок клиента — и подходит к разговору подготовленным.",
+    "f4_example": "Менеджер видит жалобу в WhatsApp ещё до того, как ответит на звонок клиента - и подходит к разговору подготовленным.",
     "f5_problem": "После звонка ни у кого нет времени переслушать его или оценить, действительно ли клиент заинтересован.",
     "f5_how": "AI автоматически оценивает готовность к покупке по заметкам или расшифровкам и выделяет сигналы и возражения.",
-    "f5_example": "Система помечает звонок как «низкий потенциал» после трёх возражений подряд — менеджер не тратит время на дальнейший прогрев этого лида.",
+    "f5_example": "Система помечает звонок как «низкий потенциал» после трёх возражений подряд - менеджер не тратит время на дальнейший прогрев этого лида.",
     "f6_problem": "Корпоративный блог не обновляется месяцами, потому что в команде ни у кого нет времени писать.",
     "f6_how": "AI пишет и планирует публикацию SEO-статей и отслеживает эффект в Google Search Console.",
     "f6_example": "Статья «Как выбрать CRM для малого бизнеса» пишется за день, ставится в план публикации и отслеживается по органическому трафику.",
     "f7_problem": "Договор ходит по почте как вложение «final_v3», и никто не знает, кто согласовал его последним.",
     "f7_how": "Согласование подписей и утверждений хранит документы прямо в карточке партнёра.",
-    "f7_example": "Новый договор ждёт согласования юротдела — система показывает точно, у кого именно он застрял, вместо очередного письма-напоминания.",
+    "f7_example": "Новый договор ждёт согласования юротдела - система показывает точно, у кого именно он застрял, вместо очередного письма-напоминания.",
     "f8_problem": "Новый сотрудник получает доступ ко всему «на всякий случай», потому что настраивать права вручную слишком долго.",
     "f8_how": "Среда каждой компании полностью изолирована, с ролями, правами доступа и входом через SSO/SAML.",
-    "f8_example": "Стажёр в маркетинге никогда не увидит условия по клиентам отдела продаж — его роль просто не даёт туда доступа.",
+    "f8_example": "Стажёр в маркетинге никогда не увидит условия по клиентам отдела продаж - его роль просто не даёт туда доступа.",
     "f9_problem": "У выездного менеджера нет доступа к CRM между встречами, и он забывает записать договорённости до возвращения в офис.",
     "f9_how": "Лиды, партнёры и задачи всегда под рукой, с push-уведомлениями.",
-    "f9_example": "Сразу после встречи с клиентом менеджер добавляет заметку с телефона прямо в лифте — пока ничего не забылось.",
+    "f9_example": "Сразу после встречи с клиентом менеджер добавляет заметку с телефона прямо в лифте - пока ничего не забылось.",
+    "f9_shot_alt": "Мобильное приложение CRMtree - список лидов",
     "f10_problem": "Менеджер тратит часы, вручную проверяя, подходит ли компания из холодного списка вообще под профиль целевого клиента.",
     "f10_how": "Автоматический ICP-скоринг 0–100 сам обогащает данные компании.",
-    "f10_example": "Из 500 новых компаний система сразу показывает 40 с лучшим совпадением — менеджер звонит сначала им, а не просто по порядку списка.",
-    "f11_problem": "После подписания договора внедрение у клиента расползается по письмам, таблицам и мессенджерам — никто не знает, кто за что отвечает и на каком этапе работа.",
-    "f11_how": "У проекта есть карточка с командой, задачи с подзадачами, временная шкала (Гант) и чат — с ролями для руководителя проекта, участников, контролёра и людей вне компании.",
-    "f11_example": "Руководитель проекта создаёт проект внедрения и назначает задачи своим сотрудникам и человеку со стороны клиента — тот после входа видит только свои задачи и закрывает их по ходу работы.",
+    "f10_example": "Из 500 новых компаний система сразу показывает 40 с лучшим совпадением - менеджер звонит сначала им, а не просто по порядку списка.",
+    "f11_problem": "После подписания договора внедрение у клиента расползается по письмам, таблицам и мессенджерам - никто не знает, кто за что отвечает и на каком этапе работа.",
+    "f11_how": "У проекта есть карточка с командой, задачи с подзадачами, временная шкала (Гант) и чат - с ролями для руководителя проекта, участников, контролёра и людей вне компании.",
+    "f11_example": "Руководитель проекта создаёт проект внедрения и назначает задачи своим сотрудникам и человеку со стороны клиента - тот после входа видит только свои задачи и закрывает их по ходу работы.",
     "label_problem": "Какую проблему решает CRMtree",
     "label_how": "Каким образом",
     "label_example": "Пример использования"
   },
   "compare": {
+    "legend_yes": "Есть",
+    "legend_partial": "Частично",
+    "legend_no": "Нет",
+    "note_paid": "Платный модуль",
+    "note_enterprise": "Тариф Enterprise",
+    "note_advanced": "Тариф Advanced",
+    "note_addon": "Дополнение",
+    "note_addon_beta": "Дополнение, Гант в бета-версии",
+    "note_professional": "С тарифа Professional",
+    "unknown": "Нет данных",
     "eyebrow": "Сравнение",
     "h2": "CRMtree на фоне других CRM-систем",
     "sub": "В CRMtree есть всё, что предлагают конкуренты, и он опережает их в следующих функциональных областях.",
     "col_feature": "Функция",
     "col_us": "CRMtree",
+    "pick_label": "Сравнить с",
     "g1": "Внедрение",
     "g2": "Почта и коммуникация в реальном времени",
     "g3": "Телефония и AI-анализ звонков",
@@ -1929,9 +2433,9 @@
   "security": {
     "eyebrow": "Безопасность",
     "h2": "Данные вашей компании надёжно изолированы в выделенном пространстве",
-    "sub": "Каждая компания работает в полностью изолированной среде — это встроено по умолчанию.",
+    "sub": "Каждая компания работает в полностью изолированной среде - это встроено по умолчанию.",
     "sec1_t": "Полная изоляция данных",
-    "sec1_d": "Среда каждой компании отделена — пользователи одной компании никогда не видят данные другой.",
+    "sec1_d": "Среда каждой компании отделена - пользователи одной компании никогда не видят данные другой.",
     "sec2_t": "RBAC и SSO/SAML",
     "sec2_d": "Доступ контролируется ролями и правами. Корпоративный вход через SSO/SAML.",
     "sec3_t": "Серверы в ЕС",
@@ -1941,14 +2445,14 @@
   },
   "aiact": {
     "eyebrow": "Соответствие законодательству",
-    "h2": "Готовы к AI Act — не только к GDPR",
-    "body": "AI-функции CRMtree (анализ звонков, скоринг лидов, SEObot) работают через нативную интеграцию с GovAI — нашим шлюзом соответствия европейскому AI Act. Каждый вызов AI-модели классифицируется по риску, проверяется на персональные данные и записывается в неизменяемый журнал аудита. Результат: соответствие AI Act с первого дня — так же, как мы уже обеспечиваем соответствие GDPR.",
+    "h2": "Готовы к AI Act - не только к GDPR",
+    "body": "AI-функции CRMtree (анализ звонков, скоринг лидов, SEObot) работают через нативную интеграцию с GovAI - нашим шлюзом соответствия европейскому AI Act. Каждый вызов AI-модели классифицируется по риску, проверяется на персональные данные и записывается в неизменяемый журнал аудита. Результат: соответствие AI Act с первого дня - так же, как мы уже обеспечиваем соответствие GDPR.",
     "card1_t": "Классификация риска",
     "card1_d": "Каждый вызов AI автоматически классифицируется по ст. 5, Приложению III и ст. 50 AI Act.",
     "card2_t": "Контроль человеком",
     "card2_d": "Вызовы, отмеченные для проверки, ждут квалифицированного рецензента перед продолжением.",
     "card3_t": "Неизменяемый журнал аудита",
-    "card3_d": "Каждое решение AI фиксируется с меткой времени — готовое доказательство для аудита.",
+    "card3_d": "Каждое решение AI фиксируется с меткой времени - готовое доказательство для аудита.",
     "card4_t": "GDPR и AI Act вместе",
     "card4_d": "Единый согласованный уровень соответствия вместо отдельных проектов под каждое регулирование."
   },
@@ -1956,11 +2460,11 @@
     "eyebrow": "Вопросы",
     "h2": "Самые частые вопросы",
     "q1": "Подходит ли CRMtree для моей отрасли?",
-    "a1": "Да — CRMtree не заточен под одну модель продаж. Вы настраиваете воронку, поля и роли под уже существующий у вас процесс.",
+    "a1": "Да - CRMtree не заточен под одну модель продаж. Вы настраиваете воронку, поля и роли под уже существующий у вас процесс.",
     "q2": "Можно ли попробовать CRMtree бесплатно?",
-    "a2": "Да — 14 дней полного доступа, без банковской карты. Отменить можно в любой момент.",
+    "a2": "Да - 14 дней полного доступа, без банковской карты. Отменить можно в любой момент.",
     "q3": "Какую почту можно подключить?",
-    "a3": "Gmail, Outlook и Zoho — переписка синхронизируется прямо на карточках лидов и партнёров.",
+    "a3": "Gmail, Outlook и Zoho - переписка синхронизируется прямо на карточках лидов и партнёров.",
     "q4": "Как работает AI-анализ звонков?",
     "a4": "Система анализирует заметки или расшифровки звонков и оценивает готовность к покупке вместе с сигналами и возражениями клиента.",
     "q5": "Где хранятся наши данные?",
@@ -1968,7 +2472,7 @@
     "q_migrate": "Можно ли перенести данные из другой CRM (например, Livespace, Pipedrive)?",
     "a_migrate": "Да, обычно мы импортируем данные партнёров и менеджеров из файла CSV. При крупных миграциях помогаем индивидуально.",
     "q_whatsapp": "Работает ли WhatsApp Business сразу после регистрации?",
-    "a_whatsapp": "Номер WhatsApp Business настраивает администратор вашей компании в панели — один общий корпоративный номер, видимый всей команде.",
+    "a_whatsapp": "Номер WhatsApp Business настраивает администратор вашей компании в панели - один общий корпоративный номер, видимый всей команде.",
     "q_price": "Сколько это стоит?",
     "a_price": "Зависит от количества пользователей и выбранных модулей. Полную цену смотрите на странице Цены, или напишите нам, если хотите обсудить."
   },
@@ -1993,12 +2497,13 @@
     "phone_ph": "+7 900 000 00 00",
     "message_label": "Сообщение",
     "message_ph": "Кратко опишите ваши потребности или задайте вопрос…",
-    "success": "✅ Спасибо! Мы скоро свяжемся.",
-    "error": "❌ Что-то пошло не так. Попробуйте ещё раз или напишите нам напрямую.",
+    "success": "Спасибо! Мы скоро свяжемся.",
+    "error": "Что-то пошло не так. Попробуйте ещё раз или напишите нам напрямую.",
     "submit": "Отправить запрос",
     "submitting": "Отправка…"
   },
   "footer": {
+    "col_modules": "Модули",
     "tagline": "CRM для современной компании",
     "col_product": "Продукт",
     "col_resources": "Ресурсы",
@@ -2013,11 +2518,61 @@
     "privacy": "Политика конфиденциальности",
     "copyright": "© 2026 CRMtree. Все права защищены."
   },
+  "pricing": {
+    "billing_label": "Оплата",
+    "billing_annual": "Ежегодно",
+    "billing_monthly": "Ежемесячно",
+    "compare_h2": "Сравнить тарифы",
+    "hero_h1": "Простые и прозрачные цены",
+    "hero_sub": "Вы платите только за активных пользователей. Без скрытых платежей и долгосрочных обязательств.",
+    "save_badge": "Экономия до 32%",
+    "currency_label": "Валюта",
+    "currency_note": "Цены в PLN ориентировочные - курс ~4,30 PLN/EUR, обновляется периодически.",
+    "badge_popular": "Самый популярный",
+    "tag_lite": "Для отделов продаж, которые начинают наводить порядок в своей CRM.",
+    "tag_standard": "Полное сопровождение продаж - от лида до отчёта и интеграции данных.",
+    "tag_pro": "Для организаций, которым нужны выделенные каналы и расширенная аналитика.",
+    "per_user_month": "/пользователь/месяц",
+    "price_contact": "Свяжитесь с нами",
+    "note_annual": "Оплата за год · {price}/год/пользователь",
+    "note_monthly": "Оплата помесячно",
+    "note_pro": "Индивидуальный расчёт · Гарантированный SLA",
+    "cta_call": "Назначить звонок",
+    "features_label": "Что входит",
+    "inherits_lite": "Всё из тарифа Lite, плюс:",
+    "inherits_standard": "Всё из тарифа Standard, плюс:",
+    "f_leads": "Полный модуль управления лидами и клиентами",
+    "f_funnels": "Воронки продаж и бюджеты менеджеров",
+    "f_email": "Сквозная коммуникация по e-mail (Gmail)",
+    "f_tasks": "Задачи и workflow назначений",
+    "f_config": "Гибкая настройка справочников и ролей",
+    "f_storage": "Хранилище данных",
+    "f_partner": "Полное сопровождение партнёрского процесса",
+    "f_onboarding": "Workflow онбординга (4-этапный процесс внедрения)",
+    "f_reports": "Отчёты по продажам и аналитика (тренды, KPI, win rate)",
+    "f_dwh_api": "Загрузка данных в хранилище через выделенный API",
+    "f_churn": "Расширенные отчёты и анализ оттока",
+    "f_cs": "Модуль Customer Service",
+    "f_phone": "Выделенный телефонный канал",
+    "f_queue": "Управление очередью агентов",
+    "f_kb": "База знаний",
+    "f_portal": "Портал самообслуживания для клиента",
+    "f_mail": "Выделенная интеграция почтовой коммуникации",
+    "note1_t": "Внедрение за 24 часа",
+    "note1_d": "После подписания договора ваша среда готова на следующий рабочий день. Импорт данных из CSV-файла за несколько минут.",
+    "note2_t": "Безопасность enterprise-уровня",
+    "note2_d": "SAML 2.0, изоляция данных каждого клиента, audit trail, Azure Poland Central. Ваши данные остаются в ЕС.",
+    "note3_t": "Поддержка на польском языке",
+    "note3_d": "Выделенный менеджер по внедрению, документация на польском, поддержка по e-mail и телефону.",
+    "cta_h2": "Есть вопросы о ценах?",
+    "cta_sub": "Ответим в течение одного рабочего дня",
+    "cta_btn": "Напишите нам"
+  },
   "chat": {
-    "pill": "Привет! 👋",
+    "pill": "Привет!",
     "name": "Команда CRMtree",
     "status": "Онлайн сейчас",
-    "msg1": "Привет! 👋 Расскажите, что вы ищете или что хотите улучшить в продажах — мы поможем.",
+    "msg1": "Привет! Расскажите, что вы ищете или что хотите улучшить в продажах - мы поможем.",
     "msg2": "Можем сразу подключить 14-дневный тестовый доступ.",
     "cta": "Написать нам"
   }
@@ -2037,7 +2592,10 @@
     "contact": "Kontakt",
     "login": "Prijava",
     "cta_trial": "14 dni brezplačno",
-    "products": "Izdelki"
+    "products": "Izdelki",
+    "menu_open": "Odpri meni",
+    "menu_close": "Zapri meni",
+    "language": "Jezik"
   },
   "hero": {
     "eyebrow": "CRM za vsako panogo",
@@ -2047,7 +2605,9 @@
     "cta_secondary": "Poglej funkcije",
     "trust1": "14 dni brezplačno",
     "trust2": "Brez IT-integracije",
-    "trust3": "Podatki v Azure, regija Poljska Centralna"
+    "trust3": "Podatki v Azure, regija Poljska Centralna",
+    "shot_web_alt": "Nadzorna plošča CRMtree v brskalniku",
+    "shot_mobile_alt": "Mobilna aplikacija CRMtree - začetni zaslon"
   },
   "trial": {
     "eyebrow": "Začnite še danes",
@@ -2059,7 +2619,7 @@
   },
   "cycle": {
     "eyebrow": "Kako rastemo skupaj z vami",
-    "h2": "Celoten cikel rasti — od hladnega leada do zvestega kupca",
+    "h2": "Celoten cikel rasti - od hladnega leada do zvestega kupca",
     "sub": "CRMtree se ne konča s sklenitvijo posla. Vodi celoten proces: pridobivanje, kvalifikacijo, konverzijo in ohranjanje strank.",
     "s1_t": "Bogatenje podatkov",
     "s1_d": "Domena podjetja iz hladne baze leadov se samodejno dopolni s panogo in velikostjo.",
@@ -2079,6 +2639,7 @@
     "s8_d": "Rezultati prodaje, partnerjev in proračunov na eni nadzorni plošči."
   },
   "features": {
+    "more": "Več",
     "eyebrow": "Funkcije",
     "h2": "Vse, kar potrebujete",
     "sub": "En sistem namesto deset preglednic in orodij",
@@ -2096,47 +2657,59 @@
     "cta": "Preizkusite brezplačno",
     "f1_problem": "Vodja prodaje resnično ne ve, kako je ekipa uspešna, dokler nekdo ročno ne zbere številk od vsakega prodajalca.",
     "f1_how": "Prodajna nadzorna plošča prikazuje rezultate v realnem času, z izvozom podatkov in filtri po obdobju, partnerju in prodajalcu.",
-    "f1_example": "V petek zjutraj vodja na prvi pogled opazi, da je imel prodajalec Kowalski 40 % manj aktivnosti kot preostala ekipa — in lahko ukrepa še isti dan, ne šele ob koncu meseca.",
+    "f1_example": "V petek zjutraj vodja na prvi pogled opazi, da je imel prodajalec Kowalski 40 % manj aktivnosti kot preostala ekipa - in lahko ukrepa še isti dan, ne šele ob koncu meseca.",
     "f2_problem": "Podatki o strankah in partnerjih končajo razpršeni po e-pošti, listkih in spominu različnih sodelavcev.",
     "f2_how": "Baza partnerjev na enem mestu hrani zgodovino transakcij, dokumente in dodeljenega skrbnika.",
-    "f2_example": "Ko skrbnik odide na dopust, nadomestni prodajalec v dveh minutah vidi celotno zgodovino s podjetjem ABC — brez klica kolegu.",
+    "f2_example": "Ko skrbnik odide na dopust, nadomestni prodajalec v dveh minutah vidi celotno zgodovino s podjetjem ABC - brez klica kolegu.",
     "f3_problem": "Prodajni načrt živi v ločeni preglednici, ki je nihče ne posodablja.",
     "f3_how": "Letni in mesečni proračuni po prodajalcu se samodejno primerjajo z realizacijo.",
-    "f3_example": "Sistem sam opozori, da je prodajna ekipa v 3. četrtletju dosegla le 60 % cilja — medtem ko je še čas za popravek strategije.",
+    "f3_example": "Sistem sam opozori, da je prodajna ekipa v 3. četrtletju dosegla le 60 % cilja - medtem ko je še čas za popravek strategije.",
     "f4_problem": "Pogovor s stranko poteka hkrati po treh različnih kanalih, nihče pa nima celotne slike.",
     "f4_how": "E-pošta, WhatsApp Business in telefon se prikažejo na isti kartici leada oziroma partnerja.",
-    "f4_example": "Prodajalec vidi pritožbo na WhatsAppu, še preden sprejme klic stranke — in je na pogovor pripravljen.",
+    "f4_example": "Prodajalec vidi pritožbo na WhatsAppu, še preden sprejme klic stranke - in je na pogovor pripravljen.",
     "f5_problem": "Po klicu nihče nima časa, da bi ga ponovno poslušal ali ocenil, ali stranko dejansko zanima ponudba.",
     "f5_how": "AI samodejno oceni nakupno namero iz zapiskov ali prepisov ter izpostavi signale in ugovore.",
-    "f5_example": "Sistem klic označi kot \"nizek potencial\", ko zazna tri ugovore zapored — prodajalec tako ne izgublja več časa s tem leadom.",
+    "f5_example": "Sistem klic označi kot \"nizek potencial\", ko zazna tri ugovore zapored - prodajalec tako ne izgublja več časa s tem leadom.",
     "f6_problem": "Podjetniški blog že mesece miruje, ker nihče v ekipi nima časa za pisanje.",
     "f6_how": "AI piše in načrtuje objave SEO-člankov ter spremlja učinek v Google Search Console.",
     "f6_example": "Članek \"Kako izbrati CRM za malo podjetje\" nastane v enem dnevu, se uvrsti v načrt objav in spremlja glede organskega prometa.",
     "f7_problem": "Pogodba kroži po e-pošti kot priloga \"final_v3\", nihče pa ne ve, kdo jo je nazadnje odobril.",
     "f7_how": "Postopki podpisovanja in odobritev hranijo dokumente neposredno pri kartici partnerja.",
-    "f7_example": "Nova pogodba čaka na odobritev pravne službe — sistem natančno pokaže, kje se je ustavila, namesto še enega opomnika po e-pošti.",
+    "f7_example": "Nova pogodba čaka na odobritev pravne službe - sistem natančno pokaže, kje se je ustavila, namesto še enega opomnika po e-pošti.",
     "f8_problem": "Nov zaposleni dobi dostop do vsega \"za vsak primer\", ker ročno urejanje dovoljenj traja predolgo.",
     "f8_how": "Okolje vsakega podjetja je popolnoma izolirano, z vlogami, dovoljenji in prijavo prek SSO/SAML.",
-    "f8_example": "Pripravnik v marketingu nikoli ne vidi komercialnih pogojev strank prodajne ekipe — njegova vloga tja preprosto nima dostopa.",
+    "f8_example": "Pripravnik v marketingu nikoli ne vidi komercialnih pogojev strank prodajne ekipe - njegova vloga tja preprosto nima dostopa.",
     "f9_problem": "Terenski prodajalec med sestanki nima dostopa do CRM-ja in pozabi zapisati dogovorjeno, preden se vrne v pisarno.",
     "f9_how": "Leadi, partnerji in naloge so vedno pri roki, s potisnimi obvestili.",
-    "f9_example": "Takoj po sestanku s stranko prodajalec doda zapisek s telefona kar v dvigalu — preden kaj pozabi.",
+    "f9_example": "Takoj po sestanku s stranko prodajalec doda zapisek s telefona kar v dvigalu - preden kaj pozabi.",
+    "f9_shot_alt": "Mobilna aplikacija CRMtree - seznam leadov",
     "f10_problem": "Prodajalec izgubi ure z ročnim preverjanjem, ali podjetje s hladnega seznama sploh ustreza profilu ciljne stranke.",
     "f10_how": "Samodejno ocenjevanje ICP 0–100 samo obogati podatke o podjetju.",
-    "f10_example": "Od 500 novih podjetij sistem takoj pokaže 40 z najvišjo oceno ujemanja — prodajalec pokliče najprej te, ne po vrstnem redu seznama.",
-    "f11_problem": "Po podpisu pogodbe se uvedba pri stranki razprši po e-pošti, preglednicah in klepetih — nihče ne ve, kdo je za kaj odgovoren in kako daleč je delo.",
-    "f11_how": "Projekt ima kartico z ekipo, naloge s podnalogami, časovnico (Gantt) in klepet — z vlogami za vodjo projekta, udeležence, kontrolorja in osebe zunaj podjetja.",
-    "f11_example": "Vodja projekta ustvari projekt uvedbe in dodeli naloge svojim ljudem ter osebi na strani stranke — ta po prijavi vidi samo svoje naloge in jih sproti zaključuje.",
+    "f10_example": "Od 500 novih podjetij sistem takoj pokaže 40 z najvišjo oceno ujemanja - prodajalec pokliče najprej te, ne po vrstnem redu seznama.",
+    "f11_problem": "Po podpisu pogodbe se uvedba pri stranki razprši po e-pošti, preglednicah in klepetih - nihče ne ve, kdo je za kaj odgovoren in kako daleč je delo.",
+    "f11_how": "Projekt ima kartico z ekipo, naloge s podnalogami, časovnico (Gantt) in klepet - z vlogami za vodjo projekta, udeležence, kontrolorja in osebe zunaj podjetja.",
+    "f11_example": "Vodja projekta ustvari projekt uvedbe in dodeli naloge svojim ljudem ter osebi na strani stranke - ta po prijavi vidi samo svoje naloge in jih sproti zaključuje.",
     "label_problem": "Kateri problem rešuje CRMtree",
     "label_how": "Na kakšen način",
     "label_example": "Praktični primer"
   },
   "compare": {
+    "legend_yes": "Na voljo",
+    "legend_partial": "Delno",
+    "legend_no": "Ni na voljo",
+    "note_paid": "Plačljiv modul",
+    "note_enterprise": "Paket Enterprise",
+    "note_advanced": "Paket Advanced",
+    "note_addon": "Dodatek",
+    "note_addon_beta": "Dodatek, Gantt v beta različici",
+    "note_professional": "Od paketa Professional",
+    "unknown": "Ni podatkov",
     "eyebrow": "Primerjava",
     "h2": "CRMtree v primerjavi z drugimi CRM sistemi",
     "sub": "CRMtree ima vse, kar ponuja konkurenca, in jo prehiteva na naslednjih funkcionalnih področjih.",
     "col_feature": "Lastnost",
     "col_us": "CRMtree",
+    "pick_label": "Primerjaj z",
     "g1": "Uvajanje",
     "g2": "E-pošta in komunikacija v realnem času",
     "g3": "Telefonija in analiza klicev z AI",
@@ -2178,9 +2751,9 @@
   "security": {
     "eyebrow": "Varnost",
     "h2": "Podatki vašega podjetja so varno izolirani v namenskem prostoru",
-    "sub": "Vsako podjetje deluje v popolnoma izoliranem okolju — to je vgrajeno.",
+    "sub": "Vsako podjetje deluje v popolnoma izoliranem okolju - to je vgrajeno.",
     "sec1_t": "Popolna izolacija podatkov",
-    "sec1_d": "Okolje vsakega podjetja je ločeno — uporabniki enega podjetja nikoli ne vidijo podatkov drugega.",
+    "sec1_d": "Okolje vsakega podjetja je ločeno - uporabniki enega podjetja nikoli ne vidijo podatkov drugega.",
     "sec2_t": "RBAC in SSO/SAML",
     "sec2_d": "Dostop nadzorovan z vlogami in dovoljenji. Poslovna prijava prek SSO/SAML.",
     "sec3_t": "Strežniki v EU",
@@ -2190,14 +2763,14 @@
   },
   "aiact": {
     "eyebrow": "Zakonska skladnost",
-    "h2": "Pripravljeni na AI Act — ne le na GDPR",
-    "body": "AI-funkcije CRMtree (analiza klicev, ocenjevanje priložnosti, SEObot) delujejo prek native integracije z GovAI — našim prehodom za skladnost z evropskim AI Act. Vsak klic modela AI je razvrščen glede na tveganje, preverjen glede osebnih podatkov in zabeležen v nespremenljivem revizijskem dnevniku. Rezultat: skladnost z AI Act od prvega dne, enako kot že zagotavljamo skladnost z GDPR.",
+    "h2": "Pripravljeni na AI Act - ne le na GDPR",
+    "body": "AI-funkcije CRMtree (analiza klicev, ocenjevanje priložnosti, SEObot) delujejo prek native integracije z GovAI - našim prehodom za skladnost z evropskim AI Act. Vsak klic modela AI je razvrščen glede na tveganje, preverjen glede osebnih podatkov in zabeležen v nespremenljivem revizijskem dnevniku. Rezultat: skladnost z AI Act od prvega dne, enako kot že zagotavljamo skladnost z GDPR.",
     "card1_t": "Razvrstitev tveganja",
     "card1_d": "Vsak klic AI je samodejno razvrščen po čl. 5, Prilogi III in čl. 50 AI Act.",
     "card2_t": "Človeški nadzor",
     "card2_d": "Klici, označeni za pregled, počakajo na usposobljenega pregledovalca, preden se nadaljujejo.",
     "card3_t": "Nespremenljiv revizijski dnevnik",
-    "card3_d": "Vsaka odločitev AI je zabeležena s časovnim žigom — pripravljen dokaz za revizijo.",
+    "card3_d": "Vsaka odločitev AI je zabeležena s časovnim žigom - pripravljen dokaz za revizijo.",
     "card4_t": "GDPR in AI Act skupaj",
     "card4_d": "Ena sama usklajena raven skladnosti namesto ločenih projektov za vsako regulativo."
   },
@@ -2205,11 +2778,11 @@
     "eyebrow": "Pogosta vprašanja",
     "h2": "Najpogostejša vprašanja",
     "q1": "Ali CRMtree ustreza moji panogi?",
-    "a1": "Da — CRMtree ni zgrajen za en sam prodajni model. Lijak, polja in vloge nastavite po procesu, ki ga že imate.",
+    "a1": "Da - CRMtree ni zgrajen za en sam prodajni model. Lijak, polja in vloge nastavite po procesu, ki ga že imate.",
     "q2": "Ali lahko CRMtree preizkusim brezplačno?",
-    "a2": "Da — 14 dni polnega dostopa, brez kreditne kartice. Prekličete lahko kadar koli.",
+    "a2": "Da - 14 dni polnega dostopa, brez kreditne kartice. Prekličete lahko kadar koli.",
     "q3": "Katere ponudnike e-pošte lahko povežem?",
-    "a3": "Gmail, Outlook in Zoho — korespondenca se sinhronizira neposredno na kartice leadov in partnerjev.",
+    "a3": "Gmail, Outlook in Zoho - korespondenca se sinhronizira neposredno na kartice leadov in partnerjev.",
     "q4": "Kako deluje analiza klicev z AI?",
     "a4": "Sistem analizira zapiske ali prepise pogovorov in oceni nakupno namero skupaj s signali in ugovori strank.",
     "q5": "Kje so shranjeni naši podatki?",
@@ -2217,7 +2790,7 @@
     "q_migrate": "Ali lahko prenesem podatke iz drugega CRM-ja (npr. Livespace, Pipedrive)?",
     "a_migrate": "Da, običajno uvozimo podatke partnerjev in prodajalcev iz datoteke CSV. Pri večjih selitvah pomagamo individualno.",
     "q_whatsapp": "Ali WhatsApp Business deluje takoj po registraciji?",
-    "a_whatsapp": "Številko WhatsApp Business v nadzorni plošči nastavi skrbnik vašega podjetja — ena skupna poslovna številka, vidna celotni ekipi.",
+    "a_whatsapp": "Številko WhatsApp Business v nadzorni plošči nastavi skrbnik vašega podjetja - ena skupna poslovna številka, vidna celotni ekipi.",
     "q_price": "Koliko to stane?",
     "a_price": "Odvisno je od števila uporabnikov in izbranih modulov. Celoten cenik najdete na strani Cenik, ali nam pišite, če se raje pogovorite."
   },
@@ -2242,12 +2815,13 @@
     "phone_ph": "+386 40 000 000",
     "message_label": "Sporočilo",
     "message_ph": "Na kratko opišite svoje potrebe ali zastavite vprašanje…",
-    "success": "✅ Hvala! Kmalu se oglasimo.",
-    "error": "❌ Nekaj je šlo narobe. Poskusite znova ali nam pišite neposredno.",
+    "success": "Hvala! Kmalu se oglasimo.",
+    "error": "Nekaj je šlo narobe. Poskusite znova ali nam pišite neposredno.",
     "submit": "Pošlji povpraševanje",
     "submitting": "Pošiljanje…"
   },
   "footer": {
+    "col_modules": "Moduli",
     "tagline": "CRM za sodobno podjetje",
     "col_product": "Izdelek",
     "col_resources": "Viri",
@@ -2262,11 +2836,61 @@
     "privacy": "Politika zasebnosti",
     "copyright": "© 2026 CRMtree. Vse pravice pridržane."
   },
+  "pricing": {
+    "billing_label": "Obračun",
+    "billing_annual": "Letno",
+    "billing_monthly": "Mesečno",
+    "compare_h2": "Primerjaj pakete",
+    "hero_h1": "Preprost, pregleden cenik",
+    "hero_sub": "Plačate samo za aktivne uporabnike. Brez skritih stroškov, brez dolgoročnih obveznosti.",
+    "save_badge": "Prihranite do 32%",
+    "currency_label": "Valuta",
+    "currency_note": "Cene v PLN so okvirne - menjalni tečaj ~4,30 PLN/EUR, občasno posodobljen.",
+    "badge_popular": "Najbolj priljubljen",
+    "tag_lite": "Za prodajne ekipe, ki začenjajo urejati svoj CRM.",
+    "tag_standard": "Celovita podpora prodaji - od leada do poročila in integracije podatkov.",
+    "tag_pro": "Za organizacije, ki potrebujejo namenske kanale in napredno analitiko.",
+    "per_user_month": "/uporabnik/mesec",
+    "price_contact": "Pišite nam",
+    "note_annual": "Letni obračun · {price}/leto/uporabnik",
+    "note_monthly": "Mesečni obračun",
+    "note_pro": "Individualna ponudba · Zagotovljen SLA",
+    "cta_call": "Dogovorite se za pogovor",
+    "features_label": "Kaj vključuje",
+    "inherits_lite": "Vse iz paketa Lite, plus:",
+    "inherits_standard": "Vse iz paketa Standard, plus:",
+    "f_leads": "Celovit modul za upravljanje leadov in strank",
+    "f_funnels": "Prodajni lijaki in proračuni prodajalcev",
+    "f_email": "Celovita e-poštna komunikacija (Gmail)",
+    "f_tasks": "Naloge in workflow dodeljevanja",
+    "f_config": "Prilagodljiva nastavitev šifrantov in vlog",
+    "f_storage": "Prostor za podatke",
+    "f_partner": "Celovita podpora partnerskemu procesu",
+    "f_onboarding": "Workflowi uvajanja (4-stopenjski proces uvedbe)",
+    "f_reports": "Prodajna poročila in analitika (trendi, KPI, win rate)",
+    "f_dwh_api": "Polnjenje podatkovnega skladišča prek namenskega API-ja",
+    "f_churn": "Razširjena poročila in analiza odliva",
+    "f_cs": "Modul Customer Service",
+    "f_phone": "Namenski telefonski kanal",
+    "f_queue": "Upravljanje čakalne vrste agentov",
+    "f_kb": "Baza znanja",
+    "f_portal": "Samopostrežni portal za stranke",
+    "f_mail": "Namenska integracija e-poštne komunikacije",
+    "note1_t": "Uvedba v 24 urah",
+    "note1_d": "Po podpisu pogodbe je vaše okolje pripravljeno naslednji delovni dan. Uvoz podatkov iz datoteke CSV v nekaj minutah.",
+    "note2_t": "Varnost na ravni enterprise",
+    "note2_d": "SAML 2.0, izolacija podatkov za vsako stranko, audit trail, Azure Poland Central. Vaši podatki ostanejo v EU.",
+    "note3_t": "Podpora v poljščini",
+    "note3_d": "Namenski skrbnik uvedbe, dokumentacija v poljščini, podpora po e-pošti in telefonu.",
+    "cta_h2": "Imate vprašanja o ceniku?",
+    "cta_sub": "Odgovorimo v enem delovnem dnevu",
+    "cta_btn": "Pišite nam"
+  },
   "chat": {
-    "pill": "Živjo! 👋",
+    "pill": "Živjo!",
     "name": "Ekipa CRMtree",
     "status": "Trenutno na voljo",
-    "msg1": "Živjo! 👋 Z veseljem pomagamo ugotoviti, kaj iščete ali kaj bi radi izboljšali pri prodaji.",
+    "msg1": "Živjo! Z veseljem pomagamo ugotoviti, kaj iščete ali kaj bi radi izboljšali pri prodaji.",
     "msg2": "Lahko takoj aktiviramo tudi 14-dnevni preizkusni dostop.",
     "cta": "Pišite nam"
   }
@@ -2286,7 +2910,10 @@
     "contact": "Kontakt",
     "login": "Prijava",
     "cta_trial": "14 dana besplatno",
-    "products": "Proizvodi"
+    "products": "Proizvodi",
+    "menu_open": "Otvori izbornik",
+    "menu_close": "Zatvori izbornik",
+    "language": "Jezik"
   },
   "hero": {
     "eyebrow": "CRM za svaku djelatnost",
@@ -2296,7 +2923,9 @@
     "cta_secondary": "Pogledaj značajke",
     "trust1": "14 dana besplatno",
     "trust2": "Bez IT integracije",
-    "trust3": "Podaci na Azureu, regija Poljska Centralna"
+    "trust3": "Podaci na Azureu, regija Poljska Centralna",
+    "shot_web_alt": "Nadzorna ploča CRMtree u pregledniku",
+    "shot_mobile_alt": "Mobilna aplikacija CRMtree - početni zaslon"
   },
   "trial": {
     "eyebrow": "Počnite već danas",
@@ -2308,7 +2937,7 @@
   },
   "cycle": {
     "eyebrow": "Kako rastemo zajedno s vama",
-    "h2": "Cijeli ciklus rasta — od hladnog leada do vjernog kupca",
+    "h2": "Cijeli ciklus rasta - od hladnog leada do vjernog kupca",
     "sub": "CRMtree ne završava zatvaranjem posla. Vodi cijeli proces: akviziciju, kvalifikaciju, konverziju i zadržavanje klijenata.",
     "s1_t": "Obogaćivanje baza podataka",
     "s1_d": "Domena tvrtke iz hladne baze leadova automatski se dopunjuje djelatnošću i veličinom.",
@@ -2328,6 +2957,7 @@
     "s8_d": "Rezultati prodaje, partnera i proračuna na jednoj nadzornoj ploči."
   },
   "features": {
+    "more": "Prikaži više",
     "eyebrow": "Značajke",
     "h2": "Sve što vam treba",
     "sub": "Jedan sustav umjesto desetaka tablica i alata",
@@ -2345,47 +2975,59 @@
     "cta": "Isprobajte besplatno",
     "f1_problem": "Voditelj prodaje zapravo ne zna kako tim stoji dok netko ručno ne skupi brojke od svakog prodavača.",
     "f1_how": "Prodajna nadzorna ploča prikazuje rezultate u stvarnom vremenu, s izvozom podataka i filtrima po razdoblju, partneru i prodavaču.",
-    "f1_example": "U petak ujutro voditelj na prvi pogled vidi da je prodavač Kowalski imao 40 % manje aktivnosti od ostatka tima — i može reagirati isti dan, a ne tek krajem mjeseca.",
+    "f1_example": "U petak ujutro voditelj na prvi pogled vidi da je prodavač Kowalski imao 40 % manje aktivnosti od ostatka tima - i može reagirati isti dan, a ne tek krajem mjeseca.",
     "f2_problem": "Podaci o klijentima i partnerima završe raspršeni po e-mailovima, bilješkama i sjećanju različitih kolega.",
     "f2_how": "Baza partnera na jednom mjestu čuva povijest transakcija, dokumente i dodijeljenog voditelja.",
-    "f2_example": "Kad voditelj računa ode na godišnji, zamjena za dvije minute vidi cijelu povijest s tvrtkom ABC — bez zvanja kolege.",
+    "f2_example": "Kad voditelj računa ode na godišnji, zamjena za dvije minute vidi cijelu povijest s tvrtkom ABC - bez zvanja kolege.",
     "f3_problem": "Prodajni plan živi u zasebnoj tablici koju nitko ne ažurira.",
     "f3_how": "Godišnji i mjesečni proračuni po prodavaču automatski se uspoređuju s ostvarenim.",
-    "f3_example": "Sustav sam javi da je prodajni tim u 3. kvartalu ostvario samo 60 % cilja — dok još ima vremena za korekciju strategije.",
+    "f3_example": "Sustav sam javi da je prodajni tim u 3. kvartalu ostvario samo 60 % cilja - dok još ima vremena za korekciju strategije.",
     "f4_problem": "Razgovor s klijentom odvija se kroz tri različita kanala odjednom, a nitko nema cjelovitu sliku.",
     "f4_how": "E-mail, WhatsApp Business i telefon vidljivi su na istoj kartici leada ili partnera.",
-    "f4_example": "Prodavač vidi pritužbu na WhatsAppu prije nego što uopće javi se na poziv klijenta — i stiže pripremljen na razgovor.",
+    "f4_example": "Prodavač vidi pritužbu na WhatsAppu prije nego što uopće javi se na poziv klijenta - i stiže pripremljen na razgovor.",
     "f5_problem": "Nakon poziva nitko nema vremena ponovno ga preslušati ili procijeniti je li klijent stvarno zainteresiran.",
     "f5_how": "AI automatski ocjenjuje sklonost kupnji iz bilježaka ili transkripta te ističe signale i prigovore.",
-    "f5_example": "Sustav označi poziv kao \"nizak potencijal\" nakon što otkrije tri prigovora zaredom — prodavač više ne gubi vrijeme zagrijavajući taj lead.",
+    "f5_example": "Sustav označi poziv kao \"nizak potencijal\" nakon što otkrije tri prigovora zaredom - prodavač više ne gubi vrijeme zagrijavajući taj lead.",
     "f6_problem": "Poslovni blog stoji mjesecima jer nitko u timu nema vremena pisati.",
     "f6_how": "AI piše i planira objavu SEO članaka te prati učinak u Google Search Consoleu.",
     "f6_example": "Članak \"Kako odabrati CRM za malu tvrtku\" nastane u jednom danu, uvrsti se u plan objave i prati po organskom prometu.",
     "f7_problem": "Ugovor kruži e-mailom kao privitak \"final_v3\", a nitko ne zna tko ga je zadnji odobrio.",
     "f7_how": "Tijek potpisivanja i odobravanja drži dokumente izravno uz karticu partnera.",
-    "f7_example": "Novi ugovor čeka odobrenje pravnog odjela — sustav točno pokazuje gdje je zapeo, umjesto još jednog podsjetnika e-mailom.",
+    "f7_example": "Novi ugovor čeka odobrenje pravnog odjela - sustav točno pokazuje gdje je zapeo, umjesto još jednog podsjetnika e-mailom.",
     "f8_problem": "Novi zaposlenik dobiva pristup svemu \"za svaki slučaj\" jer ručno postavljanje dozvola traje predugo.",
     "f8_how": "Okruženje svake tvrtke potpuno je izolirano, s ulogama, dozvolama i prijavom putem SSO/SAML-a.",
-    "f8_example": "Pripravnik u marketingu nikad ne vidi komercijalne uvjete klijenata prodajnog tima — njegova uloga jednostavno nema pristup tome.",
+    "f8_example": "Pripravnik u marketingu nikad ne vidi komercijalne uvjete klijenata prodajnog tima - njegova uloga jednostavno nema pristup tome.",
     "f9_problem": "Terenski prodavač između sastanaka nema pristup CRM-u i zaboravi zapisati dogovoreno prije povratka u ured.",
     "f9_how": "Leadovi, partneri i zadaci uvijek su pri ruci, s push obavijestima.",
-    "f9_example": "Odmah nakon sastanka s klijentom prodavač doda bilješku s telefona u dizalu — prije nego što nešto zaboravi.",
+    "f9_example": "Odmah nakon sastanka s klijentom prodavač doda bilješku s telefona u dizalu - prije nego što nešto zaboravi.",
+    "f9_shot_alt": "Mobilna aplikacija CRMtree - popis leadova",
     "f10_problem": "Prodavač gubi sate ručno provjeravajući odgovara li tvrtka s hladnog popisa uopće profilu ciljanog klijenta.",
     "f10_how": "Automatska ICP ocjena 0–100 sama obogaćuje podatke o tvrtki.",
-    "f10_example": "Od 500 novih tvrtki sustav odmah pokaže 40 s najboljim podudaranjem — prodavač njih zove prve, a ne redom kako su na popisu.",
-    "f11_problem": "Nakon potpisa ugovora uvođenje kod klijenta raspe se po e-pošti, tablicama i chatovima — nitko ne zna tko je za što odgovoran ni dokle je posao stigao.",
-    "f11_how": "Projekt ima karticu s timom, zadatke s podzadacima, vremensku crtu (Gantt) i chat — s ulogama za voditelja projekta, sudionike, kontrolora i osobe izvan tvrtke.",
-    "f11_example": "Voditelj projekta otvara projekt uvođenja i dodjeljuje zadatke svojim ljudima i osobi na strani klijenta — ona nakon prijave vidi samo svoje zadatke i zatvara ih u hodu.",
+    "f10_example": "Od 500 novih tvrtki sustav odmah pokaže 40 s najboljim podudaranjem - prodavač njih zove prve, a ne redom kako su na popisu.",
+    "f11_problem": "Nakon potpisa ugovora uvođenje kod klijenta raspe se po e-pošti, tablicama i chatovima - nitko ne zna tko je za što odgovoran ni dokle je posao stigao.",
+    "f11_how": "Projekt ima karticu s timom, zadatke s podzadacima, vremensku crtu (Gantt) i chat - s ulogama za voditelja projekta, sudionike, kontrolora i osobe izvan tvrtke.",
+    "f11_example": "Voditelj projekta otvara projekt uvođenja i dodjeljuje zadatke svojim ljudima i osobi na strani klijenta - ona nakon prijave vidi samo svoje zadatke i zatvara ih u hodu.",
     "label_problem": "Koji problem rješava CRMtree",
     "label_how": "Na koji način",
     "label_example": "Praktični primjer"
   },
   "compare": {
+    "legend_yes": "Dostupno",
+    "legend_partial": "Djelomično",
+    "legend_no": "Nije dostupno",
+    "note_paid": "Plaćeni modul",
+    "note_enterprise": "Paket Enterprise",
+    "note_advanced": "Paket Advanced",
+    "note_addon": "Dodatak",
+    "note_addon_beta": "Dodatak, Gantt u beta verziji",
+    "note_professional": "Od paketa Professional",
+    "unknown": "Nema podataka",
     "eyebrow": "Usporedba",
     "h2": "CRMtree u odnosu na druge CRM sustave",
     "sub": "CRMtree ima sve što nudi konkurencija, a prednjači pred njom u sljedećim funkcionalnim područjima.",
     "col_feature": "Značajka",
     "col_us": "CRMtree",
+    "pick_label": "Usporedi s",
     "g1": "Uvođenje",
     "g2": "E-pošta i komunikacija u stvarnom vremenu",
     "g3": "Telefonija i AI analiza razgovora",
@@ -2427,9 +3069,9 @@
   "security": {
     "eyebrow": "Sigurnost",
     "h2": "Podaci vaše tvrtke sigurno su izolirani u namjenskom prostoru",
-    "sub": "Svaka tvrtka radi u potpuno izoliranom okruženju — to je ugrađeno.",
+    "sub": "Svaka tvrtka radi u potpuno izoliranom okruženju - to je ugrađeno.",
     "sec1_t": "Potpuna izolacija podataka",
-    "sec1_d": "Okruženje svake tvrtke je odvojeno — korisnici jedne tvrtke nikad ne vide podatke druge.",
+    "sec1_d": "Okruženje svake tvrtke je odvojeno - korisnici jedne tvrtke nikad ne vide podatke druge.",
     "sec2_t": "RBAC i SSO/SAML",
     "sec2_d": "Pristup kontroliran ulogama i dozvolama. Poslovna prijava putem SSO/SAML-a.",
     "sec3_t": "Poslužitelji u EU",
@@ -2439,14 +3081,14 @@
   },
   "aiact": {
     "eyebrow": "Zakonska usklađenost",
-    "h2": "Spremni za AI Act — ne samo za GDPR",
-    "body": "AI značajke CRMtreea (analiza razgovora, ocjenjivanje prilika, SEObot) rade putem native integracije s GovAI — našim pristupnikom za usklađenost s europskim AI Actom. Svaki poziv AI modela klasificira se prema riziku, provjerava na osobne podatke i bilježi u nepromjenjivi revizijski zapisnik. Rezultat: usklađenost s AI Actom od prvog dana, jednako kao što već osiguravamo usklađenost s GDPR-om.",
+    "h2": "Spremni za AI Act - ne samo za GDPR",
+    "body": "AI značajke CRMtreea (analiza razgovora, ocjenjivanje prilika, SEObot) rade putem native integracije s GovAI - našim pristupnikom za usklađenost s europskim AI Actom. Svaki poziv AI modela klasificira se prema riziku, provjerava na osobne podatke i bilježi u nepromjenjivi revizijski zapisnik. Rezultat: usklađenost s AI Actom od prvog dana, jednako kao što već osiguravamo usklađenost s GDPR-om.",
     "card1_t": "Klasifikacija rizika",
     "card1_d": "Svaki AI poziv automatski se klasificira prema čl. 5, Prilogu III i čl. 50 AI Acta.",
     "card2_t": "Ljudski nadzor",
     "card2_d": "Pozivi označeni za pregled čekaju kvalificiranog recenzenta prije nastavka.",
     "card3_t": "Nepromjenjivi revizijski zapisnik",
-    "card3_d": "Svaka AI odluka bilježi se s vremenskom oznakom — spreman dokaz za reviziju.",
+    "card3_d": "Svaka AI odluka bilježi se s vremenskom oznakom - spreman dokaz za reviziju.",
     "card4_t": "GDPR i AI Act zajedno",
     "card4_d": "Jedna dosljedna razina usklađenosti umjesto zasebnih projekata za svaku regulativu."
   },
@@ -2454,11 +3096,11 @@
     "eyebrow": "Česta pitanja",
     "h2": "Najčešća pitanja",
     "q1": "Odgovara li CRMtree mojoj djelatnosti?",
-    "a1": "Da — CRMtree nije izgrađen za jedan model prodaje. Lijevak, polja i uloge prilagođavate procesu koji već imate.",
+    "a1": "Da - CRMtree nije izgrađen za jedan model prodaje. Lijevak, polja i uloge prilagođavate procesu koji već imate.",
     "q2": "Mogu li isprobati CRMtree besplatno?",
-    "a2": "Da — 14 dana punog pristupa, bez kartice. Otkažite u bilo kojem trenutku.",
+    "a2": "Da - 14 dana punog pristupa, bez kartice. Otkažite u bilo kojem trenutku.",
     "q3": "Koje pružatelje e-pošte mogu povezati?",
-    "a3": "Gmail, Outlook i Zoho — korespondencija se sinkronizira izravno na kartice leadova i partnera.",
+    "a3": "Gmail, Outlook i Zoho - korespondencija se sinkronizira izravno na kartice leadova i partnera.",
     "q4": "Kako radi AI analiza razgovora?",
     "a4": "Sustav analizira bilješke ili transkripte razgovora i ocjenjuje sklonost kupnji zajedno sa signalima i prigovorima klijenta.",
     "q5": "Gdje se pohranjuju naši podaci?",
@@ -2466,7 +3108,7 @@
     "q_migrate": "Mogu li prenijeti podatke iz drugog CRM-a (npr. Livespace, Pipedrive)?",
     "a_migrate": "Da, standardno uvozimo podatke partnera i prodavača iz CSV datoteke. Kod većih migracija pomažemo individualno.",
     "q_whatsapp": "Radi li WhatsApp Business odmah nakon registracije?",
-    "a_whatsapp": "Broj WhatsApp Business konfigurira administrator vaše tvrtke u panelu — jedan zajednički poslovni broj, vidljiv cijelom timu.",
+    "a_whatsapp": "Broj WhatsApp Business konfigurira administrator vaše tvrtke u panelu - jedan zajednički poslovni broj, vidljiv cijelom timu.",
     "q_price": "Koliko to košta?",
     "a_price": "Ovisi o broju korisnika i odabranim modulima. Cjelovit cjenik pronaći ćete na stranici Cjenik, a ako radije razgovarate, pišite nam."
   },
@@ -2491,12 +3133,13 @@
     "phone_ph": "+385 91 000 0000",
     "message_label": "Poruka",
     "message_ph": "Ukratko opišite svoje potrebe ili postavite pitanje…",
-    "success": "✅ Hvala! Javit ćemo se uskoro.",
-    "error": "❌ Nešto je pošlo po zlu. Pokušajte ponovno ili nam pišite izravno.",
+    "success": "Hvala! Javit ćemo se uskoro.",
+    "error": "Nešto je pošlo po zlu. Pokušajte ponovno ili nam pišite izravno.",
     "submit": "Pošalji upit",
     "submitting": "Slanje…"
   },
   "footer": {
+    "col_modules": "Moduli",
     "tagline": "CRM za modernu tvrtku",
     "col_product": "Proizvod",
     "col_resources": "Resursi",
@@ -2511,11 +3154,61 @@
     "privacy": "Politika privatnosti",
     "copyright": "© 2026 CRMtree. Sva prava pridržana."
   },
+  "pricing": {
+    "billing_label": "Naplata",
+    "billing_annual": "Godišnje",
+    "billing_monthly": "Mjesečno",
+    "compare_h2": "Usporedi planove",
+    "hero_h1": "Jednostavan, pregledan cjenik",
+    "hero_sub": "Plaćate samo aktivne korisnike. Bez skrivenih troškova, bez dugoročnih obveza.",
+    "save_badge": "Uštedite do 32%",
+    "currency_label": "Valuta",
+    "currency_note": "Cijene u PLN-u su okvirne - tečaj ~4,30 PLN/EUR, povremeno se ažurira.",
+    "badge_popular": "Najpopularniji",
+    "tag_lite": "Za prodajne timove koji tek počinju uvoditi red u svoj CRM.",
+    "tag_standard": "Potpuna podrška prodaji - od leada do izvještaja i integracije podataka.",
+    "tag_pro": "Za organizacije kojima su potrebni namjenski kanali i napredna analitika.",
+    "per_user_month": "/korisnik/mjesec",
+    "price_contact": "Kontaktirajte nas",
+    "note_annual": "Godišnja naplata · {price}/godina/korisnik",
+    "note_monthly": "Mjesečna naplata",
+    "note_pro": "Individualna ponuda · Zajamčeni SLA",
+    "cta_call": "Dogovorite razgovor",
+    "features_label": "Što uključuje",
+    "inherits_lite": "Sve iz plana Lite, plus:",
+    "inherits_standard": "Sve iz plana Standard, plus:",
+    "f_leads": "Cjelovit modul za upravljanje leadovima i klijentima",
+    "f_funnels": "Prodajni lijevci i proračuni prodavača",
+    "f_email": "Cjelovita komunikacija e-poštom (Gmail)",
+    "f_tasks": "Zadaci i workflow dodjela",
+    "f_config": "Fleksibilna konfiguracija šifrarnika i uloga",
+    "f_storage": "Prostor za podatke",
+    "f_partner": "Potpuna podrška partnerskom procesu",
+    "f_onboarding": "Workflowi uvođenja (proces implementacije u 4 koraka)",
+    "f_reports": "Prodajni izvještaji i analitika (trendovi, KPI, win rate)",
+    "f_dwh_api": "Punjenje skladišta podataka putem namjenskog API-ja",
+    "f_churn": "Prošireni izvještaji i analiza odljeva",
+    "f_cs": "Modul Customer Service",
+    "f_phone": "Namjenski telefonski kanal",
+    "f_queue": "Upravljanje redom čekanja agenata",
+    "f_kb": "Baza znanja",
+    "f_portal": "Self-service portal za klijente",
+    "f_mail": "Namjenska integracija komunikacije e-poštom",
+    "note1_t": "Implementacija u 24h",
+    "note1_d": "Nakon potpisivanja ugovora vaše je okruženje spremno sljedeći radni dan. Uvoz podataka iz CSV datoteke u nekoliko minuta.",
+    "note2_t": "Sigurnost na razini enterprisea",
+    "note2_d": "SAML 2.0, izolacija podataka po klijentu, audit trail, Azure Poland Central. Vaši podaci ostaju u EU.",
+    "note3_t": "Podrška na poljskom jeziku",
+    "note3_d": "Namjenski voditelj implementacije, dokumentacija na poljskom, podrška e-poštom i telefonom.",
+    "cta_h2": "Imate pitanja o cjeniku?",
+    "cta_sub": "Odgovorit ćemo u roku od jednog radnog dana",
+    "cta_btn": "Pišite nam"
+  },
   "chat": {
-    "pill": "Bok! 👋",
+    "pill": "Bok!",
     "name": "CRMtree tim",
     "status": "Online sada",
-    "msg1": "Bok! 👋 Rado ćemo pomoći oko toga što tražite ili što biste željeli poboljšati u prodaji.",
+    "msg1": "Bok! Rado ćemo pomoći oko toga što tražite ili što biste željeli poboljšati u prodaji.",
     "msg2": "Odmah vam možemo aktivirati i 14-dnevni probni pristup.",
     "cta": "Pišite nam"
   }
@@ -2566,43 +3259,124 @@
       if (pval != null) attrNodes[j].setAttribute("placeholder", pval);
     }
 
-    var btnLabel = document.getElementById("langBtnLabel");
-    if (btnLabel) btnLabel.textContent = code.toUpperCase();
-    var menuBtns = document.querySelectorAll("#langMenu button");
-    for (var k = 0; k < menuBtns.length; k++) {
-      menuBtns[k].setAttribute("aria-current", menuBtns[k].getAttribute("data-code") === code ? "true" : "false");
+    var ariaNodes = document.querySelectorAll("[data-i18n-aria-label]");
+    for (var n = 0; n < ariaNodes.length; n++) {
+      var akey = ariaNodes[n].getAttribute("data-i18n-aria-label");
+      var aval = getByPath(table, akey);
+      if (aval == null) aval = getByPath(fallback, akey);
+      if (aval != null) ariaNodes[n].setAttribute("aria-label", aval);
+    }
+
+    var altNodes = document.querySelectorAll("[data-i18n-alt]");
+    for (var q = 0; q < altNodes.length; q++) {
+      var tkey = altNodes[q].getAttribute("data-i18n-alt");
+      var tval = getByPath(table, tkey);
+      if (tval == null) tval = getByPath(fallback, tkey);
+      if (tval != null) altNodes[q].setAttribute("alt", tval);
+    }
+
+    updateLangButton(code, table, fallback);
+  }
+
+  function langByCode(code) {
+    for (var i = 0; i < LANGS.length; i++) if (LANGS[i].code === code) return LANGS[i];
+    return LANGS[0];
+  }
+
+  // Przycisk: [flaga] PL ▾ w pasku, [flaga] Polski ▾ w menu na telefonie (CSS).
+  function updateLangButton(code, table, fallback) {
+    var lang = langByCode(code);
+    var btn = document.getElementById("langBtn");
+    if (!btn) return;
+    var flag = document.getElementById("langBtnFlag");
+    if (flag) flag.setAttribute("src", FLAG_DIR + lang.flag);
+    var label = document.getElementById("langBtnLabel");
+    if (label) label.textContent = lang.code.toUpperCase();
+    var name = document.getElementById("langBtnName");
+    if (name) name.textContent = lang.name;
+    var word = getByPath(table, "nav.language") || getByPath(fallback, "nav.language") || "Język";
+    btn.setAttribute("aria-label", word + ": " + lang.name);
+    var opts = document.querySelectorAll("#langMenu [role=option]");
+    for (var k = 0; k < opts.length; k++) {
+      var on = opts[k].getAttribute("data-code") === code;
+      opts[k].setAttribute("aria-selected", on ? "true" : "false");
     }
   }
 
+  var CHECK_SVG = '<svg class="langmenu__check" viewBox="0 0 16 16" fill="none" aria-hidden="true">' +
+    '<path d="M3 8.5l3.2 3L13 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+  // Lista języków: role=listbox, strzałki / Home / End / Enter / Spacja,
+  // Esc i Tab zamykają, klik obok zamyka.
   function buildLangMenu() {
     var menu = document.getElementById("langMenu");
     var btn = document.getElementById("langBtn");
     if (!menu || !btn) return;
+
     LANGS.forEach(function (l) {
-      var b = document.createElement("button");
-      b.type = "button";
-      b.setAttribute("data-code", l.code);
-      b.innerHTML = "<span>" + l.name + "</span><span class=\"lang-code\">" + l.code.toUpperCase() + "</span>";
-      b.addEventListener("click", function () {
-        var code = this.getAttribute("data-code");
-        applyLang(code);
-        // Only a language picked here is remembered — a browser-language guess
-        // saved on every visit would outlive a later change of that browser.
-        try { localStorage.setItem(STORAGE_KEY, code); } catch (e) {}
-        menu.classList.remove("open");
-        btn.setAttribute("aria-expanded", "false");
-      });
-      menu.appendChild(b);
+      var li = document.createElement("li");
+      li.id = "lang-opt-" + l.code;
+      li.setAttribute("role", "option");
+      li.setAttribute("tabindex", "-1");
+      li.setAttribute("lang", l.code);
+      li.setAttribute("data-code", l.code);
+      li.setAttribute("aria-selected", "false");
+      li.innerHTML = '<img class="flag" src="' + FLAG_DIR + l.flag + '" alt="" width="20" height="14" loading="lazy" />' +
+        "<span>" + l.name + "</span>" + CHECK_SVG;
+      menu.appendChild(li);
     });
-    btn.addEventListener("click", function () {
-      var open = menu.classList.toggle("open");
-      btn.setAttribute("aria-expanded", open ? "true" : "false");
+
+    function options() { return Array.prototype.slice.call(menu.querySelectorAll("[role=option]")); }
+    function isOpen() { return menu.classList.contains("open"); }
+
+    function open(focusWhich) {
+      menu.classList.add("open");
+      btn.setAttribute("aria-expanded", "true");
+      var opts = options();
+      var target = menu.querySelector("[aria-selected=true]") || opts[0];
+      if (focusWhich === "last") target = opts[opts.length - 1];
+      if (target) target.focus();
+    }
+    function close(returnFocus) {
+      if (!isOpen()) return;
+      menu.classList.remove("open");
+      btn.setAttribute("aria-expanded", "false");
+      if (returnFocus) btn.focus();
+    }
+    function choose(li) {
+      var code = li.getAttribute("data-code");
+      applyLang(code);
+      // Only a language picked here is remembered - a browser-language guess
+      // saved on every visit would outlive a later change of that browser.
+      try { localStorage.setItem(STORAGE_KEY, code); } catch (e) {}
+      close(true);
+    }
+
+    btn.addEventListener("click", function () { if (isOpen()) close(false); else open(); });
+    btn.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowDown" || e.key === "ArrowUp") { e.preventDefault(); open(e.key === "ArrowUp" ? "last" : null); }
+    });
+    menu.addEventListener("click", function (e) {
+      var li = e.target.closest ? e.target.closest("[role=option]") : null;
+      if (li) choose(li);
+    });
+    menu.addEventListener("keydown", function (e) {
+      var opts = options();
+      var i = opts.indexOf(document.activeElement);
+      if (e.key === "ArrowDown") { e.preventDefault(); opts[Math.min(i + 1, opts.length - 1)].focus(); }
+      else if (e.key === "ArrowUp") { e.preventDefault(); opts[Math.max(i - 1, 0)].focus(); }
+      else if (e.key === "Home") { e.preventDefault(); opts[0].focus(); }
+      else if (e.key === "End") { e.preventDefault(); opts[opts.length - 1].focus(); }
+      else if (e.key === "Enter" || e.key === " ") { e.preventDefault(); if (i >= 0) choose(opts[i]); }
+      else if (e.key === "Escape") { e.preventDefault(); e.stopPropagation(); close(true); }
+      else if (e.key === "Tab") { close(false); }
     });
     document.addEventListener("click", function (e) {
-      if (!menu.contains(e.target) && e.target !== btn && !btn.contains(e.target)) {
-        menu.classList.remove("open");
-        btn.setAttribute("aria-expanded", "false");
-      }
+      if (isOpen() && !menu.contains(e.target) && !btn.contains(e.target)) close(false);
+    });
+    // Esc przy otwartej liście zamyka tylko listę, nie całe menu (nav.js słucha później).
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && isOpen()) { e.stopImmediatePropagation(); close(true); }
     });
   }
 
@@ -2611,5 +3385,14 @@
     applyLang(detectLang());
   });
 
-  window.CRMtreeI18N = { apply: applyLang, langs: LANGS };
+  window.CRMtreeI18N = {
+    apply: applyLang,
+    langs: LANGS,
+    // Tłumaczenie jednego klucza w bieżącym języku strony (fallback: polski).
+    t: function (key) {
+      var code = document.documentElement.getAttribute("lang");
+      var val = getByPath(I18N[code] || I18N.pl, key);
+      return val != null ? val : getByPath(I18N.pl, key);
+    }
+  };
 })();
