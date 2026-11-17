@@ -186,83 +186,19 @@
     </div>
   </section>
 
-  <!-- FUNKCJE: 5 pełnych sekcji, siatka pozostałych modułów i jeden pas CTA.
-       Kafelek to <details>: pełny opis i zdjęcie zostają w HTML (dla Google), rozwijają się po kliknięciu. -->
+  <!-- FUNKCJE: wszystkie moduły jako pełne sekcje, w kolejności z oryginału, potem pas CTA -->
   <div id="features">
-  <!-- PRODUCT: PROSPEKTY -->
-  <section class="product-section" id="f-prospekty">
-    <div class="container product-section__inner">
-      <div class="product-section__text">
-        <h2 data-i18n="features.f10_t">Prospekty</h2>
-        <div class="product-block">
-          <span class="product-label" data-i18n="features.label_problem">Jaki problem rozwiązuje CRMtree</span>
-          <p data-i18n="features.f10_problem">Handlowiec traci godziny na ręczne sprawdzanie, czy firma z zimnej bazy w ogóle pasuje do profilu klienta.</p>
-        </div>
-        <div class="product-block">
-          <span class="product-label" data-i18n="features.label_how">W jaki sposób</span>
-          <p data-i18n="features.f10_how">Automatyczny scoring ICP 0–100 sam wzbogaca dane firmy.</p>
-        </div>
-        <div class="product-block">
-          <span class="product-label" data-i18n="features.label_example">Przykład zastosowania</span>
-          <p data-i18n="features.f10_example">Z listy 500 nowych firm system od razu pokazuje 40 z najwyższym dopasowaniem - handlowiec dzwoni najpierw do nich, nie po kolei od góry listy.</p>
-        </div>
-        <a href="#trial" class="text-link"><span data-i18n="features.cta">Wypróbuj za darmo</span><svg class="ic-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      </div>
-      <div class="product-section__visual">
-        <div class="screenshot-frame"><img src="prospekty.webp" alt="" loading="lazy" width="900" height="675" /></div>
-      </div>
-    </div>
-  </section>
-  <!-- PRODUCT: ANALIZA ROZMÓW AI -->
-  <section class="product-section product-section--alt" id="f-analiza-ai">
-    <div class="container product-section__inner">
-      <div class="product-section__text">
-        <h2 data-i18n="features.f5_t">Analiza rozmów AI</h2>
-        <div class="product-block">
-          <span class="product-label" data-i18n="features.label_problem">Jaki problem rozwiązuje CRMtree</span>
-          <p data-i18n="features.f5_problem">Po rozmowie telefonicznej nikt nie ma czasu przesłuchać jej ponownie ani ocenić, czy klient faktycznie jest zainteresowany.</p>
-        </div>
-        <div class="product-block">
-          <span class="product-label" data-i18n="features.label_how">W jaki sposób</span>
-          <p data-i18n="features.f5_how">AI automatycznie ocenia skłonność do zakupu z notatek lub transkrypcji i wskazuje sygnały oraz obiekcje.</p>
-        </div>
-        <div class="product-block">
-          <span class="product-label" data-i18n="features.label_example">Przykład zastosowania</span>
-          <p data-i18n="features.f5_example">System oznacza rozmowę jako "niski potencjał" po wykryciu trzech odmów pod rząd - handlowiec nie traci czasu na dalsze wygrzewanie tego leada.</p>
-        </div>
-        <a href="#trial" class="text-link"><span data-i18n="features.cta">Wypróbuj za darmo</span><svg class="ic-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      </div>
-      <div class="product-section__visual">
-        <div class="screenshot-frame"><img src="analiza-ai.webp" alt="" loading="lazy" width="900" height="675" /></div>
-      </div>
-    </div>
-  </section>
-  <!-- PRODUCT: KOMUNIKACJA -->
-  <section class="product-section" id="f-komunikacja">
-    <div class="container product-section__inner">
-      <div class="product-section__text">
-        <h2 data-i18n="features.f4_t">Komunikacja wielokanałowa</h2>
-        <div class="product-block">
-          <span class="product-label" data-i18n="features.label_problem">Jaki problem rozwiązuje CRMtree</span>
-          <p data-i18n="features.f4_problem">Rozmowa z klientem toczy się w trzech różnych kanałach naraz, a nikt nie ma pełnego obrazu.</p>
-        </div>
-        <div class="product-block">
-          <span class="product-label" data-i18n="features.label_how">W jaki sposób</span>
-          <p data-i18n="features.f4_how">E-mail, WhatsApp Business i telefon są widoczne przy jednej karcie leada i partnera.</p>
-        </div>
-        <div class="product-block">
-          <span class="product-label" data-i18n="features.label_example">Przykład zastosowania</span>
-          <p data-i18n="features.f4_example">Handlowiec widzi na WhatsAppie reklamację klienta, zanim jeszcze odbierze od niego telefon - i jest przygotowany na rozmowę.</p>
-        </div>
-        <a href="#trial" class="text-link"><span data-i18n="features.cta">Wypróbuj za darmo</span><svg class="ic-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      </div>
-      <div class="product-section__visual">
-        <div class="screenshot-frame"><img src="komunikacja.webp" alt="" loading="lazy" width="900" height="675" /></div>
+  <!-- PRODUKTY: wstęp (jak w oryginale) -->
+  <section class="products-intro">
+    <div class="container">
+      <div class="section-header">
+        <h2 data-i18n="features.h2">Wszystko, czego potrzebujesz</h2>
+        <p data-i18n="features.sub">Jeden system zamiast dziesiątek arkuszy i narzędzi</p>
       </div>
     </div>
   </section>
   <!-- PRODUCT: DASHBOARD -->
-  <section class="product-section product-section--alt" id="f-dashboard">
+  <section class="product-section" id="f-dashboard">
     <div class="container product-section__inner">
       <div class="product-section__text">
         <h2 data-i18n="features.f1_t">Dashboard sprzedaży</h2>
@@ -285,6 +221,177 @@
       </div>
     </div>
   </section>
+
+  <section class="product-section product-section--alt" id="f-partnerzy">
+    <div class="container product-section__inner">
+      <div class="product-section__text">
+        <h2 data-i18n="features.f2_t">Zarządzanie partnerami</h2>
+        <div class="product-block">
+          <span class="product-label" data-i18n="features.label_problem">Jaki problem rozwiązuje CRMtree</span>
+          <p data-i18n="features.f2_problem">Dane o kliencie i partnerze są rozsiane w mailach, notatkach i pamięci różnych osób w firmie.</p>
+        </div>
+        <div class="product-block">
+          <span class="product-label" data-i18n="features.label_how">W jaki sposób</span>
+          <p data-i18n="features.f2_how">Baza partnerów trzyma w jednym miejscu historię transakcji, dokumenty i przypisanego opiekuna.</p>
+        </div>
+        <div class="product-block">
+          <span class="product-label" data-i18n="features.label_example">Przykład zastosowania</span>
+          <p data-i18n="features.f2_example">Gdy opiekun klienta idzie na urlop, zastępujący go handlowiec w dwie minuty widzi całą historię współpracy z firmą ABC - bez dzwonienia do kolegi.</p>
+        </div>
+        <a href="#trial" class="text-link"><span data-i18n="features.cta">Wypróbuj za darmo</span><svg class="ic-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+      <div class="product-section__visual">
+        <div class="screenshot-frame"><img src="partnerzy.webp" alt="" loading="lazy" width="900" height="675" /></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="product-section" id="f-budzety">
+    <div class="container product-section__inner">
+      <div class="product-section__text">
+        <h2 data-i18n="features.f3_t">Budżety i cele</h2>
+        <div class="product-block">
+          <span class="product-label" data-i18n="features.label_problem">Jaki problem rozwiązuje CRMtree</span>
+          <p data-i18n="features.f3_problem">Plan sprzedażowy żyje w osobnym arkuszu, którego nikt nie aktualizuje na bieżąco.</p>
+        </div>
+        <div class="product-block">
+          <span class="product-label" data-i18n="features.label_how">W jaki sposób</span>
+          <p data-i18n="features.f3_how">Budżety roczne i miesięczne per handlowiec są automatycznie porównywane z wykonaniem.</p>
+        </div>
+        <div class="product-block">
+          <span class="product-label" data-i18n="features.label_example">Przykład zastosowania</span>
+          <p data-i18n="features.f3_example">System sam pokazuje, że dział handlowy w Q3 zrealizował tylko 60% celu - zanim będzie za późno na korektę strategii.</p>
+        </div>
+        <a href="#trial" class="text-link"><span data-i18n="features.cta">Wypróbuj za darmo</span><svg class="ic-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+      <div class="product-section__visual">
+        <div class="screenshot-frame"><img src="budzety.webp" alt="" loading="lazy" width="900" height="675" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT: KOMUNIKACJA -->
+  <section class="product-section product-section--alt" id="f-komunikacja">
+    <div class="container product-section__inner">
+      <div class="product-section__text">
+        <h2 data-i18n="features.f4_t">Komunikacja wielokanałowa</h2>
+        <div class="product-block">
+          <span class="product-label" data-i18n="features.label_problem">Jaki problem rozwiązuje CRMtree</span>
+          <p data-i18n="features.f4_problem">Rozmowa z klientem toczy się w trzech różnych kanałach naraz, a nikt nie ma pełnego obrazu.</p>
+        </div>
+        <div class="product-block">
+          <span class="product-label" data-i18n="features.label_how">W jaki sposób</span>
+          <p data-i18n="features.f4_how">E-mail, WhatsApp Business i telefon są widoczne przy jednej karcie leada i partnera.</p>
+        </div>
+        <div class="product-block">
+          <span class="product-label" data-i18n="features.label_example">Przykład zastosowania</span>
+          <p data-i18n="features.f4_example">Handlowiec widzi na WhatsAppie reklamację klienta, zanim jeszcze odbierze od niego telefon - i jest przygotowany na rozmowę.</p>
+        </div>
+        <a href="#trial" class="text-link"><span data-i18n="features.cta">Wypróbuj za darmo</span><svg class="ic-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+      <div class="product-section__visual">
+        <div class="screenshot-frame"><img src="komunikacja.webp" alt="" loading="lazy" width="900" height="675" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT: ANALIZA ROZMÓW AI -->
+  <section class="product-section" id="f-analiza-ai">
+    <div class="container product-section__inner">
+      <div class="product-section__text">
+        <h2 data-i18n="features.f5_t">Analiza rozmów AI</h2>
+        <div class="product-block">
+          <span class="product-label" data-i18n="features.label_problem">Jaki problem rozwiązuje CRMtree</span>
+          <p data-i18n="features.f5_problem">Po rozmowie telefonicznej nikt nie ma czasu przesłuchać jej ponownie ani ocenić, czy klient faktycznie jest zainteresowany.</p>
+        </div>
+        <div class="product-block">
+          <span class="product-label" data-i18n="features.label_how">W jaki sposób</span>
+          <p data-i18n="features.f5_how">AI automatycznie ocenia skłonność do zakupu z notatek lub transkrypcji i wskazuje sygnały oraz obiekcje.</p>
+        </div>
+        <div class="product-block">
+          <span class="product-label" data-i18n="features.label_example">Przykład zastosowania</span>
+          <p data-i18n="features.f5_example">System oznacza rozmowę jako "niski potencjał" po wykryciu trzech odmów pod rząd - handlowiec nie traci czasu na dalsze wygrzewanie tego leada.</p>
+        </div>
+        <a href="#trial" class="text-link"><span data-i18n="features.cta">Wypróbuj za darmo</span><svg class="ic-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+      <div class="product-section__visual">
+        <div class="screenshot-frame"><img src="analiza-ai.webp" alt="" loading="lazy" width="900" height="675" /></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="product-section product-section--alt" id="f-seobot">
+    <div class="container product-section__inner">
+      <div class="product-section__text">
+        <h2 data-i18n="features.f6_t">SEObot</h2>
+        <div class="product-block">
+          <span class="product-label" data-i18n="features.label_problem">Jaki problem rozwiązuje CRMtree</span>
+          <p data-i18n="features.f6_problem">Blog firmowy stoi od miesięcy, bo nikt w zespole nie ma czasu pisać artykułów.</p>
+        </div>
+        <div class="product-block">
+          <span class="product-label" data-i18n="features.label_how">W jaki sposób</span>
+          <p data-i18n="features.f6_how">AI pisze i planuje publikację artykułów SEO oraz mierzy efekt w Google Search Console.</p>
+        </div>
+        <div class="product-block">
+          <span class="product-label" data-i18n="features.label_example">Przykład zastosowania</span>
+          <p data-i18n="features.f6_example">W jeden dzień powstaje artykuł "Jak wybrać CRM dla małej firmy" - zaplanowany do publikacji i śledzony pod kątem wejść z Google.</p>
+        </div>
+        <a href="#trial" class="text-link"><span data-i18n="features.cta">Wypróbuj za darmo</span><svg class="ic-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+      <div class="product-section__visual">
+        <div class="screenshot-frame"><img src="seobot.webp" alt="" loading="lazy" width="900" height="675" /></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="product-section" id="f-dokumenty">
+    <div class="container product-section__inner">
+      <div class="product-section__text">
+        <h2 data-i18n="features.f7_t">Dokumenty i workflow</h2>
+        <div class="product-block">
+          <span class="product-label" data-i18n="features.label_problem">Jaki problem rozwiązuje CRMtree</span>
+          <p data-i18n="features.f7_problem">Umowa krąży w mailach jako załącznik "wersja_final_v3" i nikt nie wie, kto ją ostatnio zaakceptował.</p>
+        </div>
+        <div class="product-block">
+          <span class="product-label" data-i18n="features.label_how">W jaki sposób</span>
+          <p data-i18n="features.f7_how">Obieg podpisów i akceptacji trzyma dokumenty bezpośrednio przy karcie partnera.</p>
+        </div>
+        <div class="product-block">
+          <span class="product-label" data-i18n="features.label_example">Przykład zastosowania</span>
+          <p data-i18n="features.f7_example">Nowa umowa czeka na akceptację działu prawnego - system pokazuje dokładnie, na czyim biurku utknęła, zamiast kolejnego przypominającego maila.</p>
+        </div>
+        <a href="#trial" class="text-link"><span data-i18n="features.cta">Wypróbuj za darmo</span><svg class="ic-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+      <div class="product-section__visual">
+        <div class="screenshot-frame"><img src="dokumenty.webp" alt="" loading="lazy" width="900" height="675" /></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="product-section product-section--alt" id="f-bezpieczenstwo">
+    <div class="container product-section__inner">
+      <div class="product-section__text">
+        <h2 data-i18n="features.f8_t">Bezpieczeństwo i role</h2>
+        <div class="product-block">
+          <span class="product-label" data-i18n="features.label_problem">Jaki problem rozwiązuje CRMtree</span>
+          <p data-i18n="features.f8_problem">Nowy pracownik dostaje dostęp do wszystkiego "na wszelki wypadek", bo ręczne ustawianie uprawnień zajmuje zbyt dużo czasu.</p>
+        </div>
+        <div class="product-block">
+          <span class="product-label" data-i18n="features.label_how">W jaki sposób</span>
+          <p data-i18n="features.f8_how">Środowisko każdej firmy jest w pełni odizolowane, z rolami, uprawnieniami i logowaniem przez SSO/SAML.</p>
+        </div>
+        <div class="product-block">
+          <span class="product-label" data-i18n="features.label_example">Przykład zastosowania</span>
+          <p data-i18n="features.f8_example">Stażysta w dziale marketingu nie zobaczy warunków finansowych klientów działu sprzedaży - bo jego rola po prostu nie ma tam dostępu.</p>
+        </div>
+        <a href="#trial" class="text-link"><span data-i18n="features.cta">Wypróbuj za darmo</span><svg class="ic-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+      <div class="product-section__visual">
+        <div class="screenshot-frame"><img src="bezpieczenstwo.webp" alt="" loading="lazy" width="900" height="675" /></div>
+      </div>
+    </div>
+  </section>
+
   <!-- PRODUCT: APLIKACJA MOBILNA -->
   <section class="product-section" id="f-mobile">
     <div class="container product-section__inner">
@@ -314,148 +421,51 @@
     </div>
   </section>
 
-  <!-- POZOSTAŁE MODUŁY -->
-  <section class="modules-section" aria-labelledby="modulesTitle">
-    <div class="container">
-      <div class="section-header">
-        <h2 id="modulesTitle" data-i18n="features.h2">Wszystko, czego potrzebujesz</h2>
-        <p data-i18n="features.sub">Jeden system zamiast dziesiątek arkuszy i narzędzi</p>
+  <!-- PRODUCT: PROSPEKTY -->
+  <section class="product-section product-section--alt" id="f-prospekty">
+    <div class="container product-section__inner">
+      <div class="product-section__text">
+        <h2 data-i18n="features.f10_t">Prospekty</h2>
+        <div class="product-block">
+          <span class="product-label" data-i18n="features.label_problem">Jaki problem rozwiązuje CRMtree</span>
+          <p data-i18n="features.f10_problem">Handlowiec traci godziny na ręczne sprawdzanie, czy firma z zimnej bazy w ogóle pasuje do profilu klienta.</p>
+        </div>
+        <div class="product-block">
+          <span class="product-label" data-i18n="features.label_how">W jaki sposób</span>
+          <p data-i18n="features.f10_how">Automatyczny scoring ICP 0–100 sam wzbogaca dane firmy.</p>
+        </div>
+        <div class="product-block">
+          <span class="product-label" data-i18n="features.label_example">Przykład zastosowania</span>
+          <p data-i18n="features.f10_example">Z listy 500 nowych firm system od razu pokazuje 40 z najwyższym dopasowaniem - handlowiec dzwoni najpierw do nich, nie po kolei od góry listy.</p>
+        </div>
+        <a href="#trial" class="text-link"><span data-i18n="features.cta">Wypróbuj za darmo</span><svg class="ic-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
-      <div class="module-grid">
-      <details class="module-tile" id="f-partnerzy">
-        <summary>
-          <span class="module-tile__icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="7" r="3"/><path d="M2 17c0-3 2.5-5 6-5s6 2 6 5"/><path d="M14 4a3 3 0 0 1 0 6"/><path d="M16 12c1.5.6 2 2.4 2 5"/></svg></span>
-          <h2 class="module-tile__title" data-i18n="features.f2_t">Zarządzanie partnerami</h2>
-          <span class="module-tile__lead" data-i18n="features.f2_how">Baza partnerów trzyma w jednym miejscu historię transakcji, dokumenty i przypisanego opiekuna.</span>
-          <span class="module-tile__more"><span data-i18n="features.more">Zobacz więcej</span><svg class="ic-chev" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </summary>
-        <div class="module-tile__body">
-          <div class="module-tile__text">
-            <div class="product-block">
-              <span class="product-label" data-i18n="features.label_problem">Jaki problem rozwiązuje CRMtree</span>
-              <p data-i18n="features.f2_problem">Dane o kliencie i partnerze są rozsiane w mailach, notatkach i pamięci różnych osób w firmie.</p>
-            </div>
-            <div class="product-block">
-              <span class="product-label" data-i18n="features.label_example">Przykład zastosowania</span>
-              <p data-i18n="features.f2_example">Gdy opiekun klienta idzie na urlop, zastępujący go handlowiec w dwie minuty widzi całą historię współpracy z firmą ABC - bez dzwonienia do kolegi.</p>
-            </div>
-          </div>
-          <div class="module-tile__visual">
-    <div class="screenshot-frame"><img src="partnerzy.webp" alt="" loading="lazy" width="900" height="675" /></div>
-          </div>
+      <div class="product-section__visual">
+        <div class="screenshot-frame"><img src="prospekty.webp" alt="" loading="lazy" width="900" height="675" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT: PROJEKTY -->
+  <section class="product-section" id="f-projekty">
+    <div class="container product-section__inner">
+      <div class="product-section__text">
+        <h2 data-i18n="features.f11_t">Projekty</h2>
+        <div class="product-block">
+          <span class="product-label" data-i18n="features.label_problem">Jaki problem rozwiązuje CRMtree</span>
+          <p data-i18n="features.f11_problem">Po podpisaniu umowy wdrożenie u klienta rozjeżdża się po mailach, arkuszach i komunikatorach - nikt nie wie, kto za co odpowiada ani na jakim etapie jest praca.</p>
         </div>
-      </details>
-      <details class="module-tile" id="f-budzety">
-        <summary>
-          <span class="module-tile__icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10" cy="10" r="8"/><circle cx="10" cy="10" r="4"/><circle cx="10" cy="10" r="1"/></svg></span>
-          <h2 class="module-tile__title" data-i18n="features.f3_t">Budżety i cele</h2>
-          <span class="module-tile__lead" data-i18n="features.f3_how">Budżety roczne i miesięczne per handlowiec są automatycznie porównywane z wykonaniem.</span>
-          <span class="module-tile__more"><span data-i18n="features.more">Zobacz więcej</span><svg class="ic-chev" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </summary>
-        <div class="module-tile__body">
-          <div class="module-tile__text">
-            <div class="product-block">
-              <span class="product-label" data-i18n="features.label_problem">Jaki problem rozwiązuje CRMtree</span>
-              <p data-i18n="features.f3_problem">Plan sprzedażowy żyje w osobnym arkuszu, którego nikt nie aktualizuje na bieżąco.</p>
-            </div>
-            <div class="product-block">
-              <span class="product-label" data-i18n="features.label_example">Przykład zastosowania</span>
-              <p data-i18n="features.f3_example">System sam pokazuje, że dział handlowy w Q3 zrealizował tylko 60% celu - zanim będzie za późno na korektę strategii.</p>
-            </div>
-          </div>
-          <div class="module-tile__visual">
-    <div class="screenshot-frame"><img src="budzety.webp" alt="" loading="lazy" width="900" height="675" /></div>
-          </div>
+        <div class="product-block">
+          <span class="product-label" data-i18n="features.label_how">W jaki sposób</span>
+          <p data-i18n="features.f11_how">Projekt ma kartę z zespołem, zadania z podzadaniami, oś czasu (Gantt) i czat - z rolami dla PM-a, uczestników, kontrolera i osób spoza firmy.</p>
         </div>
-      </details>
-      <details class="module-tile" id="f-seobot">
-        <summary>
-          <span class="module-tile__icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 16l1-4 8-8 3 3-8 8z"/><path d="M11 6l3 3"/><path d="M4 18h12"/></svg></span>
-          <h2 class="module-tile__title" data-i18n="features.f6_t">SEObot</h2>
-          <span class="module-tile__lead" data-i18n="features.f6_how">AI pisze i planuje publikację artykułów SEO oraz mierzy efekt w Google Search Console.</span>
-          <span class="module-tile__more"><span data-i18n="features.more">Zobacz więcej</span><svg class="ic-chev" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </summary>
-        <div class="module-tile__body">
-          <div class="module-tile__text">
-            <div class="product-block">
-              <span class="product-label" data-i18n="features.label_problem">Jaki problem rozwiązuje CRMtree</span>
-              <p data-i18n="features.f6_problem">Blog firmowy stoi od miesięcy, bo nikt w zespole nie ma czasu pisać artykułów.</p>
-            </div>
-            <div class="product-block">
-              <span class="product-label" data-i18n="features.label_example">Przykład zastosowania</span>
-              <p data-i18n="features.f6_example">W jeden dzień powstaje artykuł "Jak wybrać CRM dla małej firmy" - zaplanowany do publikacji i śledzony pod kątem wejść z Google.</p>
-            </div>
-          </div>
-          <div class="module-tile__visual">
-    <div class="screenshot-frame"><img src="seobot.webp" alt="" loading="lazy" width="900" height="675" /></div>
-          </div>
+        <div class="product-block">
+          <span class="product-label" data-i18n="features.label_example">Przykład zastosowania</span>
+          <p data-i18n="features.f11_example">PM zakłada projekt wdrożenia i przypisuje zadania swoim ludziom oraz osobie po stronie klienta - ta po zalogowaniu widzi wyłącznie swoje zadania i zamyka je na bieżąco.</p>
         </div>
-      </details>
-      <details class="module-tile" id="f-dokumenty">
-        <summary>
-          <span class="module-tile__icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 2h7l4 4v12H5z"/><path d="M12 2v4h4"/><path d="M8 12l2 2 3-4"/></svg></span>
-          <h2 class="module-tile__title" data-i18n="features.f7_t">Dokumenty i workflow</h2>
-          <span class="module-tile__lead" data-i18n="features.f7_how">Obieg podpisów i akceptacji trzyma dokumenty bezpośrednio przy karcie partnera.</span>
-          <span class="module-tile__more"><span data-i18n="features.more">Zobacz więcej</span><svg class="ic-chev" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </summary>
-        <div class="module-tile__body">
-          <div class="module-tile__text">
-            <div class="product-block">
-              <span class="product-label" data-i18n="features.label_problem">Jaki problem rozwiązuje CRMtree</span>
-              <p data-i18n="features.f7_problem">Umowa krąży w mailach jako załącznik "wersja_final_v3" i nikt nie wie, kto ją ostatnio zaakceptował.</p>
-            </div>
-            <div class="product-block">
-              <span class="product-label" data-i18n="features.label_example">Przykład zastosowania</span>
-              <p data-i18n="features.f7_example">Nowa umowa czeka na akceptację działu prawnego - system pokazuje dokładnie, na czyim biurku utknęła, zamiast kolejnego przypominającego maila.</p>
-            </div>
-          </div>
-          <div class="module-tile__visual">
-    <div class="screenshot-frame"><img src="dokumenty.webp" alt="" loading="lazy" width="900" height="675" /></div>
-          </div>
-        </div>
-      </details>
-      <details class="module-tile" id="f-bezpieczenstwo">
-        <summary>
-          <span class="module-tile__icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 2l7 3v5c0 4-3 7-7 8-4-1-7-4-7-8V5z"/><path d="M7 10l2 2 4-4"/></svg></span>
-          <h2 class="module-tile__title" data-i18n="features.f8_t">Bezpieczeństwo i role</h2>
-          <span class="module-tile__lead" data-i18n="features.f8_how">Środowisko każdej firmy jest w pełni odizolowane, z rolami, uprawnieniami i logowaniem przez SSO/SAML.</span>
-          <span class="module-tile__more"><span data-i18n="features.more">Zobacz więcej</span><svg class="ic-chev" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </summary>
-        <div class="module-tile__body">
-          <div class="module-tile__text">
-            <div class="product-block">
-              <span class="product-label" data-i18n="features.label_problem">Jaki problem rozwiązuje CRMtree</span>
-              <p data-i18n="features.f8_problem">Nowy pracownik dostaje dostęp do wszystkiego "na wszelki wypadek", bo ręczne ustawianie uprawnień zajmuje zbyt dużo czasu.</p>
-            </div>
-            <div class="product-block">
-              <span class="product-label" data-i18n="features.label_example">Przykład zastosowania</span>
-              <p data-i18n="features.f8_example">Stażysta w dziale marketingu nie zobaczy warunków finansowych klientów działu sprzedaży - bo jego rola po prostu nie ma tam dostępu.</p>
-            </div>
-          </div>
-          <div class="module-tile__visual">
-    <div class="screenshot-frame"><img src="bezpieczenstwo.webp" alt="" loading="lazy" width="900" height="675" /></div>
-          </div>
-        </div>
-      </details>
-      <details class="module-tile" id="f-projekty">
-        <summary>
-          <span class="module-tile__icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="16" height="14" rx="2"/><path d="M5 7h6M7 10h7M5 13h4"/></svg></span>
-          <h2 class="module-tile__title" data-i18n="features.f11_t">Projekty</h2>
-          <span class="module-tile__lead" data-i18n="features.f11_how">Projekt ma kartę z zespołem, zadania z podzadaniami, oś czasu (Gantt) i czat - z rolami dla PM-a, uczestników, kontrolera i osób spoza firmy.</span>
-          <span class="module-tile__more"><span data-i18n="features.more">Zobacz więcej</span><svg class="ic-chev" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </summary>
-        <div class="module-tile__body">
-          <div class="module-tile__text">
-            <div class="product-block">
-              <span class="product-label" data-i18n="features.label_problem">Jaki problem rozwiązuje CRMtree</span>
-              <p data-i18n="features.f11_problem">Po podpisaniu umowy wdrożenie u klienta rozjeżdża się po mailach, arkuszach i komunikatorach - nikt nie wie, kto za co odpowiada ani na jakim etapie jest praca.</p>
-            </div>
-            <div class="product-block">
-              <span class="product-label" data-i18n="features.label_example">Przykład zastosowania</span>
-              <p data-i18n="features.f11_example">PM zakłada projekt wdrożenia i przypisuje zadania swoim ludziom oraz osobie po stronie klienta - ta po zalogowaniu widzi wyłącznie swoje zadania i zamyka je na bieżąco.</p>
-            </div>
-          </div>
-          <div class="module-tile__visual">
+        <a href="#trial" class="text-link"><span data-i18n="features.cta">Wypróbuj za darmo</span><svg class="ic-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+      <div class="product-section__visual">
     <div class="screenshot-frame">
       <svg class="app-shot" viewBox="0 0 900 675" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Podgląd modułu Projekty w CRMtree: oś czasu zadań, szczegóły zadania i czat" font-family="Inter, sans-serif">
         <defs>
@@ -602,12 +612,10 @@
         <text x="646" y="632" font-size="11" fill="#111827">Sprawdzone - zamykam zadanie.</text>
       </svg>
     </div>
-          </div>
-        </div>
-      </details>
       </div>
     </div>
   </section>
+
 
   <!-- PAS CTA (jedyny główny przycisk w części produktowej) -->
   <section class="cta-band">
@@ -811,6 +819,17 @@
     </div>
   </section>
 
+  <!-- LOGIN CTA (jak w oryginale) -->
+  <section class="login-cta">
+    <div class="container login-cta__inner">
+      <div class="login-cta__text">
+        <h2 data-i18n="logincta.h2">Masz już konto?</h2>
+        <p data-i18n="logincta.sub">Zaloguj się do swojego środowiska CRMtree</p>
+      </div>
+      <a href="https://demo.crmtree.pl/login" class="btn btn--primary btn--lg" data-i18n="logincta.cta">Przejdź do aplikacji →</a>
+    </div>
+  </section>
+
   <!-- CONTACT -->
   <section class="contact" id="contact">
     <div class="container">
@@ -877,7 +896,6 @@
         </div>
         <div class="contact-form__foot">
           <button type="submit" id="formSubmit" class="btn btn--primary btn--lg" data-i18n="contact.submit">Wyślij zapytanie</button>
-          <p class="contact-login"><span data-i18n="logincta.h2">Masz już konto?</span> <a href="https://demo.crmtree.pl/login" data-i18n="nav.login">Zaloguj się</a></p>
         </div>
       </form>
       </div>

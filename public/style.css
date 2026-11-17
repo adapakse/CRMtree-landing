@@ -535,6 +535,8 @@ a.cycle__stage:hover .cycle__go { transform: translateX(2px); }
 
 /* ── SEKCJE PRODUKTÓW ────────────────────────────────────────────── */
 .product-section { padding: 48px 0; overflow-x: clip; }
+.products-intro { padding: var(--section-y) 0 0; }
+.products-intro .section-header { margin-bottom: 0; }
 .product-section--alt { background: var(--page-bg); }
 .product-section__inner { display: grid; grid-template-columns: 1fr; gap: 32px; align-items: center; }
 .product-section__text, .product-section__visual { min-width: 0; }
